@@ -1,0 +1,486 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+header {
+    background-color: rgb(204, 201, 201);
+    height: 45px;
+    position: relative;
+    width: 100%;   
+    opacity: 0.7;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+nav {
+    padding: 8px 0 0;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 5px 0;
+    padding: 0 5px;
+}
+
+nav .user {
+    display: none;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.logo {
+    justify-content: center;
+}
+
+.logo img{
+    width: 60px;
+    border-radius: 50%;
+}
+
+.items {
+   display: none;
+}
+
+.items a:hover{
+    color:rgb(72, 138, 72)
+}
+
+.search-icon {
+    height: 45px;
+    width: 40px;
+    display: flex;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.search-icon input {
+    height: 100%;
+    width: 200px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    background: rgb(228, 227, 227);
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    display: none;
+}
+
+.search-icon .icon {
+    line-height: 40px;
+    border-radius:5px;
+    cursor: pointer;
+    padding-right: 7px;
+}
+
+.user, .heart, .shop {
+    font-size: 17px;
+}
+
+.user a:hover, .heart a:hover, .shop a:hover{
+    color:#21660c;
+    cursor: pointer;
+}
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px; 
+}
+
+.iniciar-sesion{
+    margin: 50px 0 10px 0;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.comunidad {
+    font-size: 15px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.comunidad a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+}
+
+.form-name, .form-pass, .form-btn-send{
+    margin: 20px;
+    text-align: center;
+}
+
+.login-form input, .creation-form input{
+    border: 0.5px solid rgb(72, 138, 72);
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    padding: 9px;
+    /* width: 320px; */
+    /* background-color: rgb(243, 240, 240); */
+    background-color: #ffffff;
+}
+
+.login-form input:focus, .creation-form input:focus{
+    border: 1.7px solid rgb(32, 105, 32);
+}
+
+section.my-prod {
+    margin: 20px;
+}
+
+div article{
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    flex-direction: column;
+    border:rgb(56, 56, 56) 2px solid;   
+}
+
+div.product-ex{
+    display: flex;
+}
+
+div.crear-prod{
+    width: 50%;
+    float: right;
+    position: relative;
+    left: 300px;
+    top: 40px;
+}
+
+.product-ex button {
+    border: none;
+    border-radius: 3px;
+    width: 80px;
+    height: 30%;
+    border: rgb(72, 138, 72) 1px solid;
+    background-color: #ffffff;
+    padding: 8px;
+    margin-top: 50px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.product-ex button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.crear-prod button {
+    border: none;
+    border-radius: 3px;
+    width: 200px;
+    height: 50px;
+    border: rgb(72, 138, 72) 1px solid;
+    background-color: rgb(72, 138, 72);
+    padding: 8px;
+    color: #ffffff;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.crear-prod button a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.crear-prod button:hover{
+    background-color: rgb(35, 102, 35);
+}
+
+.creation-form {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.creation-form div label {
+    margin-bottom: 15px;
+}
+
+.creation-form div {
+    margin: 25px 0;
+}
+
+.form-btn-send button{
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    background: rgb(72, 138, 72);
+    padding: 9px;
+    color: #ffffff;
+    cursor: pointer
+}
+
+.form-btn-send button:hover {
+    background: #21660c;
+}
+
+hr {
+    width: 98%;
+    margin: auto
+}
+
+
+
+/*****************************************/
+  /*CARRITO DE COMPRAS*/
+/*****************************************/
+.shopping-card-conteiner{
+    width: 100%;    
+    
+}
+
+.shopping-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.title{
+    text-align: center;
+}
+
+.imagen-producto{
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.product-img{    
+    margin-right: 7px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 10px rgb(56, 56, 56);
+}
+
+.product-description{
+    width: 30%;
+}
+.product-description p{
+    display: none;
+}
+.product-cant{
+    display: flex;    
+    align-items: center;
+    
+}
+.product-cant i{
+    
+    font-size: 0.7rem;
+    color: green;
+    margin: 0px 7px;
+}
+#cantidad{
+    width: 30px; 
+    height: 30px;   
+    text-align: center;
+    border: none;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    
+}
+
+.cart-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0px;
+
+
+}
+
+.product-subtotal{
+    margin-left: 25px;
+}
+
+.product-delete i{
+    color:red;
+    font-size: 1rem;
+    margin:15px;
+    
+}
+.footer-cart{
+    display: flex;
+    justify-content: space-around;
+}
+.total{
+    margin: 20px 80px ;
+}
+.forma-pago{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+
+}
+.forma-pago i{
+    font-size: 1rem;    
+    color: rgb(37, 35, 35);
+    margin-top: 1.5rem;
+}
+.opciones{
+    display: flex;    
+
+}
+.opciones button{
+    margin: 10px 5px;
+}
+.btn-continue{
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.btn-end{
+    background-color: green;
+    color: white;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+}
+.btn-end:hover{
+    box-shadow: 3px 3px 10px rgb(37, 35, 35);
+}
+/***********************************************************
+    End shooping cart
+*/
+
+
+
+@media(min-width: 380px){
+    .login-form input{
+        width: 320px
+    }
+}
+
+@media(min-width: 771px){
+    .items {
+        display: flex;
+        margin-left: 150px;
+    }
+    .items li {
+        margin: 0 10px
+    }
+    .burger {
+        display: none;
+    }
+    .logo {
+        order: -1;
+    }
+    .heart, .shop {
+        order: 1;
+    }
+
+}
+
+@media(min-width: 1000px){
+    .search-icon input {
+        display: flex;
+    }
+    .search-icon .icon {
+        background: rgb(228, 227, 227);
+        border-radius: 0 5px 5px 0;
+    }
+    nav .user {
+        display: block;
+    } 
+    
+}
+
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    background-image: url('/img/natural-product.jpg');
+    height: 600px;
+    margin: 3px 0;
+    background-size: cover;
+    animation: banner 28s infinite linear;
+    /* transition: banner 2000ms */
+}
+
+.banner-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: rgba(0, 22, 20, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-content h2 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.banner-content a {
+    text-decoration: none;
+    color: #fff;
+    padding: 9px 20px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+}
+
+.banner-content a:hover {
+    background-color: rgb(241, 239, 239);
+    color: #333;
+}
+
+/* @keyframes banner {
+    0%{
+        background-image: url('/img/natural-product.jpg');
+    }
+    25%{
+        background-image: url('/img/natural-product.jpg');
+    }
+    26%{
+        background-image: url('/img/natural-product1.jpg');
+    }
+    50%{
+        background-image: url('/img/natural-product1.jpg');
+    }
+    51%{
+        background-image: url('/img/natural-product2.jpg');
+    }
+    75%{
+        background-image: url('/img/natural-product2.jpg');
+    }
+    76%{
+        background-image: url('/img/natural-product3.jpg');
+    }
+    100%{
+        background-image: url('/img/natural-product3.jpg');
+    }
+} */
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+    <body>
+
+        <%- include('./partials/header') %>
+            <hr>
+
+
+            <main class='creation-form'>
+                <form action=# method="post">
+                    <div>
+                        <label for='product-name'>Nombre del producto</label>
+                          <br>  
+                        <input type="text" name="nombre" id="product-name">
+                    </div>
+                    <div>
+                        <label for='descrip'>Descripción del producto</label>
+                        <br>
+                        <textarea name="descripcion" id="descrip"></textarea>
+                    </div>
+                    <div>
+                        <label for='imagen'>Imagen</label>
+                        <br>
+                        <input type="file" name="image" id="imagen" accept=".jpg, .png"></input>
+                    </div>
+                    <div>
+                        <label for='category'>Categoría</label>
+                        <br>
+                        <select name="category" id="category">
+                            <option value=></option>
+                            <option value=></option>
+                            <option value=></option>
+                            <option value=></option>
+                            <option value=></option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for='precio'>Precio</label>
+                        <br>
+                      $  <input type="number" name="precio" id="precio">
+                    </div>
+                </form>
+            </main>
+
+            <!-- <main class="up-form">
+        <form action=# method="post">
+            <div>
+                <label for="name"></label>
+                <input type="text" name="nombre" id="name" placeholder="Nombre del producto">
+            </div>
+            <div>
+                <label for="descripcion">Describa el producto</label>
+                <br>
+                <textarea name='descripcion' id='descripcion'></textarea>
+            </div>
+            <div>
+                <label for="email"></label>
+                <input type="email" name="E-mail" id="email" placeholder="E-mail">
+            </div>
+            <div>
+                <h3>Fecha de nacimiento</h3>
+                <label for="birth"></label>
+                <input class="form-birth-input" type="date" name="fecha-nac" id="birth" max="2022/12/31">
+            </div>
+            <div>
+                <label for="address"></label>
+                <input type="text" name="domicilio" id="address" placeholder="Domicilio">
+            </div>
+            <div>
+                <h3>Perfil de usuario</h3>
+                <input class="form-perfil-input" type="radio" name="perfil" value="Comprador">Comprador
+                <br> 
+                <input class="form-perfil-input" type="radio" name="perfil" value="Vendedor">Vendedor
+            </div>
+            <div>
+                <h3>Intereses</h3>
+                <p>
+                    <input class="form-intereses-input" type="checkbox" name="intereses" value="Electro">Electro
+                </p>
+                <p>
+                    <input class="form-intereses-input" type="checkbox" name="intereses" value="Moda">Moda
+                </p>
+                <p>
+                    <input class="form-intereses-input" type="checkbox" name="intereses" value="Hogar">Hogar
+                </p>
+                <p>
+                    <input class="form-intereses-input" type="checkbox" name="intereses"
+                        value="Jugueteria">Juguetería
+                </p>
+                <p>
+                    <input class="form-intereses-input" type="checkbox" name="intereses" value="Comprador">Vida
+                    sana
+                </p>
+            </div>
+            <div>
+                <label for="user-pic">
+                    <h3>Seleccione una foto:</h3>
+                </label>
+                <input type="file" name="foto" id="user-pic">
+            </div>
+            <div>
+                <label for="pass"></label>
+                <input type="password" name="Contraseña" id="pass" placeholder="Contraseña">
+            </div>
+            <div>
+                <label for="pass-confirm"></label>
+                <input type="password" name="Confirmar" id="pass-confirm" placeholder="Confirmar contraseña">
+            </div>
+            <div>
+                <a href='/'></a><button class="form-btn-send" type="submit">Enviar</button>
+            </div>
+            <div>
+                <button class="form-btn-reset" type="reset">Borrar</button>
+            </div>
+
+        </form>
+    </main> -->
+
+    </body>
+
+</html>
