@@ -59,7 +59,8 @@ nav ul li a {
 }
 
 .items a:hover{
-    color:rgb(72, 138, 72)
+    color:rgb(72, 138, 72);
+    font-weight: 600;
 }
 
 .search-icon {
@@ -104,9 +105,9 @@ nav ul li a {
     padding-top: 15px; 
 }
 
-.iniciar-sesion{
+.iniciar-sesion, .crear-producto{
     margin: 50px 0 10px 0;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: normal;
     text-align: center;
 }
@@ -128,98 +129,102 @@ nav ul li a {
     text-align: center;
 }
 
-.login-form input, .creation-form input{
+.login-form input{
     border: 0.5px solid rgb(72, 138, 72);
     border-radius: 5px;
     outline: none;
     font-size: 14px;
     padding: 9px;
-    /* width: 320px; */
-    /* background-color: rgb(243, 240, 240); */
     background-color: #ffffff;
 }
 
-.login-form input:focus, .creation-form input:focus{
+.login-form input:focus{
     border: 1.7px solid rgb(32, 105, 32);
 }
 
-section.my-prod {
-    margin: 20px;
+
+/******* 
+CREATE FORM
+********/
+
+div.back-create-form{
+    background: url('/img/eco-art1.png') no-repeat center center/cover;
+    margin-top: 10px;   
 }
 
-div article{
-    width: 300px;
-    height: 300px;
-    margin: 20px;
-    flex-direction: column;
-    border:rgb(56, 56, 56) 2px solid;   
-}
-
-div.product-ex{
-    display: flex;
-}
-
-div.crear-prod{
-    width: 50%;
-    float: right;
-    position: relative;
-    left: 300px;
-    top: 40px;
-}
-
-.product-ex button {
-    border: none;
-    border-radius: 3px;
-    width: 80px;
-    height: 30%;
-    border: rgb(72, 138, 72) 1px solid;
+.create-form{
+    margin: auto;
+    border: 1px solid rgb(32, 105, 32);
+    width: 90%;
+    padding: 10px 0 30px;
     background-color: #ffffff;
-    padding: 8px;
+    border-radius: 10px;
     margin-top: 50px;
-    cursor: pointer;
-    align-self: center;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-.product-ex button a {
-    text-decoration: none;
-    color: #000;
+.create-form h3{
+    text-align: center;
+    margin: 20px 0 30px;
 }
 
-.crear-prod button {
-    border: none;
-    border-radius: 3px;
-    width: 200px;
-    height: 50px;
-    border: rgb(72, 138, 72) 1px solid;
-    background-color: rgb(72, 138, 72);
-    padding: 8px;
-    color: #ffffff;
-    margin-top: 30px;
-    cursor: pointer;
-}
-
-.crear-prod button a {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.crear-prod button:hover{
-    background-color: rgb(35, 102, 35);
-}
-
-.creation-form {
+.create-form div{
     display: flex;
-    justify-content: center;
-    padding: 40px;
+    margin: auto;
+    justify-content: space-around;
 }
 
-.creation-form div label {
-    margin-bottom: 15px;
+.create-form div.labels{
+    margin-bottom: 10px;
 }
 
-.creation-form div {
-    margin: 25px 0;
+.create-form div.labels h4{
+    font-weight: normal;
 }
+
+.create-form div input, .create-form div select, .create-form div textarea{
+    margin-bottom: 50px;
+}
+
+.create-form input:focus{
+    border: 1.7px solid rgb(32, 105, 32);
+}
+
+.create-form textarea{
+    border: 0.5px solid rgb(72, 138, 72);
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    padding: 9px;
+    margin: auto;
+    height: 150px;
+    width: 70%;
+    max-width: 600px;
+}
+
+.create-form input, .create-form select{
+    border: 0.5px solid rgb(72, 138, 72);
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    padding: 9px;
+    width: 70%;
+    max-width: 500px;
+}
+
+.form-btn-send button.create-prod{
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    max-width: 500px;
+    background: rgb(72, 138, 72);
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer
+}
+
+
 
 .form-btn-send button{
     border: none;
@@ -372,6 +377,9 @@ hr {
     .login-form input{
         width: 320px
     }
+    .create-form{
+        width: 60%;
+    }
 }
 
 @media(min-width: 771px){
@@ -404,7 +412,10 @@ hr {
     }
     nav .user {
         display: block;
-    } 
+    }
+    /* .creation-form{
+        display: ;
+    } */
     
 }
 
