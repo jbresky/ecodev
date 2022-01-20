@@ -25,6 +25,11 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-app.use((req, res, next) => {
-    res.status(404).render('not-found')
-})
+
+
+
+//no habilitada para que podamos leer los errores en la pantalla
+
+// app.use((req, res, next) => {
+//     res.status(404).render("not-found")
+// })

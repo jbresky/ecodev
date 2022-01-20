@@ -77,15 +77,19 @@ nav ul li a {
     border: none;
     outline: none;
     padding: 0 10px;
-    background: rgb(228, 227, 227);
+    /* background: rgb(243, 240, 240); */
+    background: rgb(239, 239, 239);
     font-size: 16px;
     border-radius: 5px 0 0 5px;
     display: none;
+    color: rgb(63, 62, 62);
 }
+
 
 .search-icon .icon {
     line-height: 40px;
     border-radius:5px;
+    color: rgb(99, 98, 98);
     cursor: pointer;
     padding-right: 7px;
 }
@@ -407,7 +411,7 @@ hr {
         display: flex;
     }
     .search-icon .icon {
-        background: rgb(228, 227, 227);
+        background: rgb(239, 239, 239);
         border-radius: 0 5px 5px 0;
     }
     nav .user {
