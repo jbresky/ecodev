@@ -26,5 +26,5 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
 app.use((req, res, next) => {
-    res.status(404).render('not-found')
-})
+    res.status(404).render(path.join(__dirname, '../views/not-found'))
+});
