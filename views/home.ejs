@@ -1,3 +1,20 @@
+
+<style>
+    section.gandhi{
+        padding: 2rem ;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+    .gandhi blockquote{
+      margin: 0 2rem;
+    }
+ 
+    .gandhi img{
+        border-radius: 50%;
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head') %>
@@ -12,6 +29,83 @@
                 </div>
             </section>
 
+            <main class="home">
+                <h2 class="home-text">Ofertas</h2>
+                <section class="home-box">
+                    <div class="3-prod-box">
+                        <article>
+                        <img src="/img/Captura.PNG" alt="">
+                        <button class="off-fixed">19% off</button>
+                        <h3 class="prod-title">Cepillos de Bamboo</h3>
+                        
+                        <br>
+                        <button class="add-to-cart">Agregar al carrito</button>
+                        </article>
+                        <article>
+                            <img src="img/pastadedientes.PNG" alt="">
+                            <button class="off-fixed">25% off</button>
+                            <h3 class="prod-title">Jabón de Marte</h3>
+                        <br>
+                        
+                        <button class="add-to-cart">Agregar al carrito</button>
+                        </article>
+                        <article>
+                            <img src="/img/acondsolido.PNG" alt="">
+                            <button class="off-fixed">30% off</button>
+                            <h3 class="prod-title">Pasta de dientes del imalaya</h3>
+
+                        <br>
+                        <button class="add-to-cart">Agregar al carrito</button>
+                    </section>
+                        <br>
+
+                        <h2 class="home-text">Ver gama de productos</h2>
+                    <section class="home-box">
+                    <div class="3-prod-box">
+                        <article>
+                        <img src="/img/Captura.PNG" alt="">
+                        <!-- <button>19% off</button> -->
+                        <h3 class="prod-title">Cepillos</h3>
+                        <br>
+                        </article>
+                        <article>
+                            <img src="img/pastadedientes.PNG" alt="">
+                            <h3 class="prod-title">Jabones y shampoos naturales</h3>
+                        </article>
+                        <article>
+                            <img src="/img/cbd.PNG" alt="">
+                            <h3 class="prod-title">Aceite de cannabis</h3>
+                        </article>
+                    </div>
+                </section>
+            </main>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <section class="gandhi">
+                <figure>
+                    <img src="img/Gandhi.png" width="250" alt="Gandhi">
+                    
+                </figure>
+                <blockquote cite="https://www.nytimes.com/2011/08/30/opinion/falser-words-were-never-spoken.html">
+                    <p><i>
+                        "We but mirror the world. All the tendencies present in the outer world are to be found in the world of our body. If we could change ourselves, the tendencies in the world would also change. As a man changes his own nature, so does the attitude of the world change towards him. This is the divine mystery supreme. A wonderful thing it is and the source of our happiness. We need not wait to see what others do.
+                    </i>
+                    </p>
+                    <br>
+                    <strong><figcaption>Mahatma Gandhi</figcaption></strong>
+                               </blockquote>
+            </section>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+        <%- include('./partials/footer')  %> 
     </body>
+
 
 </html>

@@ -5,6 +5,9 @@ const productsController = {
     create: (req, res) => {
         res.render('creation')
     },
+    detail: (req, res) => {
+        res.render('descrip');
+    },
     store: (req, res) => {
     //obtengo los datos del form-create
     },
