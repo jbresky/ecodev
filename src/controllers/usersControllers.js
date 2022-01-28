@@ -3,6 +3,7 @@ const usersController = {
         res.render('login');
     },
     register: (req,res) => {
+        res.render('register');
     },
     administracion: (req, res) => {
         res.render('my-products')

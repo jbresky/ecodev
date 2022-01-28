@@ -27,10 +27,6 @@ app.listen(4000, () => {
 app.set('view engine', 'ejs')
 
 
-
-
-//no habilitada para que podamos leer los errores en la pantalla
-
-// app.use((req, res, next) => {
-//     res.status(404).render("not-found")
-// })
+app.use((req, res, next) => {
+    res.status(404).render(path.join(__dirname, '../views/not-found'))
+});
