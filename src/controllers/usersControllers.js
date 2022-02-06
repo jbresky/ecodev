@@ -1,3 +1,5 @@
+
+
 const usersController = {
     login: (req, res) => {
         res.render('login');
@@ -8,6 +10,12 @@ const usersController = {
     administracion: (req, res) => {
         res.render('my-products')
     },
+    processLogin: (req, res) => {
+
+    },
+    processRegister: (req, res) => {
+        
+    }
 }
 
 module.exports = usersController;
