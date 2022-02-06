@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
-const app = express();
+const session = require('express-session');
 
+const app = express();
 
 const mainRoutes = require('./routes/main')
 const usersRoutes = require('./routes/users')
@@ -9,6 +10,7 @@ const productsRoutes = require('./routes/products');
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+app.use(session({secret: 'Eco-secret!!'}))
 
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));

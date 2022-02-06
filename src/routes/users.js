@@ -29,6 +29,7 @@ router.post('/login', validation, usersController.processLogin)
 router.get('/register', usersController.register);
 router.post('/register', uploadFile.single('avatar'), usersController.processRegister)
 
+router.get('/perfil', usersController.perfil)
 router.get('/my-products', usersController.administracion);
 
 
