@@ -377,7 +377,8 @@ div.back-create-form{
     background: rgb(72, 138, 72);
     padding: 9px;
     color: #ffffff;
-    cursor: pointer
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .form-btn-send button:hover {
