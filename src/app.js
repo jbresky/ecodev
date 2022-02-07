@@ -10,7 +10,7 @@ const productsRoutes = require('./routes/products');
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
-app.use(session({secret: 'Eco-secret!!'}))
+app.use(session({secret: 'Eco-secret!!', resave: false, saveUninitialized: false}))
 
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));

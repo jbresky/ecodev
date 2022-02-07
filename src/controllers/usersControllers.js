@@ -8,10 +8,10 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const usersController = {
     login: (req, res) => {
-        res.render('login');
+        res.render('users/login.ejs');
     },
     register: (req,res) => {
-        res.render('register');
+        res.render('users/register.ejs');
     },
     administracion: (req, res) => {
         res.render('my-products')
@@ -40,7 +40,7 @@ const usersController = {
     
         },
     perfil: (req, res) => {
-        res.render('perfil', {
+        res.render('users/perfil.ejs', {
             // user: req.sesion.usuarioLogueado
         })
     },

@@ -1,12 +1,12 @@
 const productsController = {
     carrito: (req, res) => {
-        res.render('shoppingcart');
+        res.render('products/shoppingcart.ejs');
     },
     create: (req, res) => {
-        res.render('creation')
+        res.render('products/creation.ejs')
     },
     detail: (req, res) => {
-        res.render('descrip');
+        res.render('products/detail.ejs');
     },
     store: (req, res) => {
     //obtengo los datos del form-create
