@@ -69,7 +69,7 @@ nav ul li a.text-routes{
 
 .items a:hover{
     color:rgb(46, 124, 46);
-    /* font-weight: 600; */
+    font-weight: 600;
 }
 
 .items a:after{
@@ -167,7 +167,7 @@ section.home-box img{
 }
 section.home-box article {
     margin: auto;
-    margin: 0 40px 50px;
+    margin: 0 40px 80px;
     cursor: pointer;
     border-radius: 5px;
     width: 320px;
@@ -226,20 +226,21 @@ article button.off-fixed{
     text-transform: uppercase;
 }
 
-article button.add-to-cart:hover{
+article a button.add-to-cart:hover{
     box-shadow: 0px 0px 10px rgb(177, 176, 176);
    
 }
 
-article button.gama{
+article a button.gama{
     background: #ffffff;
     border: none;
     border-radius: 50px;
     padding: 7px 20px;
     font-weight: 600;
     box-shadow: 0 0 10px #b5b8b1;
-    position: absolute;
-    bottom: 60px;
+    margin-top: -70px;
+    /* position: absolute;
+    bottom: 60px; */
     color: rgb(78, 78, 78);
     cursor: pointer;
     font-size: 14px;
@@ -261,6 +262,7 @@ section.home-box article img:hover{
     /* width: 325px;
     height: 325px; */
 }
+
 
 /**** FORMS ****/
 
