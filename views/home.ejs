@@ -34,21 +34,46 @@
 <%- include('./partials/head') %>
 
     <body>
-        <%- include('./partials/header')%>
+        <header class="main-header"></header>
+        <nav>
+            <ul>
+                <li class="burger"><span class="fas fa-bars"></span></li>
+                <div class="search-icon">
+                    <input type="search" placeholder="Search">
+                    <label class="icon" style="padding-top: 12px;">
+                        <span class="fas fa-search"></span>
+                    </label>
+                </div>
+                <li class="logo">
+                    <a href="/">
+                    <img src="/img/back/Logo-v2.ico">
+                </a>
+                </li>
+                <div class="items">
+                    <li><a class="text-routes" href=#>Productos</a></li>
+                    <li><a class="text-routes" href=#>Nosotros</a></li>
+                    <li><a class="text-routes" href=#>Medioambiente</a></li>
+                    <li><a class="text-routes" href='/users/register'>Únete</a></li>
+                </div>
+                    <li class="heart"><a href=#><span class="fas fa-heart"></span></li></a>
+                    <li class="shop"><a href='/products/cart'><span class="fas fa-shopping-cart"></span></a></li>
+                <li class="user"><a href='/users/login'><span class="fas fa-user-alt"></span></a></li>
+            </ul>
+        </nav>
 
-            <section class="banner">
+            <!-- <section class="banner">
                 <div class="banner-content">
                     <a href="">Ver productos</a>
                 </div>
-            </section>
+            </section> -->
 
-            <main class="home">
+             <!-- <main class="home">
                 <h2 class="home-text">Ofertas</h2>
                 <section class="home-box">
                  
                     <div class="3-prod-box">
                         <article>
-                        <img src="/img/bottle.jpg" alt="">
+                        <img src="/img/products/bottle2.jpg" alt="">
                         <button class="off-fixed">19% off</button>
                         <h3 class="prod-title">Botella térmica</h3>
                         
@@ -57,7 +82,7 @@
                         </article>
                 
                         <article>
-                            <img src="img/acondsolido.png" alt="">
+                            <img src="img/products/acondsolido.png" alt="">
                             <button class="off-fixed">25% off</button>
                             <h3 class="prod-title">Acondicionador sólido</h3>
                         <br>
@@ -65,7 +90,7 @@
                         <button class="add-to-cart">Agregar al carrito</button>
                         </article>
                         <article>
-                            <img src="/img/dentrifico.png" alt="">
+                            <img src="/img/products/tooth-p.jpg" alt="">
                             <button class="off-fixed">30% off</button>
                             <h3 class="prod-title">Dentrifico con extracto de Eucalipto</h3>
 
@@ -73,25 +98,25 @@
                         <button class="add-to-cart">Agregar al carrito</button>
                     </article>
                         <article>
-                            <img src="/img/Captura.png" alt="">
-                            <button class="off-fixed">19% off</button>
-                            <h3 class="prod-title">Cepillos de Bamboo</h3>
+                            <img src="/img/products/cepillo-off.jpg" alt="">
+                            <button class="off-fixed">15% off</button>
+                            <h3 class="prod-title">Cepillo de Bamboo Mango Grueso</h3>
                             
                             <br>
                             <button class="add-to-cart">Agregar al carrito</button>
                             </article>
                             <article>
-                                <img src="/img/Captura.PNG" alt="">
-                                <button class="off-fixed">19% off</button>
-                                <h3 class="prod-title">Cepillos de Bamboo</h3>
+                                <img src="/img/products/after-shave.jpg" alt="">
+                                <button class="off-fixed">10% off</button>
+                                <h3 class="prod-title">Loción Barba After Shave</h3>
                                 
                                 <br>
                                 <button class="add-to-cart">Agregar al carrito</button>
                                 </article>
                                 <article>
-                                    <img src="/img/Captura.PNG" alt="">
-                                    <button class="off-fixed">19% off</button>
-                                    <h3 class="prod-title">Cepillos de Bamboo</h3>
+                                    <img src="/img/products/copita-2.jpg" alt="">
+                                    <button class="off-fixed">20% off</button>
+                                    <h3 class="prod-title">Copita Mens</h3>
                                     
                                     <br>
                                     <button class="add-to-cart">Agregar al carrito</button>
@@ -104,24 +129,29 @@
                     <section class="home-box">
                     <div class="3-prod-box">
                         <article>
-                        <img src="/img/bambu.png" alt="">
+                        <img src="/img/products/bambu.png" alt="">
                             <button class="gama">Comprar cepillos</button>
-                        <!-- <h3 class="prod-title">Cepillos</h3> -->
+                       
                         <br>
                         </article>
                         <article>
-                            <img src="img/cbd2.jpg" alt="">
+                            <img src="img/products/cbd2.jpg" alt="">
                             <button class="gama">Comprar CBD</button>
                             
                         </article>
                         <article>
-                            <img src="/img/eco-bag.PNG" alt="">
-                            <button class="gama">Comprar eco-products</button>
-                            <!-- <h3 class="prod-title">Aceite de cannabis</h3> -->
+                            <img src="/img/products/eco-bag.png" alt="">
+                           
+                         
+                        </article>
+                        <article>
+                            <img src="/img/products/deco.jpg" alt="">
+                            <button class="gama">Comprar deco</button>
+                          
                         </article>
                     </div>
                 </section>
-            </main>
+            </main> -->
             <br>
             <br>
             <br>
@@ -129,7 +159,7 @@
 
             <section class="gandhi">
                 <figure>
-                    <img src="img/Gandhi.png" alt="Gandhi">
+                    <img src="img/back/Gandhi.png" alt="Gandhi">
                     
                 </figure>
                 <blockquote cite="https://www.nytimes.com/2011/08/30/opinion/falser-words-were-never-spoken.html">

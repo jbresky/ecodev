@@ -28,6 +28,7 @@ nav ul {
     align-items: center;
     width: 100%;
     justify-content: space-around;
+    letter-spacing: .5px;
 }
 
 nav ul li {
@@ -62,9 +63,29 @@ nav ul li a.text-routes{
    display: none;
 }
 
+.items a{
+    position: relative;
+}
+
 .items a:hover{
-    color:rgb(72, 138, 72);
-    font-weight: 600;
+    color:rgb(46, 124, 46);
+    /* font-weight: 600; */
+}
+
+.items a:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(72, 138, 72);
+    height: 2px;
+    border-radius: 10px;
+    width: 0;
+    left: 0;
+    bottom: -6px;
+    transition: .3s;
+}
+
+.items a:hover:after{
+    width: 100%;
 }
 
 .search-icon {
@@ -292,7 +313,7 @@ CREATE FORM
 ********/
 
 div.back-create-form{
-    background: url('/img/eco-art1.png') no-repeat center center/cover;
+    background: url('/img/back/eco-art1.png') no-repeat center center/cover;
     margin-top: 10px;   
 }
 
@@ -581,7 +602,7 @@ hr {
 .banner {
     position: relative;
     width: 100%;
-    background-image: url('/img/natural-product.jpg');
+    background-image: url('/img/back/natural-product.jpg');
     height: 500px;
     margin: 3px 0;
     background-size: cover;

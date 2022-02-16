@@ -7,10 +7,12 @@ const app = express();
 const mainRoutes = require('./routes/main')
 const usersRoutes = require('./routes/users')
 const productsRoutes = require('./routes/products');
+const loggedMiddleware = require('./middlewares/loggedMiddleware')
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(session({secret: 'Eco-secret!!', resave: false, saveUninitialized: false}))
+app.use(loggedMiddleware)
 
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));

@@ -20,29 +20,35 @@ const usersController = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            for(i = 0; i < users.length; i++){
-                if(req.body.email == users[i].email && bcrypt.compareSync(req.body.password, users[i].password)){
-                let usuarioALoguearse = users[i];
-                req.session.usuarioLogueado = usuarioALoguearse;
-                res.redirect('users/perfil')
+            
+         for(i = 0; i < users.length; i++){
+            if(users[i].email == req.body.email){
+                if(bcrypt.compareSync(req.body.password, users[i].password)){
+                    var usuarioALoguearse = users[i];
+                    req.session.userLogged = usuarioALoguearse;
+                    res.redirect('/users/perfil');
+                }
             }
-        }
+         }
 
-        if(usuarioALoguearse == undefined){
-            res.render('login', {errors: [
+         if(usuarioALoguearse == undefined){
+             res.render('login', {errors: [
                 {msg: 'Credenciales inválidas'}
             ]})
-        }
+         }
 
         } else {
-            res.render('login', {errors: errors.errors})
+             res.render('login', {errors: errors.errors, old: req.body})
         }
-    
-        },
+    },
     perfil: (req, res) => {
-        res.render('users/perfil.ejs', {
-            // user: req.sesion.usuarioLogueado
+        res.render('perfil', {
+            user: req.session.userLogged
         })
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect('/')
     },
     processRegister: (req, res) => {
         
