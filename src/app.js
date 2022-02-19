@@ -28,7 +28,8 @@ app.listen(4000, () => {
 })
 
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
+app.set('views', 'src/views');
 
 
 app.use((req, res, next) => {
