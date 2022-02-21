@@ -5,7 +5,55 @@
     <body>
         <%- include('../partials/header')%>
             <hr>
+
+
+            <main class="home">
+                <h2 class="home-text">Nuestros Productos</h2>
+                <section class="home-box">
+                 
+                    <div class="3-prod-box">
+                        <% products.forEach( (product) => { %>
+
+                                <article>
+                                <a href="/products/<%= product.id %>/details "><img src=<%= product.image %> alt=""></a> 
+                                <% if (product.discount)  { %> 
+                                    
+                                    <button class="off-fixed"><%= product.discount %> %</button>
+
+                                <% } %>
+                                 
+                                
+                                <ul>
+                                    <li class="prod-title"><%= product.name %> </li>
+                                    
+                                    <% if (product.discount) { %> 
+                                        <li class="prod-price-before"><%= product.price %> </li>
+                                        <%   let priceOff = ( product.price - (product.discount * product.price / 100) ) %>
+                                            <li class="prod-price-off">$<%= priceOff %></li> 
     
+                                    <% } else { %> <!--if there isn't discount show product price-->
+                                        <li class="product-price">$<%= product.price %></li> 
+                                    <% } %> 
+                                    
+                                </ul>
+                                <!-- <h3 class="prod-title">Botella térmica</h3> -->
+                                
+                                <br>
+                                <a href="">
+                                <button class="add-to-cart">Agregar al carrito</button>
+                            </a>
+                                </article>
+                        <% }) %> 
+                
+           
+         
+
+        <%- include('../partials/footer')  %> 
+    </body>
+
+
+</html>
+    <!-- 
         <div class="produ">Productos</div>
         <div class="grid-cajas">
             <article class="art">
@@ -95,6 +143,6 @@
             <div class="more">
                 <p>Ver más</p>
             </div>
-        <%- include('../partials/footer') %>
+         <%- include('../partials/footer') %>  %>
         </div>
-
+ -->
