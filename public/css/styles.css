@@ -201,13 +201,17 @@ article ul li.prod-title{
     margin: 0 10px;
     color: rgb(56, 56, 56);
 }
-
-article ul li.prod-price{
+.product-price {
+    font-weight: 600;
+    color: #6aa757;  
+    font-size: 1.2rem;
+}
+article ul li.prod-price-before{
     font-weight: 600;
     color: #6aa757;
-    /* margin: 0 10px; */
+    margin: 0 7px; 
     text-decoration: line-through;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 article ul li.prod-price-off{
