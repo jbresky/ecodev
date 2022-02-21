@@ -39,7 +39,7 @@ router.post('/login', validation, usersController.processLogin)
 
 
 router.get('/register', guestMiddleware, usersController.register);
-router.post('/register', uploadFile.single('avatar'), validatorRegister, usersController.processRegister)
+router.post('/register', uploadFile.single('image'), validatorRegister, usersController.processRegister)
 
 router.get('/perfil', authMiddleware, usersController.perfil)
 router.get('/logout', usersController.logout)

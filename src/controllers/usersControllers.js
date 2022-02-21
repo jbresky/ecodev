@@ -26,6 +26,13 @@ const usersController = {
                 if(bcrypt.compareSync(req.body.password, users[i].password)){
                     var usuarioALoguearse = users[i];
                     req.session.userLogged = usuarioALoguearse;
+
+                    if(req.body.recordame){
+                        res.cookie('recordame', usuarioALoguearse.email, {
+                            maxAge: (1000 * 60) * 60
+                        }
+                        )
+                    }
                     res.redirect('/users/perfil');
                 }
             }
@@ -55,4 +62,4 @@ const usersController = {
     }
 }
 
-module.exports = usersController;
+module.exports = usersController, users

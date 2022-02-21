@@ -13,25 +13,31 @@
                 <br>
             <form action="/" method="POST">
                 <div class="labels">
-                    <h4>Nombre del producto</h4>
+                    <label for="name">Nombre del producto</label>
                 </div>
                 <div>
-                    <input type="text" name="name" id="">
+                    <input type="text" name="name" id="name" placeholder="Nombre">
                 </div>
+                <br>
+                <br>
                 <div class="labels">
-                    <h4>Precio</h4>
+                   <label for="price">Precio</label>
                 </div>
                 <div>
-                    <input type="number" name="price" id="">
+                    <input type="number" name="price" id="price" placeholder="$">
                 </div>
+                <br>
+                <br>
                 <div class="labels">
-                    <h4>Imagen</h4>
+                    <label for="image">Imagen</label>
                 </div>
                 <div>
-                    <input class="input-img" type="file" name="image" id="imagen" accept=".jpg, .png"></input>
+                    <input class="input-img" type="file" name="image" id="image" accept=".jpg, .png"></input>
                 </div>
+                <br>
+                <br>
                 <div class="labels">
-                    <h4>Categoría</h4>
+                   <label for="category">Categoría</label>
                 </div>
                 <div>
                     <select name="category" id="category">
@@ -43,15 +49,21 @@
                         <option value=>Eco Friendly Products</option>
                     </select>
                 </div>
+                <br>
+                <br>
                 <div class="labels">
-                    <h4>Descripción</h4>
+                   <label for="descrip">Descripción</label>
                 </div>
                 <div>
-                <textarea name="descripcion" id="descrip"></textarea>
+                <textarea name="descripcion" id="descrip" placeholder="Un hermoso producto... :)"></textarea>
             </div>
+            <br>
+            <br>
+            <br>
             <div class="form-btn-send">
                 <button class="create-prod">Enviar</button>
             </div>
+            <br>
             </form>
 
     </main>
