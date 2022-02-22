@@ -22,16 +22,27 @@ const storage = multer.diskStorage({
 const uploadFile = multer({storage})
 
 const validation = [
-    check('email').notEmpty().withMessage('Escribí tue email').isEmail().withMessage('Email inválido'),
-    check('password').notEmpty().withMessage('Escribí tu contraseña').isLength({min: 8}).withMessage('Mínimo 8 caracteres')
+    check('email')
+        .notEmpty().withMessage('Escribí tue email').bail()
+        .isEmail().withMessage('Email inválido'),
+    check('password')
+        .notEmpty().withMessage('Escribí tu contraseña').bail()
+        .isLength({min: 8}).withMessage('Mínimo 8 caracteres')
 ]
 
 const validatorRegister = [
-    check('firstName').isAlpha().withMessage('Colocá tu nombre'),
-    check('lastName').isAlpha().withMessage('Colocá tu nombre'),
-    check('email').isEmail().withMessage('Email inválido'),
-    check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
-    check('address').isAlphanumeric().withMessage('Colocá tu dirección')
+    check('firstName')
+        .notEmpty().withMessage('Colocá tu nombre'),
+    check('lastName')
+        .notEmpty().withMessage('Colocá tu apellido'),
+    check('email')
+        .notEmpty().withMessage('Escribí tue email').bail()
+        .isEmail().withMessage('Email inválido'),
+    check('password')
+        .notEmpty().withMessage('Escribí tu contraseña').bail()
+        .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
+    check('address')
+        .notEmpty().withMessage('Colocá tu dirección')
 ]
 
 router.get('/login', guestMiddleware, usersController.login);

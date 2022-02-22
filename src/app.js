@@ -36,8 +36,8 @@ app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
 
-app.use((req, res, next) => {
-    res.status(404).render(path.join(__dirname, 'views', 'not-found'))
-});
+// app.use((req, res, next) => {
+//     res.status(404).render(path.join(__dirname, '../views/not-found'))
+// });
 
 

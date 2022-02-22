@@ -39,13 +39,13 @@ const usersController = {
          }
 
          if(usuarioALoguearse == undefined){
-             res.render('login', {errors: [
+             res.render('users/login.ejs', {errors: [
                 {msg: 'Credenciales inválidas'}
             ]})
          }
 
         } else {
-             res.render('login', {errors: errors.errors, old: req.body})
+             res.render('users/login.ejs', {errors: errors.errors, old: req.body})
         }
     },
     perfil: (req, res) => {
