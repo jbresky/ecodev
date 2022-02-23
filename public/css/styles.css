@@ -284,6 +284,8 @@ div.container{
     margin: 20px 0
 }
 */
+
+
 section.icon-text{
     display: flex;
     justify-content: space-around;
@@ -334,12 +336,14 @@ article button.gama{
     padding: 7px 20px;
     font-weight: 600;
     box-shadow: 0 0 10px #b5b8b1;
-    margin-top: -70px;
-    /* position: absolute;
-    bottom: 60px; */
     color: rgb(78, 78, 78);
     cursor: pointer;
     font-size: 14px;
+}
+
+section.home-box article a.gama {
+    position: absolute;
+    bottom: 50px;
 }
 
 section.home-box article img{
@@ -358,6 +362,65 @@ section.home-box article img:hover{
     /* width: 325px;
     height: 325px; */
 }
+
+section.middle-home {
+        /* padding: 2rem;
+        display: flex;
+        align-items: center; */
+        width: 92%;
+        border-radius: 10px;
+        margin: auto;
+        /* margin-top: 30px; */
+        /* flex-wrap: wrap;
+        justify-content: center; */
+        background-color: #f7f4f4;
+        /* height: 500px; */
+    }
+    div.eco-activism{
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        /* width: 92%;
+        border-radius: 10px; */
+        margin: auto;
+        height: 400px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        /* background-color: #f7f4f4; */
+    }
+    div.eco-activism span.material-icons-outlined{
+        font-size: 3rem;
+        color: #588d48;
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    div.eco-activism div{
+        font-size: 1.85rem;
+        margin: 20px;
+        padding: 2rem 3rem;
+    }
+    .eco-activism div span.gray{
+        color: rgb(56, 56, 56);
+    }
+    .eco-activism div span.green{
+        color: #6aa757
+    }
+
+    section.notes{
+        display: flex;
+        justify-content: center;
+    }
+    section.notes article{
+        margin: auto;
+        margin: 15px
+    }
+    section.notes img{
+        width: 300px;
+        border-radius: 10px;
+    }
 
 
 /**** FORMS ****/
@@ -683,56 +746,6 @@ hr {
 */
 
 
-@media(min-width: 380px){
-    .login-form input{
-        width: 320px
-    }
-}
-
-@media(min-width: 620px){
-    .create-form{
-        width: 50%;
-    }
-}
-
-@media(min-width: 771px){
-    .items {
-        display: flex;
-        /* margin-left: 150px; */
-    }
-    .items li {
-        margin: 0 10px
-    }
-    .burger {
-        display: none;
-    }
-    .logo {
-        order: -1;
-    }
-    .heart, .shop {
-        order: 1;
-    }
-    section.home-box, section.home-box div {
-        flex-direction: row;
-    }
-}
-
-@media(min-width: 1000px){
-    .search-icon input {
-        display: flex;
-    }
-    .search-icon .icon {
-        background: rgb(239, 239, 239);
-        border-radius: 0 5px 5px 0;
-    }
-    nav .user {
-        display: block;
-    }
-    .items{
-        margin-left: 150px;
-    }
-}
-
 /*BANNER HOME*/
 
 .banner {
@@ -1047,6 +1060,56 @@ End Register Form
 
  /* RESPONSIVE //////////////////////////////////////////////////
  ///////////////////////////////////////////////////////////////*/
+ @media(min-width: 380px){
+    .login-form input{
+        width: 320px
+    }
+}
+
+@media(min-width: 620px){
+    .create-form{
+        width: 50%;
+    }
+}
+
+@media(min-width: 771px){
+    .items {
+        display: flex;
+        /* margin-left: 150px; */
+    }
+    .items li {
+        margin: 0 10px
+    }
+    .burger {
+        display: none;
+    }
+    .logo {
+        order: -1;
+    }
+    .heart, .shop {
+        order: 1;
+    }
+    section.home-box, section.home-box div {
+        flex-direction: row;
+    }
+}
+
+@media(min-width: 1000px){
+    .search-icon input {
+        display: flex;
+    }
+    .search-icon .icon {
+        background: rgb(239, 239, 239);
+        border-radius: 0 5px 5px 0;
+    }
+    nav .user {
+        display: block;
+    }
+    .items{
+        margin-left: 150px;
+    }
+}
+
 
  
 @media screen and (max-width: 550px){

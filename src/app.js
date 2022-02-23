@@ -13,8 +13,8 @@ const cookieMiddleware = require('./middlewares/cookieAuthMiddleware')
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
-app.use(cookieParser())
 app.use(session({secret: 'Eco-secret!!', resave: false, saveUninitialized: false}))
+app.use(cookieParser())
 app.use(loggedMiddleware)
 app.use(cookieMiddleware)
 

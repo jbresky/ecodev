@@ -1,86 +1,4 @@
-<style>
-    section.middle-home {
-        /* padding: 2rem;
-        display: flex;
-        align-items: center; */
-        width: 92%;
-        border-radius: 10px;
-        margin: auto;
-        margin-top: 30px;
-        /* flex-wrap: wrap;
-        justify-content: center; */
-        background-color: #f7f4f4;
-        /* height: 500px; */
-    }
-    div.eco-activism{
-        padding: 2rem;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        /* width: 92%;
-        border-radius: 10px; */
-        margin: auto;
-        height: 400px;
-        margin-top: 30px;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        /* background-color: #f7f4f4; */
-    }
-    div.eco-activism span.material-icons-outlined{
-        font-size: 3rem;
-        color: #588d48;
-        margin-top: 2rem;
-        padding-top: 2rem;
-    }
-    div.eco-activism div{
-        font-size: 1.85rem;
-        margin: 20px;
-        padding: 2rem 3rem;
-    }
-    .eco-activism div span.gray{
-        color: rgb(56, 56, 56);
-    }
-    .eco-activism div span.green{
-        color: #6aa757
-    }
 
-    section.notes{
-        display: flex;
-        justify-content: center;
-    }
-    section.notes article{
-        margin: auto;
-        margin: 15px
-    }
-    section.notes img{
-        width: 300px;
-        border-radius: 10px;
-    }
-    /* .gandhi blockquote {
-        margin: 2rem
-    }
-
-    .gandhi img {
-        border-radius: 50%;
-        width: 150px;
-        opacity: .8;
-    } */
-
-    @media(min-width: 380px) {
-        /* .gandhi img {
-            width: 250px;
-        }
-
-        .search-icon .icon {
-            padding-top: 12px
-        }
-
-        section.free-ecobag {
-            display: flex;
-        } */
-    }
-</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,36 +6,9 @@
 
 
     <body>
-        <header class="main-header"></header>
-        <nav>
-            <ul>
-                <li class="burger"><span class="fas fa-bars"></span></li>
-                <div class="search-icon">
-                    <input type="search" placeholder="Search">
-                    <label class="icon" style="padding-top: 12px;">
-                        <span class="fas fa-search"></span>
-                    </label>
-                </div>
-                <li class="logo">
-                    <a href="/">
-                    <img src="/img/back/Logo-v2.ico">
-                </a>
-                </li>
-                <div class="items">
-                    <li><a class="text-routes" href='/products'>Productos</a></li>
-                    <li><a class="text-routes" href=#>Nosotros</a></li>
-                    <li><a class="text-routes" href=#>Medioambiente</a></li>
-                    <li><a class="text-routes" href='/users/register'>Únete</a></li>
-                </div>
-                
-                    <li class="heart"><a href=#><span class="material-icons-outlined">favorite_border</span></span></li></a>
-                    <li class="shop"><a href='/products/cart'><span class="material-icons-outlined">shopping_cart</span></a></li>
-                <li class="user"><a href='/users/login'><span class="material-icons-outlined">
-                    account_circle
-                    </span></span></a></li>
-            </ul>
-        </nav>
 
+        <%- include('./partials/header') %>
+       
             <section class="banner">
                 <div class="banner-content">
                     <a href="">Ver productos</a>
@@ -227,7 +118,7 @@
                         </article>
                         <article>
                             <img src="img/products/cbd2.jpg" alt="">
-                            <a href="#/products/natural-medicine">
+                            <a class="gama" href="#/products/natural-medicine">
                                 <button class="gama">Comprar CBD</button>
                             </a>
                         </article>
@@ -312,24 +203,7 @@
                     </div>
                 </div>
 
-                <!-- <div class="gandhi">
-                <figure>
-                    <img src="img/back/Gandhi.png" alt="Gandhi">
-
-                </figure>
-                <blockquote cite="https://www.nytimes.com/2011/08/30/opinion/falser-words-were-never-spoken.html">
-                    <p><i>
-
-                            Be the change you want to see in the world
-                        </i>
-                    </p>
-                    <br>
-                    <strong>
-                        <figcaption>Mahatma Gandhi</figcaption>
-                    </strong>
-                </blockquote>
-            </div> -->
-                <!-- <hr style="width: 92%; border-color: #e6e9ee;"> -->
+        
                 <section class="notes" style="height: 500px;">
                     <article class="ocean">
                         <img src="img/back/ocean.jpg" alt="">
@@ -343,52 +217,9 @@
                 </section>
             </section>
 
-            <style>
-                section.register-now button {
-                    /* border: 2px solid #818890; */
-                    border: none;
-                    border-radius: 100px;
-                    /* width: 100%; */
-                    width: 320px;
-                    /* background: rgb(72, 138, 72); */
-                    background: rgb(47, 122, 81);
-                    padding: 15px 10px;
-                    color: #ffffff;
-                    cursor: pointer;
-                }
-            </style>
-
             <%- include('./partials/footer')  %> 
 
-            <!-- <section style="display: flex; justify-content: center; background-color: #D5DDC6; height: 450px;" class="register-now">
-                <div style=" margin: auto; padding: 20x; margin-top: 20px;">
-                    <img style="width: 300px; border-radius: 5px;" src="img/back/eco-nscius.png" alt="">
-                </div>
-                <div style="margin: auto;">
-                    <div>
-                        <h2 style="color: rgb(47, 122, 81);">Registrate hoy y recibí tu bolsa ecológica de regalo!</h2>
-                    </div>
-                    <div style="margin-top: 40px;">
-                        <button>Registrarme</button>
-                    </div>
-
-                </div>
-            </section> -->
-
-            <!-- <section>
-
-                <span style="color: rgb(75, 74, 74);
-                    border: 1px solid rgb(75, 74, 74);
-                    border-radius: 50%;
-                    font-size: 2rem;
-                    padding: 10px;" class="material-icons-outlined">
-                    east
-                </span>
-
-            </section>
-            <br>
-            <br> -->
-
+         
 
 
           
