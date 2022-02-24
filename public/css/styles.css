@@ -1306,17 +1306,160 @@ End Register Form
 
 /* FOOTER FINALL //////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
+
+footer{
+    margin-top: 8rem;
+    background-color: #fafafa;
+}
+
+footer section.f-1{
+    display: flex;
+    /* padding: 20px 0 10px; */
+    padding: 2rem 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1180px;
+}
+/* footer footer section.f-1{
+    display: flex;
+} */
+
+footer section.f-1 ul{
+    list-style: none;
+    margin-right: 100px;
+}
+
+section.f-1 ul h4{
+    color: #535661;
+    font-size: 15px;
+    margin: 23px 0;
+}
+
+footer section.f-1 ul li{
+    color: #535661;
+    font-weight: normal;
+    margin: 23px 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+section.f-1 ul li:hover{
+    text-decoration: underline;
+}
+footer section.f-1 ul li a{
+    text-decoration: none;
+    color: #535661;
+}
+footer section.f-1 ul li a i{
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #000;
+}
+footer section.f-1 ul li a i span{
+    margin-left: 5px;
 }
 
 
+footer section.f-2{
+    display: flex;
+}
 
-.pie-pag {
+
+footer section.f-2{
+    width: 100%;
+    border-top: 2px solid #e9e9ee;
+    border-bottom: 2px solid #e9e9ee;
+    padding: 1.8rem 1.5rem 2.5rem;
+    font-size: 15px;
+}
+
+div.box-2 {
+    margin-left: 1.5rem;
+}
+
+div.box-2 ul li{
+    list-style: none;
+    cursor: pointer;
+}
+
+div.box-2 ul li:hover{
+    text-decoration: underline;
+}
+
+div.box-2 img{
+    width: 125px;
+}
+
+div.box-2 ul.list-3{
+    display: flex
+}
+
+div.box-2 ul.list-3 li{
+    list-style: none;
+    color: #535661;
+    margin-left: 14px;
+    margin-right: 18px;
+    font-size: 13px;
+}
+
+footer section.f-3{
+    /* padding: 20px 0 10px; */
+    padding: 2rem 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1180px;
+}
+
+section.f-3 div.payment{
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2rem
+}
+    div.payment ul {
+        display: flex;
+        justify-content: center;
+    }
+    div.payment ul li{
+        list-style: none;
+        margin-right: 1rem;
+    }
+    div.payment ul li img{
+        height: 28px;
+        border-radius: 4px;
+    }
+
+section.f-3 div.apps{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    padding: 2rem
+}
+    div.apps ul{
+        display: flex;
+        margin-left: 20px;
+    }
+    div.apps ul li{
+        list-style: none;
+        margin-right: 16px;
+    }
+
+section.f-3 div.apps img{
+    max-height: 2.4rem;
+    border-radius: 8px;
+    /* border: 2px solid rgb(190, 189, 189); */
+    cursor: pointer;
+}
+
+div.reserved {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 2rem 1.5rem;
+}
+div.reserved span{
+    font-size: 12px;
+    color: #9695A8;
+}
+
+/* .pie-pag {
     width: 100%;
     background-color:  #3d3d33;
 }
@@ -1329,18 +1472,10 @@ End Register Form
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* display: grid; */
-    /* grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px; */
-    padding: 20px 0px;
-}
-
 .pie-pag .group .box figure {
     width: 100%;
     height: 100%;
-    /* display: flex; */
-    /* justify-content:  center;
-    align-items:center; */
+
 }
 
 .pie-pag .group .box img {
@@ -1413,4 +1548,4 @@ End Register Form
     .pie-pag .group .box p a{ 
     padding-bottom: 20
 }
-}
+} */
