@@ -93,7 +93,7 @@ nav ul li a.text-routes{
     width: 0;
     left: 0;
     bottom: -6px;
-    transition: .5s;
+    transition: .3s;
 }
 
 .items a:hover:after{
@@ -105,7 +105,12 @@ nav ul li a.text-routes{
     width: 40px;
     display: flex;
     border-radius: 5px;
-    padding: 0 10px;
+    /* padding: 0 10px; */
+    margin-right: 10px;
+}
+
+.search-icon form{
+    display: flex;
 }
 
 .search-icon input {
@@ -113,24 +118,23 @@ nav ul li a.text-routes{
     width: 200px;
     border: none;
     outline: none;
-    padding: 0 10px;
-    /* background: rgb(243, 240, 240); */
-    background: rgb(239, 239, 239);
+    padding-left: 10px;
+    background: rgb(243, 240, 240);
     font-size: 16px;
     border-radius: 5px 0 0 5px;
     display: none;
 }
 
 
-.search-icon .icon {
-    line-height: 40px;
-    border-radius:5px;
+.search-icon form button {
+    border-radius: 0 5px 5px 0;
     color: rgb(75, 74, 74);
     cursor: pointer;
-    padding-right: 7px;
-    
-    /* padding-top: 12px; */
+    border: none;
+    background: transparent;
+    padding: 12px;
 }
+
 
 .user, .heart, .shop {
     font-size: 17px;
@@ -166,24 +170,29 @@ section.home-box{
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    margin: auto;
+    max-width: 1400px;
 }
 
-section.home-box div {
+section.home-box div.prod-box {
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    margin: auto;
     flex-wrap: wrap;
 }
-section.home-box img{
-    margin-bottom: 10px;
+
+section.home-box div.prod-box div{
+    width: 255px;
 }
+
 section.home-box article {
     margin: auto;
     margin: 0 10px 0px;
+    margin-bottom: 3rem;
     cursor: pointer;
     border-radius: 5px;
-    width: 380px;
+    /* width: 380px; */
+    width: 255px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -191,8 +200,18 @@ section.home-box article {
     position: relative;
 }
 
+section.home-box article div img{
+    /* width: 350px; */
+    /* height: 380px;  */
+    height: 340px;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    transition:  all .5s;
+}
+
 section.home-box article h3{
-    margin: 10px;
+    margin: 10px 0 3px;
     font-size: 15px;
     font-weight: 600;
     display: inline-block;
@@ -200,26 +219,19 @@ section.home-box article h3{
     color: rgb(78, 78, 78);
     text-align: center;
 }
-article ul {
+div.prod-box article ul {
     display: flex;
-    width: 80%;
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    width: 100%;
 }
 
-article ul li.prod-title{
-    font-weight: 600;
-    font-size: 15px;
+div.prod-box article ul li {
     margin: 0 10px;
-    color: rgb(56, 56, 56);
 }
-.product-price {
-    font-weight: 600;
-    color: #6aa757;  
-    font-size: 1.2rem;
-}
-article ul li.prod-price-before{
+
+div.prod-box article ul li.prod-price{
     font-weight: 600;
     color: #6aa757;
     margin: 0 7px; 
@@ -227,20 +239,14 @@ article ul li.prod-price-before{
     font-size: 1rem;
 }
 
-article ul li.prod-price-off{
+div.prod-box article ul li.prod-price-off{
     font-size: 14px;
     color: #6aa757;
     font-weight: 600;
     letter-spacing: .5;
 }
 
-article p{
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
-}
-
-article button.add-to-cart{
+div.prod-box article button.add-to-cart{
     margin: auto;
     background: #ffffff;
     border: 1.5px solid rgb(32, 32, 32);
@@ -254,12 +260,12 @@ article button.add-to-cart{
     transition: all .7s ease-in-out;
 }
 
-article button.add-to-cart:hover{
+div.prod-box article button.add-to-cart:hover{
     box-shadow: 0 0 0 3px rgb(224, 223, 223);
     border: 1.5px solid rgb(224, 223, 223);
 }
 
-article button.off-fixed{
+div.prod-box article button.off-fixed{
     margin: auto;
     border: 1px solid #6aa757;
     /* border: 2px solid #21660c; */
@@ -270,33 +276,24 @@ article button.off-fixed{
     font-weight: 600;
     position: absolute;
     bottom: 350px;
-    left: -15px;
+    left: -30px;
     text-transform: uppercase;
 }
-/*MOBILE FIRST:
+
 section.icon-text{
     display: flex;
     justify-content: center;
     margin: 20px 0;
-    flex-direction: column
-}
-div.container{
-    margin: 20px 0
-}
-*/
-
-
-section.icon-text{
-    display: flex;
-    justify-content: space-around;
-    margin: 20px;
-    padding-bottom: 30px;
+    flex-direction: column;
     align-items: center;
 }
+div.container{
+    margin: 20px
+}
+
 
 section.icon-text div.container{
     display: flex;
-    max-width: 300px;
     align-items: center;
 }
 
@@ -346,83 +343,165 @@ section.home-box article a.gama {
     bottom: 50px;
 }
 
-section.home-box article img{
-    width: 350px;
-    height: 380px;
-    border-radius: 5px;
-    object-fit: cover;
-    transition:  all .5s;
-}
-
-/* article img#special{
-    width: 200px;
-} */
 section.home-box article img:hover{
     box-shadow: 0px 0px 10px rgb(177, 176, 176);
-    /* width: 325px;
-    height: 325px; */
 }
 
 section.middle-home {
-        /* padding: 2rem;
-        display: flex;
-        align-items: center; */
-        width: 92%;
+        /* width: 92%; */
         border-radius: 10px;
-        margin: auto;
-        /* margin-top: 30px; */
-        /* flex-wrap: wrap;
-        justify-content: center; */
-        background-color: #f7f4f4;
-        /* height: 500px; */
-    }
-    div.eco-activism{
-        padding: 2rem;
         display: flex;
-        align-items: center;
         flex-direction: column;
-        /* width: 92%;
-        border-radius: 10px; */
         margin: auto;
-        height: 400px;
-        margin-top: 30px;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        /* background-color: #f7f4f4; */
+        margin-top: 4rem;
+        background-color: #f7f4f4;
     }
+
+    div.eco-activism{
+        padding: 4rem 2rem;
+        gap: 20px;
+        text-align: flex-start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     div.eco-activism span.material-icons-outlined{
         font-size: 3rem;
         color: #588d48;
-        margin-top: 2rem;
-        padding-top: 2rem;
     }
+
     div.eco-activism div{
         font-size: 1.85rem;
-        margin: 20px;
-        padding: 2rem 3rem;
+        /* margin: 20px;
+        padding: 2rem 3rem; */
+        
     }
-    .eco-activism div span.gray{
+    div.eco-activism div h2{
+        color: rgb(50, 31, 75);
+        font-size: 1.8rem;
+    }
+    /* .eco-activism div span.gray{
         color: rgb(56, 56, 56);
     }
     .eco-activism div span.green{
         color: #6aa757
+    } */
+    div.eco-activism div p{
+        color: rgb(107, 107, 107);
     }
 
-    section.notes{
+    /* section.notes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+
+    section.notes-img{
         display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
-    section.notes article{
+
+    section.notes article {
         margin: auto;
-        margin: 15px
+        width: 255px;
+        height: 340px;
+        margin-bottom: 14rem;
+        background-color: var(--background-color);
+        position: relative;
+        border-radius: .5rem;
+        text-decoration: none;
+        cursor: pointer;
+
+        --background-color: #000;
+        --border-size: 2.5px
     }
-    section.notes img{
-        width: 300px;
+
+    section.notes-img article::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* z-index: -1; */
+        border: var(--border-size) solid transparent;
         border-radius: 10px;
+        transition: all 300ms cubic-bezier(0.2, 0, 0.4, 1);
     }
 
+      section.notes article:hover::before{
+        /* z-index: 1; */
+        border: var(--border-size) solid var(--background-color);
+        top: calc(var(--border-size) * -2.5);
+        left: calc(var(--border-size) * -2.5);
+        right: calc(var(--border-size) * -2.5);
+        bottom: calc(var(--border-size) * -2.5);
+    }
 
+    section.notes div.display-desktop{
+        display: none;
+    }
+
+    section.notes img {
+        width: 100%;
+        border-radius: .5rem;
+        object-fit: cover;
+        height: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    section.notes a{
+        font-size: 1.6rem;
+        color: #000;
+        /* margin-right: 1rem; */
+        cursor: pointer;
+        text-decoration: none;
+    }
+    section.middle-home div.note-text{
+        display: flex;
+        margin: 1rem 4rem;
+        justify-content: center;
+    }
+
+   div.newsletter{
+        /* margin: 12rem 0 4rem; */
+        margin: 5rem;
+        font-size: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* color: #a9adc1; */
+        color: #68719c;
+    }
+
+div.newsletter div{
+        position: relative;
+    }
+div.newsletter button{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 10px;
+        bottom: 2px;
+        border: none;
+        background: transparent;
+    }
+div.newsletter input{
+        margin-top: 1rem;
+        padding-left: 10px;
+        padding-right: 40px;
+        border: none;
+        border-bottom: 2px solid #8C95A5;
+        background-color: transparent;
+        width: 300px;
+        height: 40px;
+    }
+div.newsletter input::placeholder{
+        color: #2e2e2e ;
+    }
 /**** FORMS ****/
 
 .login-form{
@@ -457,9 +536,21 @@ section.middle-home {
     font-weight: 700;
 }
 
-.form-name, .form-pass, .form-btn-send, .form-cookie{
+.form-email, .form-pass{
     margin: 20px;
     text-align: center;
+}
+
+.form-cookie, .form-btn-send{
+    margin: 10px;
+}
+
+.form-cookie input{
+    max-width: 100px;
+    height: 11px;
+}
+.form-cookie label{
+    font-size: 0.9rem;
 }
 
 .login-form input, .register-conteiner input{
@@ -470,7 +561,7 @@ section.middle-home {
     border: 2px solid #f7f7f7;
     width: 320px;
     /* border:none; */
-    padding: 14px;
+    padding: 1rem;
     /* padding: 2rem; */
     background-color: #f7f7f7;
     transition: 500ms ease;  
@@ -479,20 +570,6 @@ section.middle-home {
  .login-form input:hover, .login-form input:focus{
     border: 2px solid #000;
 }
-
-/* .login-form input{
-    border: 0.5px solid rgb(72, 138, 72);
-    border-radius: 5px;
-    outline: none;
-    font-size: 14px;
-    padding: 9px;
-    background-color: #ffffff;
-}
-
-.login-form input:focus{
-    border: 1.7px solid rgb(32, 105, 32);
-} */
-
 
 /******* 
 CREATE FORM
@@ -547,16 +624,7 @@ div.back-create-form{
     transition: .5s ease;
 }
 
-/* .create-form input, .create-form select{
-    border: 0.5px solid rgb(72, 138, 72);
-    border-radius: 5px;
-    outline: none;
-    font-size: 14px;
-    padding: 9px;
-    width: 70%;
-    max-width: 500px;
-    transition: .5s ease;
-} */
+
 .create-form input, .create-form select{
     border-radius: 10px;
     outline: none;
@@ -576,45 +644,38 @@ div.back-create-form{
     border: 2px solid #000; 
 }
 
-.form-btn-send button.create-prod{
-    /* border: 2px solid #818890; */
-    border: none;
-    border-radius: 100px;
-    /* width: 100%; */
-    width: 320px;
-    /* background: rgb(72, 138, 72); */
-    background: #538d42;
-    padding: 15px 10px;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.form-btn-send{
-    border: 2px solid #fff;
-    border-radius: 100px;
-    width: 335px;
-    transition: 200ms ease-in-out;
-    padding: 3.5px 0;
-    margin: auto;
-}
-
 .form-btn-send button{
-    /* border: 2px solid #818890; */
-    border: none;
     border-radius: 100px;
-    /* width: 100%; */
+    border: none;
+    position:relative;
     width: 320px;
-    /* background: rgb(72, 138, 72); */
-    background: #538d42;
-    padding: 15px 10px;
+    background: var(--background-color);
+    padding: 1.4rem 1rem;
     color: #ffffff;
     cursor: pointer;
+
+    --background-color: #538d42;
+    --border-size: 2.5px
 }
 
-.form-btn-send:hover{
-    /* border: 2px solid #818890; */
-    border: 2px solid #6aa757;
-   }
+.form-btn-send button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: var(--border-size) solid var(--background-color);
+    border-radius: 100px;
+    transition: all 300ms cubic-bezier(0.2, 0, 0.4, 1);
+}
+
+.form-btn-send button:hover::before{
+    top: calc(var(--border-size) * -3);
+    left: calc(var(--border-size) * -3);
+    right: calc(var(--border-size) * -3);
+    bottom: calc(var(--border-size) * -3);
+}
 
 hr {
     width: 98%;
@@ -825,18 +886,6 @@ hr {
 
 /*descrip produ /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////*/
-.grid-cajas {
-    display: flex;
-    background-color: whitesmoke;
-    width: 100vw;
-    /* justify-content: auto; */
-}
-
-/* .fas {
-    color: grey; 
-    /* margin-left: 9px;
- 
-} */
 
 .art {
     display: inline-block;
@@ -1007,7 +1056,6 @@ Form Register Styles
   }
 
  .label-icon i{   
-  
     width: 40px;   
     text-align: center;
     background-color: #565a56;
@@ -1064,11 +1112,43 @@ End Register Form
     .login-form input{
         width: 320px
     }
+    div.apps ul li{
+        margin: 1rem;
+    }
 }
 
 @media(min-width: 620px){
     .create-form{
         width: 50%;
+    }
+    section.home-box div.prod-box div{
+        width: 350px;
+    }
+    section.home-box article {
+        width: 350px;
+    }
+    section.home-box article div img{
+        height: 380px;
+    }
+    article button.off-fixed{
+        left: -2rem;
+    }
+    /* section.notes div.display-tablet{
+        display: flex;
+    } */
+    section.notes-img{
+        flex-direction: row;
+    }
+    section.notes div.display-tablet{
+        display: flex;
+    }
+    section.notes article{
+        margin-bottom: 2rem;
+        margin: 1.5rem;
+        width: 280px;
+        height: 370px;
+        /* width: 249px;
+        height: 332px; */
     }
 }
 
@@ -1089,16 +1169,37 @@ End Register Form
     .heart, .shop {
         order: 1;
     }
-    section.home-box, section.home-box div {
+    section.icon-text{
         flex-direction: row;
+        justify-content: space-around;
+        padding: 0 2rem;
+        margin-top:-30px;
+    }
+    /* section.home-box{
+        flex-direction: row;
+        justify-content: space-around;
+    } */
+    section.home-box div.prod-box {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0 20px;
+    }
+    footer section.f-1 {
+        flex-direction: row !important;
+    }
+    footer section.f-1 ul{
+        margin-right: 50px;
+    }
+    footer section.f-2 {
+        padding-left: 1.5rem;
     }
 }
 
-@media(min-width: 1000px){
+@media(min-width: 1024px){
     .search-icon input {
         display: flex;
     }
-    .search-icon .icon {
+    .search-icon form button {
         background: rgb(239, 239, 239);
         border-radius: 0 5px 5px 0;
     }
@@ -1108,9 +1209,29 @@ End Register Form
     .items{
         margin-left: 150px;
     }
+    footer section.f-1 ul{
+        margin-right: 100px;
+    }
+    section.notes div.display-desktop{
+        display: block;
+    }
+    section.notes article{
+        margin-bottom: 2rem;
+        margin: 1.5rem;
+        /* width: 320px;
+        height: 425px; */
+        width: 260px;
+        height: 346px;
+    }
 }
 
-
+/*Solo para ver como queda... esta mal tantas media queries*/
+@media(min-width: 1100px){
+    section.notes article{
+        width: 320px;
+        height: 425px;
+    }
+}
  
 @media screen and (max-width: 550px){
     .grid-cajas {
@@ -1180,62 +1301,7 @@ End Register Form
         width: 290px;
         height: 290px; }
 
-    .move {
-        display: inline-block;
-        margin-left: 20px;
-        margin-right: 40px;
-        height: 35px;
-    }
-
-    .text-sabermas {
-        text-align: justify;
-        font-size: small;
-        padding-top: 18px;
-
-    }
-
-    .tsm {
-        font-size: small;
-        padding-bottom: 10px;
-    }
-
-    .tsm2 {
-        font-size: small;
-        padding-bottom: 10px;
-    }
-    .copy {
-        font-size: small;
-        padding-top: 30px;
-        padding-bottom: 10px;
-        text-align: center;
-    }
-  
-}
-
-/* responsive footer codigo /////////////////////////
-//////////////////////////////////////////*/
-@media screen and (min-width: 900) {
-.tsm {
-    font-size: 25px;
-}
-.tsm2 {
-    font-size: 22px;
-}
-.text-sabermas {
-    font-size: 25px;
-}
-}
-
-
-@media screen and (max-width: 600) {
-  .tsm { font-size: 19px;
-  }
-  .tsm2{
-      font-size: 17px;
-  }
-  .text-sabermas {
-      font-size: 22px;
-  }
+    
 }
 
 
@@ -1272,36 +1338,8 @@ End Register Form
     }
     .caja {
         width: 290px;
-        height: 290px; }
-
-    .move {
-        display: inline-block;
-        margin-left: 40px;
-        margin-right: 80px;
-        height: 100px;
-    }
-
-    .text-sabermas {
-        text-align: justify;
-        font-size: x-large;
-
-    }
-
-    .tsm {
-        font-size: small;
-        padding-bottom: 10px;
-    }
-
-    .tsm2 {
-        font-size: small;
-        padding-bottom: 10px;
-    }
-    .copy {
-        font-size: small;
-        padding-top: 30px;
-        padding-bottom: 10px;
-        text-align: center;
-    }
+        height: 290px;
+     }
 }
 
 /* FOOTER FINALL //////////////////////////////////////////////////////////////////////////////////
@@ -1315,6 +1353,7 @@ footer{
 footer section.f-1{
     display: flex;
     /* padding: 20px 0 10px; */
+    flex-direction: column;
     padding: 2rem 1.5rem;
     margin-right: auto;
     margin-left: auto;
@@ -1326,7 +1365,6 @@ footer section.f-1{
 
 footer section.f-1 ul{
     list-style: none;
-    margin-right: 100px;
 }
 
 section.f-1 ul h4{
@@ -1338,18 +1376,43 @@ section.f-1 ul h4{
 footer section.f-1 ul li{
     color: #535661;
     font-weight: normal;
-    margin: 23px 0;
-    font-size: 15px;
+    margin: 20px 0;
+    font-size: 1rem;
     cursor: pointer;
 }
-section.f-1 ul li:hover{
+
+/* section.f-1 ul li:hover{
     text-decoration: underline;
+} */
+
+section.f-1 ul li a{
+    position: relative;
 }
+section.f-1 ul li a:hover{
+    color: #000;
+}
+
+section.f-1 ul li a:after{
+    content: "";
+    position: absolute;
+    background-color: #000;
+    height: 1.5px;
+    border-radius: 10px;
+    width: 0;
+    left: 0;
+    bottom: -4px;
+    transition: .3s;
+}
+section.f-1 ul li a:hover:after{
+    color: #000;
+    width: 100%;
+}
+
 footer section.f-1 ul li a{
     text-decoration: none;
     color: #535661;
 }
-footer section.f-1 ul li a i{
+footer section.f-1 ul li i{
     font-size: 1.2rem;
     margin-right: 10px;
     color: #000;
@@ -1368,7 +1431,7 @@ footer section.f-2{
     width: 100%;
     border-top: 2px solid #e9e9ee;
     border-bottom: 2px solid #e9e9ee;
-    padding: 1.8rem 1.5rem 2.5rem;
+    padding: 1.8rem 0 2.5rem;
     font-size: 15px;
 }
 
@@ -1381,16 +1444,17 @@ div.box-2 ul li{
     cursor: pointer;
 }
 
-div.box-2 ul li:hover{
+/* div.box-2 ul li:hover{
     text-decoration: underline;
-}
+} */
 
 div.box-2 img{
     width: 125px;
 }
 
 div.box-2 ul.list-3{
-    display: flex
+    display: flex;
+    flex-wrap: wrap;
 }
 
 div.box-2 ul.list-3 li{
@@ -1398,7 +1462,7 @@ div.box-2 ul.list-3 li{
     color: #535661;
     margin-left: 14px;
     margin-right: 18px;
-    font-size: 13px;
+    font-size: 13.5px;
 }
 
 footer section.f-3{
@@ -1412,11 +1476,11 @@ footer section.f-3{
 section.f-3 div.payment{
     margin-right: auto;
     margin-left: auto;
-    padding: 2rem
 }
     div.payment ul {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
     div.payment ul li{
         list-style: none;
@@ -1431,15 +1495,15 @@ section.f-3 div.apps{
     padding: 1rem;
     display: flex;
     justify-content: center;
-    padding: 2rem
 }
     div.apps ul{
         display: flex;
         margin-left: 20px;
+        flex-wrap: wrap;
     }
     div.apps ul li{
         list-style: none;
-        margin-right: 16px;
+        margin-bottom: 1rem;
     }
 
 section.f-3 div.apps img{
@@ -1452,7 +1516,6 @@ section.f-3 div.apps img{
 div.reserved {
     display: flex;
     justify-content: center;
-    padding: 2rem 2rem 1.5rem;
 }
 div.reserved span{
     font-size: 12px;
