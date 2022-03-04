@@ -9,9 +9,10 @@
         <hr>
         
         <% if (typeof errors != 'undefined') { %>
+          <p style="color: red">ERROR</p>
          <ul>
            <% for(error of errors) { %> 
-            <%= error.msg %> 
+            <li><%= error.msg %></li> 
             <% } %> 
          </ul>
         <% } %>
@@ -19,7 +20,7 @@
           <h3 class='iniciar-sesion'>Inciar sesión</h3>
         <h4 class='comunidad'>¿Aún no tienes una cuenta? <a href="/users/register">Unite a la comunidad</a></h4>
         <main class="login-form">
-            <form>
+            <form action="/users/login" method="POST">
               <div class="form-name">
               <input type="email" name="email" placeholder="Email">
             </div>
@@ -29,9 +30,9 @@
               <input type="password" name="password" placeholder="Contraseña">
             </div>
 
-            <div>
-              <label for="remb" style="margin-left: 20px; margin-right: -20px;">Recordarme</label>
-              <input type="checkbox" id="remb" name="remember" style="max-width: 100px;">
+            <div class="form-cookie">
+              <label for="remb">Recordame</label>
+              <input type="checkbox" id="remb" name="remember" style="max-width: 100px; height: 11px;">
             </div>
 
             <br>
@@ -41,14 +42,11 @@
             </form>
            
           </main>
-          <!-- <div>
-            <ul>
-          <li>Terms</li>
-          <li>Privacy</li>
-          <li>Security</li>
-          <li>Terms</li>
-        </ul> -->
-        </div>
+       
+          <footer>
+
+          </footer>
+
     </body>
 
 </html>

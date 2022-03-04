@@ -5,8 +5,139 @@
     
     <body>
         <%- include('../partials/header')%>
-<!-- <hr> -->
-        <div class="box-container">
+            <hr>
+
+
+            <main class="home">
+                <h2 class="home-text">Nuestros Productos</h2>
+                <section class="home-box">
+                 
+                    <div class="3-prod-box">
+                        <% products.forEach( (product) => { %>
+
+                                <article>
+                                <a href="/products/<%= product.id %>/details "><img src=<%= product.image %> alt=""></a> 
+                                <% if (product.discount)  { %> 
+                                    
+                                    <button class="off-fixed"><%= product.discount %> %</button>
+
+                                <% } %>
+                                 
+                                
+                                <ul>
+                                    <li class="prod-title"><%= product.name %> </li>
+                                    
+                                    <% if (product.discount) { %> 
+                                        <li class="prod-price-before"><%= product.price %> </li>
+                                        <%   let priceOff = ( product.price - (product.discount * product.price / 100) ) %>
+                                            <li class="prod-price-off">$<%= priceOff %></li> 
+    
+                                    <% } else { %> <!--if there isn't discount show product price-->
+                                        <li class="product-price">$<%= product.price %></li> 
+                                    <% } %> 
+                                    
+                                </ul>
+                                <!-- <h3 class="prod-title">Botella térmica</h3> -->
+                                
+                                <br>
+                                <a href="">
+                                <button class="add-to-cart">Agregar al carrito</button>
+                            </a>
+                                </article>
+                        <% }) %> 
+                
+           
+         
+
+        <%- include('../partials/footer')  %> 
+    </body>
+
+
+</html>
+    <!-- 
+        <div class="produ">Productos</div>
+        <div class="grid-cajas">
+            <article class="art">
+                <div class="caja"><img src="/img/shampoograso.PNG"> </div>
+                <div>
+                <h2 class="letter">Shampoo Cabello Graso</h2>
+                </div>
+                <h4 class="descrip">Elaborado con arcilla bentonita y aceite de Jojoba. Elimina la grasitud dejando sensación de frescura.</h4>
+                <h3 class="price"> $499 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/shampoomixto.PNG"></div>
+                <div>
+                    <h2 class="letter">Shampoo Cabello Mixto</h2>
+                </div>
+                <h4 class="descrip"> Diseñado para hidratar equilibradamente, sus componentes activos permiten un resultado inigualable.</h4>
+                <h3 class="price"> $499 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/shampooseco.png"></div>
+                <div>
+                    <h2 class="letter">Shampoo Cabello Seco</h2>
+                </div>
+                <h4 class="descrip">Contiene Aceite de Coco el cual brinda una profunda hidratación y brillo hasta a los cabellos más dañados.</h4>
+                <h3 class="price"> $499 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/acondsolido.PNG"></div>
+                <div>
+                    <h2 class="letter">Acondicionador Sólido</h2>
+                </div>
+                <h4 class="descrip">La Manteca de Karité es un acondicionador natural, desenrieda el cabello y da suavidad.</h4>
+                <h3 class="price"> $399 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/Captura.PNG"></div>
+                <div>
+                    <h2 class="letter">Cepillos de Dientes de Bamboo</h2>
+                </div>
+                <h4 class="descrip">Reducí tu huella ecológica mientras cuidas tu salud bucal, solo el 3% de este producto es desechable.</h4>
+                <h3 class="price"> $279 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/pastadedientes.PNG"></div>
+                <div>
+                    <h2 class="letter">Pasta dental</h2>
+                </div>
+                <h4 class="descrip">Sin conservantes ni aditivos, mantene tu sonrisa fresca. Intenso aroma a menta y eucalyptus.</h4>
+                <h3 class="price"> $299 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/Copita.PNG"></div>
+                <div>
+                    <h2 class="letter">Copita menstrual</h2>
+                </div>
+                <h4 class="descrip">Tu periodo ¡libre de plásticos! Ahorra dinero y tiempo, recordá que la copita tiene una vida útil de diez años.</h4>
+                <h3 class="price"> $899 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/pads.PNG"></div>
+                <div>
+                    <h2 class="letter">Pads reutilizables</h2>
+                </div>
+                <h4 class="descrip">Desmaquillarse nunca fue tan fácil y eco-friendly. Al ser de 100% algodón además cuida tu piel.</h4>
+                <h3 class="price"> $399 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/cepillo.PNG"></div>
+                <div>
+                    <h2 class="letter">Cepillo</h2>
+                </div>
+                <h4 class="descrip">Reduciendo día a día nuestros residuos, producido con madera reciclada.</h4>
+                <h3 class="price"> $599 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+            <article class="art">
+                <div class="caja"><img src="/img/jabonera.PNG"></div>
+                <div>
+                    <h2 class="letter">Jabonera</h2>
+                </div>
+                <h4 class="descrip">Para que tus productos sustentables se mantengan intactos en el tiempo y duren más. </h4>
+                <h3 class="price"> $299 ARS <i class="fas fa-cart-arrow-down"></i></h3>
+            </article>
+        </div>
 
             <div class="box">
         
@@ -133,6 +264,7 @@
                 </div>
         
             </div>
+<<<<<<< HEAD
             
             
          </div>
@@ -141,3 +273,8 @@
     </footer>
     </body>        
 
+=======
+         <%- include('../partials/footer') %>  %>
+        </div>
+ -->
+>>>>>>> 3f6ce625219a4aba4ea5eaa1612cb68da9d87bfa
