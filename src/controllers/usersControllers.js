@@ -47,7 +47,7 @@ const usersController = {
         }
     },
     perfil: (req, res) => {
-        console.log(req.session.userLogged);
+        // console.log(req.session.userLogged);
         res.render('users/perfil.ejs', {
             user: req.session.userLogged
         })

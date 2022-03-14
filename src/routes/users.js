@@ -29,7 +29,7 @@ router.get('/register', guestMiddleware, usersController.register);
 router.get('/perfil', authMiddleware, usersController.perfil)
 router.get('/logout', usersController.logout)
 
-router.get('/favorites', usersController.favorites)
+router.get('/favorites', authMiddleware, usersController.favorites)
 
 const validation = [
     check('email')
