@@ -3,10 +3,10 @@
 <%- include('../partials/head') %> 
 <body>
     <%- include('../partials/header') %> 
-<hr>
+    <hr>
     <main class="register-conteiner">
-        <h2>Nuevo Usuario</h2>
-
+        <h3 class="title-form">Nuevo Usuario</h3>
+        <h3 class="comunidad">¿Ya tienes una cuenta? <a href="/users/login">Inicia Sesión</a></h3>
         <form>
             <div class="input-form">
                 <label class="label-icon" for="nombre">
@@ -39,11 +39,7 @@
                 <input type="email" name="email" id="email" placeholder="Email" required />
             </div>
 
-            <div class="input-form">
-                <label class="label-icon" for="tel-codigo-area">
-                    <i class="fas fa-phone-alt"></i>
-                </label>
-                <input type="text" name="tel-codigo-area" id="tel-codigo-area" placeholder="Cód. área" />
+            <div class="input-form">                
 
                 <label class="label-icon" for="telefono">
                     <i class="fas fa-phone-alt"></i>
@@ -78,7 +74,7 @@
 
             
         </form>
-        <p class="aviso-iniciasesion">¿Ya tienes una cuenta? <a href="users/login">Inicia Sesión</a></p>
+        
     </main>
     <%- include('../partials/footer') %> 
 </body>

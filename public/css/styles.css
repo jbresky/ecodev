@@ -301,7 +301,7 @@ section.home-box article img:hover{
     padding-top: 15px; 
 }
 
-.iniciar-sesion, .crear-producto{
+.title-form, .crear-producto{
     margin: 50px 0 10px 0;
     font-size: 25px;
     font-weight: normal;
@@ -846,8 +846,8 @@ hr {
 /*End not found style*/
 
 
+
 /********************************************************************
---------------------------------------------------------------------
 Form Register Styles
 ------------------------------------------------------------------*/
 .register-conteiner{    
@@ -857,33 +857,34 @@ Form Register Styles
     align-items: center;
     justify-content: center;
     width: 90vw;   
-    padding: 20px;
+    padding: 10px;
     /* box-shadow: 2px 2px 10px rgba(0,0,0,.4); 
-    border-radius: 10px;*/
-    
-    margin: auto;
-    margin-top: 2rem;
+    border-radius: 10px;*/    
+    margin: auto;    
     background-color: white;
 
-    border-bottom: 1px rgb(63, 63, 63) solid;
+    
 
 }
 .input-form{
     display: flex;
     justify-content: center;
     align-items: center;     
-    
+    margin-bottom: 15px;
 }
 
 
 .input-form input {   /*[type=text],input[type=password]{ */
-    width: 100%; 
+    border: 0.5px solid rgb(72, 138, 72);
+    border-radius: 5px;
+
+    width: 320px; 
     height: 39px;    
-    border-radius: 0px 5px 4px 0px/5px 5px 5px 4px; 
+    
     background-color: #fff;  
-    box-shadow: 1px 2px 7px rgba(0,0,0,.4); 
+   /*  box-shadow: 1px 2px 7px rgba(0,0,0,.4); 
     border: solid 1px #cbc9c9;
-    outline: none;
+    border-radius: 0px 5px 4px 0px/5px 5px 5px 4px;  */
     margin-left: -5px;
     margin-top: 13px; 
     padding-left: 5px;
@@ -891,27 +892,37 @@ Form Register Styles
 
   #tel-codigo-area{
       width: 25%;
-      
   }
 
  .label-icon i{   
   
     width: 40px;   
     text-align: center;
-    background-color: #565a56;
+    background-color: rgb(61, 61, 61);
     padding: 8px 10px;
     margin-left: 7px; 
     margin-top: 13px; 
     border-radius: 4px 0px 0px 4px;
     color: white; 
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
-    
+    /* box-shadow: 2px 2px 5px rgba(0,0,0,0.2);  */
+    opacity: 0;
+    transition: all 0.5s;
   }
-.aviso-iniciasesion{
-    margin-top: 10px;
-    text-align: center;
-
+  .label-icon {
+      margin-right: 4px;
+    
+    transition: opacity 0.4s;
+    
 }
+.input-form:hover .label-icon i,
+.input-form:focus .label-icon i {
+    
+    background-color: #21660c;
+    opacity: 1;
+    
+}  
+
+
 .btn-opciones{
     display: flex;
     justify-content: space-around;
@@ -926,15 +937,10 @@ Form Register Styles
     width: 100%;
 }
 
-.btn-cancelar{
-    background-color: rgb(156, 27, 27);    
-    font-size: 0.7rem;
-    height: 1.5rem;
-    width: 4rem;
-}
 
-.btn-aceptar, 
-.btn-cancelar {
+
+.btn-aceptar
+{
     color: white;
     border:none;
     
@@ -944,6 +950,7 @@ Form Register Styles
 /********************************************************
 End Register Form
 */
+
 
 
 

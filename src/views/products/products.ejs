@@ -12,16 +12,20 @@
                 <section class="home-box">
                  
                     <div class="3-prod-box">
+
+
                         <% products.forEach( (product) => { %>
 
                                 <article>
                                 <a href="/products/<%= product.id %>/details "><img src=<%= product.image %> alt=""></a> 
                                 <% if (product.discount)  { %> 
                                     
-                                    <button class="off-fixed"><%= product.discount %> %</button>
+                                    <button class="off-fixed"><%= product.discount %> % OFF</button>
 
                                 <% } %>
-                                 
+                                 <div class="icon-fav">
+                                    <i class="fas fa-heart"></i>
+                                 </div>
                                 
                                 <ul>
                                     <li class="prod-title"><%= product.name %> </li>
