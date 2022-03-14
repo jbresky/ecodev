@@ -510,18 +510,7 @@ div.newsletter input::placeholder{
     padding-top: 15px; 
 }
 
-<<<<<<< HEAD
 .title-form, .crear-producto{
-=======
-.login-form form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.iniciar-sesion, .crear-producto{
->>>>>>> 8ad8d9c4516a7be1ca4dd29fe85489a6b6514d2e
     margin: 50px 0 10px 0;
     font-size: 25px;
     font-weight: normal;
@@ -1116,12 +1105,9 @@ End Register Form
 */
 
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 8ad8d9c4516a7be1ca4dd29fe85489a6b6514d2e
  /* RESPONSIVE //////////////////////////////////////////////////
  ///////////////////////////////////////////////////////////////*/
  @media(min-width: 380px){
