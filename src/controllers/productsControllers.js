@@ -3,8 +3,6 @@ const fs = require('fs');
 
 let productJson = fs.readFileSync(path.join(__dirname, '../data', 'products.json'), 'utf-8');
 
-
-
 const productsController = {
     shoppingCart: (req, res) => {
         res.render('products/shoppingcart.ejs');
@@ -16,15 +14,18 @@ const productsController = {
         res.render('products/products.ejs');
     },
     detail: (req, res) => {
-        res.render('products/detail-prod.ejs');
-       
+
+        let product = JSON.parse(productJson);
+        let searchProduct = product.find(result => result.id == req.params.id)
+        res.render('products/detail-prod.ejs', {searchProduct});
     },
     products: (req, res) => {        
-        //Convert product Json in a 
+       
         let products = JSON.parse(productJson);
         
         res.render('products/Products', {products})
-    },
+    
+    } ,
     storeProduct: (req, res) => {
     //obtengo los datos del form-create
     },

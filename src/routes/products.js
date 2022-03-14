@@ -4,15 +4,16 @@ const router = express.Router();
 const path = require('path'); 
 
 const productsController = require('../controllers/productsControllers');
+const guestMiddleware = require('../middlewares/guestMiddleware')
 
 //router.get('/', productsController.list)
 router.get('/', productsController.products)
 router.get('/cart', productsController.shoppingCart)
 
-router.get('/create', productsController.createForm)
+router.get('/create', guestMiddleware, productsController.createForm)
 router.post('/', productsController.storeProduct)
 
-router.get('/detail', productsController.detail)
+router.get('/detail/:id', productsController.detail)
 router.get('/:id/edit', productsController.edit)
 
 router.put('/:id', productsController.change)

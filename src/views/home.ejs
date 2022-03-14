@@ -1,122 +1,11 @@
-<style>
-    section.middle-home {
-        /* padding: 2rem;
-        display: flex;
-        align-items: center; */
-        width: 92%;
-        border-radius: 10px;
-        margin: auto;
-        margin-top: 30px;
-        /* flex-wrap: wrap;
-        justify-content: center; */
-        background-color: #f7f4f4;
-        /* height: 500px; */
-    }
-    div.eco-activism{
-        padding: 2rem;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        /* width: 92%;
-        border-radius: 10px; */
-        margin: auto;
-        height: 400px;
-        margin-top: 30px;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        /* background-color: #f7f4f4; */
-    }
-    div.eco-activism span.material-icons-outlined{
-        font-size: 3rem;
-        color: #588d48;
-        margin-top: 2rem;
-        padding-top: 2rem;
-    }
-    div.eco-activism div{
-        font-size: 1.85rem;
-        margin: 20px;
-        padding: 2rem 3rem;
-    }
-    .eco-activism div span.gray{
-        color: rgb(56, 56, 56);
-    }
-    .eco-activism div span.green{
-        color: #6aa757
-    }
-
-    section.notes{
-        display: flex;
-        justify-content: center;
-    }
-    section.notes article{
-        margin: auto;
-        margin: 15px
-    }
-    section.notes img{
-        width: 300px;
-        border-radius: 10px;
-    }
-    /* .gandhi blockquote {
-        margin: 2rem
-    }
-
-    .gandhi img {
-        border-radius: 50%;
-        width: 150px;
-        opacity: .8;
-    } */
-
-    @media(min-width: 380px) {
-        /* .gandhi img {
-            width: 250px;
-        }
-
-        .search-icon .icon {
-            padding-top: 12px
-        }
-
-        section.free-ecobag {
-            display: flex;
-        } */
-    }
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head') %>
 
 
     <body>
-        <header class="main-header"></header>
-        <nav>
-            <ul>
-                <li class="burger"><span class="fas fa-bars"></span></li>
-                <div class="search-icon">
-                    <input type="search" placeholder="Search">
-                    <label class="icon" style="padding-top: 12px;">
-                        <span class="fas fa-search"></span>
-                    </label>
-                </div>
-                <li class="logo">
-                    <a href="/">
-                    <img src="/img/back/Logo-v2.ico">
-                </a>
-                </li>
-                <div class="items">
-                    <li><a class="text-routes" href='/products'>Productos</a></li>
-                    <li><a class="text-routes" href=#>Nosotros</a></li>
-                    <li><a class="text-routes" href=#>Medioambiente</a></li>
-                    <li><a class="text-routes" href='/users/register'>Únete</a></li>
-                </div>
-                
-                    <li class="heart"><a href=#><span class="material-icons-outlined">favorite_border</span></span></li></a>
-                    <li class="shop"><a href='/products/cart'><span class="material-icons-outlined">shopping_cart</span></a></li>
-                <li class="user"><a href='/users/login'><span class="material-icons-outlined">
-                    account_circle
-                    </span></span></a></li>
-            </ul>
-        </nav>
+
+        <%- include('./partials/header') %>
 
             <section class="banner">
                 <div class="banner-content">
@@ -128,9 +17,11 @@
                 <h2 class="home-text">Ofertas</h2>
                 <section class="home-box">
 
-                    <div class="3-prod-box">
-                        <article style="margin-bottom: 60px;">
+                    <div class="prod-box">
+                        <article>
+                            <div>
                             <img src="/img/products/bottle2.jpg" alt="">
+                        </div>
                             <button class="off-fixed">19% off</button>
                             <h3 class="prod-title">Botella térmica</h3>
                             <br>
@@ -138,13 +29,15 @@
                                 <a href="">
                                     <button class="add-to-cart">Agregar al carrito</button>
                                 </a>
-                                <li class="prod-price">$1200</li>
+                                <!-- <li class="prod-price">$1200</li> -->
                                 <li class="prod-price-off">$980</li>
                             </ul>
                         </article>
 
-                        <article style="margin-bottom: 60px;">
+                        <article>
+                            <div>
                             <img src="img/products/acondsolido.png" alt="">
+                        </div>
                             <button class="off-fixed">25% off</button>
                             <h3 class="prod-title">Acondicionador sólido</h3>
                             <br>
@@ -152,13 +45,15 @@
                                 <a href="">
                                     <button class="add-to-cart">Agregar al carrito</button>
                                 </a>
-                                <li class="prod-price">$1200</li>
+                                <!-- <li class="prod-price">$1200</li> -->
                                 <li class="prod-price-off">$980</li>
                             </ul>
                         </article>
 
-                        <article style="margin-bottom: 60px;">
+                        <article>
+                            <div>
                             <img src="/img/products/tooth-p.jpg" alt="">
+                        </div>
                             <button class="off-fixed">30% off</button>
                             <h3 class="prod-title">Dentrifico con extracto de Eucalipto</h3>
                             <br>
@@ -166,12 +61,14 @@
                                 <a href="">
                                     <button class="add-to-cart">Agregar al carrito</button>
                                 </a>
-                                <li class="prod-price">$1200</li>
+                                <!-- <li class="prod-price">$1200</li> -->
                                 <li class="prod-price-off">$980</li>
                             </ul>
                         </article>
-                        <article style="margin-bottom: 30px;">
+                        <article>
+                            <div>
                             <img src="/img/products/cepillo-off.jpg" alt="">
+                        </div>
                             <button class="off-fixed">15% off</button>
                             <h3 class="prod-title">Cepillo de Bamboo Mango Grueso</h3>
                             <br>
@@ -179,13 +76,15 @@
                                 <a href="">
                                     <button class="add-to-cart">Agregar al carrito</button>
                                 </a>
-                                <li class="prod-price">$1200</li>
+                                <!-- <li class="prod-price">$1200</li> -->
                                 <li class="prod-price-off">$980</li>
                             </ul>
                         </article>
 
-                        <article style="margin-bottom: 30px;">
+                        <article>
+                            <div>
                             <img src="/img/products/cremas-2.jpg" alt="">
+                        </div>
                             <button class="off-fixed">10% off</button>
                             <h3 class="prod-title">Crema para cuerpo y manos</h3>
                             <br>
@@ -193,21 +92,23 @@
                                 <a href="">
                                     <button class="add-to-cart">Agregar al carrito</button>
                                 </a>
-                                <li class="prod-price">$1200</li>
+                                <!-- <li class="prod-price">$1200</li> -->
                                 <li class="prod-price-off">$980</li>
                             </ul>
                         </article>
 
-                        <article style="margin-bottom: 30px;">
+                        <article>
+                            <div>
                             <img src="/img/products/copita-2.jpg" alt="">
+                        </div>
                             <button class="off-fixed">20% off</button>
-                              <h3 class="prod-title">Copita menstrual</h3>
+                            <h3 class="prod-title">Copita menstrual</h3>
                             <br>
                             <ul>
                                 <a href="">
                                     <button class="add-to-cart">Agregar al carrito</button>
                                 </a>
-                                <li class="prod-price">$1200</li>
+                                <!-- <li class="prod-price">$1200</li> -->
                                 <li class="prod-price-off">$980</li>
                             </ul>
                         </article>
@@ -217,26 +118,33 @@
 
                 <h2 class="home-text">Ver gama de productos</h2>
                 <section class="home-box">
-                    <div class="3-prod-box">
+                    <div class="prod-box">
                         <article>
+                            <div>
                             <img src="/img/products/bambu.png" alt="">
-                            <a href="#/products/eco-products">
+                        </div>
+                            <a class="gama" href="#/products/eco-products">
                                 <button class="gama">Comprar cepillos</button>
                             </a>
                             <br>
                         </article>
                         <article>
+                            <div>
                             <img src="img/products/cbd2.jpg" alt="">
-                            <a href="#/products/natural-medicine">
+                        </div>
+                            <a class="gama" href="#/products/natural-medicine">
                                 <button class="gama">Comprar CBD</button>
                             </a>
                         </article>
                         <article>
+                            <div>
                             <img src="/img/products/eco-bag.png" alt="">
-                            <a href="#/products/eco-products">
+                        </div>
+                            <a class="gama" href="#/products/eco-products">
                                 <button class="gama">Comprar eco-products</button>
                             </a>
                         </article>
+                        </div>
                 </section>
 
                 <section class="icon-text">
@@ -279,21 +187,28 @@
                     </div>
                 </section>
                 <section class="home-box">
+                    <div class="prod-box">
                     <article>
+                        <div>
                         <img src="/img/products/deco-bath.jpg" alt="">
-                        <a href="#/products/deco">
+                    </div>
+                        <a class="gama" href="#/products/deco">
                             <button class="gama">Comprar deco</button>
                         </a>
                     </article>
                     <article>
+                        <div>
                         <img src="/img/products/cremas.jpg" alt="">
-                        <a href="#/products/health&beauty">
+                    </div>
+                        <a class="gama" href="#/products/health&beauty">
                             <button class="gama">Comprar cremas</button>
                         </a>
                     </article>
                     <article>
+                        <div>
                         <img src="/img/shampoograso.png" alt="">
-                        <a href="#/products/health&beauty">
+                    </div>
+                        <a class="gama" href="#/products/health&beauty">
                             <button class="gama">Comprar shampoo</button>
                         </a>
                     </article>
@@ -306,90 +221,81 @@
                 <div class="eco-activism">
                     <span class="material-icons-outlined">
                         volunteer_activism
-                        </span>
+                    </span>
                     <div>
-                       <span class="gray">EcoDev te propone una vida mas</span><span class="green"> natural, sustentable y ecológica</span>
+                        <!-- <span class="gray">EcoDev te propone una vida mas</span><span class="green"> natural,
+                            sustentable y ecológica</span> -->
+                            <!-- <span>Recomendaciones de blogs, preparados especialmente para vos.</span> -->
+                            <h2>Recomendaciones de blogs.</h2>
+                            <p>Preparados especialmente para vos.</p>
                     </div>
                 </div>
 
-                <!-- <div class="gandhi">
-                <figure>
-                    <img src="img/back/Gandhi.png" alt="Gandhi">
-
-                </figure>
-                <blockquote cite="https://www.nytimes.com/2011/08/30/opinion/falser-words-were-never-spoken.html">
-                    <p><i>
-
-                            Be the change you want to see in the world
-                        </i>
-                    </p>
+                <section class="notes">
+                    <section class="notes-img">
+                        <div class="display-tablet">
+                        <article>
+                            <a href="" class="ocean">
+                                <img src="img/back/ocean.jpg" alt="">
+                             El océano y el plástico: por qué eliminar su uso de inmediato.
+                            </a>
+                            <!-- <span>
+                                Oceános y el plástico: cómo influyen en el ambiente
+                            </span> -->
+                        </article>
+                        <article>
+                            <a href="" class="forest">
+                                <img src="img/back/forest.jpg" alt="">
+                               Conocé los bosques Ecodev, mil hectáreas de reserva natural
+                            </a>
+                            <!-- <span>
+                                2 mil hectáreas de reserva natural: conocé los bosques Ecodev 
+                            </span> -->
+                        </article>
+                    </div>
+                        <div class="display-desktop">
+                        <article>
+                            <a href="" class="third">
+                                <img src="img/back/tercera.jpg" alt="">
+                               ¿Viajas a la montaña? No vayas sin antes leer esta guía.
+                            </a>
+                            <!-- <span>
+                                En tu visita a la montaña no olvides tu botella térmica
+                            </span> -->
+                        </article>
+                    </div>
+                    </section>
                     <br>
-                    <strong>
-                        <figcaption>Mahatma Gandhi</figcaption>
-                    </strong>
-                </blockquote>
-            </div> -->
-                <!-- <hr style="width: 92%; border-color: #e6e9ee;"> -->
-                <section class="notes" style="height: 500px;">
-                    <article class="ocean">
-                        <img src="img/back/ocean.jpg" alt="">
-                    </article>
-                    <article class="forest">
-                        <img src="img/back/forest.jpg" alt="">
-                    </article>
-                    <article class="third">
-                        <img src="img/back/tercera.jpg" alt="">
-                    </article>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="newsletter">
+                        <div class="suscribe">
+                            Suscribite a nuestro newsletter
+                        </div>
+                        <div>
+                            <form action="" method="POST">
+                            <input type="email" name="news-email" id="" placeholder="Dejanos tu correo">
+                            <button type="submit"><i class="far fa-paper-plane"></i></button>
+                        </form>
+                        </div>
+                    </div>
                 </section>
+                   
+
+                <!-- <br>
+                <br>
+                <br>
+                <br> -->
             </section>
+          
+            
+       
+            <div style="height: 12rem;"></div>
 
-            <style>
-                section.register-now button {
-                    /* border: 2px solid #818890; */
-                    border: none;
-                    border-radius: 100px;
-                    /* width: 100%; */
-                    width: 320px;
-                    /* background: rgb(72, 138, 72); */
-                    background: rgb(47, 122, 81);
-                    padding: 15px 10px;
-                    color: #ffffff;
-                    cursor: pointer;
-                }
-            </style>
-
-            <%- include('./partials/footer')  %> 
-
-            <!-- <section style="display: flex; justify-content: center; background-color: #D5DDC6; height: 450px;" class="register-now">
-                <div style=" margin: auto; padding: 20x; margin-top: 20px;">
-                    <img style="width: 300px; border-radius: 5px;" src="img/back/eco-nscius.png" alt="">
-                </div>
-                <div style="margin: auto;">
-                    <div>
-                        <h2 style="color: rgb(47, 122, 81);">Registrate hoy y recibí tu bolsa ecológica de regalo!</h2>
-                    </div>
-                    <div style="margin-top: 40px;">
-                        <button>Registrarme</button>
-                    </div>
-
-                </div>
-            </section> -->
-
-            <!-- <section>
-
-                <span style="color: rgb(75, 74, 74);
-                    border: 1px solid rgb(75, 74, 74);
-                    border-radius: 50%;
-                    font-size: 2rem;
-                    padding: 10px;" class="material-icons-outlined">
-                    east
-                </span>
-
-            </section>
-            <br>
-            <br> -->
-
-
+            <%- include('./partials/footer') %> 
 
           
     </body>

@@ -6,36 +6,44 @@
 
     <%- include('../partials/header') %>
     <hr>
+        <div class="cont-sup">
         <div class="cont-detail">
-            <a class='back' href="#">Volver Atrás</a>
             <div class="colum1">
-                <img src="../img/jabonera.png">
+                <img class="img-d" src= "/img/products/<%=searchProduct.image%>" alt="qqq">
             </div>
-            <div class="colum2">
-                <h2>Name Product</h2>
-                <h4>Price</h4>
+            <div class="colum2"> 
+                <div><%= searchProduct.category %> </div>
+                <div class='name-d'><%= searchProduct.name %> </div>
+                <h3>Product details</h3>
+                <p class="desc-d"><%= searchProduct.description %></p>
+                <div class="value-d">
+                    <select class="select">
+                        <option value="">Seleccionar item</option>
+                        <option value="">hola</option>
+                        <option value="">hola</option>
+                        <option value="">hola</option>
+                    </select>
+                </div>
+                <div class="price-d">$  <%= searchProduct.price %> </div> 
+                <a class="off-d" href="/products/cart">Promociones y descuentos aquí</a>
+                
+               
+                    
                 
 
-                <h3>Product details</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Ullam quia ipsam obcaecati, eveniet in ducimus, 
-                    at ipsa dolorum,
-                    aliquam incidunt aspernatur? Expedita, facere dolore 
-                  </p>
-                    <div class="btn-styles">
-                    <select>
-                        <option>Seleccionar cantidad</option>
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                    </select>
-                    <a href="" class="btn-detail">Add</a> 
-                    </div>
+                
+                  <div class="option">
+                    <a href="/products/cart" class="btn-detail1">Añadir</a>
+                    <a  href="/products" class="btn-detail2">Volver</a>
+                  </div>
+            
             </div>
             
         </div>
+    </div>
 
 
 
 </body>
+<%- include('../partials/footer')  %> 
 </html>
