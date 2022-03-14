@@ -12,7 +12,13 @@
                 <h2 class="home-text">Nuestros Productos</h2>
                 <section class="home-box">
                  
+<<<<<<< HEAD
+                    <div class="3-prod-box">
+
+
+=======
                     <div class="prod-box">
+>>>>>>> 8ad8d9c4516a7be1ca4dd29fe85489a6b6514d2e
                         <% products.forEach( (product) => { %>
 
                                 <article>
@@ -21,10 +27,12 @@
                             </div>
                                 <% if (product.discount)  { %> 
                                     
-                                    <button class="off-fixed"><%= product.discount %> %</button>
+                                    <button class="off-fixed"><%= product.discount %> % OFF</button>
 
                                 <% } %>
-                                 
+                                 <div class="icon-fav">
+                                    <i class="fas fa-heart"></i>
+                                 </div>
                                 
                                 <ul>
                                     <li class="prod-title"><%= product.name %> </li>
