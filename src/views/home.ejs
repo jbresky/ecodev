@@ -1,46 +1,10 @@
-
-<style>
-    section.gandhi{
-        padding: 2rem ;
-        display: flex;
-        align-items: center;
-        margin: auto;
-        padding: 2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: #f7f4f4;
-        height: 500px;
-    }
-    .gandhi blockquote{
-      margin: 2rem
-    }
- 
-    .gandhi img{
-        border-radius: 50%;
-        width: 150px;
-    }
-
-    @media(min-width: 380px){
-        .gandhi img{
-        width: 250px;
-    }
-    .search-icon .icon{
-        padding-top: 12px
-    }
-    section.free-ecobag{
-        display: flex;
-    }
-    }
-  
- 
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head') %>
 
 
     <body>
+
         <%- include('./partials/header') %>
 
             <section class="banner">
@@ -49,159 +13,291 @@
                 </div>
             </section>
 
-             <main class="home">
+            <main class="home">
                 <h2 class="home-text">Ofertas</h2>
                 <section class="home-box">
-                 
-                    <div class="3-prod-box">
+
+                    <div class="prod-box">
                         <article>
-                        <img src="/img/products/bottle2.jpg" alt="">
-                        <button class="off-fixed">19% off</button>
-                        <ul>
-                            <li class="prod-title">Botella térmica</li>
-                            <li class="prod-price">$1200</li>
-                            <li class="prod-price-off">$980</li>
-                        </ul>
-                        <!-- <h3 class="prod-title">Botella térmica</h3> -->
-                        
-                        <br>
-                        <a href="">
-                        <button class="add-to-cart">Agregar al carrito</button>
-                    </a>
-                        </article>
-                
-                        <article>
-                            <img src="img/products/acondsolido.png" alt="">
-                            <button class="off-fixed">25% off</button>
-                           <ul>
-                               <li class="prod-title">Acondicionador sólido</li>
-                               <li class="prod-price">$1200</li>
-                           </ul>
-                        <br>
-                        <a href="">
-                        <button class="add-to-cart">Agregar al carrito</button>
-                    </a>
-                        </article>
-                        <article>
-                            <img src="/img/products/tooth-p.jpg" alt="">
-                            <button class="off-fixed">30% off</button>
-                         
-                                <h3 class="prod-title">Dentrifico con extracto de Eucalipto</h3>
-                            
-                        <br>
-                        <ul>
-                        <a href="">
-                        <button class="add-to-cart">Agregar al carrito</button>
-                    </a>
-                    <li class="prod-price">$1200</li>
-                    <li class="prod-price-off">$980</li>
-                </ul>
-                    </article>
-                        <article>
-                            <img src="/img/products/cepillo-off.jpg" alt="">
-                            <button class="off-fixed">15% off</button>
-                            <ul>
-                                <li class="prod-title">Cepillo de Bamboo Mango Grueso</li>
-                                <li class="prod-price">$1200</li>
-                            </ul>
-                            
+                            <div>
+                            <img src="/img/products/bottle2.jpg" alt="">
+                        </div>
+                            <button class="off-fixed">19% off</button>
+                            <h3 class="prod-title">Botella térmica</h3>
                             <br>
-                            <a href="">
-                            <button class="add-to-cart">Agregar al carrito</button>
-                        </a>
-                            </article>
-                            <article>
-                                <img src="/img/products/cremas-2.jpg" alt="">
-                                <button class="off-fixed">10% off</button>
-                                <ul>
-                                    <li class="prod-title">Crema para cuerpo y manos</li>
-                                    <li class="prod-price">$1200</li>
-                                </ul>
-                                
-                                <br>
+                            <ul>
                                 <a href="">
-                                <button class="add-to-cart">Agregar al carrito</button>
-                            </a>
-                                </article>
-                                <article>
-                                    <img src="/img/products/copita-2.jpg" alt="">
-                                    <button class="off-fixed">20% off</button>
-                                    <ul>
-                                        <li class="prod-title">Copita M.</li>
-                                        <li class="prod-price">$1200</li>
-                                    </ul>
-                                    <br>
-                                    <a href="">
                                     <button class="add-to-cart">Agregar al carrito</button>
                                 </a>
-                                    </article>
-                                    </div>
-                    </section>
-                        <br>
+                                <!-- <li class="prod-price">$1200</li> -->
+                                <li class="prod-price-off">$980</li>
+                            </ul>
+                        </article>
 
-                        <h2 class="home-text">Ver gama de productos</h2>
-                    <section class="home-box">
-                    <div class="3-prod-box">
                         <article>
-                        <img src="/img/products/bambu.png" alt="">
-                        <a href="#/products/eco-products">
-                            <button class="gama">Comprar cepillos</button>
-                        </a>
-                        <br>
+                            <div>
+                            <img src="img/products/acondsolido.png" alt="">
+                        </div>
+                            <button class="off-fixed">25% off</button>
+                            <h3 class="prod-title">Acondicionador sólido</h3>
+                            <br>
+                            <ul>
+                                <a href="">
+                                    <button class="add-to-cart">Agregar al carrito</button>
+                                </a>
+                                <!-- <li class="prod-price">$1200</li> -->
+                                <li class="prod-price-off">$980</li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div>
+                            <img src="/img/products/tooth-p.jpg" alt="">
+                        </div>
+                            <button class="off-fixed">30% off</button>
+                            <h3 class="prod-title">Dentrifico con extracto de Eucalipto</h3>
+                            <br>
+                            <ul>
+                                <a href="">
+                                    <button class="add-to-cart">Agregar al carrito</button>
+                                </a>
+                                <!-- <li class="prod-price">$1200</li> -->
+                                <li class="prod-price-off">$980</li>
+                            </ul>
                         </article>
                         <article>
+                            <div>
+                            <img src="/img/products/cepillo-off.jpg" alt="">
+                        </div>
+                            <button class="off-fixed">15% off</button>
+                            <h3 class="prod-title">Cepillo de Bamboo Mango Grueso</h3>
+                            <br>
+                            <ul>
+                                <a href="">
+                                    <button class="add-to-cart">Agregar al carrito</button>
+                                </a>
+                                <!-- <li class="prod-price">$1200</li> -->
+                                <li class="prod-price-off">$980</li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div>
+                            <img src="/img/products/cremas-2.jpg" alt="">
+                        </div>
+                            <button class="off-fixed">10% off</button>
+                            <h3 class="prod-title">Crema para cuerpo y manos</h3>
+                            <br>
+                            <ul>
+                                <a href="">
+                                    <button class="add-to-cart">Agregar al carrito</button>
+                                </a>
+                                <!-- <li class="prod-price">$1200</li> -->
+                                <li class="prod-price-off">$980</li>
+                            </ul>
+                        </article>
+
+                        <article>
+                            <div>
+                            <img src="/img/products/copita-2.jpg" alt="">
+                        </div>
+                            <button class="off-fixed">20% off</button>
+                            <h3 class="prod-title">Copita menstrual</h3>
+                            <br>
+                            <ul>
+                                <a href="">
+                                    <button class="add-to-cart">Agregar al carrito</button>
+                                </a>
+                                <!-- <li class="prod-price">$1200</li> -->
+                                <li class="prod-price-off">$980</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+                <br>
+
+                <h2 class="home-text">Ver gama de productos</h2>
+                <section class="home-box">
+                    <div class="prod-box">
+                        <article>
+                            <div>
+                            <img src="/img/products/bambu.png" alt="">
+                        </div>
+                            <a class="gama" href="#/products/eco-products">
+                                <button class="gama">Comprar cepillos</button>
+                            </a>
+                            <br>
+                        </article>
+                        <article>
+                            <div>
                             <img src="img/products/cbd2.jpg" alt="">
-                            <a href="#/products/natural-medicine">
-                            <button class="gama">Comprar CBD</button>
-                        </a>
+                        </div>
+                            <a class="gama" href="#/products/natural-medicine">
+                                <button class="gama">Comprar CBD</button>
+                            </a>
                         </article>
                         <article>
+                            <div>
                             <img src="/img/products/eco-bag.png" alt="">
-                            <a href="#/products/eco-products">
-                            <button class="gama">Comprar eco-products</button>
-                        </a>
+                        </div>
+                            <a class="gama" href="#/products/eco-products">
+                                <button class="gama">Comprar eco-products</button>
+                            </a>
                         </article>
-                        <article>
-                            <img src="/img/products/deco.jpg" alt="">
-                            <a href="#/products/deco">
+                        </div>
+                </section>
+
+                <section class="icon-text">
+                    <div class="container">
+                        <div class="icon">
+                            <span class="fas fa-leaf"></span>
+                        </div>
+                        <div class="text">
+                            <ul>
+                                <li> <span class="title">Responsabilidad social</span></li>
+                                <li> <span class="desc">Triple impacto: económico, social y ambiental</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="icon">
+                            <span class="material-icons-outlined">
+                                thumb_up
+                            </span>
+                        </div>
+                        <div class="text">
+                            <ul>
+                                <li> <span class="title">Zero waste</span></li>
+                                <li> <span class="desc">Productos reutilizables para un mundo sin plásticos</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="icon">
+                            <span class="material-icons-outlined">
+                                currency_bitcoin
+                            </span>
+                        </div>
+                        <div class="text">
+                            <ul>
+                                <li> <span class="title">Bitcoin</span></li>
+                                <li> <span class="desc">Aceptamos Bitcoin como medio de pago</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="home-box">
+                    <div class="prod-box">
+                    <article>
+                        <div>
+                        <img src="/img/products/deco-bath.jpg" alt="">
+                    </div>
+                        <a class="gama" href="#/products/deco">
                             <button class="gama">Comprar deco</button>
                         </a>
-                        </article>
-                        <article>
-                            <img src="/img/products/cremas.jpg" alt="">
-                            <a href="#/products/healt&beauty">
+                    </article>
+                    <article>
+                        <div>
+                        <img src="/img/products/cremas.jpg" alt="">
+                    </div>
+                        <a class="gama" href="#/products/health&beauty">
                             <button class="gama">Comprar cremas</button>
                         </a>
-                        </article>
+                    </article>
+                    <article>
+                        <div>
+                        <img src="/img/shampoograso.png" alt="">
+                    </div>
+                        <a class="gama" href="#/products/health&beauty">
+                            <button class="gama">Comprar shampoo</button>
+                        </a>
+                    </article>
                     </div>
                 </section>
             </main>
             <br>
-            <br>
-            <br>
-            <br>
 
-            <section class="gandhi">
-                <figure>
-                    <img src="img/back/Gandhi.png" alt="Gandhi">
-                    
-                </figure>
-                <blockquote cite="https://www.nytimes.com/2011/08/30/opinion/falser-words-were-never-spoken.html">
-                    <p><i>
-                    
-                        Be the change you want to see in the world
-                    </i>
-                    </p>
+            <section class="middle-home">
+                <div class="eco-activism">
+                    <span class="material-icons-outlined">
+                        volunteer_activism
+                    </span>
+                    <div>
+                        <!-- <span class="gray">EcoDev te propone una vida mas</span><span class="green"> natural,
+                            sustentable y ecológica</span> -->
+                            <!-- <span>Recomendaciones de blogs, preparados especialmente para vos.</span> -->
+                            <h2>Recomendaciones de blogs.</h2>
+                            <p>Preparados especialmente para vos.</p>
+                    </div>
+                </div>
+
+                <section class="notes">
+                    <section class="notes-img">
+                        <div class="display-tablet">
+                        <article>
+                            <a href="" class="ocean">
+                                <img src="img/back/ocean.jpg" alt="">
+                             El océano y el plástico: por qué eliminar su uso de inmediato.
+                            </a>
+                            <!-- <span>
+                                Oceános y el plástico: cómo influyen en el ambiente
+                            </span> -->
+                        </article>
+                        <article>
+                            <a href="" class="forest">
+                                <img src="img/back/forest.jpg" alt="">
+                               Conocé los bosques Ecodev, mil hectáreas de reserva natural
+                            </a>
+                            <!-- <span>
+                                2 mil hectáreas de reserva natural: conocé los bosques Ecodev 
+                            </span> -->
+                        </article>
+                    </div>
+                        <div class="display-desktop">
+                        <article>
+                            <a href="" class="third">
+                                <img src="img/back/tercera.jpg" alt="">
+                               ¿Viajas a la montaña? No vayas sin antes leer esta guía.
+                            </a>
+                            <!-- <span>
+                                En tu visita a la montaña no olvides tu botella térmica
+                            </span> -->
+                        </article>
+                    </div>
+                    </section>
                     <br>
-                    <strong><figcaption>Mahatma Gandhi</figcaption></strong>
-                               </blockquote>
-            </section>
-            <br>
-            <br>
-           
-         
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="newsletter">
+                        <div class="suscribe">
+                            Suscribite a nuestro newsletter
+                        </div>
+                        <div>
+                            <form action="" method="POST">
+                            <input type="email" name="news-email" id="" placeholder="Dejanos tu correo">
+                            <button type="submit"><i class="far fa-paper-plane"></i></button>
+                        </form>
+                        </div>
+                    </div>
+                </section>
+                   
 
-        <%- include('./partials/footer')  %> 
+                <!-- <br>
+                <br>
+                <br>
+                <br> -->
+            </section>
+          
+            
+       
+            <div style="height: 12rem;"></div>
+
+            <%- include('./partials/footer') %> 
+
+          
     </body>
 
 

@@ -13,9 +13,6 @@ const usersController = {
     register: (req,res) => {
         res.render('users/register.ejs');
     },
-    administracion: (req, res) => {
-        res.render('my-products')
-    },
     processLogin: (req, res) => {
         let errors = validationResult(req);
 
@@ -23,26 +20,35 @@ const usersController = {
             
          for(i = 0; i < users.length; i++){
             if(users[i].email == req.body.email){
-                if(bcrypt.compareSync(req.body.password, users[i].password)){
+                if(req.body.password == users[i].password){
+                // if(bcrypt.compareSync(req.body.password, users[i].password)){
                     var usuarioALoguearse = users[i];
                     req.session.userLogged = usuarioALoguearse;
+                
+                    if(req.body.recordame){
+                        res.cookie('recordame', usuarioALoguearse.email, {
+                            maxAge: (1000 * 60) * 60
+                        }
+                        )
+                    }
                     res.redirect('/users/perfil');
                 }
             }
          }
 
          if(usuarioALoguearse == undefined){
-             res.render('login', {errors: [
+             res.render('users/login.ejs', {errors: [
                 {msg: 'Credenciales inválidas'}
             ]})
          }
 
         } else {
-             res.render('login', {errors: errors.errors, old: req.body})
+             res.render('users/login.ejs', {errors: errors.errors, old: req.body})
         }
     },
     perfil: (req, res) => {
-        res.render('perfil', {
+        console.log(req.session.userLogged);
+        res.render('users/perfil.ejs', {
             user: req.session.userLogged
         })
     },
@@ -52,7 +58,10 @@ const usersController = {
     },
     processRegister: (req, res) => {
         
+    },
+    favorites: (req, res) => {
+        res.render('users/favorites.ejs')
     }
 }
 
-module.exports = usersController;
+module.exports = usersController, users

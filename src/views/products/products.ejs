@@ -11,13 +11,19 @@
                 <h2 class="home-text">Nuestros Productos</h2>
                 <section class="home-box">
                  
+<<<<<<< HEAD
                     <div class="3-prod-box">
 
 
+=======
+                    <div class="prod-box">
+>>>>>>> 8ad8d9c4516a7be1ca4dd29fe85489a6b6514d2e
                         <% products.forEach( (product) => { %>
 
                                 <article>
+                                    <div>
                                 <a href="/products/<%= product.id %>/details "><img src=<%= product.image %> alt=""></a> 
+                            </div>
                                 <% if (product.discount)  { %> 
                                     
                                     <button class="off-fixed"><%= product.discount %> % OFF</button>
@@ -31,7 +37,7 @@
                                     <li class="prod-title"><%= product.name %> </li>
                                     
                                     <% if (product.discount) { %> 
-                                        <li class="prod-price-before"><%= product.price %> </li>
+                                        <li class="prod-price"><%= product.price %> </li>
                                         <%   let priceOff = ( product.price - (product.discount * product.price / 100) ) %>
                                             <li class="prod-price-off">$<%= priceOff %></li> 
     
