@@ -1,11 +1,18 @@
 [
     {
         "id": 1,
+<<<<<<< HEAD
         "name": "ECO BOLSA",
         "description": "ut massa volutpat convallis morbi odio odio elementum eu mi ulis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla u ",
         "image":  "eco-bag.png ",
         "category": "Eco Friendly Products",
         "discount": 25,
+=======
+        "name": "Bread - Crusty Italian Poly",
+        "description": "ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet",
+        "image": "img/products/tooth-p.jpg",
+        "category": "Pesonal Care",
+>>>>>>> ee43a8afb5c5990260e47be56b8a492cdef2f226
         "price": 7890.97,
         "size": 200
     },

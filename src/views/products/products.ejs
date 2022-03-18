@@ -9,63 +9,130 @@
 
 
             <main class="home">
-                <h2 class="home-text">Nuestros Productos</h2>
-                <section class="home-box">
-                 
-<<<<<<< HEAD
-                    <div class="3-prod-box">
-
-
-=======
+                <!-- <h2 class="home-text">Nuestros productos</h2> -->
+                <section class="product-box">
+                 <div class="side-filter">
+                     <aside>
+                         <h2>Filtrar</h2>
+                         <div>
+                             <ul>
+                                 <li class="filter-button">
+                                     <!-- <div class="category"> -->
+                                         <button class="search-category">
+                                            <span>Categoría</span> 
+                                            <div class="transform">
+                                                <span>
+                                                    <i class="fas fa-angle-up"></i>
+                                                </span>
+                                            </div>
+                                         </button>
+                                     <!-- </div> -->
+                                     <div>
+                                         <ul>
+                                             <li>
+                                                 <button class="all-category">
+                                                     <span>Todas las categorías</span>
+                                                 </button>
+                                                 <ul class="list-category">
+                                                     <li>Deco</li>
+                                                     <li>Health & Beauty</li>
+                                                     <li>Natural medicine</li>
+                                                     <li>Eco products</li>
+                                                 </ul>
+                                             </li>
+                                         </ul>
+                                     </div>
+                                 </li>
+                                 <li class="filter-button">
+                                    <button class="search-category">
+                                        <span>Precio</span> 
+                                        <div class="transform">
+                                            <span>
+                                                <i class="fas fa-angle-up"></i>
+                                            </span>
+                                        </div>
+                                     </button>
+                                 <!-- </div> -->
+                                 <div class="filter-price">
+                                   <form action="">
+                                       <label for="">
+                                       <input type="checkbox">
+                                       <span>$</span>
+                                    </label>
+                                    <label for="">
+                                        <input type="checkbox">
+                                        <span>$$</span>
+                                     </label>
+                                     <label for="">
+                                        <input type="checkbox">
+                                        <span>$$$</span>
+                                     </label>
+                                   </form>
+                                 </div>
+                                 </li>
+                             </ul>
+                         </div>
+                     </aside>
+                 </div>
                     <div class="prod-box">
->>>>>>> 8ad8d9c4516a7be1ca4dd29fe85489a6b6514d2e
                         <% products.forEach( (product) => { %>
 
-                                <article>
+                                <article class="show-products">
                                     <div>
                                 <a href="/products/detail/<%= product.id %> "><img src=<%= product.image %> alt=""></a> 
                             </div>
-                                <% if (product.discount)  { %> 
+                                <!-- <% if (product.discount)  { %> 
                                     
                                     <button class="off-fixed"><%= product.discount %> % OFF</button>
 
-                                <% } %>
-                                 <div class="icon-fav">
-                                    <i class="fas fa-heart"></i>
-                                 </div>
+                                <% } %> -->
+                                 
                                 
-                                <ul>
-                                    <li class="prod-title"><%= product.name %> </li>
+                                <!-- <ul>
+                                    <li class="prod-title">
+                                    </li> -->
+                                    <div><%= product.name %></div> 
                                     
-                                    <% if (product.discount) { %> 
+                                    
+                                    <!-- <% if (product.discount) { %> 
                                         <li class="prod-price"><%= product.price %> </li>
                                         <%   let priceOff = ( product.price - (product.discount * product.price / 100) ) %>
-                                            <li class="prod-price-off">$<%= priceOff %></li> 
-    
-                                    <% } else { %> <!--if there isn't discount show product price-->
-                                        <li class="product-price">$<%= product.price %></li> 
-                                    <% } %> 
+                                            <li class="prod-price-off">$<%= priceOff %></li>  -->
+                                        
+                                    <!-- <% } else { %> if there isn't discount show product price -->
+                                        <!-- <li class="product-price">
+                                        </li> -->
+                                        <br>
+                                <div>$<%= product.price %></div> 
+                                    <!-- <% } %>  -->
                                     
-                                </ul>
+                                <!-- </ul> -->
                                 <!-- <h3 class="prod-title">Botella térmica</h3> -->
                                 
                                 <br>
+<<<<<<< HEAD
                                 
                                 <a href="/products/detail/<%=product.id %>"> <button class="add-to-cart">Ver más</button> </a>
                                 
                                 
                             </a>
                                 </article>
+=======
+                                <!-- <a href="">
+                                <button class="add-to-cart">Agregar al carrito</button>
+                            </a> -->
+                                </article> 
+>>>>>>> ee43a8afb5c5990260e47be56b8a492cdef2f226
                         <% }) %> 
-                
+                    </div>
+                </section>
            
          
 
         <%- include('../partials/footer')  %> 
     </body>
-
-
 </html>
+<<<<<<< HEAD
     <!-- 
         <div class="produ">Productos</div>
         <div class="grid-cajas">
@@ -279,3 +346,6 @@
 
         </div>
  -->
+=======
+   
+>>>>>>> ee43a8afb5c5990260e47be56b8a492cdef2f226

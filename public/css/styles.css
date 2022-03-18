@@ -182,7 +182,7 @@ section.home-box div.prod-box {
 }
 
 section.home-box div.prod-box div{
-    width: 255px;
+    width: 220px;
 }
 
 section.home-box article {
@@ -203,12 +203,124 @@ section.home-box article {
 section.home-box article div img{
     /* width: 350px; */
     /* height: 380px;  */
-    height: 340px;
+    height: 300px;
     width: 100%;
     border-radius: 5px;
     object-fit: cover;
     transition:  all .5s;
 }
+
+/*products ejs*/
+section.product-box{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1400px;
+    padding-top: 2.5rem;
+}
+section.product-box div.prod-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70%;
+    margin-top: 4rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+section.product-box article.show-products{
+    width: 200px;
+    margin: 0 10px;
+}
+section.product-box div.prod-box article.show-products div{
+    width: 200px;
+    font-size: .9rem;
+}
+section.product-box article.show-products div img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+section.product-box div.side-filter{
+    margin: 0 30px;
+    width: 20%;
+}
+
+section.product-box div.side-filter div.transform{
+    padding: 10px;
+}
+
+section.product-box div.side-filter ul li.filter-button{
+    border-bottom: 1px solid #D6DADF;
+    padding: 10px 0;
+}
+
+section.product-box aside ul.list-category{
+    padding-left: 2.4rem;
+}
+section.product-box aside ul.list-category li{
+    padding: 16px 0;
+    color: #19124F;
+    font-size: 14px;
+    cursor: pointer;
+}
+section.product-box aside ul.list-category li:hover{
+    text-decoration: underline;
+}
+section.product-box aside h2{
+    padding: 0 0 20px;
+    font-size: 20px;
+    color: #19124F;
+}
+
+div.side-filter ul{
+    list-style: none;
+}
+div.side-filter ul button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+div.side-filter ul button.search-category{
+    padding-left: .8rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+div.side-filter ul button.search-category i{
+    font-size: 1rem;
+}
+
+div.side-filter ul button.all-category{
+    padding-left: 1.5rem;
+    margin: 20px 0 10px;
+}
+
+div.side-filter ul button.all-category span:hover{
+    text-decoration: underline;
+}
+div.side-filter ul button span{
+    font-size: 14px;
+    font-weight: 600;
+    color: #19124F;
+}
+div.side-filter div.filter-price form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding-left: 2.4rem;
+}
+div.side-filter div.filter-price form label{
+    height: 40px;
+}
+div.side-filter div.filter-price form label span{
+    font-size: .9rem;
+    margin-left: 1rem;
+}
+/*end prodcut ejs*/
 
 section.home-box article h3{
     margin: 10px 0 3px;
@@ -269,14 +381,15 @@ div.prod-box article button.off-fixed{
     margin: auto;
     border: 1px solid #6aa757;
     /* border: 2px solid #21660c; */
-    background-color: #6aa757;
+    /* background-color: #6aa757; */
+    background-color: #4b813a;
     color: #fafafa;
     border-radius: 20px;
     padding: 10px 15px;
     font-weight: 600;
     position: absolute;
-    bottom: 350px;
-    left: -30px;
+    bottom: 320px;
+    left: -5px;
     text-transform: uppercase;
 }
 
@@ -348,7 +461,7 @@ section.home-box article img:hover{
 }
 
 section.middle-home {
-        /* width: 92%; */
+        width: 92%;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -371,31 +484,19 @@ section.middle-home {
         color: #588d48;
     }
 
-    div.eco-activism div{
-        font-size: 1.85rem;
-        /* margin: 20px;
-        padding: 2rem 3rem; */
-        
-    }
+    /* div.eco-activism div{
+        font-size: 1.45rem;
+        margin: 20px;
+        padding: 2rem 3rem;
+    } */
     div.eco-activism div h2{
         color: rgb(50, 31, 75);
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
-    /* .eco-activism div span.gray{
-        color: rgb(56, 56, 56);
-    }
-    .eco-activism div span.green{
-        color: #6aa757
-    } */
     div.eco-activism div p{
         color: rgb(107, 107, 107);
+        font-size: 1.2rem;
     }
-
-    /* section.notes{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    } */
 
     section.notes-img{
         display: flex;
@@ -406,9 +507,9 @@ section.middle-home {
 
     section.notes article {
         margin: auto;
-        width: 255px;
-        height: 340px;
-        margin-bottom: 14rem;
+        width: 220px;
+        height: 300px;
+        margin-bottom: 12rem;
         background-color: var(--background-color);
         position: relative;
         border-radius: .5rem;
@@ -450,11 +551,11 @@ section.middle-home {
         border-radius: .5rem;
         object-fit: cover;
         height: 100%;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.3rem;
     }
 
     section.notes a{
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         color: #000;
         /* margin-right: 1rem; */
         cursor: pointer;
@@ -467,18 +568,17 @@ section.middle-home {
     }
 
    div.newsletter{
-        /* margin: 12rem 0 4rem; */
-        margin: 5rem;
-        font-size: 1.4rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* color: #a9adc1; */
-        color: #68719c;
     }
 
 div.newsletter div{
         position: relative;
+        font-size: 1rem;
+        width: 300px;
+        color: rgb(25, 18, 79);
+        font-weight: 600;
     }
 div.newsletter button{
         width: 40px;
@@ -496,11 +596,22 @@ div.newsletter input{
         border: none;
         border-bottom: 2px solid #8C95A5;
         background-color: transparent;
-        width: 300px;
+        width: 200px;
         height: 40px;
     }
 div.newsletter input::placeholder{
         color: #2e2e2e ;
+    }
+    div.newsletter p{
+        width: 300px;
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    div.newsletter p a{
+        font-weight: 600;
+        text-decoration: underline;
+        color: #000;
+        cursor: pointer;
     }
 /**** FORMS ****/
 
@@ -664,10 +775,10 @@ div.back-create-form{
 }
 
 .form-btn-send button:hover::before{
-    top: calc(var(--border-size) * -3);
-    left: calc(var(--border-size) * -3);
-    right: calc(var(--border-size) * -3);
-    bottom: calc(var(--border-size) * -3);
+    top: calc(var(--border-size) * -2.5);
+    left: calc(var(--border-size) * -2.5);
+    right: calc(var(--border-size) * -2.5);
+    bottom: calc(var(--border-size) * -2.5);
 }
 
 hr {
@@ -1100,6 +1211,76 @@ Form Register Styles
     border-radius: 5px;
     box-shadow: 2px 2px 7px grey;
 }
+
+section.recommend{
+    margin: 4rem 1.2rem;
+}
+section.recommend h2{
+    font-weight: normal;
+    margin: 1.5rem 1rem;
+}
+section.recommend div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+section.recommend article{
+    margin: 0 10px;
+    position: relative;
+}
+
+section.recommend article span{
+    display: inherit;
+}
+
+section.recommend img {
+    width: 220px;
+    height: 220px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+section.recommend button{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* section.recommend article span{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #000;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0px 0px 10px rgb(177, 176, 176);
+    color: #4b4b4b;
+    cursor: pointer;
+    z-index: 1;
+} */
+
+section.recommend article i{
+    
+    font-size: 1rem;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0px 0px 10px rgb(177, 176, 176);
+    opacity: .9;
+    color: #e9b0b0;
+    cursor: pointer;
+    /* z-index: -1; */
+}
+
+section.recommend article i:hover{
+    background-color: #f0f0f0;
+}
 /********************************************************
 End Register Form
 */
@@ -1117,6 +1298,20 @@ End Register Form
     div.apps ul li{
         margin: 1rem;
     }
+    section.home-box div.prod-box div{
+        width: 255px;
+    }
+    section.home-box article div img{
+        height: 340px;
+    }
+    div.prod-box article button.off-fixed{
+        left: -20px;
+        bottom: 350px;
+    }
+    div.newsletter input{
+        width: 300px;
+    }
+    
 }
 
 @media(min-width: 620px){
@@ -1133,7 +1328,7 @@ End Register Form
         height: 380px;
     }
     article button.off-fixed{
-        left: -2rem;
+        left: -20px;
     }
     /* section.notes div.display-tablet{
         display: flex;
@@ -1141,16 +1336,18 @@ End Register Form
     section.notes-img{
         flex-direction: row;
     }
-    section.notes div.display-tablet{
-        display: flex;
-    }
     section.notes article{
-        margin-bottom: 2rem;
-        margin: 1.5rem;
+        /* margin: 1.5rem; */
         width: 280px;
         height: 370px;
         /* width: 249px;
         height: 332px; */
+    }
+    section.notes a{
+        font-size: 1.5rem;
+    }
+    div.eco-activism div p, div.eco-activism div h2{
+        font-size: 1.4rem;
     }
 }
 
@@ -1171,16 +1368,24 @@ End Register Form
     .heart, .shop {
         order: 1;
     }
+    section.notes div.display-tablet{
+        display: flex;
+    }
+    section.notes article{
+        margin: 1.5rem;
+    }
     section.icon-text{
         flex-direction: row;
         justify-content: space-around;
         padding: 0 2rem;
         margin-top:-30px;
     }
-    /* section.home-box{
-        flex-direction: row;
-        justify-content: space-around;
-    } */
+    div.eco-activism div h2{
+        font-size: 1.6rem;
+    }
+    div.eco-activism div p{
+        font-size: 1.4rem;
+    }
     section.home-box div.prod-box {
         flex-direction: row;
         justify-content: space-around;
@@ -1195,6 +1400,7 @@ End Register Form
     footer section.f-2 {
         padding-left: 1.5rem;
     }
+    
 }
 
 @media(min-width: 1024px){
