@@ -20,11 +20,8 @@ const productsController = {
         res.render('products/detail-prod.ejs', {searchProduct});
     },
     products: (req, res) => {        
-       
         let products = JSON.parse(productJson);
-        
         res.render('products/Products', {products})
-    
     } ,
     storeProduct: (req, res) => {
     //obtengo los datos del form-create
