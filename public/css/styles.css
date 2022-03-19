@@ -374,7 +374,7 @@ div.prod-box article button.add-to-cart{
 
 div.prod-box article button.add-to-cart:hover{
     box-shadow: 0 0 0 3px rgb(224, 223, 223);
-    border: 1.5px solid rgb(224, 223, 223);
+    /* border: 1.5px solid rgb(224, 223, 223); */
 }
 
 div.prod-box article button.off-fixed{
@@ -615,49 +615,74 @@ div.newsletter input::placeholder{
     }
 /**** FORMS ****/
 
-.login-form{
+.login-form, .register-container{
     display: flex;
     justify-content: center;
-    padding-top: 15px; 
 }
 
 .title-form, .crear-producto{
     margin: 50px 0 10px 0;
-    font-size: 25px;
+    font-size: 1.4rem;
     font-weight: normal;
     text-align: center;
+    color: #242424;
 }
 
 .comunidad {
     font-size: 15px;
     text-align: center;
+    color: #242424;
     font-weight: normal;
 }
 
 .comunidad a {
     text-decoration: none;
-    color: #000;
     font-weight: 700;
+    color: #242424;
 }
 
-.form-email, .form-pass{
+.form-email, .form-pass, .input-form{
     margin: 20px;
     text-align: center;
 }
 
-.form-cookie, .form-btn-send{
-    margin: 10px;
+.form-btn-send{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.form-header{
+    margin-bottom: 2rem;
+}
+
+.form-cookie{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 .form-cookie input{
     max-width: 100px;
     height: 11px;
 }
+
 .form-cookie label{
     font-size: 0.9rem;
+    color: #4b4a4a;
 }
 
-.login-form input, .register-conteiner input{
+.form-cookie label a{
+    text-decoration: none;
+    color: #242424;
+}
+
+input#remb{
+    width: 20px;
+}
+
+.login-form input, .register-container input{
     /* border: 0.5px solid rgb(72, 138, 72); */
     border-radius: 10px;
     outline: none;
@@ -665,15 +690,27 @@ div.newsletter input::placeholder{
     border: 2px solid #f7f7f7;
     width: 320px;
     /* border:none; */
-    padding: 1rem;
+    padding: 1.2rem;
     /* padding: 2rem; */
     background-color: #f7f7f7;
     transition: 500ms ease;  
 }
 
- .login-form input:hover, .login-form input:focus{
+ .login-form input:hover, .login-form input:focus, .register-container input:hover, .register-container input:focus{
     border: 2px solid #000;
 }
+
+/*FRONT VALIDATION LOGIN */
+
+.login-form span{
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 0 0 10px;
+    color: #bb0f0f;
+}
+/**/
+
 
 /******* 
 CREATE FORM
@@ -752,7 +789,7 @@ div.back-create-form{
     border-radius: 100px;
     border: none;
     position:relative;
-    width: 320px;
+    width: 400px;
     background: var(--background-color);
     padding: 1.4rem 1rem;
     color: #ffffff;
@@ -789,7 +826,7 @@ hr {
 /*****************************************/
   /*CARRITO DE COMPRAS*/
 /*****************************************/
-.shopping-card-conteiner{
+.shopping-card-container{
     width: 100%;    
 }
 
@@ -1115,50 +1152,6 @@ hr {
 /********************************************************************
 Form Register Styles
 ------------------------------------------------------------------*/
-.register-conteiner{    
-    
-    display: flex;
-    flex-direction: column;        
-    align-items: center;
-    justify-content: center;
-    width: 90vw;   
-    padding: 10px;
-    /* box-shadow: 2px 2px 10px rgba(0,0,0,.4); 
-    border-radius: 10px;*/    
-    margin: auto;    
-    background-color: white;
-
-    
-
-}
-.input-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;     
-    margin-bottom: 15px;
-}
-
-
-.input-form input {   /*[type=text],input[type=password]{ */
-    border: 0.5px solid rgb(72, 138, 72);
-    border-radius: 5px;
-
-    width: 320px; 
-    height: 39px;    
-    
-    background-color: #fff;  
-   /*  box-shadow: 1px 2px 7px rgba(0,0,0,.4); 
-    border: solid 1px #cbc9c9;
-    border-radius: 0px 5px 4px 0px/5px 5px 5px 4px;  */
-    margin-left: -5px;
-    margin-top: 13px; 
-    padding-left: 5px;
-  }
-
-  #tel-codigo-area{
-      width: 25%;
-  }
-
  .label-icon i{   
     width: 40px;   
     text-align: center;
@@ -1292,8 +1285,8 @@ End Register Form
  /* RESPONSIVE //////////////////////////////////////////////////
  ///////////////////////////////////////////////////////////////*/
  @media(min-width: 380px){
-    .login-form input{
-        width: 320px
+    .login-form input, .register-container input{
+        width: 400px
     }
     div.apps ul li{
         margin: 1rem;

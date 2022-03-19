@@ -17,12 +17,16 @@
          </ul>
         <% } %>
 
-          <h3 class='title-form'>Inciar sesión</h3>
+        <div class="form-header">
+        <h3 class='title-form'>Inciar sesión</h3>
         <h4 class='comunidad'>¿Aún no tienes una cuenta? <a href="/users/register">Unite a la comunidad</a></h4>
+      </div>
         <main class="login-form">
             <form action="/users/login" method="POST">
               <div class="form-email">
               <input type="email" name="email" placeholder="Email">
+              <!-- <br>
+              <span>Escribí tu email</span> -->
             </div>
 
             <div class="form-pass">
@@ -31,11 +35,12 @@
             </div>
 
             <div class="form-cookie">
-              <label for="remb">Recordame</label>
+              <div>
+              <label class="remb" for="remb">Recordar</label>
               <input type="checkbox" id="remb" name="remember">
             </div>
-
-            <br>
+              <label><a href="">¿Has olvidado tu contraseña?</a></label>
+            </div>
             <div class="form-btn-send">
               <button type="submit">Ingresar</button>
             </div>

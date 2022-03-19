@@ -4,13 +4,15 @@
 <body>
     <%- include('../partials/header') %> 
     <hr>
-    <main class="register-conteiner">
-        <h3 class="title-form">Nuevo Usuario</h3>
-        <h3 class="comunidad">¿Ya tienes una cuenta? <a href="/users/login">Inicia Sesión</a></h3>
+<div class="form-header">
+    <h3 class="title-form">Nuevo Usuario</h3>
+    <h3 class="comunidad">¿Ya tienes una cuenta? <a href="/users/login">Inicia Sesión</a></h3>
+</div>
+    <main class="register-container">
         <form>
             <div class="input-form">
                 <label class="label-icon" for="nombre">
-                    <i class="fas fa-id-card"></i>
+                    <!-- <i class="fas fa-id-card"></i> -->
                 </label>
 
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo" required />
@@ -18,7 +20,7 @@
 
             <div class="input-form">
                 <label class="label-icon" for="direccion">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <!-- <i class="fas fa-map-marker-alt"></i> -->
                 </label>
 
                 <input type="text" name="direccion" id="direccion" placeholder="Dirección" required />
@@ -26,7 +28,7 @@
 
             <div class="input-form">
                 <label class="label-icon" for="ciudad">
-                    <i <i class="fas fa-city"></i>
+                    <!-- <i <i class="fas fa-city"></i> -->
                 </label>
 
                 <input type="text-area" name="ciudad" id="ciudad" placeholder="Ciudad" required />
@@ -34,7 +36,7 @@
 
             <div class="input-form">
                 <label class="label-icon" for="email">
-                    <i class="fas fa-envelope"></i>
+                    <!-- <i class="fas fa-envelope"></i> -->
                 </label>
                 <input type="email" name="email" id="email" placeholder="Email" required />
             </div>
@@ -42,28 +44,19 @@
             <div class="input-form">                
 
                 <label class="label-icon" for="telefono">
-                    <i class="fas fa-phone-alt"></i>
+                    <!-- <i class="fas fa-phone-alt"></i> -->
                 </label>
                 <input type="text" name="telefono" id="telefono" placeholder="Telefono" />
             </div>
-            <br>
-       
-            <div class="input-form">
-                <label class="label-icon" for="username">
-                    <i class="fas fa-user"></i>
-                </label>
-                <input type="text" name="username" id="username" placeholder="Nombre de Usuario" />
-            </div>
-            
             <div class="input-form">
                 <label class="label-icon" for="password">
-                    <i class="fas fa-lock"></i>
+                    <!-- <i class="fas fa-lock"></i> -->
                 </label>
                 <input type="password" name="password" id="password" placeholder="Contraseña" required />
             </div>
             <div class="input-form">
                 <label class="label-icon" for="password1">
-                    <i class="fas fa-lock"></i>
+                    <!-- <i class="fas fa-lock"></i> -->
                 </label>
                 <input type="password" name="password1" id="password1" placeholder=" Repetir Contraseña" required />
             </div>           
