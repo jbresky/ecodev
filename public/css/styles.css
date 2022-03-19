@@ -1432,62 +1432,6 @@ End Register Form
         width: 320px;
         height: 425px;
     }
-}
- 
-@media screen and (max-width: 550px){
-    .grid-cajas {
-        display: flex;
-        flex-direction: column;
-    }
-    .caja {
-        width: 300px;
-        height: 300px;
-    }
-    .art {
-        padding-left: 75px;
-    }
-    .letter {
-        padding-top: 8px;
-        padding-bottom: 5px;
-    }
-    .descrip {
-        padding-top: 3px;
-        padding-bottom: 8px;
-
-    }
-
-    .price {
-        size: 50px;
-        padding-top: 40px;
-        padding-bottom: 5px;
-    }
-  }
-
-@media screen and (min-width: 550px){
-  .grid-cajas {
-      display: flex;
-      flex-direction: column;
-  }
-  .caja {
-      width: 300px;
-      height: 300px;
-  }
-}
-
-@media screen and (min-width: 551px){
-    .grid-cajas {
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .art {
-        padding-left: 80px;
-    }
-
-    .descrip{
-        font-size: 16px;
-        padding-bottom: 5px;
-
-    }
     .letter {
         font-size: 26px;
         padding-top: 5px;
@@ -1547,7 +1491,7 @@ End Register Form
 /////////////////////////////////////////////////////////////*/
 
 footer{
-    margin-top: 8rem;
+    
     background-color: #fafafa;
 }
 
@@ -1721,4 +1665,124 @@ div.reserved {
 div.reserved span{
     font-size: 12px;
     color: #9695A8;
+}
+
+/*DETAIL FINAL////////////////////////////////////*/
+
+.cont-detail {
+    display: flex;
+    justify-content: space-between;
+    border:#535661 solid 1px;
+    width: 900px;
+    height: 500px;
+    margin: 50px;
+    border-radius: 10px;
+    background-color: white;
+ 
+    overflow: hidden;
+    
+}
+.colum1 {
+    width: 450px;
+    height: 500px;
+    
+}
+.colum2 {
+    width: 450px;
+    height: 500px;
+    padding-top: 10px;
+}
+
+.cont-sup {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;    
+    margin: 0;
+    padding: 0; 
+    
+    
+}
+
+.img-d {
+    width: 440px;
+    height: 500px;
+    
+}
+.name-d {
+    font-size:xx-large;
+    margin: 20px 0px 20px; 
+}
+
+
+.price-d {
+    color: green;
+    font-size:x-large;
+    padding-top: 30px;
+}
+
+.btn-detail1 {
+    border-radius: 30px;
+    background-color: #ddd;
+    padding: 15px 32px;
+    color: gray;
+    text-decoration: none;
+    margin: 10px;
+    transition: 
+        background-color, 0.5s,
+        color, 0.5s;
+}
+.btn-detail2 {
+    border-radius: 30px;
+    background-color: #ddd;
+    padding: 15px 32px;
+    margin: 10px;
+    color: grey;
+    text-decoration: none;
+    transition: 
+        background-color, 0.5s,
+        color, 0.5s;
+
+}
+
+.option {
+   
+    display: flex;
+    padding-top: 30px;
+    
+}
+
+.btn-detail1:hover {
+    background-color:#21660c ;
+    color: white;
+}
+
+.btn-detail2:hover {
+    background-color: red ;
+    color: white;
+}
+.off-d {
+    font-size: x-small;
+    color:#535661;
+    text-decoration: none;
+}
+.off-d:hover {
+    color: green;
+}
+
+.value-d {
+    padding: 20px 0 0px 0;
+}
+.desc-d {
+    font-size: small;
+    color:#565a56;
+    width: 350px;
+}
+
+.select {
+    padding: 8px 12px;
+    color: #333;
+    background-color: #eeeeee;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 5px;
 }

@@ -14,7 +14,7 @@ router.get('/cart', productsController.shoppingCart)
 router.get('/create', authMiddleware, productsController.createForm)
 router.post('/', productsController.storeProduct)
 
-router.get('/:id', productsController.detail)
+router.get('/detail/:id', productsController.detail)
 router.get('/:id/edit', productsController.edit)
 
 router.put('/:id', productsController.change)
