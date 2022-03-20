@@ -3,6 +3,71 @@
     <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %> 
+    <!-- <hr> -->
+<div class="back-create-form">
+    <br>
+             <main class="edit-form">
+                 <!-- este main es el contenedor del form -->
+                 <h3 class="edit-product">Crea tu producto!</h3>
+                    <br>
+                <form action="/products/edit/:id" method="POST">
+                    <div class="labels">
+                        <label for="name">Nombre del producto</label>
+                    </div>
+                    <div>
+                        <input type="text" name="name" id="name" placeholder="Nombre">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="labels">
+                       <label for="price">Precio</label>
+                    </div>
+                    <div>
+                        <input type="number" name="price" id="price" placeholder="$">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="labels">
+                        <label for="image">Imagen</label>
+                    </div>
+                    <div>
+                        <input class="input-img" type="file" name="image" id="image" accept=".jpg, .png"></input>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="labels">
+                       <label for="category">Categoría</label>
+                    </div>
+                    <div>
+                        <select name="category" id="category">
+                            <!-- No definitive -->
+                            <option value=>Elegí</option>
+                            <option value=>Personal Care</option>
+                            <option value=>Health & Beauty</option>
+                            <option value=>Natural Medicine</option>
+                            <option value=>Eco Friendly Products</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="labels">
+                       <label for="descrip">Descripción</label>
+                    </div>
+                    <div>
+                    <textarea name="description" id="descrip" placeholder="Un hermoso producto... :)"></textarea>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="form-btn-send">
+                    <button type="submit">Enviar</button>
+                </div>
+                <br>
+                </form>
+    
+        </main>
+    <br>
+    </div>
     <%- include('../partials/footer') %> 
 </body>
 </html>

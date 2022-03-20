@@ -6,15 +6,43 @@ const bcrypt = require('bcryptjs');
 const usersFilePath = path.join(__dirname, '../data/users.json')
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
-const DB = require('../database/models');
+const db = require('../database/models');
 
 const usersController = {
     login: (req, res) => {
         res.render('users/login.ejs');
     },
     register: (req,res) => {
-        res.render('users/register.ejs');
+        db.User.create({
+            name:req.params.name,
+            direccion: req.params.direccion,
+            ciudad: req.params.ciudad,
+            email: req.params.email,
+            telefono: req.params.telefono,
+            username: req.params.username,
+            password: req.params.password,
+            password1: req.params.password1,
+        })
+        res.redirect('home');
+        /*res.render('users/register.ejs')*/;
     },
+    editProfile: (req,res) => {
+        db.User.update({
+            name:req.params.name,
+            direccion: req.params.direccion,
+            ciudad: req.params.ciudad,
+            email: req.params.email,
+            telefono: req.params.telefono,
+            username: req.params.username,
+            password: req.params.password,
+            password1: req.params.password1,
+        })
+        res.redirect('perfil', {})
+    },
+    detailProfile: (req, res) =>{
+        res.render('perfil');
+    },
+
     processLogin: (req, res) => {
         let errors = validationResult(req);
 
