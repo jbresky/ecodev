@@ -25,8 +25,10 @@ const uploadFile = multer({storage})
 router.get('/login', guestMiddleware, usersController.login);
 
 router.get('/register', guestMiddleware, usersController.register);
+router.post('edit-profile', usersController.editProfile);
 
-router.get('/perfil', authMiddleware, usersController.perfil)
+
+router.get('/perfil', authMiddleware, usersController.detailProfile);
 router.get('/logout', usersController.logout)
 
 router.get('/favorites', authMiddleware, usersController.favorites)
