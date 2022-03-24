@@ -13,4 +13,11 @@ document.addEventListener('DOMContentLoaded', function(){
          console.log(e.style.color);
       }
    }))
+
+
+   const dataPaises = async () => {
+      const res = fetch()
+   }
+   
+
 })

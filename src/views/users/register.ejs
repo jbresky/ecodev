@@ -9,7 +9,7 @@
     <h3 class="comunidad">¿Ya tienes una cuenta? <a href="/users/login">Inicia Sesión</a></h3>
 </div>
     <main class="register-container">
-        <form>
+        <form action="/users/register" method="POST">
             <div class="input-form">
                 <label class="label-icon" for="nombre">
                     <!-- <i class="fas fa-id-card"></i> -->
@@ -69,6 +69,7 @@
         </form>
         
     </main>
+    <div style="height: 6rem;"></div>
     <%- include('../partials/footer') %> 
 </body>
 </html>

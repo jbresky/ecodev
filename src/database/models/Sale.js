@@ -6,23 +6,18 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-       order_number: {
+        order: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        date_sale: {
+        date: {
             type: dataTypes.DATE,
             allowNull: false
         },
-        user_id: {
+        cart_id: {
             type: dataTypes.INTEGER,
             allowNull: false,
         },
-        sale_item_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
-       
     }
     let config = {
         timestamps: false,
@@ -32,13 +27,9 @@ module.exports = (sequelize, dataTypes) => {
     const Sale = sequelize.define(alias, cols, config);
 
     Sale.associate = (models) => {
-        Sale.belongsTo(models.User, {
-            as: "user",
-            foreignKey: "user_id"
-        })
-        Sale.hasMany(models.Sale_item, {
-            as: "sale_items",
-            foreignKey: "sale_item_id"
+        Sale.belongsTo(models.Cart, {
+            as: "cart",
+            foreignKey: "carts_id"
         })
     }
     return Sale

@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         name: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(45),
             allowNull: false
         }
     }
@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
     Category.associate = (models) => {
         Category.hasMany(models.Product, {
             as: "products",
-            foreignKey: "category_id"
+            foreignKey: "categories_id"
         })
     }
     return Category

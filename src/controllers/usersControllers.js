@@ -13,31 +13,20 @@ const usersController = {
         res.render('users/login.ejs');
     },
     register: (req,res) => {
-        db.User.create({
-            name:req.params.name,
-            direccion: req.params.direccion,
-            ciudad: req.params.ciudad,
-            email: req.params.email,
-            telefono: req.params.telefono,
-            username: req.params.username,
-            password: req.params.password,
-            password1: req.params.password1,
-        })
-        res.redirect('home');
-        /*res.render('users/register.ejs')*/;
+        res.render('users/register.ejs');
     },
     editProfile: (req,res) => {
-        db.User.update({
-            name:req.params.name,
-            direccion: req.params.direccion,
-            ciudad: req.params.ciudad,
-            email: req.params.email,
-            telefono: req.params.telefono,
-            username: req.params.username,
-            password: req.params.password,
-            password1: req.params.password1,
-        })
-        res.redirect('perfil', {})
+        // db.User.update({
+        //     name:req.params.name,
+        //     direccion: req.params.direccion,
+        //     ciudad: req.params.ciudad,
+        //     email: req.params.email,
+        //     telefono: req.params.telefono,
+        //     username: req.params.username,
+        //     password: req.params.password,
+        //     password1: req.params.password1,
+        // })
+        // res.redirect('perfil', {})
     },
     detailProfile: (req, res) =>{
         res.render('perfil');
@@ -91,7 +80,7 @@ const usersController = {
     },
     favorites: (req, res) => {
         res.render('users/favorites.ejs')
-    },
+    }
 }
 
 module.exports = usersController, users

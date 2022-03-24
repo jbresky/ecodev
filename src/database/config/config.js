@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "joacosql2022",
-    "database": "ecodev_db",
+    "database": "ecodev",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -22,23 +22,22 @@ module.exports = (sequelize, dataTypes) => {
         phone: {
             type: dataTypes.STRING(25)
         },
-        address: {
-            type: dataTypes.STRING(150),
-        },
         country: {
             type: dataTypes.STRING(80),
             allowNull: false,
-            defaultValue: "Argentina"
         },
         province: {
             type: dataTypes.STRING(80),
+        },
+        address: {
+            type: dataTypes.STRING(50),
         },
         password: {
             type: dataTypes.STRING(50),
             allowNull: false
         },
         avatar: {
-            type: dataTypes.STRING(150)
+            type: dataTypes.STRING(100)
         }
     }
     let config = {
@@ -49,9 +48,16 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.associate = (models) => {
-        User.hasMany(models.Sale, {
-            as: "sales",
-            foreignKey: "user_id"
+        User.belongsTo(models.Cart, {
+            as: "cart",
+            foreignKey: "users_id"
+        })
+        User.belongsToMany(models.Product, {
+            as: "products",
+            through: "user_favorites",
+            foreignKey: "users_id",
+            otherKey: "products_id",
+            timestamps: false
         })
     }
     return User

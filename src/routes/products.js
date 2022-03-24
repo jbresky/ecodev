@@ -12,13 +12,13 @@ router.get('/', productsController.products)
 router.get('/cart', productsController.shoppingCart)
 
 router.get('/create', authMiddleware, productsController.createForm)
-router.post('/', productsController.storeProduct)
+// router.post('/create', productsController.storeProduct)
 
 router.get('/detail/:id', productsController.detail)
 router.get('/edit/:id', productsController.edit)
-router.post('/edit/:id', productsController.saveEdit)
+// router.post('/edit/:id', productsController.saveEdit)
 
-router.put('/:id', productsController.change)
+// router.put('/:id', productsController.change)
 router.delete('/:id', productsController.delete)
 
 module.exports = router;

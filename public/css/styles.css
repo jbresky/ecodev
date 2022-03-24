@@ -218,6 +218,7 @@ section.product-box{
     max-width: 1400px;
     padding-top: 2.5rem;
 }
+
 section.product-box div.prod-box{
     display: flex;
     justify-content: center;
@@ -230,17 +231,31 @@ section.product-box div.prod-box{
 }
 section.product-box article.show-products{
     width: 200px;
-    margin: 0 10px;
+    margin: 10px;
 }
 section.product-box div.prod-box article.show-products div{
     width: 200px;
     font-size: .9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
+section.product-box div.prod-box article.show-products div.name{
+    font-weight: 600;
+    padding: 7px 0 10px 0;
+}
+
 section.product-box article.show-products div img{
     height: 200px;
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
+    transition: all .2s;
+}
+
+section.product-box article.show-products div img:hover{
+    transform: scale(1.5);
 }
 
 section.product-box div.side-filter{
@@ -649,7 +664,7 @@ div.newsletter input::placeholder{
 .form-btn-send{
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
 }
 
 .form-header{
@@ -1372,6 +1387,9 @@ End Register Form
         justify-content: space-around;
         padding: 0 2rem;
         margin-top:-30px;
+    }
+    section.icon-text div.container{
+        width: 350px;
     }
     div.eco-activism div h2{
         font-size: 1.6rem;
