@@ -11,28 +11,48 @@
     <main class="register-container">
         <form action="/users/register" method="POST">
             <div class="input-form">
-                <label class="label-icon" for="nombre">
+                <label class="label-icon" for="first_name">
                     <!-- <i class="fas fa-id-card"></i> -->
                 </label>
 
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo" required />
+                <input type="text" name="first_name" id="first_name" placeholder="Nombre" required />
             </div>
 
             <div class="input-form">
-                <label class="label-icon" for="direccion">
-                    <!-- <i class="fas fa-map-marker-alt"></i> -->
+                <label class="label-icon" for="last_name">
+                    <!-- <i class="fas fa-id-card"></i> -->
                 </label>
 
-                <input type="text" name="direccion" id="direccion" placeholder="Dirección" required />
+                <input type="text" name="last_name" id="last_name" placeholder="Apellido" required />
             </div>
 
             <div class="input-form">
-                <label class="label-icon" for="ciudad">
+                <label class="label-icon" for="country">
                     <!-- <i <i class="fas fa-city"></i> -->
                 </label>
 
-                <input type="text-area" name="ciudad" id="ciudad" placeholder="Ciudad" required />
+                <!-- <input type="text-area" name="country" id="country" placeholder="Pais" required /> -->
+                <select name="country" id="country">
+                    <option style="color: gray" disabled selected>País</option>
+                </select>
             </div>
+
+            <div class="input-form">
+                <label class="label-icon" for="province">
+                    <!-- <i <i class="fas fa-city"></i> -->
+                </label>
+
+                <input type="text-area" name="province" id="province" placeholder="Ciudad" required />
+            </div>
+
+            <div class="input-form">
+                <label class="label-icon" for="address">
+                    <!-- <i class="fas fa-map-marker-alt"></i> -->
+                </label>
+
+                <input type="text" name="address" id="address" placeholder="Dirección" required />
+            </div>
+
 
             <div class="input-form">
                 <label class="label-icon" for="email">

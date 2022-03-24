@@ -14,10 +14,24 @@ document.addEventListener('DOMContentLoaded', function(){
       }
    }))
 
+   let selectPaises = document.querySelector('#country')
 
    const dataPaises = async () => {
-      const res = fetch()
+      const res = await fetch('https://restcountries.com/v2/all');
+      const data = await res.json();
+
+      data.forEach(country => {
+         console.log(data);
+         selectPaises.innerHTML += `
+         <option>${country.name}</option>
+         `
+         // console.log(country.name)
+      })
    }
+   dataPaises();
    
+   selectPaises.addEventListener('click', () => {
+      selectPaises.style.color = "black"
+   })
 
 })

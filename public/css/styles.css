@@ -239,6 +239,7 @@ section.product-box div.prod-box article.show-products div{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    border-radius: 5px;
 }
 
 section.product-box div.prod-box article.show-products div.name{
@@ -697,7 +698,7 @@ input#remb{
     width: 20px;
 }
 
-.login-form input, .register-container input{
+.login-form input, .register-container input, .register-container select{
     /* border: 0.5px solid rgb(72, 138, 72); */
     border-radius: 10px;
     outline: none;
@@ -711,7 +712,10 @@ input#remb{
     transition: 500ms ease;  
 }
 
- .login-form input:hover, .login-form input:focus, .register-container input:hover, .register-container input:focus{
+.register-container select{
+    color: gray
+}
+ .login-form input:hover, .login-form input:focus, .register-container input:hover, .register-container input:focus, .register-container select:focus, .register-container select:hover{
     border: 2px solid #000;
 }
 
@@ -1300,7 +1304,7 @@ End Register Form
  /* RESPONSIVE //////////////////////////////////////////////////
  ///////////////////////////////////////////////////////////////*/
  @media(min-width: 380px){
-    .login-form input, .register-container input{
+    .login-form input, .register-container input, .register-container select{
         width: 400px
     }
     div.apps ul li{
