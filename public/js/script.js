@@ -7,31 +7,20 @@ document.addEventListener('DOMContentLoaded', function(){
    fav.forEach(e => e.addEventListener('click', () => {
       if(e.style.color !== "rgb(255, 80, 80)"){
       e.style.color = "rgb(255, 80, 80)"
-      console.log(e.style.color);
+      // console.log(e.style.color);
       } else {
          e.style.color = "#e9b0b0"
-         console.log(e.style.color);
       }
    }))
 
-   let selectPaises = document.querySelector('#country')
+   //Validaciones
 
-   const dataPaises = async () => {
-      const res = await fetch('https://restcountries.com/v2/all');
-      const data = await res.json();
+   let formLogin = document.querySelector('.form-email input');
+   let span = document.querySelector('.form-email span');
 
-      data.forEach(country => {
-         console.log(data);
-         selectPaises.innerHTML += `
-         <option>${country.name}</option>
-         `
-         // console.log(country.name)
-      })
-   }
-   dataPaises();
-   
-   selectPaises.addEventListener('click', () => {
-      selectPaises.style.color = "black"
+   formLogin.addEventListener('blur', function(){
+      span.style.display = 'flex'
    })
+
 
 })

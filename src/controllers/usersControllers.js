@@ -3,8 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
-const usersFilePath = path.join(__dirname, '../data/users.json')
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
+// const usersFilePath = path.join(__dirname, '../data/users.json')
+// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const db = require('../database/models');
 
@@ -76,11 +76,28 @@ const usersController = {
         res.redirect('/')
     },
     processRegister: (req, res) => {
-        
+        let errors = validationResult(req);
+
+        if(!errors){
+            db.User.create({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                country: req.body.country,
+                province: req.body.province,
+                address: req.body.address,
+                email: req.body.email,
+                phone: req.body.phone,
+                avatar: req.body.avatar,
+                password: req.body.password
+            })
+            res.redirect('users/login.ejs')
+        } else {
+            
+        }
     },
     favorites: (req, res) => {
         res.render('users/favorites.ejs')
     }
 }
 
-module.exports = usersController, users
+module.exports = usersController

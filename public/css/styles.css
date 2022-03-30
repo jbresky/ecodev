@@ -401,8 +401,9 @@ div.prod-box article button.off-fixed{
     background-color: #4b813a;
     color: #fafafa;
     border-radius: 20px;
-    padding: 10px 15px;
-    font-weight: 600;
+    padding: 10px 10px;
+    /* font-weight: 600; */
+    font-size: 14px;
     position: absolute;
     bottom: 320px;
     left: -5px;
@@ -721,12 +722,13 @@ input#remb{
 
 /*FRONT VALIDATION LOGIN */
 
-.login-form span{
+.form-email span{
     display: flex;
     font-size: 12px;
     font-weight: 600;
     padding: 10px 0 0 10px;
     color: #bb0f0f;
+    display: none;
 }
 /**/
 
@@ -810,7 +812,7 @@ div.back-create-form{
     position:relative;
     width: 400px;
     background: var(--background-color);
-    padding: 1.4rem 1rem;
+    padding: 1.5rem 1rem;
     color: #ffffff;
     cursor: pointer;
 
@@ -1317,7 +1319,7 @@ End Register Form
         height: 340px;
     }
     div.prod-box article button.off-fixed{
-        left: -20px;
+        left: -10px;
         bottom: 350px;
     }
     div.newsletter input{
@@ -1331,13 +1333,13 @@ End Register Form
         width: 50%;
     }
     section.home-box div.prod-box div{
-        width: 350px;
+        width: 330px;
     }
     section.home-box article {
         width: 350px;
     }
     section.home-box article div img{
-        height: 380px;
+        height: 350px;
     }
     article button.off-fixed{
         left: -20px;

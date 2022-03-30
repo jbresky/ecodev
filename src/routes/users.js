@@ -32,7 +32,7 @@ router.get('/logout', usersController.logout)
 
 router.get('/favorites', authMiddleware, usersController.favorites)
 
-const validation = [
+const validationLogin = [
     check('email')
         .notEmpty().withMessage('Escribí tue email').bail()
         .isEmail().withMessage('Email inválido'),
@@ -41,7 +41,7 @@ const validation = [
         .isLength({min: 8}).withMessage('Mínimo 8 caracteres')
 ]
 
-router.post('/login', validation, usersController.processLogin)
+router.post('/login', validationLogin, usersController.processLogin)
 
 const validatorRegister = [
     check('firstName')
