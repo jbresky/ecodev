@@ -16,7 +16,8 @@ const storage = multer.diskStorage({
         cb(null, './public/img/users')
     },
     filename: (req, file, cb) => {
-        cb(null, `${Date.now()}-${path.extname(file.originalname)}`)
+       let fileName = `${Date.now()}-${path.extname(file.originalname)}`;
+       cb(null, fileName)
     }
 }) 
 
@@ -27,37 +28,38 @@ router.get('/login', guestMiddleware, usersController.login);
 router.get('/register', guestMiddleware, usersController.register);
 // router.post('edit-profile', usersController.editProfile);
 
-router.get('/perfil', authMiddleware, usersController.detailProfile);
+router.get('/profile', authMiddleware, usersController.profile);
 router.get('/logout', usersController.logout)
 
 router.get('/favorites', authMiddleware, usersController.favorites)
 
 const validationLogin = [
     check('email')
-        .notEmpty().withMessage('Escribí tue email').bail()
-        .isEmail().withMessage('Email inválido'),
+        .notEmpty(),
+        // .isEmail().withMessage('Email inválido'),
     check('password')
-        .notEmpty().withMessage('Escribí tu contraseña').bail()
-        .isLength({min: 8}).withMessage('Mínimo 8 caracteres')
+        .notEmpty()
+        .isLength({min: 8})
 ]
 
 router.post('/login', validationLogin, usersController.processLogin)
 
 const validatorRegister = [
-    check('firstName')
-        .notEmpty().withMessage('Colocá tu nombre'),
-    check('lastName')
-        .notEmpty().withMessage('Colocá tu apellido'),
+    check('first_name')
+        .notEmpty()
+        .isLength({min: 4}),
+    check('last_name')
+        .notEmpty(),
     check('email')
-        .notEmpty().withMessage('Escribí tue email').bail()
-        .isEmail().withMessage('Email inválido'),
+        .notEmpty()
+        .isEmail(),
     check('password')
-        .notEmpty().withMessage('Escribí tu contraseña').bail()
-        .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
-    check('address')
-        .notEmpty().withMessage('Colocá tu dirección')
+        .notEmpty()
+        .isLength({min: 8}),
+    check('country')
+        .notEmpty()
 ]
 
-router.post('/register', uploadFile.single('image'), validatorRegister, usersController.processRegister)
+router.post('/register', uploadFile.single('avatar'), validatorRegister, usersController.processRegister)
 
 module.exports = router;

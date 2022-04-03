@@ -10,7 +10,7 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.16.3"
   },
-  "name": "prueba_ecodev",
+  "name": "ecodev",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {

@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `ecodev`.`users` (
   `country` VARCHAR(80),
   `province` VARCHAR(80),
   `address` VARCHAR(50),
-  `password` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(150) NOT NULL,
   `avatar` VARCHAR(100));
   
 -- -----------------------------------------------------

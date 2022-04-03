@@ -1,10 +1,8 @@
 
-const path = require('path');
-const fs = require('fs');
+// const path = require('path');
+// const fs = require('fs');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
-// const usersFilePath = path.join(__dirname, '../data/users.json')
-// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 const db = require('../database/models');
 
@@ -28,47 +26,39 @@ const usersController = {
         // })
         // res.redirect('perfil', {})
     },
-    detailProfile: (req, res) =>{
-        res.render('perfil');
-    },
-
     processLogin: (req, res) => {
-        let errors = validationResult(req);
+         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
-            
-         for(i = 0; i < users.length; i++){
-            if(users[i].email == req.body.email){
-                if(req.body.password == users[i].password){
-                // if(bcrypt.compareSync(req.body.password, users[i].password)){
-                    var usuarioALoguearse = users[i];
-                    req.session.userLogged = usuarioALoguearse;
-                
-                    if(req.body.recordame){
-                        res.cookie('recordame', usuarioALoguearse.email, {
-                            maxAge: (1000 * 60) * 60
+        db.User.findOne(
+            {where:
+                {email: req.body.email}
+            })
+            .then(user => {
+                if(user){
+                if(bcrypt.compareSync(req.body.password, user.password)){
+                    userData = user.dataValues;
+                    delete userData.password
+
+                    req.session.userLogged = userData;
+                        if(req.body.recordame){
+                            res.cookie('recordame', userData.email, {
+                                maxAge: (1000 * 60) * 60
+                            }
+                            )
                         }
-                        )
+                        return res.redirect('/users/profile');
                     }
-                    res.redirect('/users/perfil');
-                }
-            }
-         }
-
-         if(usuarioALoguearse == undefined){
-             res.render('users/login.ejs', {errors: [
-                {msg: 'Credenciales inválidas'}
-            ]})
-         }
-
-        } else {
-             res.render('users/login.ejs', {errors: errors.errors, old: req.body})
-        }
-    },
-    perfil: (req, res) => {
-        // console.log(req.session.userLogged);
-        res.render('users/perfil.ejs', {
-            user: req.session.userLogged
+                    //aca solo enviar si existe el usuario pero no coincide la contraseña,tambien si no existe el usuario
+                 } else {
+                        res.render('users/login.ejs', {errors})
+                    }
+                })
+        },
+       
+    profile: (req, res) => {
+        console.log(req.session.userLogged);
+        res.render('users/profile.ejs', {
+            user: userData
         })
     },
     logout: (req, res) => {
@@ -78,21 +68,19 @@ const usersController = {
     processRegister: (req, res) => {
         let errors = validationResult(req);
 
-        if(!errors){
+        if(errors.isEmpty()){
+          
             db.User.create({
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
-                country: req.body.country,
-                province: req.body.province,
-                address: req.body.address,
-                email: req.body.email,
-                phone: req.body.phone,
-                avatar: req.body.avatar,
-                password: req.body.password
+                ...req.body,
+                avatar: req.file ? req.file.filename : 'default.jpg',
+                password: bcrypt.hashSync(req.body.password, 10)
             })
-            res.redirect('users/login.ejs')
+            .then( createdUser => {
+                return res.redirect('/users/login')
+            })
+            .catch(error => console.log(error))
         } else {
-            
+            res.render('users/register.ejs')
         }
     },
     favorites: (req, res) => {

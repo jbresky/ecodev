@@ -7,31 +7,30 @@
         <%- include('../partials/header')%>
     
         <hr>
-        
-        <% if (typeof errors != 'undefined') { %>
-          <p style="color: red">ERROR</p>
-         <ul>
-           <% for(error of errors) { %> 
-            <li><%= error.msg %></li> 
-            <% } %> 
-         </ul>
-        <% } %>
 
         <div class="form-header">
         <h3 class='title-form'>Inciar sesión</h3>
         <h4 class='comunidad'>¿Aún no tienes una cuenta? <a href="/users/register">Unite a la comunidad</a></h4>
       </div>
+
+      <% if(typeof errors != 'undefined'){ %> 
+      <div class="login-error">
+        <p>ERROR</p>
+           <span>
+             Credenciales inválidas
+           </span>
+        </div>
+     <% } %>
         <main class="login-form">
             <form action="/users/login" method="POST">
-              <div class="form-email">
-              <input type="email" name="email" placeholder="Email">
-              <br>
-              <span>Escribí tu email</span>
+              <div class="input-form">
+              <input type="email" name="email" placeholder="Email" id="inputEmail">
+              <span class="valid-register" id="email-login"></span>
             </div>
 
-            <div class="form-pass">
-              
-              <input type="password" name="password" placeholder="Contraseña">
+            <div class="input-form">
+              <input type="password" name="password" placeholder="Contraseña" id="inputPassword">
+              <span class="valid-register" id="password-login"></span>
             </div>
 
             <div class="form-cookie">
