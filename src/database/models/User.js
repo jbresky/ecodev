@@ -47,17 +47,17 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.associate = (models) => {
-        // User.belongsTo(models.Cart, {
-        //     as: "cart",
-        //     foreignKey: "users_id"
-        // })
-        // User.belongsToMany(models.Product, {
-        //     as: "products",
-        //     through: "user_favorites",
-        //     foreignKey: "users_id",
-        //     otherKey: "products_id",
-        //     timestamps: false
-        // })
+        User.hasOne(models.Cart, {
+            as: "cart",
+            foreignKey: "user_id"
+        })
+        User.belongsToMany(models.Product, {
+            as: "products",
+            through: "user_favorites",
+            foreignKey: "user_id",
+            otherKey: "product_id",
+            timestamps: false
+        })
     }
     return User
 }

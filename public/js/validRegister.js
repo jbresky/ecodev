@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
        if(inputPassowrd.value.length < 8){
         errores.push(5)
-        spanPassword.innerText = "Tu contraseña debe tener al menos 8 caracteres"
+        spanPassword.innerText = "Tu contraseña debe superar los 8 caracteres"
      }
 
        if(errores.length > 0){
@@ -71,6 +71,9 @@ document.addEventListener('DOMContentLoaded', function(){
     let spanName = document.querySelector('#firstName-register');
 
     nameInputChange.addEventListener('input', () => {
+      spans.forEach(span => {
+         span.style.padding = "10px 0";
+      })
       if(nameInputChange.value.length < 2){
         spanName.innerText = "Tu nombre debe superar los 2 caracteres"
       } else {
@@ -82,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function(){
        let spanPassword = document.querySelector('#password-register');
 
     inputPassowrd.addEventListener('input', () => {
+      spans.forEach(span => {
+         span.style.padding = "10px 0";
+      })
       if(inputPassowrd.value.length < 8){
         spanPassword.innerText = "Tu contraseña debe superar los 8 caracteres"
       } else {

@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
         description: {
             type: dataTypes.STRING(200),
         },
-        categories_id: {
+        category_id: {
             type: dataTypes.INTEGER
         }
     }
@@ -34,20 +34,20 @@ module.exports = (sequelize, dataTypes) => {
     Product.associate = (models) => {
         Product.belongsTo(models.Category, {
             as: "category",
-            foreignKey: "categories_id"
+            foreignKey: "category_id"
         })
-        // Product.belongsToMany(models.User, {
-        //     as: "users",
-        //     through: "user_favorites",
-        //     foreignKey: "products_id",
-        //     otherKey: "users_id",
-        //     timestamps: false
-        // })
+        Product.belongsToMany(models.User, {
+            as: "users",
+            through: "user_favorites",
+            foreignKey: "product_id",
+            otherKey: "user_id",
+            timestamps: false
+        })
         Product.belongsToMany(models.Cart, {
             as: "carts",
             through: "carts_has_products",
-            foreignKey: "products_id",
-            otherKey: "carts_id",
+            foreignKey: "product_id",
+            otherKey: "cart_id",
             timestamps: false
         })
     }

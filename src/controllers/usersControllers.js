@@ -47,16 +47,17 @@ const usersController = {
                             )
                         }
                         return res.redirect('/users/profile');
-                    }
-                    //aca solo enviar si existe el usuario pero no coincide la contraseña,tambien si no existe el usuario
-                 } else {
+                    } else {
                         res.render('users/login.ejs', {errors})
                     }
+                 } else {
+                    res.render('users/login.ejs', {errors})
+                 }
                 })
         },
        
     profile: (req, res) => {
-        console.log(req.session.userLogged);
+        console.log(req.cookie);
         res.render('users/profile.ejs', {
             user: userData
         })
