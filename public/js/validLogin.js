@@ -31,22 +31,5 @@ document.addEventListener('DOMContentLoaded', function(){
         })
         }
     })
- 
-  /*  formLogin.addEventListener('change', function(){
-       // if(formLogin.value != '@'){
-          
-       //    span.innerHTML = 'Ingresá un email válido'
-       // }
-       span.style.display = 'none' 
-    })
-    */
- 
-    // let nameInputChange = document.querySelector('#first_name');
-    // let spanName = document.querySelector('#firstName-register');
- 
-    // nameInputChange.addEventListener('change', () => {
-    //     if(nameInputChange.value < 5)
-    //     spanName.innerText = "Tu nombre debe superar los 5 caracteres"
-    // })
  })
  

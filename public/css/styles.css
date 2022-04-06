@@ -299,15 +299,20 @@ div.side-filter ul button{
     background-color: transparent;
     cursor: pointer;
 }
-div.side-filter ul button.search-category{
+button.search-category, button.search-price{
     padding-left: .8rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
-div.side-filter ul button.search-category i{
+button.search-category:focus, button.search-price:focus{
+    outline: 0;
+    box-shadow: inset 0 0 0 3px rgb(177, 201, 177);
+}
+div.side-filter ul button i{
     font-size: 1rem;
+    transition: transform .3s;
 }
 
 div.side-filter ul button.all-category{
@@ -335,6 +340,26 @@ div.side-filter div.filter-price form label{
 div.side-filter div.filter-price form label span{
     font-size: .9rem;
     margin-left: 1rem;
+}
+/* 
+div.side-filter ul.links-filter{
+    height: 0;
+    overflow: hidden;
+}
+div.side-filter ul.links-filter .animation{
+    height: 100%;
+} */
+.dropdown{
+    transition: max-height .5s ease-out;
+    max-height: 20em;
+    overflow: hidden;
+}
+
+.hide{
+    max-height: 0 !important;
+}
+.rotate-90{
+    transform: rotate(180deg);
 }
 /*end prodcut ejs*/
 
@@ -377,7 +402,7 @@ div.prod-box article ul li.prod-price-off{
 div.prod-box article button.add-to-cart{
     margin: auto;
     background: #ffffff;
-    border: 1.5px solid rgb(32, 32, 32);
+    border: 1.5px solid rgb(170 165 165);
     border-radius: 20px;
     padding: 8px 20px;
     transition: all .5s;
@@ -389,8 +414,8 @@ div.prod-box article button.add-to-cart{
 }
 
 div.prod-box article button.add-to-cart:hover{
-    box-shadow: 0 0 0 3px rgb(224, 223, 223);
-    /* border: 1.5px solid rgb(224, 223, 223); */
+    box-shadow: 0 3px 0 3px rgb(224, 223, 223);
+    border: 1.5px solid rgb(224, 223, 223);
 }
 
 div.prod-box article button.off-fixed{
