@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function(){
           spanName.innerText = "Ingresá tu nombre"
        }
        if(inputName.value.length < 5){
-        spanName.innerText = "Tu nombre debe superar los 5 caracteres"
+        spanName.innerText = "Tu nombre debe superar los 2 caracteres"
        }
        if(inputLastName.value == ""){
           errores.push(2)
