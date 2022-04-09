@@ -661,6 +661,7 @@ div.newsletter input::placeholder{
     justify-content: center;
 }
 
+
 .title-form, .crear-producto{
     margin: 50px 0 10px 0;
     font-size: 1.4rem;
@@ -712,6 +713,7 @@ div.newsletter input::placeholder{
     display: flex;
     justify-content: center;
     margin-top: 2.5rem;
+    margin: 20px;
 }
 
 .form-header{
@@ -750,7 +752,7 @@ input#remb{
     outline: none;
     font-size: 14px;
     border: 2px solid #f7f7f7;
-    width: 320px;
+    width: 250px;
     /* border:none; */
     padding: 1.3rem;
     /* padding: 2rem; */
@@ -875,7 +877,7 @@ div.back-create-form{
     border-radius: 100px;
     border: none;
     position:relative;
-    width: 400px;
+    width: 250px;
     background: var(--background-color);
     padding: 1.5rem 1rem;
     color: #ffffff;
@@ -1372,7 +1374,7 @@ End Register Form
  ///////////////////////////////////////////////////////////////*/
  @media(min-width: 380px){
     .login-form input, .register-container input, .register-container select{
-        width: 400px
+        width: 300px
     }
     div.apps ul li{
         margin: 1rem;
@@ -1388,6 +1390,9 @@ End Register Form
         bottom: 350px;
     }
     div.newsletter input{
+        width: 300px;
+    }
+    .form-btn-send button{
         width: 300px;
     }
     
@@ -1428,6 +1433,13 @@ End Register Form
     div.eco-activism div p, div.eco-activism div h2{
         font-size: 1.4rem;
     }
+    .login-form input, .register-container input, .register-container select{
+        width: 400px
+    }
+    .form-btn-send button{
+        width: 400px;
+    }
+
 }
 
 @media(min-width: 771px){
@@ -1481,6 +1493,16 @@ End Register Form
     }
     footer section.f-2 {
         padding-left: 1.5rem;
+    }
+    .register-container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .register-container form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
     
 }
