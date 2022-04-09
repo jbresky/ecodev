@@ -878,6 +878,7 @@ div.back-create-form{
     border: none;
     position:relative;
     width: 250px;
+    height: 85px;
     background: var(--background-color);
     padding: 1.5rem 1rem;
     color: #ffffff;
@@ -1503,6 +1504,7 @@ End Register Form
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        align-items: center;
     }
     
 }

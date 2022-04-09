@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
           errores.push(1)
           spanName.innerText = "Ingresá tu nombre"
        }
-       if(inputName.value.length < 5){
+       if(inputName.value.length < 3){
         spanName.innerText = "Tu nombre debe superar los 2 caracteres"
        }
        if(inputLastName.value == ""){
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function(){
           spanPassword.innerText = "Crea una contraseña"
        }
 
-       if(inputPassowrd.value.length < 8){
+       if(inputPassowrd.value.length < 9){
         errores.push(5)
         spanPassword.innerText = "Tu contraseña debe superar los 8 caracteres"
      }
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function(){
       spans.forEach(span => {
          span.style.padding = "10px 0";
       })
-      if(nameInputChange.value.length < 2){
+      if(nameInputChange.value.length < 3){
         spanName.innerText = "Tu nombre debe superar los 2 caracteres"
       } else {
           spanName.innerText = ""
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function(){
       spans.forEach(span => {
          span.style.padding = "10px 0";
       })
-      if(inputPassowrd.value.length < 8){
+      if(inputPassowrd.value.length < 9){
         spanPassword.innerText = "Tu contraseña debe superar los 8 caracteres"
       } else {
           spanPassword.innerText = ""
