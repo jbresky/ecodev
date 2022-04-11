@@ -285,6 +285,11 @@ section.product-box aside ul.list-category li{
 section.product-box aside ul.list-category li:hover{
     text-decoration: underline;
 }
+
+section.product-box aside ul.list-category li a{
+    color: #000;
+    text-decoration: none;
+}
 section.product-box aside h2{
     padding: 0 0 20px;
     font-size: 20px;

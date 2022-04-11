@@ -33,10 +33,10 @@
                                                      <span>Todas las categorías</span>
                                                  </button>
                                                  <ul class="list-category">
-                                                     <li>Deco</li>
-                                                     <li>Health & Beauty</li>
-                                                     <li>Natural medicine</li>
-                                                     <li>Eco products</li>
+                                                     <li><a href="/products/">Deco</a></li>
+                                                     <li><a href="/products">Health & Beauty</a></li>
+                                                     <li><a href="/products">Natural medicine</a></li>
+                                                     <li><a href="/products">Eco products</a></li>
                                                  </ul>
                                              </li>
                                          </ul>
@@ -73,7 +73,7 @@
                      </aside>
                  </div>
                     <div class="prod-box">
-                        <% products.forEach( (product) => { %>
+                        <% products.forEach( product => { %>
 
                                 <article class="show-products">
                                     <div>
@@ -112,7 +112,7 @@
                     </div>
                 </section>
            
-         
+                <div style="height: 4rem;"></div>
 
         <%- include('../partials/footer')  %> 
     </body>
