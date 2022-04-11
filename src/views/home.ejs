@@ -18,100 +18,25 @@
                 <section class="home-box">
 
                     <div class="prod-box">
-                        <article>
-                            <div>
-                            <img src="/img/products/bottle2.jpg" alt="">
-                        </div>
-                            <button class="off-fixed">19% off</button>
-                            <h3 class="prod-title">Botella térmica</h3>
-                            <br>
-                            <ul>
-                                <a href="">
-                                    <button class="add-to-cart">Agregar al carrito</button>
-                                </a>
-                                <!-- <li class="prod-price">$1200</li> -->
-                                <li class="prod-price-off">$980</li>
-                            </ul>
-                        </article>
-
-                        <article>
-                            <div>
-                            <img src="img/products/acondsolido.png" alt="">
-                        </div>
-                            <button class="off-fixed">25% off</button>
-                            <h3 class="prod-title">Acondicionador sólido</h3>
-                            <br>
-                            <ul>
-                                <a href="">
-                                    <button class="add-to-cart">Agregar al carrito</button>
-                                </a>
-                                <!-- <li class="prod-price">$1200</li> -->
-                                <li class="prod-price-off">$980</li>
-                            </ul>
-                        </article>
-
-                        <article>
-                            <div>
-                            <img src="/img/products/tooth-p.jpg" alt="">
-                        </div>
-                            <button class="off-fixed">30% off</button>
-                            <h3 class="prod-title">Dentrifico con extracto de Eucalipto</h3>
-                            <br>
-                            <ul>
-                                <a href="">
-                                    <button class="add-to-cart">Agregar al carrito</button>
-                                </a>
-                                <!-- <li class="prod-price">$1200</li> -->
-                                <li class="prod-price-off">$980</li>
-                            </ul>
-                        </article>
-                        <article>
-                            <div>
-                            <img src="/img/products/cepillo-off.jpg" alt="">
-                        </div>
-                            <button class="off-fixed">15% off</button>
-                            <h3 class="prod-title">Cepillo de Bamboo Mango Grueso</h3>
-                            <br>
-                            <ul>
-                                <a href="">
-                                    <button class="add-to-cart">Agregar al carrito</button>
-                                </a>
-                                <!-- <li class="prod-price">$1200</li> -->
-                                <li class="prod-price-off">$980</li>
-                            </ul>
-                        </article>
-
-                        <article>
-                            <div>
-                            <img src="/img/products/cremas-2.jpg" alt="">
-                        </div>
-                            <button class="off-fixed">10% off</button>
-                            <h3 class="prod-title">Crema para cuerpo y manos</h3>
-                            <br>
-                            <ul>
-                                <a href="">
-                                    <button class="add-to-cart">Agregar al carrito</button>
-                                </a>
-                                <!-- <li class="prod-price">$1200</li> -->
-                                <li class="prod-price-off">$980</li>
-                            </ul>
-                        </article>
-
-                        <article>
-                            <div>
-                            <img src="/img/products/copita-2.jpg" alt="">
-                        </div>
-                            <button class="off-fixed">20% off</button>
-                            <h3 class="prod-title">Copita menstrual</h3>
-                            <br>
-                            <ul>
-                                <a href="">
-                                    <button class="add-to-cart">Agregar al carrito</button>
-                                </a>
-                                <!-- <li class="prod-price">$1200</li> -->
-                                <li class="prod-price-off">$980</li>
-                            </ul>
-                        </article>
+                        <% products.forEach(product => { %>
+                            <% if(product.insale == 1){ %> 
+                            <article>
+                                <div>
+                                <img src="/img/products/<%= product.image %>" alt="">
+                            </div>
+                                <button class="off-fixed"><%= product.off%>% OFF </button>
+                                <h3 class="prod-title"><%= product.name %> </h3>
+                                <br>
+                                <ul>
+                                    <a href="">
+                                        <button class="add-to-cart">Agregar al carrito</button>
+                                    </a>
+                                    <li class="prod-price">$ <%= product.price%></li>
+                                    <li class="prod-price-off">$ <%= product.price - (product.price * product.off / 100)  %> </li>
+                                </ul>
+                            </article>
+                            <% } %> 
+                        <% }) %>  
                     </div>
                 </section>
                 <br>
@@ -290,9 +215,14 @@
                     <!-- <div> -->
                     <article>
                         <img src="/img/products/deco-bath.jpg" alt="">
-                        <button type="button">
+                        <!-- <form method="POST" action="/users/favs"> -->
+                            <!-- <input id="fav" type="radio">
+                            <label for="fav"> -->
+                        <button id="addToFavs">
+                        <!-- </label> -->
                         <i class="fas fa-heart fav-red"></i>
                     </button>
+                <!-- </form> -->
                         <!-- <span class="material-icons-outlined fav-white">favorite_border</span> -->
                     <span>Producto</span>
                         </article>
@@ -300,9 +230,11 @@
                         <article>
                            
                             <img src="/img/products/cepillo-off.jpg" alt="">
-                            <button>
+                            <!-- <form action="/users/favorites"> -->
+                            <button type="submit">
                             <i class="fas fa-heart fav-red"></i>
                         </button>
+                    <!-- </form> -->
                             <!-- <span class="material-icons-outlined fav-white">favorite_border</span> -->
                             
                         </article>
@@ -341,7 +273,10 @@
 <br>
             <div class="newsletter">
                 <div class="suscribe">
-                    Descuentos del 15%, promociones y los mejores blogs sobre el medioambiente.
+                    <img src="/img/back/mail.png" width="100" alt="">
+                    <span>
+                    Descuentos del 15%, promociones y los mejores blogs.
+                </span>
                 </div>
                 <div>
                     <form action="" method="POST">
