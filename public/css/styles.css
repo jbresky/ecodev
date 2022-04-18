@@ -210,6 +210,8 @@ section.home-box article div img{
     transition:  all .5s;
 }
 
+
+
 /*products ejs*/
 section.product-box{
     display: flex;
@@ -855,7 +857,9 @@ hr {
     justify-content: center;
     align-content: center;
 }
-
+.title h3, p {
+    padding: 0.5rem;
+}
 .title{
     text-align: center;
 }
@@ -912,59 +916,89 @@ hr {
 }
 
 .product-delete i{
-    color:red;
+    color: grey;
     font-size: 1rem;
     margin:15px;
     
 }
-.footer-cart{
-    display: flex;
-    justify-content: space-around;
+.footer-cart {
+    padding:10px;
 }
-
 .total{
-    margin: 20px 80px ;
-}
-
-.forma-pago{
+      
+    height: auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
+    justify-content: center;
+    
+}
 
+.total h3, p{
+    padding: 12px;
+    
 }
-.forma-pago i{
-    font-size: 1rem;    
-    color: rgb(37, 35, 35);
-    margin-top: 1.5rem;
-}
+
+
 .opciones{
     display: flex;    
+    justify-content: center;
 
 }
 .opciones button{
     margin: 10px 5px;
 }
 .btn-continue{
-    border: none;
-    color: blue;
-    text-decoration: underline;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 30px;
+    color: white;
     cursor: pointer;
+    background-color: green;
+    border:none;
+    padding: 8px;
+    transition: background-color;
+    
+    
 }
 .btn-end{
+    text-decoration: none;
     background-color: green;
     color: white;
-    height: 30px;
-    border-radius: 7px;
+    margin: 5px;
+    border-radius: 30px;
     border: none;
+    padding: 8px;
+    transition: background-color;
+    
 }
 
-.btn-end:hover{
-    box-shadow: 3px 3px 10px rgb(37, 35, 35);
+.btn-end:hover {
+    
+    background-color: rgb(204, 201, 201);
+    transition:  0.5s;
+    cursor: pointer;
 }
+
+.btn-continue:hover {
+
+    background-color: rgb(204, 201, 201);
+    cursor:pointer;
+    transition:  0.5s;
+    cursor: pointer;
+    }
+
+
+@media(min-width: 771px) {
+    .total{
+    justify-content: flex-end;
+    margin-right: 8rem; }
+
+}
+
 /***********************************************************
     End shooping cart
-*/
+
+
+/*CART //////////////////////////////////////////*/
 
 
 /*BANNER HOME*/
@@ -1293,6 +1327,18 @@ section.recommend article i{
 section.recommend article i:hover{
     background-color: #f0f0f0;
 }
+.bar {
+    display: block;
+    width: 19px;
+    height: 2px;
+    margin: 3px 1rem 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+    
+    
+
+}
 /********************************************************
 End Register Form
 */
@@ -1323,6 +1369,9 @@ End Register Form
     div.newsletter input{
         width: 300px;
     }
+    
+    
+   
     
 }
 
@@ -1361,6 +1410,7 @@ End Register Form
     div.eco-activism div p, div.eco-activism div h2{
         font-size: 1.4rem;
     }
+
 }
 
 @media(min-width: 771px){
@@ -1371,8 +1421,9 @@ End Register Form
     .items li {
         margin: 0 10px
     }
-    .burger {
-        display: none;
+    .burguer {
+        display:none;
+        
     }
     .logo {
         order: -1;
