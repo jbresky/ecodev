@@ -1,95 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head') %> 
-<body>
-    <%- include('../partials/header') %> 
-    <hr>
-<div class="form-header">
-    <h3 class="title-form">Nuevo Usuario</h3>
-    <h3 class="comunidad">¿Ya tienes una cuenta? <a href="/users/login">Inicia Sesión</a></h3>
-</div>
-    <main class="register-container">
-        <form action="/users/register" method="POST">
-            <div class="input-form">
-                <label class="label-icon" for="first_name">
-                    <!-- <i class="fas fa-id-card"></i> -->
-                </label>
+<%- include('../partials/head') %>
 
-                <input type="text" name="first_name" id="first_name" placeholder="Nombre" required />
+    <body>
+        <%- include('../partials/header') %>
+            <hr>
+
+            <div class="form-header">
+                <h3 class="title-form">Nuevo Usuario</h3>
+                <h3 class="comunidad">¿Ya tienes una cuenta? <a href="/users/login">Inicia Sesión</a></h3>
             </div>
 
-            <div class="input-form">
-                <label class="label-icon" for="last_name">
-                    <!-- <i class="fas fa-id-card"></i> -->
-                </label>
-
-                <input type="text" name="last_name" id="last_name" placeholder="Apellido" required />
+            <div class="register-error">
+                <p>ERROR</p>
+                <span>
+                    Revisá los campos
+                </span>
             </div>
 
-            <div class="input-form">
-                <label class="label-icon" for="country">
-                    <!-- <i <i class="fas fa-city"></i> -->
-                </label>
+            <main class="register-container">
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
+                    <div class="input-form">
+                        <label class="label-icon" for="first_name">
+                            <!-- <i class="fas fa-id-card"></i> -->
+                            Nombre
+                        </label>
 
-                <!-- <input type="text-area" name="country" id="country" placeholder="Pais" required /> -->
-                <select name="country" id="country">
-                    <option style="color: gray" disabled selected>País</option>
-                </select>
-            </div>
+                        <input type="text" name="first_name" id="first_name" />
+                        <span class="valid-register" id="firstName-register"></span>
+                    </div>
 
-            <div class="input-form">
-                <label class="label-icon" for="province">
-                    <!-- <i <i class="fas fa-city"></i> -->
-                </label>
+                    <div class="input-form">
+                        <label class="label-icon" for="last_name">
+                            Apellido
+                            <!-- <i class="fas fa-id-card"></i> -->
+                        </label>
 
-                <input type="text-area" name="province" id="province" placeholder="Ciudad" required />
-            </div>
+                        <input type="text" name="last_name" id="last_name" />
+                        <span class="valid-register" id="lastName-register"></span>
+                    </div>
 
-            <div class="input-form">
-                <label class="label-icon" for="address">
-                    <!-- <i class="fas fa-map-marker-alt"></i> -->
-                </label>
+                    <div class="input-form">
+                        <label class="label-icon" for="country">
 
-                <input type="text" name="address" id="address" placeholder="Dirección" required />
-            </div>
+                            País
+                        </label>
+                        <select name="country" id="country">
+                            <option style="color: gray" disabled selected>--</option>
+                        </select>
+                        <span class="valid-register" id="country-register"></span>
+                    </div>
+
+                    <div class="input-form">
+                        <label class="label-icon" for="province">
+                            <!-- <i <i class="fas fa-city"></i> -->
+                            Ciudad
+                        </label>
+                        <input type="text-area" name="province" id="province" />
+                    </div>
+
+                    <div class="input-form">
+                        <label class="label-icon" for="address">
+                            Dirección
+                            <!-- <i class="fas fa-map-marker-alt"></i> -->
+                        </label>
+                        <input type="text" name="address" id="address" />
+
+                    </div>
+
+                    <div class="input-form">
+                        <label class="label-icon" for="email">
+                            Email
+                            <!-- <i class="fas fa-envelope"></i> -->
+                        </label>
+                        <input type="email" name="email" id="email" />
+                        <span class="valid-register" id="email-register"></span>
+                    </div>
+
+                    <div class="input-form">
+
+                        <label class="label-icon" for="phone">
+                            Teléfono
+                            <!-- <i class="fas fa-phone-alt"></i> -->
+                        </label>
+                        <input type="text" name="phone" id="phone" />
+                    </div>
+
+                    <div class="input-form">
+                        <label for="avatar">
+                            Avatar
+                            <!-- <i class="fas fa-phone-alt"></i> -->
+                        </label>
+                        <input type="file" name="avatar" id="avatar" accept=".jpg, .png, .jpeg, .gif" />
+                    </div>
+
+                    <div class="input-form">
+                        <label class="label-icon" for="password">
+                            Contraseña
+                            <!-- <i class="fas fa-lock"></i> -->
+                        </label>
+                        <input type="password" name="password" id="password" />
+                        <span class="valid-register" id="password-register"></span>
+                    </div>
+
+                    <div class="form-btn-send">
+                        <button type="submit">Crear cuenta</button>
+                    </div>
 
 
-            <div class="input-form">
-                <label class="label-icon" for="email">
-                    <!-- <i class="fas fa-envelope"></i> -->
-                </label>
-                <input type="email" name="email" id="email" placeholder="Email" required />
-            </div>
+                </form>
 
-            <div class="input-form">                
+            </main>
+            <div style="height: 6rem;"></div>
+            <%- include('../partials/footer') %>
+    </body>
 
-                <label class="label-icon" for="telefono">
-                    <!-- <i class="fas fa-phone-alt"></i> -->
-                </label>
-                <input type="text" name="telefono" id="telefono" placeholder="Telefono" />
-            </div>
-            <div class="input-form">
-                <label class="label-icon" for="password">
-                    <!-- <i class="fas fa-lock"></i> -->
-                </label>
-                <input type="password" name="password" id="password" placeholder="Contraseña" required />
-            </div>
-            <div class="input-form">
-                <label class="label-icon" for="password1">
-                    <!-- <i class="fas fa-lock"></i> -->
-                </label>
-                <input type="password" name="password1" id="password1" placeholder=" Repetir Contraseña" required />
-            </div>           
-          
-            <div class="form-btn-send">
-                <button type="submit">Crear cuenta</button>
-            </div>
-
-            
-        </form>
-        
-    </main>
-    <div style="height: 6rem;"></div>
-    <%- include('../partials/footer') %> 
-</body>
 </html>

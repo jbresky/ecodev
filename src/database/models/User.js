@@ -24,7 +24,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         country: {
             type: dataTypes.STRING(80),
-            allowNull: false,
         },
         province: {
             type: dataTypes.STRING(80),
@@ -48,15 +47,15 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.associate = (models) => {
-        User.belongsTo(models.Cart, {
+        User.hasOne(models.Cart, {
             as: "cart",
-            foreignKey: "users_id"
+            foreignKey: "user_id"
         })
         User.belongsToMany(models.Product, {
             as: "products",
             through: "user_favorites",
-            foreignKey: "users_id",
-            otherKey: "products_id",
+            foreignKey: "user_id",
+            otherKey: "product_id",
             timestamps: false
         })
     }

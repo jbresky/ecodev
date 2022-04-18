@@ -9,14 +9,14 @@ const mainRoutes = require('./routes/main')
 const usersRoutes = require('./routes/users')
 const productsRoutes = require('./routes/products');
 const loggedMiddleware = require('./middlewares/loggedMiddleware')
-const cookieMiddleware = require('./middlewares/cookieAuthMiddleware')
+// const cookieMiddleware = require('./middlewares/cookieAuthMiddleware')
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(session({secret: 'Eco-secret!!', resave: false, saveUninitialized: false}))
 app.use(cookieParser())
 app.use(loggedMiddleware)
-app.use(cookieMiddleware)
+// app.use(cookieMiddleware)
 
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
@@ -37,8 +37,8 @@ app.set('views', 'src/views');
 
                                                                                                                                                  
 
-// app.use((req, res, next) => {
-//     res.status(404).render(path.join(__dirname, '../views/not-found'))
-// });
+app.use((req, res, next) => {
+    res.status(404).render(path.join(__dirname, './views/not-found'))
+});
 
 

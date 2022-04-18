@@ -287,6 +287,11 @@ section.product-box aside ul.list-category li{
 section.product-box aside ul.list-category li:hover{
     text-decoration: underline;
 }
+
+section.product-box aside ul.list-category li a{
+    color: #000;
+    text-decoration: none;
+}
 section.product-box aside h2{
     padding: 0 0 20px;
     font-size: 20px;
@@ -301,15 +306,20 @@ div.side-filter ul button{
     background-color: transparent;
     cursor: pointer;
 }
-div.side-filter ul button.search-category{
+button.search-category, button.search-price{
     padding-left: .8rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
-div.side-filter ul button.search-category i{
+button.search-category:focus, button.search-price:focus{
+    outline: 0;
+    box-shadow: inset 0 0 0 3px rgb(177, 201, 177);
+}
+div.side-filter ul button i{
     font-size: 1rem;
+    transition: transform .3s;
 }
 
 div.side-filter ul button.all-category{
@@ -337,6 +347,26 @@ div.side-filter div.filter-price form label{
 div.side-filter div.filter-price form label span{
     font-size: .9rem;
     margin-left: 1rem;
+}
+/* 
+div.side-filter ul.links-filter{
+    height: 0;
+    overflow: hidden;
+}
+div.side-filter ul.links-filter .animation{
+    height: 100%;
+} */
+.dropdown{
+    transition: max-height .5s ease-out;
+    max-height: 20em;
+    overflow: hidden;
+}
+
+.hide{
+    max-height: 0 !important;
+}
+.rotate-90{
+    transform: rotate(180deg);
 }
 /*end prodcut ejs*/
 
@@ -366,7 +396,7 @@ div.prod-box article ul li.prod-price{
     color: #6aa757;
     margin: 0 7px; 
     text-decoration: line-through;
-    font-size: 1rem;
+    font-size: 14px;
 }
 
 div.prod-box article ul li.prod-price-off{
@@ -379,7 +409,7 @@ div.prod-box article ul li.prod-price-off{
 div.prod-box article button.add-to-cart{
     margin: auto;
     background: #ffffff;
-    border: 1.5px solid rgb(32, 32, 32);
+    border: 1.5px solid rgb(170 165 165);
     border-radius: 20px;
     padding: 8px 20px;
     transition: all .5s;
@@ -391,8 +421,8 @@ div.prod-box article button.add-to-cart{
 }
 
 div.prod-box article button.add-to-cart:hover{
-    box-shadow: 0 0 0 3px rgb(224, 223, 223);
-    /* border: 1.5px solid rgb(224, 223, 223); */
+    box-shadow: 0 3px 0 3px rgb(224, 223, 223);
+    border: 1.5px solid rgb(224, 223, 223);
 }
 
 div.prod-box article button.off-fixed{
@@ -403,8 +433,9 @@ div.prod-box article button.off-fixed{
     background-color: #4b813a;
     color: #fafafa;
     border-radius: 20px;
-    padding: 10px 15px;
-    font-weight: 600;
+    padding: 10px 10px;
+    /* font-weight: 600; */
+    font-size: 14px;
     position: absolute;
     bottom: 320px;
     left: -5px;
@@ -421,7 +452,6 @@ section.icon-text{
 div.container{
     margin: 20px
 }
-
 
 section.icon-text div.container{
     display: flex;
@@ -593,6 +623,8 @@ section.middle-home {
 
 div.newsletter div{
         position: relative;
+        display: flex;
+        align-items: center;
         font-size: 1rem;
         width: 300px;
         color: rgb(25, 18, 79);
@@ -638,6 +670,7 @@ div.newsletter input::placeholder{
     justify-content: center;
 }
 
+
 .title-form, .crear-producto{
     margin: 50px 0 10px 0;
     font-size: 1.4rem;
@@ -664,10 +697,32 @@ div.newsletter input::placeholder{
     text-align: center;
 }
 
-.form-btn-send{
+.input-form{
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-email label, .form-pass label, .input-form label{
+    padding-bottom: 7px;
+    padding-left: 4px;
+    font-size: 15px;
+    color: #3a3a3a;
+}
+
+.login-form .form-btn-send{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.register-container .form-btn-send{
     display: flex;
     justify-content: center;
     margin-top: 2.5rem;
+    margin: 20px;
 }
 
 .form-header{
@@ -706,9 +761,9 @@ input#remb{
     outline: none;
     font-size: 14px;
     border: 2px solid #f7f7f7;
-    width: 320px;
+    width: 250px;
     /* border:none; */
-    padding: 1.2rem;
+    padding: 1.3rem;
     /* padding: 2rem; */
     background-color: #f7f7f7;
     transition: 500ms ease;  
@@ -721,18 +776,39 @@ input#remb{
     border: 2px solid #000;
 }
 
-/*FRONT VALIDATION LOGIN */
-
-.login-form span{
-    display: flex;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 10px 0 0 10px;
-    color: #bb0f0f;
+/*FORMS VALIDATION */
+div.register-error{
+    margin: auto;
+    display: none;
+    text-align: center;
+    border: 1.5px solid #e4e4e4;
+    width: 200px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 6px 6px 0 rgb(207, 207, 207);
 }
-/**/
-
-
+div.register-error p, div.login-error p{
+    color: #c52e2e;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+div.login-error{
+    margin: auto;
+    text-align: center;
+    border: 1.5px solid #e4e4e4;
+    width: 200px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 6px 6px 0 rgb(207, 207, 207);
+}
+span.valid-register{
+    font-size: 14px;
+    color: #cd1010;
+}
 /******* 
 CREATE FORM
 ********/
@@ -810,9 +886,10 @@ div.back-create-form{
     border-radius: 100px;
     border: none;
     position:relative;
-    width: 400px;
+    width: 250px;
+    height: 85px;
     background: var(--background-color);
-    padding: 1.4rem 1rem;
+    padding: 1.5rem 1rem;
     color: #ffffff;
     cursor: pointer;
 
@@ -843,6 +920,67 @@ hr {
     width: 98%;
     margin: auto
 }
+
+/*  PROFILE VIEW  */
+
+main.profile{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    padding: 5rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+div.user-container{
+    height: 300px;
+    /* text-align: center; */
+    /* margin: 0 2rem; */
+    display: flex;
+    flex: .75;
+    border-radius: 10px;
+    background-color: #ececec99;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgb(0 0 0 / 25%) 0 1px 2px;
+}
+
+div.avatar-container{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+div.avatar-container img{
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%
+}
+div.profile-sidebar{
+    background-color: #ffffff;
+    flex: .2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* padding-left: 2rem; */
+}
+div.profile-sidebar h3{
+    /* font-weight: normal; */
+    /* padding-top: .8rem; */
+    padding: 15px 0;
+    align-self: flex-start;
+}
+div.edit-profile button{
+    width: 100%;
+    background-color: #53575e;
+    color: #ffffff;
+    padding: 7px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+div.edit-profile button:hover{
+    background-color: #343940
+}
+
 
 /*****************************************/
   /*CARRITO DE COMPRAS*/
@@ -1324,6 +1462,12 @@ section.recommend article i{
     /* z-index: -1; */
 }
 
+input#fav{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: .1;
+}
 section.recommend article i:hover{
     background-color: #f0f0f0;
 }
@@ -1351,7 +1495,7 @@ End Register Form
  ///////////////////////////////////////////////////////////////*/
  @media(min-width: 380px){
     .login-form input, .register-container input, .register-container select{
-        width: 400px
+        width: 300px
     }
     div.apps ul li{
         margin: 1rem;
@@ -1363,10 +1507,13 @@ End Register Form
         height: 340px;
     }
     div.prod-box article button.off-fixed{
-        left: -20px;
+        left: -10px;
         bottom: 350px;
     }
     div.newsletter input{
+        width: 300px;
+    }
+    .form-btn-send button{
         width: 300px;
     }
     
@@ -1380,13 +1527,13 @@ End Register Form
         width: 50%;
     }
     section.home-box div.prod-box div{
-        width: 350px;
+        width: 330px;
     }
     section.home-box article {
         width: 350px;
     }
     section.home-box article div img{
-        height: 380px;
+        height: 350px;
     }
     article button.off-fixed{
         left: -20px;
@@ -1410,6 +1557,15 @@ End Register Form
     div.eco-activism div p, div.eco-activism div h2{
         font-size: 1.4rem;
     }
+<<<<<<< HEAD
+=======
+    .login-form input, .register-container input, .register-container select{
+        width: 400px
+    }
+    .form-btn-send button{
+        width: 400px;
+    }
+>>>>>>> cde6adf9011ad59096702a257c6b86fb4f977b01
 
 }
 
@@ -1465,6 +1621,17 @@ End Register Form
     }
     footer section.f-2 {
         padding-left: 1.5rem;
+    }
+    .register-container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .register-container form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
     }
     
 }

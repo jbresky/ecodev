@@ -37,6 +37,7 @@ const productsController = {
     },
 
     detail: (req, res) => {
+<<<<<<< HEAD
         
 
         /*let product = JSON.parse(productJson)
@@ -45,6 +46,13 @@ const productsController = {
             res.render('detail-prod', {product:searchProduct})
         })*/
         let product = JSON.parse(productJson);
+=======
+        db.Product.findByPk(req.params.id)
+        .then(product => {
+            res.render('products/detailProduct.ejs', {product})
+        })
+        /*let product = JSON.parse(productJson);
+>>>>>>> cde6adf9011ad59096702a257c6b86fb4f977b01
         let searchProduct = product.find(result => result.id == req.params.id)
         res.render('products/detail-prod.ejs', {searchProduct});
     },
