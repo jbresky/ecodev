@@ -3,12 +3,13 @@ const {check} = require('express-validator');
 const router = express.Router();
 const path = require('path'); 
 
-const productsController = require('../controllers/productsControllers');
+const productsController = require('../controllers/productsController');
 // const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
 
 //router.get('/', productsController.list)
 router.get('/', productsController.products)
+router.get('/deco', productsController.deco)
 router.get('/cart', productsController.shoppingCart)
 
 router.get('/create', authMiddleware, productsController.createForm)
@@ -20,5 +21,7 @@ router.get('/edit/:id', productsController.edit)
 
 // router.put('/:id', productsController.change)
 router.delete('/:id', productsController.delete)
+router.get('/search', productsController.search)
+
 
 module.exports = router;

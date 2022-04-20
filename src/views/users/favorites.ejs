@@ -3,4 +3,13 @@
 
 <%- include('../partials/header')%>
 
+ <!--Si tiene favorito, que muestre-->
+
+<h1>Hola, este es tu producto:
+
+  <% for(j = 0; j < favs[i].products.length; j++){ %> 
+    <span><%= favs[i].products[j].category %></span>
+<% } %> 
+</h1>
+
 <%- include('../partials/footer')%>

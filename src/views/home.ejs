@@ -18,25 +18,32 @@
                 <section class="home-box">
 
                     <div class="prod-box">
-                        <% products.forEach(product => { %>
-                            <% if(product.insale == 1){ %> 
-                            <article>
-                                <div>
-                                <img src="/img/products/<%= product.image %>" alt="">
-                            </div>
-                                <button class="off-fixed"><%= product.off%>% OFF </button>
-                                <h3 class="prod-title"><%= product.name %> </h3>
-                                <br>
-                                <ul>
-                                    <a href="">
-                                        <button class="add-to-cart">Agregar al carrito</button>
-                                    </a>
-                                    <li class="prod-price">$ <%= product.price%></li>
-                                    <li class="prod-price-off">$ <%= product.price - (product.price * product.off / 100)  %> </li>
-                                </ul>
-                            </article>
-                            <% } %> 
-                        <% }) %>  
+                        <% products.forEach(product=> { %>
+                            <% if(product.insale==1){ %>
+                                <article>
+                                    <div>
+                                        <img src="/img/products/<%= product.image %>" alt="">
+                                    </div>
+                                    <button class="off-fixed">
+                                        <%= product.off%>% OFF
+                                    </button>
+                                    <h3 class="prod-title">
+                                        <%= product.name %>
+                                    </h3>
+                                    <br>
+                                    <ul>
+                                        <a href="">
+                                            <button class="add-to-cart">Agregar al carrito</button>
+                                        </a>
+                                        <li class="prod-price">$ <%= product.price%>
+                                        </li>
+                                        <li class="prod-price-off">$ <%= product.price - (product.price * product.off /
+                                                100) %>
+                                        </li>
+                                    </ul>
+                                </article>
+                                <% } %>
+                                    <% }) %>
                     </div>
                 </section>
                 <br>
@@ -46,8 +53,8 @@
                     <div class="prod-box">
                         <article>
                             <div>
-                            <img src="/img/products/bambu.png" alt="">
-                        </div>
+                                <img src="/img/products/bambu.png" alt="">
+                            </div>
                             <a class="gama" href="#/products/eco-products">
                                 <button class="gama">Comprar cepillos</button>
                             </a>
@@ -55,21 +62,21 @@
                         </article>
                         <article>
                             <div>
-                            <img src="img/products/cbd2.jpg" alt="">
-                        </div>
+                                <img src="img/products/cbd2.jpg" alt="">
+                            </div>
                             <a class="gama" href="#/products/natural-medicine">
                                 <button class="gama">Comprar CBD</button>
                             </a>
                         </article>
                         <article>
                             <div>
-                            <img src="/img/products/eco-bag.png" alt="">
-                        </div>
+                                <img src="/img/products/eco-bag.png" alt="">
+                            </div>
                             <a class="gama" href="#/products/eco-products">
                                 <button class="gama">Comprar eco-products</button>
                             </a>
                         </article>
-                        </div>
+                    </div>
                 </section>
 
                 <section class="icon-text">
@@ -113,30 +120,30 @@
                 </section>
                 <section class="home-box">
                     <div class="prod-box">
-                    <article>
-                        <div>
-                        <img src="/img/products/deco-bath.jpg" alt="">
-                    </div>
-                        <a class="gama" href="#/products/deco">
-                            <button class="gama">Comprar deco</button>
-                        </a>
-                    </article>
-                    <article>
-                        <div>
-                        <img src="/img/products/cremas.jpg" alt="">
-                    </div>
-                        <a class="gama" href="#/products/health&beauty">
-                            <button class="gama">Comprar cremas</button>
-                        </a>
-                    </article>
-                    <article>
-                        <div>
-                        <img src="/img/shampoograso.png" alt="">
-                    </div>
-                        <a class="gama" href="#/products/health&beauty">
-                            <button class="gama">Comprar shampoo</button>
-                        </a>
-                    </article>
+                        <article>
+                            <div>
+                                <img src="/img/products/deco-bath.jpg" alt="">
+                            </div>
+                            <a class="gama" href="#/products/deco">
+                                <button class="gama">Comprar deco</button>
+                            </a>
+                        </article>
+                        <article>
+                            <div>
+                                <img src="/img/products/cremas.jpg" alt="">
+                            </div>
+                            <a class="gama" href="#/products/health&beauty">
+                                <button class="gama">Comprar cremas</button>
+                            </a>
+                        </article>
+                        <article>
+                            <div>
+                                <img src="/img/shampoograso.png" alt="">
+                            </div>
+                            <a class="gama" href="#/products/health&beauty">
+                                <button class="gama">Comprar shampoo</button>
+                            </a>
+                        </article>
                     </div>
                 </section>
             </main>
@@ -150,45 +157,45 @@
                     <div>
                         <!-- <span class="gray">EcoDev te propone una vida mas</span><span class="green"> natural,
                             sustentable y ecológica</span> -->
-                            <!-- <span>Recomendaciones de blogs, preparados especialmente para vos.</span> -->
-                            <h2>El estado del planeta</h2>
-                            <p>Noticias actualizadas para vos.</p>
+                        <!-- <span>Recomendaciones de blogs, preparados especialmente para vos.</span> -->
+                        <h2>El estado del planeta</h2>
+                        <p>Noticias actualizadas para vos.</p>
                     </div>
                 </div>
 
                 <section class="notes">
                     <section class="notes-img">
                         <div class="display-tablet">
-                        <article>
-                            <a href="" class="ocean">
-                                <img src="img/back/ocean.jpg" alt="">
-                            El uso innecesario del plástico y cómo afecta a los oceanos.
-                            </a>
-                            <!-- <span>
+                            <article>
+                                <a href="" class="ocean">
+                                    <img src="img/back/ocean.jpg" alt="">
+                                    El uso innecesario del plástico y cómo afecta a los oceanos.
+                                </a>
+                                <!-- <span>
                                 Oceános y el plástico: cómo influyen en el ambiente
                             </span> -->
-                        </article>
-                        <article>
-                            <a href="" class="forest">
-                                <img src="img/back/forest.jpg" alt="">
-                              Mil hectáreas de reserva natural: conocé los bosques Ecodev.
-                            </a>
-                            <!-- <span>
+                            </article>
+                            <article>
+                                <a href="" class="forest">
+                                    <img src="img/back/forest.jpg" alt="">
+                                    Mil hectáreas de reserva natural: conocé los bosques Ecodev.
+                                </a>
+                                <!-- <span>
                                 2 mil hectáreas de reserva natural: conocé los bosques Ecodev 
                             </span> -->
-                        </article>
-                    </div>
+                            </article>
+                        </div>
                         <div class="display-desktop">
-                        <article>
-                            <a href="" class="third">
-                                <img src="img/back/tercera.jpg" alt="">
-                               ¿Viajas a la montaña? No vayas sin antes leer esta guía.
-                            </a>
-                            <!-- <span>
+                            <article>
+                                <a href="" class="third">
+                                    <img src="img/back/tercera.jpg" alt="">
+                                    ¿Viajas a la montaña? No vayas sin antes leer esta guía.
+                                </a>
+                                <!-- <span>
                                 En tu visita a la montaña no olvides tu botella térmica
                             </span> -->
-                        </article>
-                    </div>
+                            </article>
+                        </div>
                     </section>
                     <!-- <br>
                     <br>
@@ -196,9 +203,9 @@
                     <br> -->
                     <br>
                     <br>
-                  
+
                 </section>
-                   
+
 
                 <br>
                 <br>
@@ -208,90 +215,54 @@
                 <br>
                 <br>
             </section>
-          
-            <section class="recommend">
+
+            <section class="highlight">
                 <h2>Productos destacados</h2>
-                <div class="recommend-container">
-                    <!-- <div> -->
-                    <article>
-                        <img src="/img/products/deco-bath.jpg" alt="">
-                        <!-- <form method="POST" action="/users/favs"> -->
-                            <!-- <input id="fav" type="radio">
-                            <label for="fav"> -->
-                        <button id="addToFavs">
-                        <!-- </label> -->
-                        <i class="fas fa-heart fav-red"></i>
-                    </button>
-                <!-- </form> -->
-                        <!-- <span class="material-icons-outlined fav-white">favorite_border</span> -->
-                    <span>Producto</span>
-                        </article>
-                    <!-- </div> -->
-                        <article>
-                           
-                            <img src="/img/products/cepillo-off.jpg" alt="">
-                            <!-- <form action="/users/favorites"> -->
-                            <button type="submit">
-                            <i class="fas fa-heart fav-red"></i>
-                        </button>
-                    <!-- </form> -->
-                            <!-- <span class="material-icons-outlined fav-white">favorite_border</span> -->
-                            
-                        </article>
-                        <article>
-                          
-                            <img src="/img/products/cremas.jpg" alt="">
-                            <button>
-                            <i class="fas fa-heart fav-red"></i>
-                        </button>
-                            <!-- <span class="material-icons-outlined fav-white">favorite_border</span> -->
-                           
-                        </article>
-                        <article>
-                           
-                            <img src="/img/products/cremas.jpg" alt="">
-                            <button>
-                            <i class="fas fa-heart fav-red"></i>
-                        </button>
-                            <!-- <span class="material-icons-outlined fav-white">favorite_border</span> -->
-                         
-                        </article>
-                        <article>
-                            
-                            <img src="/img/products/cremas.jpg" alt="">
-                            <button>
-                            <i class="fas fa-heart fav-red"></i>
-                        </button>
-                            <!-- <span class="material-icons-outlined fav-white">favorite_border</span> -->
-                           
-                        </article>
+                <div class="highlight-container">
+                    <% products.forEach(product=> { %>
+                        <% if(product.highlight==1){ %>
+                            <article>
+                                <img src="/img/products/<%= product.image %> " alt="">
+
+                                <button id="addToFavs" onclick="addProductToFav('<%= product.id %>')">
+
+                                    <i class="fas fa-heart fav-red"></i>
+                                </button>
+                                <div>
+                                    <%= product.name %>
+                                </div>
+                            </article>
+                            <% } %>
+                                <% }) %>
+
                 </div>
             </section>
-<br>
-<br>
-<br>
-<br>
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="newsletter">
                 <div class="suscribe">
                     <img src="/img/back/mail.png" width="100" alt="">
                     <span>
-                    Descuentos del 15%, promociones y los mejores blogs.
-                </span>
+                        Descuentos del 15%, promociones y los mejores blogs.
+                    </span>
                 </div>
                 <div>
-                    <form action="" method="POST">
-                    <input type="email" name="news-email" id="" placeholder="Dejanos tu correo">
-                    <button type="submit"><i class="far fa-paper-plane"></i></button>
-                </form>
+                    <form action="/" method="GET">
+                        <input type="email" name="news-email" id="" placeholder="Dejanos tu correo">
+                        <button type="submit"><i class="far fa-paper-plane"></i></button>
+                    </form>
                 </div>
-                <p>Al inscribirte, aceptas nuestra <a>Política de privacidad</a> y recibir correos promocionales (date de baja cuando quieras).</p>
+                <p>Al inscribirte, aceptas nuestra <a>Política de privacidad</a> y recibir correos promocionales (date
+                    de baja cuando quieras).</p>
             </div>
-       
+
             <div style="height: 4rem;"></div>
 
-            <%- include('./partials/footer') %> 
+            <%- include('./partials/footer') %>
 
-          
+
     </body>
 
 

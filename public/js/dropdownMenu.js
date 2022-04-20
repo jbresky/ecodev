@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(el.className.indexOf(className) != -1){
             el.className = el.className.replace(className, '')
         } else {
-            el.className = el.className.replace(/\s+/g, ' ') + '' + className;
+            el.className = el.className.replace(' ', ' ') + '' + className;
         }
     }
 

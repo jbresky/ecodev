@@ -33,11 +33,10 @@
                                                      <span>Todas las categorías</span>
                                                  </button>
                                                  <ul class="list-category">
-                                                    <li><a href="/products">Personal Care</a></li>
-                                                    <li><a href="/products">Health & Beauty</a></li>
-                                                    <li><a href="/products">Natural medicine</a></li>
-                                                    <li><a href="/products">Eco products</a></li>
-                                                    <li><a href="/products/deco">Deco</a></li>
+                                                     <li><a onclick="getDeco()">Deco</a></li>
+                                                     <li><a href="/products">Health & Beauty</a></li>
+                                                     <li><a href="/products">Natural medicine</a></li>
+                                                     <li><a href="/products">Eco products</a></li>
                                                  </ul>
                                              </li>
                                          </ul>
@@ -74,15 +73,15 @@
                      </aside>
                  </div>
                     <div class="prod-box">
-                        <% products.forEach( product => { %>
+                        <% deco.forEach( dproduct => { %>
                          
                                 <article class="show-products">
                                     <div>
-                                <a href="/products/detail/<%= product.id %> "> <img src= "/img/products/<%=product.image%>"> </a> 
+                                <a href="/products/detail/<%= dproduct.id %> "> <img src= "/img/products/<%=dproduct.image%>"> </a> 
                             </div>
-                                <!-- <% if (product.discount)  { %> 
+                                <!-- <% if (dproduct.discount)  { %> 
                                     
-                                    <button class="off-fixed"><%= product.discount %> % OFF</button>
+                                    <button class="off-fixed"><%= dproduct.discount %> % OFF</button>
 
                                 <% } %> -->
                                  
@@ -90,18 +89,18 @@
                                 <!-- <ul>
                                     <li class="prod-title">
                                     </li> -->
-                                    <div class="name"><%= product.name %></div> 
+                                    <div class="name"><%= dproduct.name %></div> 
                                     
                                     
-                                    <!-- <% if (product.discount) { %> 
-                                        <li class="prod-price"><%= product.price %> </li>
-                                        <%   let priceOff = ( product.price - (product.discount * product.price / 100) ) %>
+                                    <!-- <% if (dproduct.discount) { %> 
+                                        <li class="prod-price"><%= dproduct.price %> </li>
+                                        <%   let priceOff = ( dproduct.price - (dproduct.discount * dproduct.price / 100) ) %>
                                             <li class="prod-price-off">$<%= priceOff %></li>  -->
                                         
                                     <!-- <% } else { %> if there isn't discount show product price -->
                                         <!-- <li class="product-price">
                                         </li> -->
-                                <div>$<%= product.price %></div> 
+                                <div>$<%= dproduct.price %></div> 
                                     <!-- <% } %>  -->
                                     
                                 <!-- </ul> -->

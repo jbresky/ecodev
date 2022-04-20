@@ -3,11 +3,24 @@
 <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %>
+<hr>
 
+<main class="profile">
+    <div class="profile-sidebar">
+        <div class="avatar-container">
+            <img src="/img/users/<%= user.avatar %>">
+            <h3><%= user.first_name %> </h3>
+        </div>
+        <div class="edit-profile">
+            <button>Editar perfil</button>
+        </div>
+    </div>
 <div class="user-container">
-<h1>Hola <%= user.first_name %> </h1>
-    <%- include('../partials/footer') %>
+
 </div>
 
+</main>
+
+<%- include('../partials/footer') %>
 </body>
 </html>

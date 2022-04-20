@@ -562,7 +562,7 @@ section.middle-home {
         text-decoration: none;
         cursor: pointer;
 
-        --background-color: #000;
+        --background-color: rgb(0, 0, 0);
         --border-size: 2.5px
     }
 
@@ -1304,92 +1304,41 @@ div.edit-profile button:hover{
 
 /*End not found style*/
 
-
-
-/********************************************************************
-Form Register Styles
-------------------------------------------------------------------*/
- .label-icon i{   
-    width: 40px;   
-    text-align: center;
-    background-color: rgb(61, 61, 61);
-    padding: 8px 10px;
-    margin-left: 7px; 
-    margin-top: 13px; 
-    border-radius: 4px 0px 0px 4px;
-    color: white; 
-    /* box-shadow: 2px 2px 5px rgba(0,0,0,0.2);  */
-    opacity: 0;
-    transition: all 0.5s;
-  }
-  .label-icon {
-      margin-right: 4px;
-    
-    transition: opacity 0.4s;
-    
-}
-.input-form:hover .label-icon i,
-.input-form:focus .label-icon i {
-    
-    background-color: #21660c;
-    opacity: 1;
-    
-}  
-
-
-.btn-opciones{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-    align-items: center;
-}
-.btn-aceptar{
-    background: rgb(98,181,163);
-    background: linear-gradient(90deg, rgba(98,181,163,1) 0%, rgb(80, 102, 176) 25%, rgba(86,177,153,1) 61%, rgb(70, 150, 18) 100%);
-    
-    height: 2rem;
-    width: 100%;
-}
-
-
-
-.btn-aceptar
-{
-    color: white;
-    border:none;
-    
-    border-radius: 5px;
-    box-shadow: 2px 2px 7px grey;
-}
-
-section.recommend{
+section.highlight{
     margin: 4rem 1.2rem;
 }
-section.recommend h2{
+section.highlight h2{
     font-weight: normal;
     margin: 1.5rem 1rem;
 }
-section.recommend div{
+section.highlight div{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-section.recommend article{
+section.highlight article{
     margin: 0 10px;
     position: relative;
-}
-
-section.recommend article span{
-    display: inherit;
-}
-
-section.recommend img {
     width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.highlight article div{
+    align-self: flex-start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+section.highlight img {
+    width: 100%;
     height: 220px;
     border-radius: 5px;
     object-fit: cover;
 }
-section.recommend button{
+section.highlight button{
     border: none;
     background-color: transparent;
     position: absolute;
@@ -1397,23 +1346,7 @@ section.recommend button{
     top: 10px;
 }
 
-/* section.recommend article span{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 1.2rem;
-    border: 1px solid #000;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: none;
-    box-shadow: 0px 0px 10px rgb(177, 176, 176);
-    color: #4b4b4b;
-    cursor: pointer;
-    z-index: 1;
-} */
-
-section.recommend article i{
+section.highlight article i{
     
     font-size: 1rem;
     border: 1px solid #000;
@@ -1421,11 +1354,9 @@ section.recommend article i{
     border-radius: 50%;
     background-color: #ffffff;
     border: none;
-    box-shadow: 0px 0px 10px rgb(177, 176, 176);
     opacity: .9;
     color: #e9b0b0;
     cursor: pointer;
-    /* z-index: -1; */
 }
 
 input#fav{
@@ -1434,7 +1365,7 @@ input#fav{
     top: 10px;
     opacity: .1;
 }
-section.recommend article i:hover{
+section.highlight article i:hover{
     background-color: #f0f0f0;
 }
 /********************************************************
@@ -1605,7 +1536,7 @@ End Register Form
     }
     section.notes article{
         margin-bottom: 2rem;
-        margin: 1.5rem;
+        margin: 1rem;
         /* width: 320px;
         height: 425px; */
         width: 260px;
@@ -1893,7 +1824,7 @@ div.reserved span{
 .img-d {
     width: 440px;
     height: 500px;
-    
+    object-fit: cover;
 }
 .name-d {
     font-size:xx-large;

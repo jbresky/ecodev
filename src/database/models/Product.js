@@ -22,6 +22,15 @@ module.exports = (sequelize, dataTypes) => {
         },
         category_id: {
             type: dataTypes.INTEGER
+        },
+        insale: {
+            type: dataTypes.INTEGER
+        },
+        off: {
+            type: dataTypes.INTEGER
+        },
+        highlight: {
+            type: dataTypes.INTEGER
         }
     }
     let config = {

@@ -46,7 +46,7 @@ const usersController = {
                             }
                             )
                         }
-                        return res.redirect('/users/profile');
+                        return res.redirect('/');
                     } else {
                         res.render('users/login.ejs', {errors})
                     }
@@ -57,7 +57,7 @@ const usersController = {
         },
        
     profile: (req, res) => {
-        console.log(req.cookie);
+        console.log(req.session.userLogged.id);
         res.render('users/profile.ejs', {
             user: userData
         })
@@ -85,7 +85,20 @@ const usersController = {
         }
     },
     favorites: (req, res) => {
-        res.render('users/favorites.ejs')
+        db.Product.findAll({
+            include: [{association: 'users'}]
+        })
+        .then(favs => {
+            res.render('users/favorites.ejs', {favs})
+        })
+        .catch(err => console.log(err))
+    
+        // db.Fav.findAll({
+        //     include: [{association: 'product'}]
+        // })
+        // .then(favs => {
+        //     res.render('users/favorites.ejs', {favs})
+        // })
     }
 }
 

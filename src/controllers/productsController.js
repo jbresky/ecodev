@@ -1,7 +1,6 @@
-const path = require('path')
-const fs = require('fs');
-let db = require('../database/models');
-// let productJson = fs.readFileSync(path.join(__dirname, '../data', 'products.json'), 'utf-8');
+
+const db = require('../database/models');
+const op = db.Sequelize.Op
 
 const productsController = {
     shoppingCart: (req, res) => {
@@ -28,11 +27,9 @@ const productsController = {
     detail: (req, res) => {
         db.Product.findByPk(req.params.id)
         .then(product => {
-            res.render('products/detailProduct.ejs', {product})
+            res.render('products/detail.ejs', {product})
         })
-        /*let product = JSON.parse(productJson);
-        let searchProduct = product.find(result => result.id == req.params.id)
-        res.render('products/detail-prod.ejs', {searchProduct});*/
+
     },
     products: (req, res) => {        
         db.Product.findAll()
@@ -74,6 +71,27 @@ const productsController = {
     //     })
     //     res.redirect('/products');
     // },
+    },
+    search: (req, res) => {
+        db.Product.findAll({
+            where: [
+                {name: {[op.like] : '%' + req.query.search + '%'}}
+            ]
+        })
+        .then(products => {
+            res.render('products/products.ejs', {products, name: 'Resultados para ' + req.query.search + ''})
+        })
+    },
+    deco: (req, res) => {
+        db.Product.findAll({
+            where: {
+                category_id: 5
+            }
+        })
+        .then(deco => {
+            res.render('products/deco.ejs', {deco})
+        })
+        .catch(err => console.log(err))
     }
 }
 

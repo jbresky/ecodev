@@ -5,4 +5,5 @@ const products = require('../../controllers/api/products.js')
 router.get('/', products.list)
 
 
+
 module.exports = router;
