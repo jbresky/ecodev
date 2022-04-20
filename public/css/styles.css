@@ -995,7 +995,7 @@ div.edit-profile button:hover{
     justify-content: center;
     align-content: center;
 }
-.title h3, p {
+.title h3, .title p {
     padding: 0.5rem;
 }
 .title{
@@ -1070,7 +1070,7 @@ div.edit-profile button:hover{
     
 }
 
-.total h3, p{
+.total h3, .total p{
     padding: 12px;
     
 }
@@ -1457,6 +1457,12 @@ End Register Form
     .create-form{
         width: 50%;
     }
+    .login-form input, .register-container input, .register-container select{
+        width: 400px
+    }
+    .form-btn-send button{
+        width: 400px;
+    }
     section.home-box div.prod-box div{
         width: 330px;
     }
@@ -1833,46 +1839,65 @@ div.reserved span{
 
 .cont-detail {
     display: flex;
-    justify-content: space-between;
-    border:#535661 solid 1px;
-    width: 900px;
+    align-items: center;
+    /* border:#535661 solid 1px; */
+    width: 80%;
     height: 500px;
-    margin: 50px;
-    border-radius: 10px;
-    background-color: white;
- 
-    overflow: hidden;
-    
-}
-.colum1 {
-    width: 450px;
-    height: 500px;
-    
-}
-.colum2 {
-    width: 450px;
-    height: 500px;
-    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    border-radius: 5px;
+    background-color: #f0f0f099;
+    box-shadow: rgb(0 0 0 / 25%) 0 1px 2px;
+    position: relative;
 }
 
-.cont-sup {
-    display: flex;
-    justify-content: center;
-    background-color: whitesmoke;    
-    margin: 0;
-    padding: 0; 
-    
-    
+
+.colum1 {
+    width: 380px;
+    align-self: normal;
 }
 
 .img-d {
-    width: 440px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    border-radius: 5px 0 0 5px;
 }
-.name-d {
+
+.column-2 {
+    width: 450px;
+    height: 400px;
+    padding-top: 10px;
+    margin: auto;
+}
+
+div.fav i{
+    position: absolute;
+    right: 80px;
+    top: 60px;
+    font-size: 1.3rem;
+    padding: 10px;
+    color: #f09e9e;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+
+div.fav i:hover{
+    color: #f77f7f;
+}
+
+.column-2 h3.category{
+    font-size: .94rem;
+    color: #727272;
+    font-weight: normal;
+}
+
+.name {
     font-size:xx-large;
-    margin: 20px 0px 20px; 
+    margin: 20px 0px 20px;
+    font-weight: normal;
 }
 
 
@@ -1882,45 +1907,43 @@ div.reserved span{
     padding-top: 30px;
 }
 
+.option {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    width: 350px;
+}
+
+
 .btn-detail1 {
     border-radius: 30px;
-    background-color: #ddd;
+    background-color: #538d42;
     padding: 15px 32px;
-    color: gray;
+    text-align: center;
+    font-size: .9rem;
+    color: #ffffff;
     text-decoration: none;
-    margin: 10px;
-    transition: 
-        background-color, 0.5s,
-        color, 0.5s;
+    margin-bottom: 10px;
+    transition: all .3s
 }
 .btn-detail2 {
     border-radius: 30px;
-    background-color: #ddd;
+    background-color: #53ab5126;
     padding: 15px 32px;
-    margin: 10px;
-    color: grey;
+    color: #538d42;
+    text-align: center;
+    font-size: .9rem;
     text-decoration: none;
-    transition: 
-        background-color, 0.5s,
-        color, 0.5s;
-
+    transition: all .3s
 }
 
-.option {
-   
-    display: flex;
-    padding-top: 30px;
-    
-}
 
 .btn-detail1:hover {
-    background-color:#21660c ;
-    color: white;
+    background-color:#31771c ;
 }
 
 .btn-detail2:hover {
-    background-color: red ;
-    color: white;
+    background-color: #5ae95826 ;
 }
 .off-d {
     font-size: x-small;
@@ -1934,9 +1957,8 @@ div.reserved span{
 .value-d {
     padding: 20px 0 0px 0;
 }
-.desc-d {
-    font-size: small;
-    color:#565a56;
+.disc {
+    font-size: .8rem;
     width: 350px;
 }
 

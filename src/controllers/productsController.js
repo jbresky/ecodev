@@ -36,7 +36,9 @@ const productsController = {
     },
 
     detail: (req, res) => {
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id, {
+            include: ['category']
+        })
         .then(product => {
             res.render('products/detail.ejs', {product})
         })
