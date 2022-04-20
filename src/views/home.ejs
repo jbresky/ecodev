@@ -22,7 +22,9 @@
                             <% if(product.insale==1){ %>
                                 <article>
                                     <div>
+                                        <a href="/products/detail/<%= product.id %> ">
                                         <img src="/img/products/<%= product.image %>" alt="">
+                                    </a>
                                     </div>
                                     <button class="off-fixed">
                                         <%= product.off%>% OFF

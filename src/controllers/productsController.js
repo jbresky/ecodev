@@ -16,7 +16,7 @@ const productsController = {
     
         db.Product.findAll()
         .then(products => {
-            return res.render('products', {products:products})
+            return res.render('products/products.ejs', {products})
         })
         .catch(function(error) {
             console.log('error')
@@ -40,8 +40,7 @@ const productsController = {
         .then(product => {
             res.render('products/detail.ejs', {product})
         })
-        let searchProduct = product.find(result => result.id == req.params.id)
-        res.render('products/detail-prod.ejs', {searchProduct});
+        .catch(err => console.log(err))
     },
    
     edit: (req, res) => {
