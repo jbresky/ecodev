@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "joacosql2022",
-    "database": "ecodev",
+    "password": null,
+    "database": "ecodev3",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
