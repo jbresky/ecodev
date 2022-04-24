@@ -8,8 +8,11 @@
             <hr>
             <main class="main-detail">
                 <div class="cont-detail">
-                    <div class="colum1">
-                        <img class="img-d" src="/img/products/<%=product.image%>" alt="<%= product.name %> ">
+                    <div class="column-1">
+                        <img src="/img/products/<%=product.image%>" alt="<%= product.name %> ">
+                       <button class="fav-img" id="addToFavs" onclick="addProductToFav('<%= product.id %>')">
+                            <i class="fas fa-heart fav-red"></i>
+                        </button>
                     </div>
                     <div class="column-2">
                         <div class="container-column-2">
@@ -19,10 +22,10 @@
                             <h2 class='name'>
                                 <%= product.name %>
                             </h2>
-                            <div class="fav">
+                            <button class="fav" id="addToFavs" onclick="addProductToFav('<%= product.id %>')">
                                 <i class="fas fa-heart fav-red"></i>
-                            </div>
-                            <p class="disc">
+                            </button>
+                            <p class="description">
                                 <%= product.description %>
                             </p>
                             <div class="counter">
@@ -32,7 +35,7 @@
                                         remove
                                     </span>
                                 </button>
-                                <input type="text" class="numeric-stepper" value="1" min="0" max="21">
+                                <input type="text" class="numeric-stepper" value=1 min="0" max="21">
                                 <button class="plus">
                                     <span class="material-symbols-outlined">
                                         add
@@ -43,7 +46,7 @@
                             
                             <div class="price-d">$ <%= product.price %>
                             </div>
-                            <a class="off-d" href="/products/cart">Promociones y descuentos aquí</a>
+                            <span class="credit-pay">En 12x $<%= (product.price/10.3).toFixed(2) %> </span>
 
 
 

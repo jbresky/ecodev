@@ -1419,244 +1419,7 @@ End Register Form
 */
 
 
-
-
-
- /* RESPONSIVE //////////////////////////////////////////////////
- ///////////////////////////////////////////////////////////////*/
- @media(min-width: 380px){
-    .login-form input, .register-container input, .register-container select{
-        width: 300px
-    }
-    div.apps ul li{
-        margin: 1rem;
-    }
-    section.home-box div.prod-box div{
-        width: 255px;
-    }
-    section.home-box article div img{
-        height: 340px;
-    }
-    div.prod-box article button.off-fixed{
-        left: -10px;
-        bottom: 350px;
-    }
-    div.newsletter input{
-        width: 300px;
-    }
-    .form-btn-send button{
-        width: 300px;
-    }
-    
-    
-   
-    
-}
-
-@media(min-width: 620px){
-    .create-form{
-        width: 50%;
-    }
-    .login-form input, .register-container input, .register-container select{
-        width: 400px
-    }
-    .form-btn-send button{
-        width: 400px;
-    }
-    section.home-box div.prod-box div{
-        width: 330px;
-    }
-    section.home-box article {
-        width: 350px;
-    }
-    section.home-box article div img{
-        height: 350px;
-    }
-    article button.off-fixed{
-        left: -20px;
-    }
-    /* section.notes div.display-tablet{
-        display: flex;
-    } */
-    section.notes-img{
-        flex-direction: row;
-    }
-    section.notes article{
-        /* margin: 1.5rem; */
-        width: 280px;
-        height: 370px;
-        /* width: 249px;
-        height: 332px; */
-    }
-    section.notes a{
-        font-size: 1.5rem;
-    }
-    div.eco-activism div p, div.eco-activism div h2{
-        font-size: 1.4rem;
-    }
-
-}
-
-@media(min-width: 771px){
-    .items {
-        display: flex;
-        /* margin-left: 150px; */
-    }
-    .items li {
-        margin: 0 10px
-    }
-    .burguer {
-        display:none;
-        
-    }
-    .logo {
-        order: -1;
-    }
-    .heart, .shop {
-        order: 1;
-    }
-    section.notes div.display-tablet{
-        display: flex;
-    }
-    section.notes article{
-        margin: 1.5rem;
-    }
-    section.icon-text{
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0 2rem;
-        margin-top:-30px;
-    }
-    section.icon-text div.container{
-        width: 350px;
-    }
-    div.eco-activism div h2{
-        font-size: 1.6rem;
-    }
-    div.eco-activism div p{
-        font-size: 1.4rem;
-    }
-    section.home-box div.prod-box {
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 0 20px;
-    }
-    footer section.f-1 {
-        flex-direction: row !important;
-    }
-    footer section.f-1 ul{
-        margin-right: 50px;
-    }
-    footer section.f-2 {
-        padding-left: 1.5rem;
-    }
-    .register-container{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .register-container form{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    
-}
-
-@media(min-width: 1024px){
-    .search-icon input {
-        display: flex;
-    }
-    .search-icon form button {
-        background: rgb(239, 239, 239);
-        border-radius: 0 5px 5px 0;
-    }
-    nav .user {
-        display: block;
-    }
-    .items{
-        margin-left: 150px;
-    }
-    footer section.f-1 ul{
-        margin-right: 100px;
-    }
-    section.notes div.display-desktop{
-        display: block;
-    }
-    section.notes article{
-        margin-bottom: 2rem;
-        margin: 1rem;
-        /* width: 320px;
-        height: 425px; */
-        width: 260px;
-        height: 346px;
-    }
-}
-
-/*Solo para ver como queda... esta mal tantas media queries*/
-@media(min-width: 1100px){
-    section.notes article{
-        width: 320px;
-        height: 425px;
-    }
-    .letter {
-        font-size: 26px;
-        padding-top: 5px;
-        padding-bottom: 10px;
-    }
-    .price {
-        font-size: 20px;
-        padding-top: 40px;
-
-    }
-    .caja {
-        width: 290px;
-        height: 290px; }
-
-    
-}
-
-
-
-@media screen and (min-width: 1000px){
-    .grid-cajas {
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .notfound-container{
-        flex-direction: row;
-        justify-content: space-between;
-        
-    }
-
-    .img-error{
-        width: 75%;
-        justify-content: flex-end;
-    }
-    .msg-error{
-        width: 25%;
-    }
-
-    .descrip{
-        font-size: 16px;
-
-    }
-    .letter {
-        font-size: 26px;
-    }
-    .price {
-        font-size: 20px;
-    }
-    .caja {
-        width: 290px;
-        height: 290px;
-     }
-}
-
-/* FOOTER FINALL //////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////*/
+/* FOOTER */
 
 footer{
     
@@ -1835,50 +1598,73 @@ div.reserved span{
     color: #9695A8;
 }
 
-/*DETAIL FINAL////////////////////////////////////*/
+/* PRODUCT DETAIL */
 
 .cont-detail {
     display: flex;
+    flex-direction: column;
     align-items: center;
     /* border:#535661 solid 1px; */
-    width: 70%;
-    height: 500px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 4rem;
     border-radius: 5px;
     background-color: #f0f0f099;
     box-shadow: rgb(0 0 0 / 25%) 0 1px 2px;
+}
+
+
+.column-1 {
+    width: 100%;
+    align-self: normal;
     position: relative;
 }
 
-
-.colum1 {
-    width: 380px;
-    align-self: normal;
+.column-1 button{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: none;
+    background-color: transparent;
 }
 
-.img-d {
+.cont-detail img {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 5px 0 0 5px;
 }
 
 .column-2 {
-    width: 60%;
+    width: 80%;
     margin: auto;
+    position: relative;
 }
 
 div.container-column-2{
-    width: 80%;
     margin: auto;
+    padding: 1rem 0 1.5rem 0;
 }
 
-div.fav i{
+button.fav{
+    display: none;
+}
+
+button.fav-img i{
+    padding: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50%;
+    color: #e9baba;
+}
+
+button.fav i{
     position: absolute;
     right: 80px;
-    top: 60px;
+    top: -10px;
     font-size: 1.4rem;
     padding: 10px;
     color: #e9baba;
@@ -1937,10 +1723,10 @@ input.numeric-stepper{
     outline: 0;
 }
 
-input.numeric-stepper:focus{
+/* input.numeric-stepper:focus{
     border-top-color: rgb(74, 201, 74);
     border-bottom-color: rgb(74, 201, 74);
-}
+} */
 
 button.plus{
     width: 44px;
@@ -1966,8 +1752,7 @@ button.plus{
 }
 
 .cont-detail .name {
-    font-size:xx-large;
-    margin: 20px 0px 20px;
+    margin: 1rem 0;
     font-weight: normal;
 }
 
@@ -1982,7 +1767,6 @@ button.plus{
     display: flex;
     flex-direction: column;
     padding-top: 30px;
-    width: 350px;
 }
 
 .btn-detail1 {
@@ -1993,7 +1777,7 @@ button.plus{
     font-size: .9rem;
     color: #ffffff;
     text-decoration: none;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     transition: all .3s
 }
 .btn-detail2 {
@@ -2014,10 +1798,9 @@ button.plus{
 .btn-detail2:hover {
     background-color: #5ae95826 ;
 }
-.off-d {
-    font-size: x-small;
-    color:#535661;
-    text-decoration: none;
+.credit-pay {
+    font-size: .8rem;
+    color:#004b00;
 }
 .off-d:hover {
     color: green;
@@ -2026,16 +1809,310 @@ button.plus{
 .value-d {
     padding: 20px 0 0px 0;
 }
-.disc {
+.description {
     font-size: .8rem;
-    width: 350px;
 }
 
-.select {
-    padding: 8px 12px;
-    color: #333;
-    background-color: #eeeeee;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    border-radius: 5px;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+ /* RESPONSIVE //////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////*/
+ @media(min-width: 380px){
+    .login-form input, .register-container input, .register-container select{
+        width: 300px
+    }
+    div.apps ul li{
+        margin: 1rem;
+    }
+    section.home-box div.prod-box div{
+        width: 255px;
+    }
+    section.home-box article div img{
+        height: 340px;
+    }
+    div.prod-box article button.off-fixed{
+        left: -10px;
+        bottom: 350px;
+    }
+    div.newsletter input{
+        width: 300px;
+    }
+    .form-btn-send button{
+        width: 300px;
+    }
+    .cont-detail{
+        width: 70%;
+    }
+}
+
+
+@media(min-width: 620px){
+    .create-form{
+        width: 50%;
+    }
+    .login-form input, .register-container input, .register-container select{
+        width: 400px
+    }
+    .form-btn-send button{
+        width: 400px;
+    }
+    section.home-box div.prod-box div{
+        width: 330px;
+    }
+    section.home-box article {
+        width: 350px;
+    }
+    section.home-box article div img{
+        height: 350px;
+    }
+    article button.off-fixed{
+        left: -20px;
+    }
+    /* section.notes div.display-tablet{
+        display: flex;
+    } */
+    section.notes-img{
+        flex-direction: row;
+    }
+    section.notes article{
+        /* margin: 1.5rem; */
+        width: 280px;
+        height: 370px;
+        /* width: 249px;
+        height: 332px; */
+    }
+    section.notes a{
+        font-size: 1.5rem;
+    }
+    div.eco-activism div p, div.eco-activism div h2{
+        font-size: 1.4rem;
+    }
+    /* .cont-detail{
+        width: 50%;
+    } */
+    .cont-detail{
+        flex-direction: row;
+        width: 90%;
+        height: 500px;
+    }
+    .cont-detail img{
+        height: 100%;
+    }
+    div.container-column-2{
+        margin: auto;
+        width: 80%;
+        padding: 1rem 0 1.5rem 0;
+    }
+    .column-1 {
+        /* width: 380px; */
+        width: 50%;
+    }
+    .column-2{
+        width: 60%;
+    }
+
+}
+
+@media(min-width: 771px){
+    .items {
+        display: flex;
+        /* margin-left: 150px; */
+    }
+    .items li {
+        margin: 0 10px
+    }
+    .burguer {
+        display:none;
+        
+    }
+    .logo {
+        order: -1;
+    }
+    .heart, .shop {
+        order: 1;
+    }
+    section.notes div.display-tablet{
+        display: flex;
+    }
+    section.notes article{
+        margin: 1.5rem;
+    }
+    section.icon-text{
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 2rem;
+        margin-top:-30px;
+    }
+    section.icon-text div.container{
+        width: 350px;
+    }
+    div.eco-activism div h2{
+        font-size: 1.6rem;
+    }
+    div.eco-activism div p{
+        font-size: 1.4rem;
+    }
+    section.home-box div.prod-box {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0 20px;
+    }
+    footer section.f-1 {
+        flex-direction: row !important;
+    }
+    footer section.f-1 ul{
+        margin-right: 50px;
+    }
+    footer section.f-2 {
+        padding-left: 1.5rem;
+    }
+    .register-container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .register-container form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .cont-detail{
+        flex-direction: row;
+        width: 80%;
+        height: 500px;
+    }
+    /* .cont-detail img{
+        height: 100%;
+    }
+    div.container-column-2{
+        margin: auto;
+        width: 80%;
+        padding: 1rem 0 1.5rem 0;
+    } */
+    /* .column-1 {
+        width: 380px;
+    } */
+}
+
+@media(min-width: 1024px){
+    .search-icon input {
+        display: flex;
+    }
+    .search-icon form button {
+        background: rgb(239, 239, 239);
+        border-radius: 0 5px 5px 0;
+    }
+    nav .user {
+        display: block;
+    }
+    .items{
+        margin-left: 150px;
+    }
+    footer section.f-1 ul{
+        margin-right: 100px;
+    }
+    section.notes div.display-desktop{
+        display: block;
+    }
+    section.notes article{
+        margin-bottom: 2rem;
+        margin: 1rem;
+        /* width: 320px;
+        height: 425px; */
+        width: 260px;
+        height: 346px;
+    }
+    .cont-detail{
+        flex-direction: row;
+        height: 500px;
+        width: 70%;
+    }
+    /* .cont-detail img{
+        height: 100%;
+    }
+    .column-1 {
+        width: 380px;
+    } */
+    .column-2{
+        width: 60%;
+    }
+    button.fav{
+        display: block;
+        border: none;
+        background-color: transparent;
+    }
+    button.fav-img{
+        display: none;
+    }
+    div.container-column-2{
+        width: 80%;
+        margin: auto;
+        padding: 0 2rem;
+    }
+}
+
+/*Solo para ver como queda... esta mal tantas media queries*/
+@media(min-width: 1100px){
+    section.notes article{
+        width: 320px;
+        height: 425px;
+    }
+    .letter {
+        font-size: 26px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    .price {
+        font-size: 20px;
+        padding-top: 40px;
+
+    }
+    .caja {
+        width: 290px;
+        height: 290px; }
+
+    
+}
+
+
+
+@media screen and (min-width: 1000px){
+    .grid-cajas {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .notfound-container{
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+    .img-error{
+        width: 75%;
+        justify-content: flex-end;
+    }
+    .msg-error{
+        width: 25%;
+    }
+
+    .descrip{
+        font-size: 16px;
+
+    }
+    .letter {
+        font-size: 26px;
+    }
+    .price {
+        font-size: 20px;
+    }
+    .caja {
+        width: 290px;
+        height: 290px;
+     }
 }
