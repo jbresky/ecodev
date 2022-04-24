@@ -15,7 +15,7 @@ const productsController = {
         res.render('products/products.ejs', {products})*/
     
         db.Product.findAll()
-        .then(products => {
+        .then(products => {            
             return res.render('products/products.ejs', {products})
         })
         .catch(function(error) {

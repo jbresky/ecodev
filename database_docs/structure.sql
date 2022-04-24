@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `ecodev`.`users` (
   `country` VARCHAR(80),
   `province` VARCHAR(80),
   `address` VARCHAR(50),
-  `password` VARCHAR(150) NOT NULL,
+  `password` VARCHAR(50) NOT NULL,
   `avatar` VARCHAR(100));
   
 -- -----------------------------------------------------
@@ -51,6 +51,9 @@ CREATE TABLE IF NOT EXISTS `ecodev`.`products` (
   `image` VARCHAR(100) NOT NULL,
   `description` VARCHAR(200) NOT NULL,
   `categories_id` INT NOT NULL,
+  `insale` INT,
+  `off` INT, 
+  `highlight` INT, 
   CONSTRAINT `fk_products_categories`
     FOREIGN KEY (`categories_id`)
     REFERENCES `ecodev`.`categories` (`id`)
@@ -67,11 +70,10 @@ CREATE TABLE IF NOT EXISTS `ecodev`.`carts` (
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
   `deleted_at` DATETIME NULL,
-  `users_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `users_id`),
-  INDEX `fk_carts_users1_idx` (`users_id` ASC) VISIBLE,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `user_id`),  
   CONSTRAINT `fk_carts_users1`
-    FOREIGN KEY (`users_id`)
+    FOREIGN KEY (`user_id`)
     REFERENCES `ecodev`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
@@ -80,19 +82,19 @@ CREATE TABLE IF NOT EXISTS `ecodev`.`carts` (
 -- Table `ecodev`.`carts_has_products`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecodev`.`carts_has_products` (
-  `carts_id` INT NOT NULL,
-  `products_id` INT NOT NULL,
+  `cart_id` INT NOT NULL,
+  `product_id` INT NOT NULL,
   `amount` INT NULL,
-  PRIMARY KEY (`carts_id`, `products_id`),
-  INDEX `fk_carts_has_products_products1_idx` (`products_id` ASC) VISIBLE,
-  INDEX `fk_carts_has_products_carts1_idx` (`carts_id` ASC) VISIBLE,
+  PRIMARY KEY (`cart_id`, `product_id`),
+  INDEX `fk_carts_has_products_products1_idx` (`product_id` ASC),
+  INDEX `fk_carts_has_products_carts1_idx` (`cart_id` ASC),
   CONSTRAINT `fk_carts_has_products_carts1`
-    FOREIGN KEY (`carts_id`)
+    FOREIGN KEY (`cart_id`)
     REFERENCES `ecodev`.`carts` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_carts_has_products_products1`
-    FOREIGN KEY (`products_id`)
+    FOREIGN KEY (`product_id`)
     REFERENCES `ecodev`.`products` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
@@ -104,8 +106,8 @@ CREATE TABLE IF NOT EXISTS `ecodev`.`user_favorites` (
   `products_id` INT NOT NULL,
   `users_id` INT NOT NULL,
   PRIMARY KEY (`products_id`, `users_id`),
-  INDEX `fk_products_has_users_users1_idx` (`users_id` ASC) VISIBLE,
-  INDEX `fk_products_has_users_products1_idx` (`products_id` ASC) VISIBLE,
+  INDEX `fk_products_has_users_users1_idx` (`users_id` ASC),
+  INDEX `fk_products_has_users_products1_idx` (`products_id` ASC),
   CONSTRAINT `fk_products_has_users_products1`
     FOREIGN KEY (`products_id`)
     REFERENCES `ecodev`.`products` (`id`)
@@ -126,8 +128,8 @@ CREATE TABLE IF NOT EXISTS `ecodev`.`sales` (
   `date` DATETIME NULL,
   `carts_id` INT NOT NULL,
   PRIMARY KEY (`id`, `carts_id`),
-  UNIQUE INDEX `order_UNIQUE` (`order` ASC) VISIBLE,
-  INDEX `fk_sales_carts1_idx` (`carts_id` ASC) VISIBLE,
+  UNIQUE INDEX `order_UNIQUE` (`order` ASC),
+  INDEX `fk_sales_carts1_idx` (`carts_id` ASC),
   CONSTRAINT `fk_sales_carts1`
     FOREIGN KEY (`carts_id`)
     REFERENCES `ecodev`.`carts` (`id`)
