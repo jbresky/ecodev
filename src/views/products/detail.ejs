@@ -12,40 +12,49 @@
                         <img class="img-d" src="/img/products/<%=product.image%>" alt="<%= product.name %> ">
                     </div>
                     <div class="column-2">
-                        <h3 class="category">
-                            <%= product.category.name %>
-                        </h3>
-                        <h2 class='name'>
-                            <%= product.name %>
-                        </h2>
-                        <div class="fav">
-                            <i class="fas fa-heart fav-red"></i>
+                        <div class="container-column-2">
+                            <h3 class="category">
+                                <%= product.category.name %>
+                            </h3>
+                            <h2 class='name'>
+                                <%= product.name %>
+                            </h2>
+                            <div class="fav">
+                                <i class="fas fa-heart fav-red"></i>
+                            </div>
+                            <p class="disc">
+                                <%= product.description %>
+                            </p>
+                            <div class="counter">
+
+                                <button class="minus">
+                                    <span class="material-symbols-outlined">
+                                        remove
+                                    </span>
+                                </button>
+                                <input type="text" class="numeric-stepper" value="1" min="0" max="21">
+                                <button class="plus">
+                                    <span class="material-symbols-outlined">
+                                        add
+                                    </span>
+                                </button>
+
+                            </div>
+                            
+                            <div class="price-d">$ <%= product.price %>
+                            </div>
+                            <a class="off-d" href="/products/cart">Promociones y descuentos aquí</a>
+
+
+
+
+
+
+                            <div class="option">
+                                <a href="/products/cart" class="btn-detail1">Comprar ahora</a>
+                                <a href="/products" class="btn-detail2">Agregar al carrito</a>
+                            </div>
                         </div>
-                        <p class="disc">
-                            <%= product.description %>
-                        </p>
-                        <div class="value-d">
-                            <select class="select">
-                                <option value="">Seleccionar item</option>
-                                <option value="">hola</option>
-                                <option value="">hola</option>
-                                <option value="">hola</option>
-                            </select>
-                        </div>
-                        <div class="price-d">$ <%= product.price %>
-                        </div>
-                        <a class="off-d" href="/products/cart">Promociones y descuentos aquí</a>
-
-
-
-
-
-
-                        <div class="option">
-                            <a href="/products/cart" class="btn-detail1">Comprar ahora</a>
-                            <a href="/products" class="btn-detail2">Agregar al carrito</a>
-                        </div>
-
                     </div>
 
                 </div>

@@ -57,10 +57,16 @@ const usersController = {
         },
        
     profile: (req, res) => {
-        console.log(req.session.userLogged.id);
-        res.render('users/profile.ejs', {
-            user: userData
+        db.User.findOne({
+            where:{
+                email: userData.email
+            }, 
+            include: ['products']
         })
+        .then(user => {
+            res.render('users/profile.ejs',  {user})
+        })
+        .catch(err => console.log(err))
     },
     logout: (req, res) => {
         req.session.destroy();

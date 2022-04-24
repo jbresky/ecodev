@@ -931,7 +931,7 @@ main.profile{
     justify-content: space-between;
     align-items: center;
 }
-div.user-container{
+div.user-pannel{
     height: 300px;
     /* text-align: center; */
     /* margin: 0 2rem; */
@@ -1841,7 +1841,7 @@ div.reserved span{
     display: flex;
     align-items: center;
     /* border:#535661 solid 1px; */
-    width: 80%;
+    width: 70%;
     height: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -1866,9 +1866,12 @@ div.reserved span{
 }
 
 .column-2 {
-    width: 450px;
-    height: 400px;
-    padding-top: 10px;
+    width: 60%;
+    margin: auto;
+}
+
+div.container-column-2{
+    width: 80%;
     margin: auto;
 }
 
@@ -1876,9 +1879,9 @@ div.fav i{
     position: absolute;
     right: 80px;
     top: 60px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     padding: 10px;
-    color: #f09e9e;
+    color: #e9baba;
     cursor: pointer;
     border: none;
     border-radius: 50%;
@@ -1888,13 +1891,81 @@ div.fav i:hover{
     color: #f77f7f;
 }
 
+div.counter{
+    height: 42px;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+button.minus{
+    width: 44px;
+    height: 100%;
+    border: 1.5px solid rgb(119, 114, 121);
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    white-space: nowrap;
+    user-select: none;
+    appearance: none;
+    display: inline-block;
+    z-index: 1;
+    border-radius: 24px 0px 0px 24px;
+}
+
+input.numeric-stepper{
+    width: 44px;
+    height: 100%;
+    border-width: 1.5px 0px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgb(119, 114, 121);
+    border-bottom-color: rgb(119, 114, 121);
+    border-image: initial;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    position: relative;
+    color: rgb(33, 30, 34);
+    font-family: sofia, sofiaFallback, arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 2px;
+    padding-right: 2px;
+    outline: 0;
+}
+
+input.numeric-stepper:focus{
+    border-top-color: rgb(74, 201, 74);
+    border-bottom-color: rgb(74, 201, 74);
+}
+
+button.plus{
+    width: 44px;
+    height: 100%;
+    border: 1.5px solid rgb(119, 114, 121);
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    white-space: nowrap;
+    user-select: none;
+    appearance: none;
+    display: inline-block;
+    z-index: 1;
+    border-radius: 0px 24px 24px 0px;
+}
+
 .column-2 h3.category{
     font-size: .94rem;
     color: #727272;
     font-weight: normal;
 }
 
-.name {
+.cont-detail .name {
     font-size:xx-large;
     margin: 20px 0px 20px;
     font-weight: normal;
@@ -1913,7 +1984,6 @@ div.fav i:hover{
     padding-top: 30px;
     width: 350px;
 }
-
 
 .btn-detail1 {
     border-radius: 30px;
@@ -1936,7 +2006,6 @@ div.fav i:hover{
     text-decoration: none;
     transition: all .3s
 }
-
 
 .btn-detail1:hover {
     background-color:#31771c ;
