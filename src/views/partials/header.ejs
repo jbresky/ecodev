@@ -1,36 +1,42 @@
 <header class="main-header"></header>
-    <nav>
-        <ul>
-            <li class="burguer">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </li>
-            <div class="search-icon">
-                <form action="/products/search" method="GET">
+<nav>
+    <ul>
+        <li class="burguer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </li>
+        <div class="search-icon">
+            <form action="/products/search" method="GET">
                 <input type="search" placeholder="Search">
                 <!-- <label class="icon"> -->
-                    <button type="submit" class="fas fa-search"></button>
+                <button type="submit" class="fas fa-search"></button>
                 <!-- </label> -->
             </form>
-            </div>
-            <li class="logo">
-                <a href="/">
+        </div>
+        <li class="logo">
+            <a href="/">
                 <img src="/img/back/Logo-v2.ico">
             </a>
-            </li>
-            <div class="items">
-                <li><a class="text-routes" href='/products'>Productos</a></li>
-                <li><a class="text-routes" href=#>Nosotros</a></li>
-                <li><a class="text-routes" href=#>Medioambiente</a></li>
-                <li><a class="text-routes" href='/users/register'>Únete</a></li>
-            </div>
-            
-                <li class="heart"><a href='/users/favorites'><span class="material-icons-outlined">favorite_border</span></a></li>
-                <li class="shop"><a href='/products/cart'><span class="material-icons-outlined">shopping_cart</span></a></li>
-            <li class="user"><a href='/users/login'><span class="material-icons-outlined">
-                account_circle
-                </span></span></a></li>
-        </ul>
-        <script src="js/script.js"></script>
-    </nav>
+        </li>
+        <div class="items">
+            <li><a class="text-routes" href='/products'>Productos</a></li>
+            <li><a class="text-routes" href=#>Nosotros</a></li>
+            <li><a class="text-routes" href=#>Medioambiente</a></li>
+            <li><a class="text-routes" href='/users/register'>Únete</a></li>
+        </div>
+
+        <li class="heart"><a href='/users/favorites'><span class="material-icons-outlined">favorite_border</span></a>
+        </li>
+        <li class="shop"><a href='/products/cart'><span class="material-icons-outlined">shopping_cart</span></a></li>
+        <% if(locals.isLogged) { %> 
+           <li class="user"><a href='/users/login'><img src="/img/back/user_logged.png" width="40" alt="User"></a></li>
+           <% } else { %> 
+           <li class="user"><a href='/users/login'><span class="material-icons-outlined">
+            account_circle
+        </span></a></li>
+        <% } %> 
+
+    </ul>
+    <script src="js/script.js"></script>
+</nav>
