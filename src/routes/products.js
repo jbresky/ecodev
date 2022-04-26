@@ -9,6 +9,10 @@ const authMiddleware = require('../middlewares/authMiddleware')
 
 //router.get('/', productsController.list)
 router.get('/', productsController.products)
+router.get('/personal-care', productsController.personalCare)
+router.get('/health-&-beauty', productsController.healthBeauty)
+router.get('/natural-medicine', productsController.naturalMedicine)
+router.get('/eco-products', productsController.ecoProducts)
 router.get('/deco', productsController.deco)
 router.get('/cart', productsController.shoppingCart)
 

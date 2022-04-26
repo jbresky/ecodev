@@ -84,14 +84,58 @@ const productsController = {
             res.render('products/products.ejs', {products, name: 'Resultados para ' + req.query.search + ''})
         })
     },
+    personalCare: (req, res) => {
+        db.Product.findAll({
+            where: {
+                category_id: 1
+            }
+        })
+        .then(products => {
+            res.render('products/products.ejs', {products})
+        })
+        .catch(err => console.log(err))
+    },
+    healthBeauty: (req, res) => {
+        db.Product.findAll({
+            where: {
+                category_id: 2
+            }
+        })
+        .then(products => {
+            res.render('products/products.ejs', {products})
+        })
+        .catch(err => console.log(err))
+    },
+    naturalMedicine: (req, res) => {
+        db.Product.findAll({
+            where: {
+                category_id: 3
+            }
+        })
+        .then(products => {
+            res.render('products/products.ejs', {products})
+        })
+        .catch(err => console.log(err))
+    },
+    ecoProducts: (req, res) => {
+        db.Product.findAll({
+            where: {
+                category_id: 4
+            }
+        })
+        .then(products => {
+            res.render('products/products.ejs', {products})
+        })
+        .catch(err => console.log(err))
+    },
     deco: (req, res) => {
         db.Product.findAll({
             where: {
                 category_id: 5
             }
         })
-        .then(deco => {
-            res.render('products/deco.ejs', {deco})
+        .then(products => {
+            res.render('products/products.ejs', {products})
         })
         .catch(err => console.log(err))
     }
