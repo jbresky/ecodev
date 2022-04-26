@@ -288,7 +288,7 @@ section.product-box aside ul.list-category li:hover{
     text-decoration: underline;
 }
 
-section.product-box aside ul.list-category li a{
+section.product-box aside a{
     color: #000;
     text-decoration: none;
 }
@@ -933,15 +933,43 @@ main.profile{
 }
 div.user-pannel{
     height: 300px;
-    /* text-align: center; */
-    /* margin: 0 2rem; */
-    display: flex;
     flex: .75;
     border-radius: 10px;
     background-color: #ececec99;
-    justify-content: center;
-    align-items: center;
     box-shadow: rgb(0 0 0 / 25%) 0 1px 2px;
+}
+
+div.user-pannel h2{
+    margin: 1.5rem;
+    font-weight: normal;
+}
+
+div.user-pannel h3{
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+div.user-pannel ul{
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: center;
+    gap: 20px;
+}
+
+div.user-pannel .user-activity{
+    width: 200px;
+    height: 100px;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div.user-pannel .middle{
+    border-right: 1.5px solid #afb3b3;
+    border-left: 1.5px solid #afb3b3;
 }
 
 div.avatar-container{
