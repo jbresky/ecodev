@@ -44,9 +44,9 @@
 
                             </div>
                             
-                            <div class="price-d">$ <%= product.price %>
+                            <div class="price-d">$ <%= product.price.replace('.', ',') %>
                             </div>
-                            <span class="credit-pay">En 12x $<%= (product.price/10.3).toFixed(2) %> </span>
+                            <span class="credit-pay">En 12x $<%= (product.price/10.3).toFixed(2).replace('.', ',') %> </span>
 
 
 

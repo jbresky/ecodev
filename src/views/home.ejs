@@ -37,10 +37,10 @@
                                         <a href="">
                                             <button class="add-to-cart">Agregar al carrito</button>
                                         </a>
-                                        <li class="prod-price">$ <%= product.price%>
+                                        <li class="prod-price">$ <%= product.price.replace('.', ',')%>
                                         </li>
                                         <li class="prod-price-off">$ <%= product.price - (product.price * product.off /
-                                                100) %>
+                                                100).toFixed(2) %>
                                         </li>
                                     </ul>
                                 </article>

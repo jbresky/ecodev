@@ -30,13 +30,13 @@
                                          <ul class="dropdown hide">
                                              <li>
                                                  <button class="all-category">
-                                                     <span>Todas las categorías</span>
+                                                     <span><a href="/products">Todas las categorías</a></span>
                                                  </button>
                                                  <ul class="list-category">
-                                                    <li><a href="/products">Personal Care</a></li>
-                                                    <li><a href="/products">Health & Beauty</a></li>
-                                                    <li><a href="/products">Natural medicine</a></li>
-                                                    <li><a href="/products">Eco products</a></li>
+                                                    <li><a href="/products/personal-care">Personal Care</a></li>
+                                                    <li><a href="/products/health-&-beauty">Health & Beauty</a></li>
+                                                    <li><a href="/products/natural-medicine">Natural medicine</a></li>
+                                                    <li><a href="/products/eco-products">Eco products</a></li>
                                                     <li><a href="/products/deco">Deco</a></li>
                                                  </ul>
                                              </li>
@@ -101,7 +101,7 @@
                                     <!-- <% } else { %> if there isn't discount show product price -->
                                         <!-- <li class="product-price">
                                         </li> -->
-                                <div>$<%= product.price %></div> 
+                                <div>$<%= product.price.replace('.', ',') %></div> 
                                     <!-- <% } %>  -->
                                     
                                 <!-- </ul> -->
