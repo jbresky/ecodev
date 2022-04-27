@@ -1813,6 +1813,7 @@ button.plus{
     display: flex;
     flex-direction: column;
     padding-top: 30px;
+    gap: 15px;
 }
 
 .btn-detail1 {
@@ -1823,7 +1824,7 @@ button.plus{
     font-size: .9rem;
     color: #ffffff;
     text-decoration: none;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     transition: all .3s
 }
 .btn-detail2 {
