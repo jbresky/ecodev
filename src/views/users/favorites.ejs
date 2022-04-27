@@ -1,15 +1,12 @@
-
 <%- include('../partials/head')%>
 
-<%- include('../partials/header')%>
+  <%- include('../partials/header')%>
 
- <!--Si tiene favorito, que muestre-->
+    <!--Si tiene favorito, que muestre-->
+    <h1>Tus productos favoritos: </h1>
+        <% products.forEach(fav => {  %>
+    <span><%= fav['product'].name %></span> 
+    <img src="/img/products/<%= fav['product'].image%>">
+      <%  }) %> 
 
-<h1>Hola, este es tu producto:
-
-  <% for(j = 0; j < favs[i].products.length; j++){ %> 
-    <span><%= favs[i].products[j].category %></span>
-<% } %> 
-</h1>
-
-<%- include('../partials/footer')%>
+    <%- include('../partials/footer')%>

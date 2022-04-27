@@ -619,6 +619,8 @@ section.middle-home {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 1rem;
+        width: 90%;
     }
 
 div.newsletter div{
@@ -626,7 +628,7 @@ div.newsletter div{
         display: flex;
         align-items: center;
         font-size: 1rem;
-        width: 300px;
+        /* width: 300px; */
         color: rgb(25, 18, 79);
         font-weight: 600;
     }
@@ -653,7 +655,7 @@ div.newsletter input::placeholder{
         color: #2e2e2e ;
     }
     div.newsletter p{
-        width: 300px;
+        /* width: 300px; */
         font-size: 11px;
         margin-top: 10px;
     }
@@ -996,7 +998,7 @@ div.profile-sidebar h3{
     padding: 15px 0;
     align-self: flex-start;
 }
-div.edit-profile button{
+div.profile-options button.edit{
     width: 100%;
     background-color: #53575e;
     color: #ffffff;
@@ -1004,11 +1006,27 @@ div.edit-profile button{
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
-div.edit-profile button:hover{
+div.profile-options button.edit:hover{
     background-color: #343940
 }
+div.profile-options button.logout{
+    width: 100%;
+    background-color: #f1f1f1;
+    color: #000000;
+    padding: 7px 16px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+}
+div.profile-options button.logout:hover{
+    background-color: #e2e2e2
+}
 
+div.profile-options button a{
+    text-decoration: none;
+}
 
 /*****************************************/
   /*CARRITO DE COMPRAS*/
@@ -1875,6 +1893,10 @@ input[type=number]::-webkit-outer-spin-button {
     .cont-detail{
         width: 70%;
     }
+    div.newsletter{
+        width: 300px;
+        margin: auto;
+    }
 }
 
 
@@ -1942,6 +1964,7 @@ input[type=number]::-webkit-outer-spin-button {
     .column-2{
         width: 60%;
     }
+   
 
 }
 

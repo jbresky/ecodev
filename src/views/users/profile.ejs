@@ -12,8 +12,9 @@
             <h3><%= user.first_name %> </h3>
             <h2><%= user.products.id %> </h2>
         </div>
-        <div class="edit-profile">
-            <button>Editar perfil</button>
+        <div class="profile-options">
+            <a href="/users/edit"><button class="edit">Editar perfil</button></a>
+            <a href="/users/logout"><button class="logout">Cerrar sesión</button></a>
         </div>
     </div>
     

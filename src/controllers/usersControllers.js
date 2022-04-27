@@ -70,7 +70,7 @@ const usersController = {
     },
     logout: (req, res) => {
         req.session.destroy();
-        res.redirect('/')
+        res.redirect('/users/login')
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
@@ -91,11 +91,14 @@ const usersController = {
         }
     },
     favorites: (req, res) => {
-        db.Product.findAll({
-            include: [{association: 'users'}]
-        })
-        .then(favs => {
-            res.render('users/favorites.ejs', {favs})
+        db.Fav.findAll({
+            include: ['product']
+        },
+        {where:{
+            user_id: userData.id
+        }, raw: true})
+        .then(products => {
+            res.render('users/favorites.ejs', {products})
         })
         .catch(err => console.log(err))
     
