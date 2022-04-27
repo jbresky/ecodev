@@ -10,7 +10,6 @@
         <div class="avatar-container">
             <img src="/img/users/<%= user.avatar %>">
             <h3><%= user.first_name %> </h3>
-            <h2><%= user.products.id %> </h2>
         </div>
         <div class="profile-options">
             <a href="/users/edit"><button class="edit">Editar perfil</button></a>
@@ -19,7 +18,7 @@
     </div>
     
 <div class="user-pannel">
-    <h2>Panel de actividad</h2>
+    <h2>Tu actividad</h2>
     <ul>
         <div class="user-activity">
             <h3>0</h3>
@@ -27,7 +26,7 @@
             <span>Comprados</span>
         </div>
         <div class="user-activity middle">
-            <h3>0</h3>
+            <h3><%= user['products'].length %></h3>
             <br>
             <span>Favoritos</span>
         </div>
