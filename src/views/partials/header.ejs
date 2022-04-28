@@ -30,13 +30,12 @@
         </li>
         <li class="shop"><a href='/products/cart'><span class="material-icons-outlined">shopping_cart</span></a></li>
         <% if(locals.isLogged) { %> 
-           <li class="user"><a href='/users/login'><img src="/img/back/user_logged.png" width="40" alt="User"></a></li>
+                <li class="user"><a href='/users/login'><img src="/img/users/<%= userData.avatar %> " width="40" style="border-radius: 50%;" alt="User"></a></li>
            <% } else { %> 
            <li class="user"><a href='/users/login'><span class="material-icons-outlined">
             account_circle
         </span></a></li>
         <% } %> 
-
     </ul>
     <script src="js/script.js"></script>
 </nav>
