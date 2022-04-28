@@ -5,8 +5,10 @@
     <!--Si tiene favorito, que muestre-->
     <h1>Tus productos favoritos: </h1>
         <% products.forEach(fav => {  %>
+          <% if(fav['user'].id == userData.id){ %> 
     <span><%= fav['product'].name %></span> 
     <img src="/img/products/<%= fav['product'].image%>" width=100>
+    <% } %> 
       <%  }) %> 
 
     <%- include('../partials/footer')%>

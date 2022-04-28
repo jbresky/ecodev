@@ -13,19 +13,6 @@ const usersController = {
     register: (req,res) => {
         res.render('users/register.ejs');
     },
-    editProfile: (req,res) => {
-        // db.User.update({
-        //     name:req.params.name,
-        //     direccion: req.params.direccion,
-        //     ciudad: req.params.ciudad,
-        //     email: req.params.email,
-        //     telefono: req.params.telefono,
-        //     username: req.params.username,
-        //     password: req.params.password,
-        //     password1: req.params.password1,
-        // })
-        // res.redirect('perfil', {})
-    },
     processLogin: (req, res) => {
          let errors = validationResult(req);
 
@@ -55,19 +42,6 @@ const usersController = {
                  }
                 })
         },
-       
-    profile: (req, res) => {
-        db.User.findOne({
-            where:{
-                email: userData.email
-            }, 
-            include: ['products']
-        })
-        .then(user => {
-            res.render('users/profile.ejs',  {user})
-        })
-        .catch(err => console.log(err))
-    },
     logout: (req, res) => {
         req.session.destroy();
         res.redirect('/users/login')
@@ -90,24 +64,50 @@ const usersController = {
             res.render('users/register.ejs')
         }
     },
+    profile: (req, res) => {
+        db.User.findOne({
+            where:{
+                email: userData.email
+            }, 
+            include: ['products']
+        })
+        .then(user => {
+            res.render('users/profile.ejs',  {user})
+        })
+        .catch(err => console.log(err))
+    },
     favorites: (req, res) => {
         db.Fav.findAll({
-            include: ['product']
-        },
-        {where:{
-            user_id: userData.id
-        }, raw: true})
+            include: ['product', 'user']
+        }, { 
+            where: {
+                'user': userData.id
+        }
+        })
         .then(products => {
             res.render('users/favorites.ejs', {products})
         })
         .catch(err => console.log(err))
-    
-        // db.Fav.findAll({
-        //     include: [{association: 'product'}]
-        // })
-        // .then(favs => {
-        //     res.render('users/favorites.ejs', {favs})
-        // })
+    },
+    edit: (req, res) => {
+        db.User.findOne({
+            where: {
+                email: userData.email
+            }
+        })
+        .then(user => {
+            res.render('users/edit.ejs', {user})
+        })
+    },
+    processEdit: (req, res) => {
+        db.User.update({
+        // ...req.body,
+        // avatar: req.file ? req.file.filename : 'default.jpg',
+        // password: bcrypt.hashSync(req.body.password, 10)
+        })
+        .then(userUpdated => {
+            res.redirect('users/profile.ejs')
+        })
     }
 }
 
