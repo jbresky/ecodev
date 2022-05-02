@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json())
 app.use(session({secret: 'Eco-secret!!', resave: false, saveUninitialized: false}))
 app.use(cookieParser())
 app.use(loggedMiddleware)
+app.use(methodOverride('_method'))
 // app.use(cookieMiddleware)
 
 

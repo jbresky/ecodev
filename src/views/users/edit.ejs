@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+    <body style="background-color: #f9f9fb">
+        <%- include('../partials/header') %>
+            <hr>
+
+            <% if(typeof errors != 'undefined'){ %> 
+                <div class="login-error">
+                  <p>ERROR</p>
+                     <span>
+                       Credenciales inválidas
+                     </span>
+                  </div>
+               <% } %>
+
+
+            <main class="user-settings">
+                <section class="avatar-form">
+                    <fieldset>
+                        <div>
+                            <h1 class="avatar">Avatar</h1>
+                            <form action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                                <div class="avatar-form">
+                                    <div class="current-avatar">
+                                        <img src="/img/users/<%= user.avatar %>" alt="Avatar" width="100">
+                                    </div>
+
+                                    <div class="choose-image">
+                                        <h3>Elige una imagen</h3>
+                                        <div>
+                                            <input type="file" name="avatar" id="avatar-file"
+                                                accept=".jpg, .png, .jpeg, .gif">
+                                        </div>
+                                    </div>
+
+                                    <div class="button-container">
+                                        <button type="submit">Subir</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- <p>Sube un avatar (una foto, imágen o ícono gráfico que te represente).</p> -->
+                        </div>
+                    </fieldset>
+                </section>
+                <section class="user-nav-menu">
+                    <nav>
+                        <h3>Configuración de la cuenta</h3>
+                        <ul>
+                            <li><h4><a href="/users/edit" style="color: #40354e; border-bottom: 2px solid #53a841">Editar perfil</a></h4></li>
+                            <li><h4><a href="/users/edit/password" style="color: #8c95a5;">Cambiar contraseña</a></h4></li>
+                            <li><h4><a href="/users/edit/cancel" style="color: #8c95a5;">Cancelar cuenta</a></h4></li>
+                        </ul>
+                    </nav>
+                </section>
+                <form action="/users/edit" method="POST">
+                    <section class="avatar-form">
+                        <fieldset>
+                            <div>
+                                <h1 class="perfil">Perfil</h1>
+                            
+                                    <div class="user-data">
+                                        <div class="user_first_name">
+                                            <label for="name">Nombre</label>
+                                            <input type="text" value="<%= user.first_name %>" id="name">
+                                        </div>
+                                        <div class="user_last_name">
+                                            <label for="last_name">Apellido</label>
+                                            <input type="text" value="<%= user.last_name %>" id="last_name">
+                                        </div>
+                                        <div class="user_email">
+                                            <label for="email">Correo electrónico</label>
+                                            <input type="text" value="<%= user.email %>" id="email">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </fieldset>
+                    </section>
+                </form>
+            </main>
+
+            <div class="reserved" style="height:50px; border-top: 1px solid #e9e9ee">
+                <span>&copy; Ecodev. Todos los derechos reservados</span>
+            </div>
+    </body>
+
+</html>
