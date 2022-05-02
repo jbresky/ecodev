@@ -25,14 +25,14 @@ header {
     box-shadow: 0px 0px 4px rgb(100, 100, 100);
 }
 
-nav {
-    padding: 8px 0 ;
+nav.header-navbar {
+    padding: 10px 0 ;
     background: #ffffff;
     display: flex;
     justify-content: space-around;
 }
 
-nav ul {
+nav.header-navbar ul {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
@@ -42,22 +42,15 @@ nav ul {
     letter-spacing: .5px;
 }
 
-nav ul li {
-    margin: 5px 0;
-    padding: 0 5px;
-}
-
-nav .user {
+nav.header-navbar .user {
     display: none;
 }
 
-nav ul li a {
-    /* color: #000; */
+nav.header-navbar ul li a {
     text-decoration: none;
 }
 
-nav ul li a.text-routes{
-    /* color: #000; */
+nav.header-navbar ul li a.text-routes{
     color: rgb(75, 74, 74)
 }
 
@@ -74,17 +67,20 @@ nav ul li a.text-routes{
 .items {
    display: none;
 }
+.items li{
+    margin: 0 15px;
+}
 
 .items a{
     position: relative;
 }
 
-.items a:hover{
+nav.header-navbar ul li a.text-routes:hover{
     color:rgb(46, 124, 46);
     font-weight: 600;
 }
 
-.items a:after{
+nav.header-navbar ul li a.text-routes:after{
     content: "";
     position: absolute;
     background-color: rgb(72, 138, 72);
@@ -96,7 +92,7 @@ nav ul li a.text-routes{
     transition: .3s;
 }
 
-.items a:hover:after{
+nav.header-navbar ul li a.text-routes:hover:after{
     width: 100%;
 }
 
@@ -135,19 +131,23 @@ nav ul li a.text-routes{
     padding: 12px;
 }
 
-
-.user, .heart, .shop {
-    font-size: 17px;
+nav div.header-icons{
+    display: flex;
+    align-items: center;
 }
 
-.user a, .heart a, .shop a{
+nav div.header-icons li{
+    margin: 0 20px;
+}
+
+nav div.header-icons li a{
     color: rgb(75, 74, 74);
     opacity: .9;
+    cursor: pointer;
 }
 
-.user a:hover, .heart a:hover, .shop a:hover{
+nav div.header-icons li a:hover{
     color:#21660c;
-    cursor: pointer;
 }
 
 /**** HOME ****/
@@ -227,9 +227,7 @@ section.product-box div.prod-box{
     align-items: center;
     flex-wrap: wrap;
     width: 70%;
-    margin-top: 4rem;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 4rem .63rem 8rem .63rem;
 }
 section.product-box article.show-products{
     width: 200px;
@@ -982,7 +980,8 @@ div.avatar-container{
 div.avatar-container img{
     object-fit: cover;
     border-radius: 50%;
-    width: 100%
+    width: 200px;
+    height: 200px;
 }
 div.profile-sidebar{
     background-color: #ffffff;
@@ -1028,6 +1027,152 @@ div.profile-options button a{
     text-decoration: none;
 }
 
+/*** EDIT ***/
+
+main.user-settings{
+    max-width: 960px;
+    margin: auto;
+    height: 600px;
+}
+section.avatar-form{
+    width: 700px;
+    float: right;
+}
+
+section.avatar-form div.current-avatar{
+    padding-right: 12px;
+}
+
+section.avatar-form div.current-avatar img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+section.avatar-form h3{
+    font-size: 1rem;
+    padding-bottom: 10px;
+    font-family: 'Rubik', sans-serif;
+}
+section.avatar-form div.button-container{
+    padding-left: 13px;
+}
+
+section.avatar-form div.button-container button{
+    width: 100px;
+    background-color: #53a841;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+section.avatar-form fieldset{
+    border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 10%) 0 1px 2px;
+    background-color: #ffffff;
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    border: none;
+}
+
+section.avatar-form fieldset h1{
+    border-bottom: 1px solid #d6dadf;
+    margin-bottom: 2rem;
+    padding: 0 0 1rem;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+div.avatar-form{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+section.avatar-form p{
+    font-size: 14px;
+    margin: 1rem 0;
+}
+
+section.user-nav-menu{
+    display: flex;
+    margin-top: 2rem;
+    padding-right: 1rem;
+}
+
+section.user-nav-menu nav{
+    margin-top: 20px;
+}
+
+section.user-nav-menu h3{
+    padding-bottom: 0.5rem;
+    color: #40354e;
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+section.user-nav-menu ul li{
+    margin-bottom: 10px;
+    list-style: none;
+    margin-bottom: 10p;
+    font-family: 'Nunito sans', sans-serif;
+}
+
+section.user-nav-menu ul li a {
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color .5s ease;
+}
+
+section.user-nav-menu ul li a:hover {
+    color: #40354e !important;
+}
+/* 
+div.user-data{
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+div.user-data div{
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+div.user-data label{
+    text-align: left;
+    width: 140px;
+    font-size: 14px;
+}
+
+div.user-data input{
+    width: 75%;
+    height: 40px;
+    outline: none;
+    background-color: #ffffff;
+    border: 1px solid #d6dadf;
+    border-radius: 3px;
+    transition: all .2s linear;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    padding: 10px;
+}
+
+div.user-data input:focus{
+    border-color: rgba(135, 196, 153, 0.8);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgba(135, 196, 153, 0.8);
+}
+
+div.user_email input{
+    cursor: not-allowed;
+    background-color: #F2F2F6;
+    border-color: #D6DADF;
+}
 /*****************************************/
   /*CARRITO DE COMPRAS*/
 /*****************************************/
@@ -1642,6 +1787,7 @@ div.reserved {
 div.reserved span{
     font-size: 12px;
     color: #9695A8;
+    margin: auto;
 }
 
 /* PRODUCT DETAIL */
@@ -1972,14 +2118,9 @@ input[type=number]::-webkit-outer-spin-button {
 @media(min-width: 771px){
     .items {
         display: flex;
-        /* margin-left: 150px; */
-    }
-    .items li {
-        margin: 0 10px
     }
     .burguer {
         display:none;
-        
     }
     .logo {
         order: -1;
@@ -2056,10 +2197,10 @@ input[type=number]::-webkit-outer-spin-button {
         display: flex;
     }
     .search-icon form button {
-        background: rgb(239, 239, 239);
+        background: rgb(243, 240, 240);
         border-radius: 0 5px 5px 0;
     }
-    nav .user {
+    nav.header-navbar .user {
         display: block;
     }
     .items{
