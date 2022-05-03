@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
-    
- 
-    //Validaciones Login
  
     let formLogin = document.querySelector('.login-form form');
-
-    let divErrors = document.querySelector('div.register-error')
     let spans = Array.from(document.querySelectorAll('span.valid-register')); 
     let inputEmail = document.querySelector('#inputEmail');
     let inputPassowrd = document.querySelector('#inputPassword')

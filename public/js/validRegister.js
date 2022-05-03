@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){
-
-    //validation Register
  
     let formRegister = document.querySelector('.register-container form');
 
@@ -30,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function(){
           errores.push(1)
           spanName.innerText = "Ingresá tu nombre"
        }
-       if(inputName.value.length < 3){
+       if(inputName.value.length > 0 && inputName.value.length < 3){
+          errores.push(1)
         spanName.innerText = "Tu nombre debe superar los 2 caracteres"
        }
        if(inputLastName.value == ""){
@@ -53,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
           spanPassword.innerText = "Crea una contraseña"
        }
 
-       if(inputPassowrd.value.length < 9){
+       if(inputPassowrd.value.length > 0 && inputPassowrd.value.length < 9){
         errores.push(5)
         spanPassword.innerText = "Tu contraseña debe superar los 8 caracteres"
      }
@@ -67,13 +66,12 @@ document.addEventListener('DOMContentLoaded', function(){
        }
     })
 
+    // validaciones cambiando para mejor UX 
+
     let nameInputChange = document.querySelector('#first_name');
     let spanName = document.querySelector('#firstName-register');
 
     nameInputChange.addEventListener('input', () => {
-      spans.forEach(span => {
-         span.style.padding = "10px 0";
-      })
       if(nameInputChange.value.length < 3){
         spanName.innerText = "Tu nombre debe superar los 2 caracteres"
       } else {
@@ -81,13 +79,38 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     })
 
+    let lastNameInputChange = document.querySelector('#last_name');
+    let spanLastName = document.querySelector('#lastName-register');
+
+    lastNameInputChange.addEventListener('input', () => {
+      if(lastNameInputChange.value.length > 0){
+        spanLastName.innerText = ""
+      }
+    })
+
+    let selectCountryChange = document.querySelector('#country')
+      let spanCountry = document.querySelector('#country-register');
+
+      selectCountryChange.addEventListener('input', () => {
+         if(selectCountryChange.value.length != ""){
+            spanCountry.innerText = ""
+         }
+      })
+ 
+      let inputEmail = document.querySelector('#email');
+      let spanEmail = document.querySelector('#email-register');
+      
+      inputEmail.addEventListener('input', () => {
+         if(inputEmail.value.includes('@')){
+            spanEmail.innerText = ""
+         }
+      })
+
+
     let inputPassowrd = document.querySelector('#password')
-       let spanPassword = document.querySelector('#password-register');
+      let spanPassword = document.querySelector('#password-register');
 
     inputPassowrd.addEventListener('input', () => {
-      spans.forEach(span => {
-         span.style.padding = "10px 0";
-      })
       if(inputPassowrd.value.length < 9){
         spanPassword.innerText = "Tu contraseña debe superar los 8 caracteres"
       } else {
