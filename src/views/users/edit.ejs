@@ -6,22 +6,13 @@
         <%- include('../partials/header') %>
             <hr>
 
-            <% if(typeof errors != 'undefined'){ %> 
-                <div class="login-error">
-                  <p>ERROR</p>
-                     <span>
-                       Credenciales inválidas
-                     </span>
-                  </div>
-               <% } %>
-
 
             <main class="user-settings">
                 <section class="avatar-form">
                     <fieldset>
                         <div>
                             <h1 class="avatar">Avatar</h1>
-                            <form action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <form action="/users/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
                                 <div class="avatar-form">
                                     <div class="current-avatar">
                                         <img src="/img/users/<%= user.avatar %>" alt="Avatar" width="100">
@@ -54,34 +45,40 @@
                         </ul>
                     </nav>
                 </section>
-                <form action="/users/edit" method="POST">
+                <form action="/users/edit?_method=PUT" method="POST" id="edit-user">
                     <section class="avatar-form">
                         <fieldset>
                             <div>
                                 <h1 class="perfil">Perfil</h1>
-                            
+                               
                                     <div class="user-data">
                                         <div class="user_first_name">
                                             <label for="name">Nombre</label>
-                                            <input type="text" value="<%= user.first_name %>" id="name">
+                                            <input type="text" name="first_name" value="<%= user.first_name %>" id="name">
                                         </div>
+                                        <span class="valid-edit" id="firstName-edit"></span>
+                                        
                                         <div class="user_last_name">
                                             <label for="last_name">Apellido</label>
-                                            <input type="text" value="<%= user.last_name %>" id="last_name">
+                                            <input type="text" name="last_name" value="<%= user.last_name %>" id="last_Name">
+                                           
                                         </div>
-                                        <div class="user_email">
+                                        <span class="valid-edit" id="lastName-edit"></span>
+                                        <div class="user_email" style="margin-top: .5rem;">
                                             <label for="email">Correo electrónico</label>
                                             <input type="text" value="<%= user.email %>" id="email">
                                         </div>
                                     </div>
-
                             </div>
                         </fieldset>
+                        <div class="button-container" style="text-align: right; padding: 12px 0">
+                            <button type="submit" style="padding: 12px 32px; width: auto;">Guardar cambios</button>
+                        </div>
                     </section>
                 </form>
             </main>
 
-            <div class="reserved" style="height:50px; border-top: 1px solid #e9e9ee">
+            <div class="reserved" style="height:50px; border-top: 1px solid #e9e9ee; margin-top: 12px; width: 100%;">
                 <span>&copy; Ecodev. Todos los derechos reservados</span>
             </div>
     </body>
