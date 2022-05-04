@@ -8,6 +8,7 @@ const usersController = require('../controllers/usersControllers');
 
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const req = require('express/lib/request');
 
 
 
@@ -23,20 +24,21 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({storage})
 
-router.get('/login', guestMiddleware, usersController.login);
+router.get('/login', guestMiddleware, usersController.login)
 
-router.get('/register', guestMiddleware, usersController.register);
-// router.post('edit-profile', usersController.editProfile);
+router.get('/register', guestMiddleware, usersController.register)
 
-router.get('/profile', authMiddleware, usersController.profile);
+router.get('/profile', authMiddleware, usersController.profile)
 router.get('/logout', usersController.logout)
 
 router.get('/favorites', authMiddleware, usersController.favorites)
+router.get('/edit', authMiddleware, usersController.edit)
+router.get('/edit/password', authMiddleware, usersController.password)
+router.get('/edit/cancel', authMiddleware, usersController.cancel)
 
 const validationLogin = [
     check('email')
         .notEmpty(),
-        // .isEmail().withMessage('Email inválido'),
     check('password')
         .notEmpty()
         .isLength({min: 8})
@@ -62,4 +64,25 @@ const validatorRegister = [
 
 router.post('/register', uploadFile.single('avatar'), validatorRegister, usersController.processRegister)
 
+
+router.put('/avatar', uploadFile.single('avatar'), usersController.processAvatar)
+
+const validationEdit = [
+    check('first_name')
+        .notEmpty()
+        .isLength({min: 4}),
+    check('last_name')
+        .notEmpty(),
+]
+router.put('/edit', validationEdit, usersController.processName)
+
+const validationPasswordEdit = [
+    check('password')
+        .notEmpty()
+        .isLength({min: 8})
+]
+
+router.put('/password', validationPasswordEdit, usersController.processPassword)
+
+router.delete('/cancel', usersController.deleteUser)
 module.exports = router;
