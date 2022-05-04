@@ -24,7 +24,7 @@ const usersController = {
                 if(user){
                 if(bcrypt.compareSync(req.body.password, user.password)){
                     userData = user.dataValues;
-                    delete userData.password
+                    // delete userData.password
 
                     req.session.userLogged = userData;
                         if(req.body.recordame){
@@ -99,15 +99,90 @@ const usersController = {
             res.render('users/edit.ejs', {user})
         })
     },
-    processEdit: (req, res) => {
+    processAvatar: (req, res) => {
+        
         db.User.update({
-        // ...req.body,
-        // avatar: req.file ? req.file.filename : 'default.jpg',
-        // password: bcrypt.hashSync(req.body.password, 10)
+        avatar: req.file ? req.file.filename : 'default.jpg',
+        },{
+            where:{
+                id: userData.id
+            }
+        })     
+         res.redirect('/users/profile')
+        // .catch(err => console.log(err))
+   
+    },
+    password: (req, res) => {
+        db.User.findOne({
+            where: {
+                email: userData.email
+            }
         })
-        .then(userUpdated => {
-            res.redirect('users/profile.ejs')
+        .then(user => {
+            res.render('users/password.ejs', {user})
         })
+    },
+    cancel: (req, res) => {
+        db.User.findOne({
+            where: {
+                email: userData.email
+            }
+        })
+        .then(user => {
+            res.render('users/cancel.ejs', {user})
+        })
+    },
+    processName: (req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+          
+            db.User.update({
+                ...req.body,
+            },{
+                where:{ email: userData.email }
+            })
+            .then(editedUser => {
+                return res.redirect('/users/profile')
+            })
+            .catch(error => console.log(error))
+        } else {
+            res.render('users/edit.ejs', {user: userData})
+        }
+    },
+    processPassword: (req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            if(bcrypt.compareSync(req.body.oldPassword, userData.password)){
+            db.User.update({
+                password: bcrypt.hashSync(req.body.password, 10)
+            },{
+                where:{ email: userData.email }
+            })
+            .then(editedUser => {
+                return res.render('users/login.ejs')
+            })
+            .catch(error => console.log(error))
+          } else {
+            res.render('users/password.ejs', {errors})   
+          }
+        } else {
+            res.render('users/password.ejs', {user: userData})
+        }
+    },
+    deleteUser: async (req, res) => {
+        try {
+        await db.User.destroy({
+            where: {
+                id: userData.id
+            }
+        })
+            res.redirect('/users/login')
+    } catch(error ) {
+        console.log(error)
+    }
+        
     }
 }
 
