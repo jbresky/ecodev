@@ -107,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function(){
       })
 
 
-    let inputPassowrd = document.querySelector('#password')
+    let inputPassword = document.querySelector('#password')
       let spanPassword = document.querySelector('#password-register');
 
-    inputPassowrd.addEventListener('input', () => {
-      if(inputPassowrd.value.length < 9){
+    inputPassword.addEventListener('input', () => {
+      if(inputPassword.value.length < 9){
         spanPassword.innerText = "Tu contraseña debe superar los 8 caracteres"
       } else {
           spanPassword.innerText = ""

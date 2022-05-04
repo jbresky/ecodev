@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body style="background-color: #f9f9fb">
+    <%- include('../partials/header') %>
+        <hr>
+
+        <main class="user-settings">
+            
+            <form action="/users/cancel?_method=DELETE" method="POST" id="edit-cancel">
+                <section class="avatar-form">
+                    <fieldset>
+                        <div>
+                            <h1 class="perfil">Te vamos a extrañar</h1>
+                        
+                                <div class="user-data cancel">
+                                    <p>Si crees que hay algo en lo que podamos mejorar, nos gustaría mucho leer tu comentario:</p>
+                                    <textarea name="" id="" cols="65" rows="8"></textarea>
+                                    <p style="color: rgb(231, 17, 17);">Tené en cuenta que esta acción es irreversible</p>
+                                    <p style="color: #cd1010; font-weight: bold;">No podemos reestablecer cuentas canceladas</p>
+                                </div>
+
+                        </div>
+                    </fieldset>
+                    <div class="button-container" style="text-align: right; padding: 12px 0">
+                        <button type="submit" style="padding: 12px 32px; width: auto; background-color: #ff596f;">Si, quiero eliminar mi cuenta</button>
+                    </div>
+                </section>
+                
+            </form>
+            <section class="user-nav-menu">
+                <nav>
+                    <h3>Configuración de la cuenta</h3>
+                    <ul>
+                        <li><h4><a href="/users/edit" style="color: #8c95a5;">Editar perfil</a></h4></li>
+                        <li><h4><a href="/users/edit/password" style="color: #8c95a5;">Cambiar contraseña</a></h4></li>
+                        <li><h4><a href="/users/edit/cancel" style="color: #40354e; border-bottom: 2px solid #53a841">Cancelar cuenta</a></h4></li>
+                    </ul>
+                </nav>
+            </section>
+        </main>
+
+        <div class="reserved" style="height:50px; border-top: 1px solid #e9e9ee">
+            <span>&copy; Ecodev. Todos los derechos reservados</span>
+        </div>
+</body>
+</html>

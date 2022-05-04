@@ -50,6 +50,10 @@ nav.header-navbar ul li a {
     text-decoration: none;
 }
 
+nav.header-navbar ul li a:hover{
+    color:#21660c;
+}
+
 nav.header-navbar ul li a.text-routes{
     color: rgb(75, 74, 74)
 }
@@ -61,7 +65,6 @@ nav.header-navbar ul li a.text-routes{
 .logo img{
     width: 60px;
     border-radius: 50%;
-    /* opacity: .9; */
 }
 
 .items {
@@ -129,29 +132,20 @@ nav.header-navbar ul li a.text-routes:hover:after{
     border: none;
     background: transparent;
     padding: 12px;
+    font-size: 1rem;
 }
 
-nav div.header-icons{
-    display: flex;
-    align-items: center;
+li.heart, li.user, li.shop{
+    margin: 0 10px;
 }
 
-nav div.header-icons li{
-    margin: 0 20px;
-}
-
-nav div.header-icons li a{
+li.heart a, li.user a, li.shop a{
     color: rgb(75, 74, 74);
     opacity: .9;
     cursor: pointer;
 }
 
-nav div.header-icons li a:hover{
-    color:#21660c;
-}
-
 /**** HOME ****/
-/*Mobile first reminder*/
 
 main.home .home-text{
     font-weight: normal;
@@ -790,7 +784,7 @@ div.register-error{
     box-shadow: 0 6px 6px 0 rgb(207, 207, 207);
 }
 div.register-error p, div.login-error p{
-    color: #c52e2e;
+    color: #ec1414;
     padding-bottom: 5px;
     font-weight: 600;
 }
@@ -799,15 +793,23 @@ div.login-error{
     text-align: center;
     border: 1.5px solid #e4e4e4;
     width: 200px;
+    margin-top: 20px;
     margin-bottom: 20px;
     font-size: 14px;
     padding: 1rem;
     border-radius: 5px;
-    box-shadow: 0 6px 6px 0 rgb(207, 207, 207);
+    box-shadow: 0 3px 6px 0 rgb(207, 207, 207);
 }
-span.valid-register{
+span.valid-register, span.valid-edit{
     font-size: 14px;
     color: #cd1010;
+}
+span.valid-edit{
+    display: flex;
+    margin-top: -.8rem;
+    display: none;
+    padding: 10px 0;
+    /* justify-content: flex-start; */
 }
 /******* 
 CREATE FORM
@@ -1098,6 +1100,9 @@ section.avatar-form p{
     margin: 1rem 0;
 }
 
+/* CANCEL */
+
+/**/
 section.user-nav-menu{
     display: flex;
     margin-top: 2rem;
@@ -1165,6 +1170,12 @@ div.user-data input{
 
 div.user-data input:focus{
     border-color: rgba(135, 196, 153, 0.8);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgba(135, 196, 153, 0.8);
+}
+
+div.cancel textarea:focus{
+    border-color: rgba(135, 196, 153, 0.8);
+    outline: none;
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgba(135, 196, 153, 0.8);
 }
 
@@ -2179,17 +2190,6 @@ input[type=number]::-webkit-outer-spin-button {
         width: 80%;
         height: 500px;
     }
-    /* .cont-detail img{
-        height: 100%;
-    }
-    div.container-column-2{
-        margin: auto;
-        width: 80%;
-        padding: 1rem 0 1.5rem 0;
-    } */
-    /* .column-1 {
-        width: 380px;
-    } */
 }
 
 @media(min-width: 1024px){

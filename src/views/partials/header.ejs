@@ -1,5 +1,5 @@
 <header class="main-header"></header>
-<nav>
+<nav class="header-navbar">
     <ul>
         <li class="burguer">
             <span class="bar"></span>
@@ -9,9 +9,7 @@
         <div class="search-icon">
             <form action="/products/search" method="GET">
                 <input type="search" placeholder="Search">
-                <!-- <label class="icon"> -->
                 <button type="submit" class="fas fa-search"></button>
-                <!-- </label> -->
             </form>
         </div>
         <li class="logo">
@@ -26,16 +24,18 @@
             <li><a class="text-routes" href='/users/register'>Únete</a></li>
         </div>
 
+        <!-- <div class="header-icons"> -->
         <li class="heart"><a href='/users/favorites'><span class="material-icons-outlined">favorite_border</span></a>
         </li>
         <li class="shop"><a href='/products/cart'><span class="material-icons-outlined">shopping_cart</span></a></li>
         <% if(locals.isLogged) { %> 
-                <li class="user"><a href='/users/login'><img src="/img/users/<%= userData.avatar %> " width="40" style="border-radius: 50%;" alt="User"></a></li>
+                <li class="user"><a href='/users/login'><img src="/img/users/<%= userData.avatar %> " width="40" style="border-radius: 50%; height: 40px; object-fit: cover;" alt="User"></a></li>
            <% } else { %> 
            <li class="user"><a href='/users/login'><span class="material-icons-outlined">
             account_circle
         </span></a></li>
         <% } %> 
+    <!-- </div> -->
     </ul>
     <script src="js/script.js"></script>
 </nav>
