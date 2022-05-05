@@ -245,8 +245,9 @@ section.product-box article.show-products{
 }
 section.product-box div.prod-box article.show-products div{
     width: 200px;
-    font-size: .9rem;
+    font-size: 1rem;
     overflow: hidden;
+    text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;
     border-radius: 5px;
@@ -255,6 +256,8 @@ section.product-box div.prod-box article.show-products div{
 section.product-box div.prod-box article.show-products div.name{
     font-weight: 600;
     padding: 7px 0 10px 0;
+    text-align: left;
+    font-size: .9rem;
 }
 
 section.product-box article.show-products div img{
@@ -393,17 +396,17 @@ div.prod-box article ul li {
 }
 
 div.prod-box article ul li.prod-price{
-    font-weight: 600;
-    color: #6aa757;
+    /* font-weight: 600; */
+    color: #6e6969;
     margin: 0 7px; 
     text-decoration: line-through;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 div.prod-box article ul li.prod-price-off{
-    font-size: 14px;
-    color: #6aa757;
-    font-weight: 600;
+    font-size: 18px;
+    color: #6e6969;
+    /* font-weight: 600; */
     letter-spacing: .5;
 }
 
@@ -912,6 +915,7 @@ div.login-error{
 span.valid-register, span.valid-edit{
     font-size: 14px;
     color: #cd1010;
+    padding-top: 10px;
 }
 span.valid-edit{
     display: flex;
@@ -1593,6 +1597,7 @@ section.highlight article div{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-top: 10px;
 }
 
 section.highlight img {
