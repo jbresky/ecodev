@@ -3,12 +3,56 @@
   <%- include('../partials/header')%>
 
     <!--Si tiene favorito, que muestre-->
-    <h1>Tus productos favoritos: </h1>
-        <% products.forEach(fav => {  %>
-          <% if(fav['user'].id == userData.id){ %> 
-    <span><%= fav['product'].name %></span> 
-    <img src="/img/products/<%= fav['product'].image%>" width=100>
-    <% } %> 
-      <%  }) %> 
+    <main class="favorites">
 
+      <div style="width: 85%; margin: auto;">
+      <div class="favorites-header">
+        <h1>Favoritos </h1>
+        <div>
+          <button>
+        <span class="material-symbols-outlined">
+          add_shopping_cart
+          </span>
+          <span class="addAll">Agregar todo al carrito</span>
+        </button>
+        </div>
+      </div>
+      <span class="counter"><%= products.length %> artículos</span>
+    </div>
+
+      <div class="favorites-container">
+        <% products.forEach(fav=> { %>
+          <article>
+            
+              <div class="favorite-img">
+                <img src="/img/products/<%= fav['product'].image%>" width=100>
+                <button id="addToFavs" onclick="addProductToFav('<%= fav['product'].id %>')">
+                  <i class="fas fa-heart fav-red"></i>
+                </button>
+              </div>
+              <div class="details">
+                <span class="name">
+                  <%= fav['product'].name %>
+                </span>
+                <span>
+                  <%= fav['product'].category %> 
+                </span>
+                <div class="cart-logo">
+                  <span class="price">
+                   $ <%= fav['product'].price.replace('.', ',') %>
+                  </span>
+                  <button>
+                  <span class="material-symbols-outlined cart">
+                    add_shopping_cart
+                    </span>
+                  </button>
+                </div>
+              </div>
+          </article>
+        
+            <% }) %>
+      </div>
+
+    </main>
+<div style="height: 8rem;"></div>
     <%- include('../partials/footer')%>

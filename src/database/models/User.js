@@ -56,7 +56,8 @@ module.exports = (sequelize, dataTypes) => {
             through: "user_favorites",
             foreignKey: "user_id",
             otherKey: "product_id",
-            timestamps: false
+            timestamps: false,
+            onDelete: "NO ACTION"
         })
     }
     return User

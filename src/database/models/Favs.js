@@ -23,11 +23,13 @@ module.exports = (sequelize, dataTypes) => {
     Fav.associate = (models) => {
         Fav.belongsTo(models.User, {
             as: 'user',
-            foreignKey: 'user_id'
+            foreignKey: 'user_id',
+            onDelete: 'NO ACTION'
         })
         Fav.belongsTo(models.Product, {
             as: 'product',
-            foreignKey: 'product_id'
+            foreignKey: 'product_id',
+            onDelete: 'NO ACTION'
         })
     }
 

@@ -340,14 +340,7 @@ div.side-filter div.filter-price form label span{
     font-size: .9rem;
     margin-left: 1rem;
 }
-/* 
-div.side-filter ul.links-filter{
-    height: 0;
-    overflow: hidden;
-}
-div.side-filter ul.links-filter .animation{
-    height: 100%;
-} */
+
 .dropdown{
     transition: max-height .5s ease-out;
     max-height: 20em;
@@ -475,9 +468,6 @@ section.icon-text ul li{
 section.icon-text .title{
     font-weight: 600;
 }
-/* section.icon-text span.title{
-    display: flex;
-} */
 
 article button.gama{
     background: #ffffff;
@@ -524,11 +514,6 @@ section.middle-home {
         color: #588d48;
     }
 
-    /* div.eco-activism div{
-        font-size: 1.45rem;
-        margin: 20px;
-        padding: 2rem 3rem;
-    } */
     div.eco-activism div h2{
         color: rgb(50, 31, 75);
         font-size: 1.4rem;
@@ -657,6 +642,114 @@ div.newsletter input::placeholder{
         color: #000;
         cursor: pointer;
     }
+
+/*USER FAVORITES*/
+
+div.favorites-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin-top: 2rem;
+}
+
+div.favorites-container article{
+    position: relative;
+}
+
+div.favorites-container article div.details{
+    padding-top: 7px;
+}
+
+div.favorites-container article div.details span.name{
+    font-weight: 600;
+    padding-bottom: 7px;
+    color: #2a164f;
+    font-size: .9rem;
+}
+
+div.favorites-container article div.details div.cart-logo{
+    padding-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 4px
+}
+
+div.favorites-container article div.details span.price{
+    color: #2a164f;
+}
+
+div.favorites-container article div.details div.cart-logo button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+}
+
+div.favorites-container article div.details span.cart{
+    border-radius: 50%;
+    border: 2px solid #d6dadf;
+    padding: 5px;
+    font-size: 1rem;
+} 
+
+div.favorites-container article div.details div.cart-logo button:hover{
+    background-color: #e8e8ec;
+
+}
+
+div.favorites-container img{
+    width: 212px;
+    height: 212px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+div.favorites-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+div.favorites-header button{
+    background-color: #e9e9f099;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+div.favorites-header button:hover{
+    background-color: #e7e7ec;
+}
+
+div.favorites-header button span.addAll{
+    margin-left: 8px;
+}
+
+div.favorite-img button{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+div.favorite-img i{
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    opacity: .9;
+    color: #ff5a70;
+    cursor: pointer;
+}
+
+
+
 /**** FORMS ****/
 
 .login-form, .register-container{
@@ -1417,92 +1510,6 @@ div.user_email input{
     }
 } */
 
-
-/*descrip produ /////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////*/
-
-.art {
-    display: inline-block;
-    width: 390px;
-    height: 500px;
-}
-
-.caja {
-    display: flex;
-    width: 350px;
-    height: 350px;
-    border: 2px solid grey;
-    background-color: white;
-    box-shadow: 2px 2px 5px grey;
-}
-
-.caja img {
-    width: 100%;
-    height: 100%;
-}
-
-.letter {
-    /* font-family: "Roboto", "sans-serif"; */
-    color: green;
-    font-size: 20px;
-    text-align: center;
-}
-
-.encabezadoProdu{
-    display: flex;
-    /* font-family: "Roboto", "sans-serif"; */
-    font-size: 25px;
-    color: green;
-    text-align: center;
-    justify-content: center;
-}
-
-.descrip {
-    /* font-family: 'Franklin Gothic Medium'; */
-    color: #b5b8b1;
-    text-align: center;
-    width: 50x;
-    height: 30px;
-}
-
-.price {
-    /* font-family: 'Roboto', serif; */
-    color: grey;
-    text-align: center;
-}
-
-.holi {
-    display: flex;
-    align-self: center;
-    size: 35px;
-    margin-top: 15px whitesmoke;
-    background-color: whitesmoke;
-    color: black
-}
-
-.more {
-    display: flex;
-    font-size: 12px;
-    align-items: center;
-    /* font-family: "Roboto", "sans-serif"; */
-    justify-content: center;
-    background-color: whitesmoke;
-    margin-bottom: 20px whitesmoke;
-    color: grey;
-}
-
-.produ {
-    /* font-family: 'Roboto', 'sans-serif'; */
-    font-size: 30px ;
-    color: grey;
-    background-color: #f5f5f5;
-    align-self: center;
-    padding-top: 15px;
-    padding-bottom: 35px;
-    padding-left: 20px;
-    text-align: center;
-}
-
 /********************************************************************
 *** Not found page Styles
 ------------------------------------------------------------------*/
@@ -2249,31 +2256,6 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
-/*Solo para ver como queda... esta mal tantas media queries*/
-@media(min-width: 1100px){
-    section.notes article{
-        width: 320px;
-        height: 425px;
-    }
-    .letter {
-        font-size: 26px;
-        padding-top: 5px;
-        padding-bottom: 10px;
-    }
-    .price {
-        font-size: 20px;
-        padding-top: 40px;
-
-    }
-    .caja {
-        width: 290px;
-        height: 290px; }
-
-    
-}
-
-
-
 @media screen and (min-width: 1000px){
     .grid-cajas {
         flex-wrap: wrap;
@@ -2300,9 +2282,6 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .letter {
         font-size: 26px;
-    }
-    .price {
-        font-size: 20px;
     }
     .caja {
         width: 290px;
