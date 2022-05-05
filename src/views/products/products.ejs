@@ -73,45 +73,68 @@
                          </div>
                      </aside>
                  </div>
-                    <div class="prod-box">
-                        <% products.forEach( product => { %>
-                         
-                                <article class="show-products">
-                                    <div>
-                                <a href="/products/detail/<%= product.id %> "> <img src= "/img/products/<%=product.image%>"> </a> 
-                            </div>
-                                <!-- <% if (product.discount)  { %> 
-                                    
-                                    <button class="off-fixed"><%= product.discount %> % OFF</button>
 
-                                <% } %> -->
-                                 
-                                
-                                <!-- <ul>
-                                    <li class="prod-title">
-                                    </li> -->
-                                    <div class="name"><%= product.name %></div> 
-                                    
-                                    
-                                    <!-- <% if (product.discount) { %> 
-                                        <li class="prod-price"><%= product.price %> </li>
-                                        <%   let priceOff = ( product.price - (product.discount * product.price / 100) ) %>
-                                            <li class="prod-price-off">$<%= priceOff %></li>  -->
-                                        
-                                    <!-- <% } else { %> if there isn't discount show product price -->
-                                        <!-- <li class="product-price">
-                                        </li> -->
-                                <div>$<%= product.price.replace('.', ',') %></div> 
-                                    <!-- <% } %>  -->
-                                    
-                                <!-- </ul> -->
-                                <!-- <h3 class="prod-title">Botella térmica</h3> -->
-                                
-                              
-                                </article>
+
+
+                    <div class="column">
+
+                     
+                            <% if (locals.product_to_search) { %>
+                               <h3>Resultados para <span> <%= product_to_search %></span> </h3>
+                            <% } %>
                         
-                        <% }) %> 
+                            <% if (products.length === 0) { %>
+                                <h4>No hay resultados para tu búsqueda</h4>
+
+                                 
+                            
+                            <% } else { %>
+                              
+
+                                <div class="prod-box">
+                            <% products.forEach( product => { %>
+
+                             <article class="show-products">
+                                 <div>
+                                     <a href="/products/detail/<%= product.id %> "> <img src= "/img/products/<%=product.image%>"> </a> 
+                                    </div>
+                                    <!-- <% if (product.discount)  { %> 
+                                        
+                                        <button class="off-fixed"><%= product.discount %> % OFF</button>
+                                        
+                                        <% } %> -->
+                                        
+                                        
+                                        <!-- <ul>
+                                            <li class="prod-title">
+                                            </li> -->
+                                            <div class="name"><%= product.name %></div> 
+                                            
+                                            
+                                            <!-- <% if (product.discount) { %> 
+                                                <li class="prod-price"><%= product.price %> </li>
+                                                <%   let priceOff = ( product.price - (product.discount * product.price / 100) ) %>
+                                                <li class="prod-price-off">$<%= priceOff %></li>  -->
+                                                
+                                                <!-- <% } else { %> if there isn't discount show product price -->
+                                                <!-- <li class="product-price">
+                                                </li> -->
+                                                <div>$<%= product.price.replace('.', ',') %></div> 
+                                                <!-- <% } %>  -->
+                                                
+                                                <!-- </ul> -->
+                                                <!-- <h3 class="prod-title">Botella térmica</h3> -->
+                                                
+                                                
+                                            </article>
+                                            
+                                            <% }) %> 
+                                        </div>
+                     
+                    
+                        <% } %>
                     </div>
+                    
                 </section>
            
                 <div style="height: 4rem;"></div>
