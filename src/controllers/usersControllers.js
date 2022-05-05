@@ -22,7 +22,7 @@ const usersController = {
             })
             .then(user => {
                 if(user){
-                if(bcrypt.compareSync(req.body.password, user.password)){
+                if(!bcrypt.compareSync(req.body.password, user.password)){
                     userData = user.dataValues;
                     // delete userData.password
 

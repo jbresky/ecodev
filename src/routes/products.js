@@ -14,7 +14,7 @@ router.get('/health-&-beauty', productsController.healthBeauty)
 router.get('/natural-medicine', productsController.naturalMedicine)
 router.get('/eco-products', productsController.ecoProducts)
 router.get('/deco', productsController.deco)
-router.get('/cart', productsController.shoppingCart)
+router.get('/cart', authMiddleware, productsController.shoppingCart)
 
 router.get('/create', authMiddleware, productsController.createForm)
 // router.post('/create', productsController.storeProduct)
@@ -26,6 +26,9 @@ router.get('/edit/:id', productsController.edit)
 // router.put('/:id', productsController.change)
 router.delete('/:id', productsController.delete)
 router.get('/search', productsController.search)
+
+router.get('/addToCart/:productId', authMiddleware, productsController.addProductToCart);
+router.delete('/cartDeleteProduct/:productId', authMiddleware, productsController.cartDeleteProduct);
 
 
 module.exports = router;
