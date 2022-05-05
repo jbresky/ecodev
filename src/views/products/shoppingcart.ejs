@@ -14,52 +14,86 @@
         <div class="title">
 
             <h3>Carrito de Compras</h3>
-            <p>Cant. Productos: 1 </p>
+            <% if (products) { %>             
+                <p>Cant. Productos: <%= products.length %>  </p>
+            <% } %>
         </div>
         <hr>
-        <div class="cart-details">
-            <div class="product-img">
-                <img class="imagen-producto" src="../img/bottle.jpg" alt="Producto1">
-            </div>
-            <div class="product-description">
-                <h5>Nombre de Producto</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, eaque odio commodi ducimus praesentium corporis.</p>
-                <strong> $1500.50</strong>
+        <ul>
+            
+             
+                <% if (!products) { %>
+                    <p style="text-align: center;">Tu carrito está vacío</p>
+                <% } else { %>
+                        
+            
 
-            </div>
-            <div class="product-cant">
-                <a href="#"><i class="fas fa-minus"></i></a>
-                <input type="number" min="1" name="cantidad" id="cantidad" value="1" />
-                <a href="#"><i class="fas fa-plus"></i></a>
-            </div>
-            <div class="product-subtotal">
-                <h4>$1500.00</h4>
-            </div>
-            <div class="product-delete">
-                <a href="#"><i class="fas fa-trash-alt"></i></a>
+            <% products.forEach(product => { %>
+             
+          
+            
+            
+                <li>
+
+                    <div class="cart-details">
+                        <div class="product-img">
+                            <img class="imagen-producto" src="../img/products/<%= product['product.image'] %> " alt="Producto1">
+                        </div>
+                        <div class="product-description">
+                            <h5><%= product['product.name'] %></h5>
+                            <p><%= product['product.description'] %> </p>
+                            <strong>$ <%=   product['product.price'] %> </strong>
+                            
+                        </div>
+                        <div class="product-cant">
+                            <button class="subtractProduct"><i class="fas fa-minus"></i></button>
+                            <input value=<%= product.quantity %>  type="text"  name="cantidad" id="cantidad" readonly />
+                            <button class="addProduct"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="product-subtotal">
+                            
+                            <span>$ </span><h4 class="priceSubtotal"><%=  product['product.price'] * product.quantity %> </h4>                            
+                            
+                        </div>
+
+                        <div class="product-delete">
+                            <form action="/products/cartDeleteProduct/<%= product.product_id %>?_method=DELETE" method="post">
+                                <button class="deleteProduct"><i class="fas fa-trash-alt"></i></button>
+                            </form>                            
+                        </div>
+                        
+                    </div>
+                    <hr>
+                </li>
+                
+                <% }) %>
+                <% } %>
+            </ul>
+            
+            
+        </section>
+        
+        
+        <section class="footer-cart">
+            <div class="total">
+                
+
+                 <h3>Subtotal: </h3> <p class="subtotal"> </p>
+
+                
+            </div>           
+            
+            <div class="opciones">
+                <a href="/products" class="btn-continue">Seguir comprando</a>
+                <a href="#" class="btn-end">Finalizar Compra</a>
+                
             </div>
             
-        </div>
-        <hr>
-     
-        
-    </section>
-    
+            
+        </section>
 
-    <section class="footer-cart">
-        <div class="total">
-            <h3>Subtotal</h3> <p>$000</p>
-        </div>           
-
-        <div class="opciones">
-            <a href="/products" class="btn-continue">Seguir comprando</a>
-            <a href="#" class="btn-end">Finalizar Compra</a>
-               
-        </div>
-
-        
-    </section>
 </div>
+<script src="/js/shoppingCarts.js"></script>
 <%- include('../partials/footer') %> 
 </body>
 </html>

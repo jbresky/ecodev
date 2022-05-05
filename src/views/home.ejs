@@ -34,9 +34,11 @@
                                     </h3>
                                     <br>
                                     <ul>
-                                        <a href="">
-                                            <button class="add-to-cart">Agregar al carrito</button>
-                                        </a>
+                                        <form action="/products/addToCart/<%= product.id %>" method="get">
+                                            
+                                                <button class="add-to-cart">Agregar al carrito</button>
+                                            
+                                        </form>
                                         <li class="prod-price">$ <%= product.price.replace('.', ',')%>
                                         </li>
                                         <li class="prod-price-off">$ <%= product.price - (product.price * product.off /

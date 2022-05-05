@@ -3,13 +3,101 @@ const db = require('../database/models');
 const op = db.Sequelize.Op
 
 const productsController = {
-    shoppingCart: (req, res) => {
+    shoppingCart: async (req, res) => {
         /*db.Product.findByPk(req.params.id)
             .then(function(product){
                 res.render('/shoppingcart', {product:product})
             })*/
-        res.render('products/shoppingcart.ejs');
+
+
+            let user_id = req.session.userLogged.id;
+            console.log('USer ID: ' + user_id);
+            let cart = await db.Cart.findOne({
+                where: {user_id}
+            })
+
+            
+            if (cart) {
+                db.CartProducts.findAll( {where: {cart_id: cart.id}, include: ['product'], raw: true})
+                .then (prod => {
+                    res.render('products/shoppingcart.ejs', {products:prod})
+                })
+            } 
+           
     },
+
+    addProductToCart: async (req, res) => {
+        const productId = req.params.productId;
+        const user_id = req.session.userLogged.id;
+
+        
+
+        console.log('produc ID: ' +productId + ' user_id: '+ user_id);
+
+        let producto = await db.Product.findByPk(productId);
+
+        db.Cart.findOne({
+            where: {user_id}
+        })
+        .then (cart => {
+            if (cart) {
+                db.CartProducts.findOne({
+                    where:{cart_id: cart.id}
+                })
+                .then(cartProd => {
+
+                    if (!cartProd){
+                        db.CartProducts.create({cart_id: cart.id, product_id: productId, amount: cart.total, quantity:1})
+    
+                    } else {
+                       db.CartProducts.findOne({where: {product_id: productId}})
+                       .then( p => {
+    
+                           if (p){
+                               let quant = p.quantity + 1;
+                               console.log('cant: ' + quant);
+                               db.CartProducts.update({ quantity: quant }, {where : { product_id:productId }})
+                            } else {                   
+                                db.CartProducts.create({cart_id: cart.id, product_id: productId, amount: cart.total, quantity:1})
+                            }
+                            
+                        }) 
+                        
+                    }
+    
+                    res.render('/')
+                }).catch(error => console.log(error))
+               
+            } else {
+                db.Cart.create({ user_id: user_id})
+                .then( c => {
+                    db.CartProducts.create({cart_id: c.id, product_id: productId, amount: producto.price , quantity:1})
+                })
+                
+            }
+        })
+
+
+       
+        res.redirect('/');
+    },
+
+    cartDeleteProduct: (req, res) => {
+        let product_id = Number(req.params.productId);
+
+        
+
+        db.CartProducts.destroy(
+            { where:{ product_id } }  )
+        
+        
+        res.redirect('/products/cart/');
+        
+        
+        
+        
+    },
+
     products: (req, res) => {     
         /*let products = JSON.parse(productJson);  
         res.render('products/products.ejs', {products})*/
