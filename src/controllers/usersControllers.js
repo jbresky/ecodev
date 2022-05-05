@@ -78,11 +78,10 @@ const usersController = {
     },
     favorites: (req, res) => {
         db.Fav.findAll({
-            include: ['product', 'user']
-        }, { 
             where: {
-                'user': userData.id
-        }
+                user_id: userData.id
+            },
+            include: ['user', 'product']
         })
         .then(products => {
             res.render('users/favorites.ejs', {products})
