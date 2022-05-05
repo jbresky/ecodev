@@ -75,13 +75,18 @@ const productsController = {
     // },
     },
     search: (req, res) => {
+
+        
+
+        let search_criteria = req.query.product;
+        res.locals.product_to_search = search_criteria
         db.Product.findAll({
             where: [
-                {name: {[op.like] : '%' + req.query.search + '%'}}
+                {name: {[op.like] : '%' + search_criteria + '%'}}
             ]
         })
         .then(products => {
-            res.render('products/products.ejs', {products, name: 'Resultados para ' + req.query.search + ''})
+            res.render('products/products.ejs', {products, product_to_search: res.locals.product_to_search })
         })
     },
     personalCare: (req, res) => {
