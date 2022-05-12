@@ -1,7 +1,19 @@
 const db = require('../../database/models');
 
 module.exports = {
-
+    list: async (req, res) => {
+        try {
+            const users = await db.User.findAll();
+            return res.json({
+                total: users.length,
+                status: 200,
+                data: users
+            })
+        }  catch(err){
+            res.status(err.status || 500).json({...err})
+        }
+        
+    },
     addUserFav: async (req, res) => {
         try {
                 const product = await db.Product.findByPk(req.params.id);

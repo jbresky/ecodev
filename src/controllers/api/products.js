@@ -4,7 +4,10 @@ const Op = db.sequelize.Op;
 module.exports = {
     list: async (req, res) => {
         try {
-            const products = await db.Product.findAll();
+            const products = await db.Product.findAll({
+                include: ['category']
+            });
+            
             return res.json({
                 total: products.length,
                 status: 200,

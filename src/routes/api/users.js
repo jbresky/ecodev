@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../../middlewares/authMiddleware');
 
-const fav = require('../../controllers/api/fav')
+const users = require('../../controllers/api/users')
 
-router.get('/product/:id/fav', authMiddleware, fav.addUserFav)
+router.get('/', users.list )
+router.get('/product/:id/fav', authMiddleware, users.addUserFav)
 
 
 module.exports = router;
