@@ -3,7 +3,12 @@ const db = require('../../database/models');
 module.exports = {
     list: async (req, res) => {
         try {
-            const users = await db.User.findAll();
+            const users = await db.User.findAll({
+                order: [
+                    ['id', 'DESC']
+                ],
+                limit: 1
+            });
             return res.json({
                 total: users.length,
                 status: 200,

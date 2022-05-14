@@ -13,22 +13,54 @@ let totals = {
         Promise.all([Product, Category, User])
             .then(([products, categories, users]) => {
                 
+                let productCategory = []
+            products.forEach(product => {
+                productCategory.push(product.category)
+            });
+    
+            function findProduct(prodInCat, key) {
+                let category = [];
+                prodInCat.forEach(x => {
+    
+                    if (category.some(product => { 
+                        return product[key] == x[key] 
+                    })){
+                        category.forEach(k => {
+                            if (k[key] === x[key]) {
+                                k['cantidad']++
+                            }
+                        })
+                    } 
+                    else {
+                        let a = {}
+                        a[key] = x[key]
+                        a['cantidad'] = 1
+                        category.push(a);
+                    }
+                })
+                return category
+            }
+
+            let resultado = findProduct(productCategory, 'name');
+
                 return res.json({
                     status: 200,
                     data: [
                         {
-                            name: 'products',
+                            name: 'Productos',
                             total: products.length
                         },
                         {
-                            name: 'categories',
+                            name: 'Categorías',
                             total: categories.length
                         },
                         {
-                        name: 'users',
+                        name: 'Usuarios',
                         total: users.length
                     }
-                    ]
+                    ],
+                    productsCategories:  resultado ,
+                    status: 200
                 })
             })
         } catch(err){
