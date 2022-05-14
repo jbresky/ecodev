@@ -22,7 +22,7 @@ const usersController = {
             })
             .then(user => {
                 if(user){
-                if(!bcrypt.compareSync(req.body.password, user.password)){
+                if(bcrypt.compareSync(req.body.password, user.password)){
                     userData = user.dataValues;
                     // delete userData.password
 
@@ -69,7 +69,7 @@ const usersController = {
             where:{
                 email: userData.email
             }, 
-            include: ['products']
+            include: ['products', 'cart']
         })
         .then(user => {
             res.render('users/profile.ejs',  {user})

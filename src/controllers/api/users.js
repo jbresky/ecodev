@@ -12,7 +12,19 @@ module.exports = {
         }  catch(err){
             res.status(err.status || 500).json({...err})
         }
-        
+    },
+    userId: async (req, res) => {
+        try {
+            const user = await db.User.findByPk();
+            if(user){
+                return res.json({
+                    status: 220,
+                    data: user
+                })
+            }
+        } catch(err){
+            res.status(err.status || 500).json({...err})
+        }
     },
     addUserFav: async (req, res) => {
         try {

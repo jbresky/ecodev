@@ -6,6 +6,7 @@ const users = require('../../controllers/api/users')
 
 router.get('/', users.list )
 router.get('/product/:id/fav', authMiddleware, users.addUserFav)
+router.get('/:id', users.userId)
 
 
 module.exports = router;

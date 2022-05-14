@@ -64,7 +64,6 @@ const productsController = {
                         }) 
                         
                     }
-    
                     res.render('/')
                 }).catch(error => console.log(error))
                
