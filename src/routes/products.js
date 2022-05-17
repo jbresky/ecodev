@@ -16,7 +16,8 @@ router.get('/eco-products', productsController.ecoProducts)
 router.get('/deco', productsController.deco)
 router.get('/cart', authMiddleware, productsController.shoppingCart)
 
-router.get('/create', authMiddleware, productsController.createForm)
+router.get('/create', productsController.create)
+router.post('/create', productsController.createForm)
 // router.post('/create', productsController.storeProduct)
 
 router.get('/detail/:id', productsController.detail)
