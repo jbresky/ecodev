@@ -41,11 +41,15 @@ module.exports = {
                     }
                 }
             db.Fav.findOne({
-                where: {
-                    product_id: product.id
-                }
-            }).then(fav => {
+               where:{
+                product_id: product.id,
+                user_id: req.session.userLogged.id
+               }
+            }).then(
+                fav => {
                 if(!fav){
+                // if(!fav){
+                // ACA ESTA VINCULANDO CUALQUIER PRODUCTO COMO FAVORITO, NO PARA CADA USUARIO
                     db.Fav.create({
                         product_id: product.id,
                         user_id: req.session.userLogged.id
