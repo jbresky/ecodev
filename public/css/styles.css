@@ -209,10 +209,11 @@ section.home-box article div img{
 /*products ejs*/
 
 .column h3 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    font-weight: normal;
 }
 .column span{
-    color: brown;
+    color: #ff596f;
 }
 .column {
     text-align: center;
@@ -968,12 +969,15 @@ div.back-create-form{
     border-radius: 10px;
     outline: none;
     font-size: 14px;
-    border: 2px solid #f1f1f1;
+    border: 2px solid #f7f7f7;
     padding: 14px;
     background-color: #f7f7f7;
     height: 150px;
     width: 70%;
-    max-width: 600px;
+    max-width: 400px;
+    max-height: 300px;
+    min-width: 200px;
+    min-height: 50px;
     transition: .5s ease;
 }
 
@@ -982,7 +986,7 @@ div.back-create-form{
     border-radius: 10px;
     outline: none;
     font-size: 14px;
-    border: 2px solid #f1f1f1;
+    border: 2px solid #f7f7f7;
     width: 320px;
     padding: 16px;
     background-color: #f7f7f7;
@@ -1908,7 +1912,7 @@ button.fav i{
     border-radius: 50%;
 }
 
-div.fav i:hover{
+button.fav i:hover{
     color: #f77f7f;
 }
 
@@ -1934,6 +1938,7 @@ button.minus{
     display: inline-block;
     z-index: 1;
     border-radius: 24px 0px 0px 24px;
+    cursor: pointer;
 }
 
 input.numeric-stepper{
@@ -1978,6 +1983,7 @@ button.plus{
     display: inline-block;
     z-index: 1;
     border-radius: 0px 24px 24px 0px;
+    cursor: pointer;
 }
 
 .column-2 h3.category{
@@ -2049,7 +2055,67 @@ button.plus{
     font-size: .8rem;
 }
 
+div.ud-zone{
+    margin: 2rem;
+    text-align: center;
+}
 
+div.create-product{
+    margin: 2rem 0;
+    text-align: center;
+}
+
+div.ud-zone button.edit-product{
+    background-color: #53575e;
+    margin-bottom: 1rem;
+}
+
+div.ud-zone button.delete-product{
+    background-color: #ff596f;
+}
+
+div.create-product button{
+    background-color: #53575e;
+}
+
+div.ud-zone button, div.create-product button, div.delete button{
+    padding: 7px 16px;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+}
+
+div.edit-product button a, div.create-product button a{
+    text-decoration: none;
+}
+
+div.delete{
+    text-align: center;
+    margin: 3rem 2rem 4rem;
+}
+div.delete a{
+    color: #000;
+}
+
+div.delete span{
+    margin: 1rem;
+}
+div.delete div{
+    margin-top: 2rem;
+}
+div.delete img{
+    border-radius: 5px;
+    width: 300px;
+    object-fit: cover;
+}
+
+div.delete button{
+    background-color: #ff596f;
+    margin: 1rem 0;
+}
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %> 
+    <hr>
+
+    <div class="delete">
+        <span>¿Seguro querés eliminar <a href="products/detail/<%= product.id %> "><%= product.name %></a>?</span>
+        <div>
+            <img src="/img/products/<%= product.image %> " alt="">
+        </div>
+        <a href="/products/delete/:id"></a>
+        <button class="">Eliminar</button>
+        <br>
+        <a href="/products/detail/<%= product.id %>">Volver</a>
+    </div>
+    <%- include('../partials/footer') %> 
+</body>
+</html>

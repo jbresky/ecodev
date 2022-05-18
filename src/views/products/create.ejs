@@ -9,11 +9,11 @@
 <br>
          <main class="create-form">
              <!-- este main es el contenedor del form -->
-             <h3 class="crear-producto">Crea tu producto!</h3>
+             <h3 class="crear-producto">Crear producto</h3>
                 <br>
-            <form action="/products" method="POST">
+            <form action="/products/create" method="POST" enctype="multipart/form-data">
                 <div class="labels">
-                    <label for="name">Nombre del producto</label>
+                    <label for="name">Nombre</label>
                 </div>
                 <div>
                     <input type="text" name="name" id="name" placeholder="Nombre">
@@ -40,13 +40,14 @@
                    <label for="category">Categoría</label>
                 </div>
                 <div>
-                    <select name="category" id="category">
+                    <select name="category_id" id="category">
                         <!-- No definitive -->
-                        <option value=>Elegí</option>
-                        <option value=>Personal Care</option>
-                        <option value=>Health & Beauty</option>
-                        <option value=>Natural Medicine</option>
-                        <option value=>Eco Friendly Products</option>
+                        <option selected disabled>Elegí</option>
+                        <option value="1">Personal Care</option>
+                        <option value="2">Health & Beauty</option>
+                        <option value="3">Natural Medicine</option>
+                        <option value="4">Eco Products</option>
+                        <option value="5">Deco</option>
                     </select>
                 </div>
                 <br>
@@ -55,7 +56,7 @@
                    <label for="descrip">Descripción</label>
                 </div>
                 <div>
-                <textarea name="descripcion" id="descrip" placeholder="Un hermoso producto... :)"></textarea>
+                <textarea name="descripcion" id="descrip" placeholder="Un hermoso producto sustentable... :)"></textarea>
             </div>
             <br>
             <br>

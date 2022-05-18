@@ -8,9 +8,6 @@ const usersController = require('../controllers/usersControllers');
 
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const req = require('express/lib/request');
-
-
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {

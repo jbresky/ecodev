@@ -4,38 +4,24 @@ const op = db.Sequelize.Op
 
 const productsController = {
     shoppingCart: async (req, res) => {
-        /*db.Product.findByPk(req.params.id)
-            .then(function(product){
-                res.render('/shoppingcart', {product:product})
-            })*/
-
-
-            let user_id = req.session.userLogged.id;
-            console.log('USer ID: ' + user_id);
-            let cart = await db.Cart.findOne({
+        let user_id = req.session.userLogged.id;
+        console.log('USer ID: ' + user_id);
+        let cart = await db.Cart.findOne({
                 where: {user_id}
             })
-
-            
-            if (cart) {
+            if(cart) {
                 db.CartProducts.findAll( {where: {cart_id: cart.id}, include: ['product'], raw: true})
                 .then (prod => {
                     res.render('products/shoppingcart.ejs', {products:prod})
                 })
             } 
-           
     },
 
     addProductToCart: async (req, res) => {
         const productId = req.params.productId;
         const user_id = req.session.userLogged.id;
-
-        
-
         console.log('produc ID: ' +productId + ' user_id: '+ user_id);
-
         let producto = await db.Product.findByPk(productId);
-
         db.Cart.findOne({
             where: {user_id}
         })
@@ -75,32 +61,17 @@ const productsController = {
                 
             }
         })
-
-
-       
         res.redirect('/');
     },
 
     cartDeleteProduct: (req, res) => {
         let product_id = Number(req.params.productId);
-
-        
-
         db.CartProducts.destroy(
             { where:{ product_id } }  )
-        
-        
         res.redirect('/products/cart/');
-        
-        
-        
-        
     },
 
     products: (req, res) => {     
-        /*let products = JSON.parse(productJson);  
-        res.render('products/products.ejs', {products})*/
-    
         db.Product.findAll()
         .then(products => {            
             return res.render('products/products.ejs', {products})
@@ -108,18 +79,21 @@ const productsController = {
         .catch(function(error) {
             console.log('error')
         })
-    
-} ,
-
-    createForm: (req, res) => {
-        db.Product.create({
-            name: req.body.name,
-            price: req.body.price,
-            image: req.body.image,
-            category: req.body.category,
-            description: req.body.description
+},
+    create: (req, res) => {
+        db.Product.findAll({
+            include: ['category']
         })
-        /*res.render('products/creation.ejs')*/
+            .then(product => {
+                res.render('products/create.ejs', {product})
+            })
+            .catch(err => console.log(err))
+    },
+    new: (req, res) => {
+        db.Product.create({
+           ...req.body,
+           image: req.file.filename
+        })
     },
 
     detail: (req, res) => {
@@ -131,40 +105,44 @@ const productsController = {
         })
         .catch(err => console.log(err))
     },
-   
+
     edit: (req, res) => {
-       let giveAProduct = db.Product.findbyPk(req.params.id)
-            .then(function(product) {
-                return res.render('edit-prod', {products:products})
-            })
+        db.Product.findByPk(req.params.id, {
+            include: ['category']
+        })
+        .then(product => {
+            res.render('products/edit.ejs', {product})
+        })
+        .catch(err => console.log(err))
     },
-    saveEdit: (req,res) => {
+
+    processEdit: (req,res) => {
         db.Product.update({
-            name: req.body.name,
-            price: req.body.price,
-            image: req.body.image,
-            category: req.body.category,
-            description: req.body.description
+           ...req.body,
+           image: req.file.filename           
         },{
             where: {
                 id: req.params.id
             }
         })
-        res.redirect('/detail-prod/' + req.params.id)
+        res.redirect('products/detail/:id')
     }, 
     delete: (req, res) => {
-    //     db.Product.destroy({
-    //         where: {
-    //             id: req.params.id
-    //         }
-    //     })
-    //     res.redirect('/products');
-    // },
+        db.Product.findByPk(req.params.id)
+            .then(product => {
+                res.render('products/delete.ejs', {product})
+            })
+            .catch(err => console.log(err))
+    },
+    processDelete: (req, res) => {
+        db.Product.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/');
     },
     search: (req, res) => {
-
-        
-
         let search_criteria = req.query.product;
         res.locals.product_to_search = search_criteria
         db.Product.findAll({
