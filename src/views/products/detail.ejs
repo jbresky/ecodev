@@ -10,7 +10,7 @@
                 <div class="cont-detail">
                     <div class="column-1">
                         <img src="/img/products/<%=product.image%>" alt="<%= product.name %> ">
-                       <button class="fav-img" id="addToFavs" onclick="addProductToFav('<%= product.id %>')">
+                        <button class="fav-img" id="addToFavs" onclick="addProductToFav('<%= product.id %>')">
                             <i class="fas fa-heart fav-red"></i>
                         </button>
                     </div>
@@ -43,10 +43,11 @@
                                 </button>
 
                             </div>
-                            
-                            <div class="price-d">$ <%= product.price.replace('.', ',') %>
+
+                            <div class="price-d">$ <%= product.price.replace('.', ',' ) %>
                             </div>
-                            <span class="credit-pay">En 12x $<%= (product.price/10.3).toFixed(2).replace('.', ',') %> </span>
+                            <span class="credit-pay">En 12x $<%= (product.price/10.3).toFixed(2).replace('.', ',' ) %>
+                            </span>
 
 
 
@@ -55,26 +56,29 @@
 
                             <div class="option">
                                 <a href="/products/cart" class="btn-detail1">Comprar ahora</a>
-                                
-                                <a href="/products/addToCart/<%= product.id %>" class="btn-detail2">Agregar al carrito</a>
+
+                                <a href="/products/addToCart/<%= product.id %>" class="btn-detail2">Agregar al
+                                    carrito</a>
                             </div>
                         </div>
                     </div>
 
                 </div>
+                <% if(locals.isAdmin){ %> 
                 <div class="ud-zone">
                     <a href="/products/edit/<%= product.id %> ">
-                    <button class="edit-product">
-                        Editar
-                    </button>
-                </a>
+                        <button class="edit-product">
+                            Editar
+                        </button>
+                    </a>
                     <br>
                     <a href="/products/delete/<%= product.id %> ">
-                    <button class="delete-product">
-                        Eliminar
-                    </button>
-                </a>
+                        <button class="delete-product">
+                            Eliminar
+                        </button>
+                    </a>
                 </div>
+                <% } %> 
                 <div style="height: 8rem;"></div>
             </main>
 

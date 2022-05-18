@@ -9,8 +9,9 @@ const app = express();
 const mainRoutes = require('./routes/main')
 const usersRoutes = require('./routes/users')
 const productsRoutes = require('./routes/products');
-const loggedMiddleware = require('./middlewares/loggedMiddleware')
+const loggedMiddleware = require('./middlewares/loggedMiddleware');
 // const cookieMiddleware = require('./middlewares/cookieAuthMiddleware')
+const adminOptions = require('./middlewares/adminOptions')
 const apiRouter = require('./routes/api/')
 
 app.use(express.urlencoded({extended: false}))
@@ -18,6 +19,7 @@ app.use(express.json())
 app.use(session({secret: 'Eco-secret!!', resave: false, saveUninitialized: false}))
 app.use(cookieParser())
 app.use(loggedMiddleware)
+app.use(adminOptions)
 app.use(methodOverride('_method'))
 // app.use(cookieMiddleware)
 

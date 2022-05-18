@@ -7,6 +7,8 @@ const multer = require('multer');
 const productsController = require('../controllers/productsController');
 // const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
+const isAdmin = require('../middlewares/isAdmin')
+const authAdmin = require('../middlewares/authAdmin')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -28,14 +30,14 @@ router.get('/eco-products', productsController.ecoProducts)
 router.get('/deco', productsController.deco)
 router.get('/cart', authMiddleware, productsController.shoppingCart)
 
-router.get('/create', productsController.create)
+router.get('/create', isAdmin, productsController.create)
 router.post('/create', uploadFile.single('image'), productsController.new)
 
 router.get('/detail/:id', productsController.detail)
-router.get('/edit/:id', productsController.edit)
+router.get('/edit/:id', isAdmin, productsController.edit)
 
 // router.put('/:id', productsController.change)
-router.get('/delete/:id', productsController.delete)
+router.get('/delete/:id', authAdmin, isAdmin, productsController.delete)
 router.get('/search', productsController.search)
 
 
