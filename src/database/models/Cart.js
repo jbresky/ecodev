@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         total: {
-            type: dataTypes.DECIMAL(11, 2),
+            type: dataTypes.INTEGER,
         },
         created_at: {
             type: dataTypes.DATE,
