@@ -10,9 +10,11 @@ const productsController = {
                 where: {user_id}
             })
             if(cart) {
-                db.CartProducts.findAll( {where: {cart_id: cart.id}, include: ['product'], raw: true})
-                .then (prod => {
-                    res.render('products/shoppingcart.ejs', {products:prod})
+                db.CartProducts.findAll({where: 
+                    {cart_id: cart.id},
+                    include: ['product'], raw: true})
+                .then (products => {
+                    res.render('products/shoppingcart.ejs', {products})
                 })
             } 
     },
