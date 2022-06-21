@@ -64,17 +64,42 @@ const usersController = {
             res.render('users/register.ejs')
         }
     },
-    profile: (req, res) => {
-        db.User.findOne({
-            where:{
-                email: userData.email
-            }, 
-            include: ['products', 'cart']
-        })
-        .then(user => {
-            res.render('users/profile.ejs',  {user})
-        })
-        .catch(err => console.log(err))
+    profile: async (req, res) => {
+        try {
+            let User = await db.User.findOne({
+                where: {
+                    email: userData.email
+                },
+                include: ['products']
+            })
+            let Cart = await db.Cart.findOne({
+                where: {
+                    user_id: userData.id
+                }
+            })
+            let ProductsInCart = await db.CartProducts.findAll({
+                where: {
+                    cart_id: Cart.id
+                },
+            })
+
+            Promise.all([User, Cart, ProductsInCart])
+            .then(([user, cart, cartProducts]) => {
+                res.render('users/profile.ejs', {user, cartProducts})
+            })
+        } catch(err){
+            console.log(err);
+        }
+        // db.User.findOne({
+        //     where:{
+        //         email: userData.email
+        //     }, 
+        //     include: ['products', 'cart']
+        // })
+        // .then(user => {
+        //     res.render('users/profile.ejs',  {user})
+        // })
+        // .catch(err => console.log(err))
     },
     favorites: (req, res) => {
         db.Fav.findAll({
