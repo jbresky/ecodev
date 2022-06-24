@@ -668,8 +668,11 @@ div.newsletter input::placeholder{
 div.favorites-container{
     display: flex;
     justify-content: space-around;
-    flex-wrap: nowrap;
-    margin-top: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 90%;
+    row-gap: 2.5rem;
 }
 
 div.favorites-container article{
@@ -2030,7 +2033,9 @@ button.plus{
     text-align: center;
     font-size: .9rem;
     text-decoration: none;
-    transition: all .3s
+    transition: all .3s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-detail1:hover {

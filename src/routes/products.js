@@ -41,7 +41,7 @@ router.get('/delete/:id', authAdmin, isAdmin, productsController.delete)
 router.get('/search', productsController.search)
 
 
-router.get('/addToCart/:productId', authMiddleware, productsController.addProductToCart);
+// router.get('/addToCart/:productId', authMiddleware, productsController.addProductToCart);
 router.delete('/cartDeleteProduct/:productId', authMiddleware, productsController.cartDeleteProduct);
 
 router.put('/edit/:id', uploadFile.single('image'), productsController.processEdit)

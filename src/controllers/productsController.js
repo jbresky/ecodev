@@ -5,83 +5,111 @@ const op = db.Sequelize.Op
 const productsController = {
     shoppingCart: async (req, res) => {
         let user_id = req.session.userLogged.id;
-        console.log('USer ID: ' + user_id);
         let cart = await db.Cart.findOne({
                 where: {user_id}
             })
             if(cart) {
-                db.CartProducts.findAll({where: 
-                    {cart_id: cart.id},
-                    include: ['product'], raw: true})
+                db.CartProducts.findAll({
+                    where: {
+                        cart_id: cart.id
+                    },
+                    include: ['product'], 
+                    raw: true
+                })
                 .then (products => {
                     res.render('products/shoppingcart.ejs', {products})
                 })
             } 
     },
 
-    addProductToCart: async (req, res) => {
-        const productId = req.params.productId;
-        const user_id = req.session.userLogged.id;
-        // console.log('product ID: ' + productId + 'user_id:' + user_id);
-        let producto = await db.Product.findByPk(productId);
-        db.Cart.findOne({
-            where: {user_id}
-        })
-        .then (cart => {
-            if (cart) {
-                db.CartProducts.findOne({
-                    where:{cart_id: cart.id}
-                })
-                .then(cartProd => {
+    // addProductToCart: async (req, res) => {
+    //     const productId = req.params.productId;
+    //     const user_id = req.session.userLogged.id;
 
-                    if (!cartProd){
-                        db.CartProducts.create({
-                            cart_id: cart.id, product_id: productId, amount: cart.total, quantity:1
-                        })//probando
-                        .then(cart => {
-                            db.Cart.update({
-                                total: cart.length
-                            },{
-                                where:{
-                                    user_id
-                                }
-                            })
-                        })//probando
-                    } else {
-                       db.CartProducts.findOne({where: {product_id: productId}})
-                       .then( p => {
+    //     let producto = await db.Product.findByPk(productId);
+    //     // busco si el usuario tiene carrito
+    //     db.Cart.findOne({
+    //         where: {user_id}
+    //     })
+    //     .then (cart => {
+    //         // si hay carrito, busco si hay productos en el carrito, es decir, si existe carts_has_products
+    //         if (cart) {
+    //             db.CartProducts.findOne({
+    //                 where: {
+    //                     cart_id: cart.id
+    //                 }
+    //             })
+    //             .then(cartProd => {
+    //                 // si NO existe (no hay productos), los CREAMOS
+    //                 if (!cartProd){
+    //                     db.CartProducts.create({
+    //                         cart_id: cart.id,
+    //                         product_id: productId,
+    //                         // amount: cart.total,
+    //                         quantity: 1
+    //                     })//probando
+    //                     // .then(cart => {
+    //                     //     db.Cart.update({
+    //                     //         total: cart.length
+    //                     //     },{
+    //                     //         where:{
+    //                     //             user_id
+    //                     //         }
+    //                     //     })
+    //                     // })
+    //                     //probando
+    //                 } else {
+    //                     // si hay productos, buscamos si ya tiene el producto en cuestión..
+    //                    db.CartProducts.findOne({
+    //                        where: {
+    //                            product_id: productId
+    //                         }
+    //                     })
+    //                    .then( productAlreadyInCart => {
     
-                           if (p){
-                               let quant = p.quantity + 1;
-                               console.log('cant: ' + quant);
-                               db.CartProducts.update({
-                                   quantity: quant 
-                                }, 
-                                {where : 
-                                    { product_id: productId }
-                                })
-                            } else {                   
-                                db.CartProducts.create({cart_id: cart.id, product_id: productId, amount: cart.total, quantity:1})
-                            }
-                            
-                        }) 
+    //                        if (productAlreadyInCart){
+    //                            // si existe el producto, le agregamos uno (y ACTUALIZAMOS el carrito)
+    //                            let quant = productAlreadyInCart.quantity + 1;
+    //                         //    console.log('cant: ' + quant);
+    //                            db.CartProducts.update({
+    //                                quantity: quant 
+    //                             }, { where : { 
+    //                                 product_id: productId 
+    //                             }
+    //                             })
+    //                             // pero si no tiene el producto, lo CREAMOS
+    //                         } else {                   
+    //                             db.CartProducts.create({
+    //                                 cart_id: cart.id, 
+    //                                 product_id: productId, 
+    //                                 // amount: cart.total, 
+    //                                 quantity: 1
+    //                             })
+    //                         }
+    //                     }) 
                         
-                    }
-                    res.render('/')
-                }).catch(error => console.log(error))
+    //                 }
+    //                 res.render('/')
+    //             }).catch(error => console.log(error))
                
-            } else {
-                db.Cart.create({ user_id: user_id})
-                .then( c => {
-                    db.CartProducts.create({
-                        cart_id: c.id, product_id: productId, amount: producto.price , quantity:1
-                    })
-                })
+    //         } else {
+    //             // si el usuario NO tiene carrito, lo creamos..
+    //             db.Cart.create({
+    //                  user_id: user_id
+    //                 })
+    //             .then( newCart => {
+    //                 db.CartProducts.create({
+    //                     cart_id: newCart.id,
+    //                     product_id: productId, 
+    //                     amount: producto.price, 
+    //                     quantity: 1
+    //                 })
+    //             })
                 
-            }
-        })
-        res.redirect('/');
-    },
+    //         }
+    //     })
+    // //     res.redirect('/');
+    // },
 
     cartDeleteProduct: (req, res) => {
         let product_id = Number(req.params.productId);

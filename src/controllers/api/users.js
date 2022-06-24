@@ -48,8 +48,6 @@ module.exports = {
             }).then(
                 fav => {
                 if(!fav){
-                // if(!fav){
-                // ACA ESTA VINCULANDO CUALQUIER PRODUCTO COMO FAVORITO, NO PARA CADA USUARIO
                     db.Fav.create({
                         product_id: product.id,
                         user_id: req.session.userLogged.id
