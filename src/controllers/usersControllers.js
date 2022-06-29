@@ -77,12 +77,14 @@ const usersController = {
                     user_id: userData.id
                 }
             })
-            let ProductsInCart = await db.CartProducts.findAll({
+            let ProductsInCart;
+            if(Cart){
+            ProductsInCart = await db.CartProducts.findAll({
                 where: {
                     cart_id: Cart.id
                 },
             })
-
+        }
             Promise.all([User, Cart, ProductsInCart])
             .then(([user, cart, cartProducts]) => {
                 res.render('users/profile.ejs', {user, cartProducts})
@@ -101,7 +103,7 @@ const usersController = {
         // })
         // .catch(err => console.log(err))
     },
-    favorites: (req, res) => {
+    favorites: async (req, res) => {
         db.Fav.findAll({
             where: {
                 user_id: userData.id

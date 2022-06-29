@@ -27,7 +27,7 @@
         <!-- <div class="header-icons"> -->
         <li class="heart"><a href='/users/favorites'><span class="material-icons-outlined">favorite_border</span></a>
         </li>
-        <li class="shop"><a href='/products/cart'><span class="material-icons-outlined">shopping_cart</span></a></li>
+        <li class="shop"><a href='/api/product/'><span class="material-icons-outlined">shopping_cart</span></a></li>
         <% if(locals.isLogged) { %> 
                 <li class="user"><a href='/users/login'><img src="/img/users/<%= userData.avatar %> " width="40" style="border-radius: 50%; height: 40px; object-fit: cover;" alt="User"></a></li>
            <% } else { %> 

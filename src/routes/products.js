@@ -6,7 +6,7 @@ const multer = require('multer');
 
 const productsController = require('../controllers/productsController');
 // const guestMiddleware = require('../middlewares/guestMiddleware')
-const authMiddleware = require('../middlewares/authMiddleware')
+// const authMiddleware = require('../middlewares/authMiddleware')
 const isAdmin = require('../middlewares/isAdmin')
 const authAdmin = require('../middlewares/authAdmin')
 
@@ -28,7 +28,7 @@ router.get('/health-&-beauty', productsController.healthBeauty)
 router.get('/natural-medicine', productsController.naturalMedicine)
 router.get('/eco-products', productsController.ecoProducts)
 router.get('/deco', productsController.deco)
-router.get('/cart', authMiddleware, productsController.shoppingCart)
+// router.get('/cart', authMiddleware, productsController.shoppingCart)
 
 router.get('/create', isAdmin, productsController.create)
 router.post('/create', uploadFile.single('image'), productsController.new)
@@ -42,7 +42,7 @@ router.get('/search', productsController.search)
 
 
 // router.get('/addToCart/:productId', authMiddleware, productsController.addProductToCart);
-router.delete('/cartDeleteProduct/:productId', authMiddleware, productsController.cartDeleteProduct);
+// router.delete('/cartDeleteProduct/:productId', authMiddleware, productsController.cartDeleteProduct);
 
 router.put('/edit/:id', uploadFile.single('image'), productsController.processEdit)
 router.delete('/delete/:id', productsController.processDelete)

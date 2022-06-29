@@ -3,24 +3,30 @@ const db = require('../database/models');
 const op = db.Sequelize.Op
 
 const productsController = {
-    shoppingCart: async (req, res) => {
-        let user_id = req.session.userLogged.id;
-        let cart = await db.Cart.findOne({
-                where: {user_id}
-            })
-            if(cart) {
-                db.CartProducts.findAll({
-                    where: {
-                        cart_id: cart.id
-                    },
-                    include: ['product'], 
-                    raw: true
-                })
-                .then (products => {
-                    res.render('products/shoppingcart.ejs', {products})
-                })
-            } 
-    },
+    // shoppingCart: async (req, res) => {
+    //     try {
+    //     // let user_id = req.session.userLogged.id;
+    //     let cart = await db.Cart.findOne({
+    //             where: {
+    //                 user_id: req.session.userLogged.id
+    //             }
+    //         })
+    //         if(cart) {
+    //             db.CartProducts.findAll({
+    //                 where: {
+    //                     cart_id: cart.id
+    //                 },
+    //                 include: ['product'], 
+    //                 raw: true
+    //             })
+    //             .then (products => {
+    //                 res.render('products/shoppingcart.ejs', {products})
+    //             })
+    //         } 
+    //     } catch(err){
+    //         console.log(err);
+    //     }
+    // },
 
     // addProductToCart: async (req, res) => {
     //     const productId = req.params.productId;
@@ -111,17 +117,20 @@ const productsController = {
     // //     res.redirect('/');
     // },
 
-    cartDeleteProduct: (req, res) => {
-        let product_id = Number(req.params.productId);
-        db.CartProducts.destroy(
-            { where:{ product_id } }  )
-        res.redirect('/products/cart/');
-    },
+    // cartDeleteProduct: (req, res) => {
+    //     let product_id = Number(req.params.productId);
+    //     db.CartProducts.destroy({
+    //         where: {
+    //             product_id
+    //         }
+    //     })
+    //     res.redirect('/products/cart/');
+    // },
 
     products: (req, res) => {     
         db.Product.findAll()
         .then(products => {            
-            return res.render('products/products.ejs', {products})
+             res.render('products/products.ejs', {products})
         })
         .catch(function(error) {
             console.log('error')
