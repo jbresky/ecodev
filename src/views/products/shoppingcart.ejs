@@ -94,11 +94,12 @@
                     </div>
 
                  
-                    <% const suma=(product, nextProduct) => Number(product['product.price']) +
-                        Number(nextProduct['product.price']) %>
-
-                        <% let checkoutTotal = products.reduce(suma) %>
-
+                 
+                    <% let checkoutTotal = 0; %>
+                    <% for(product of products){ %>  
+                       <% checkoutTotal += Number(product['product.price']) %>  
+                        <% } %> 
+                       
                             <section class="checkout">
                                 <div class="shipping">
                                     <span class="material-symbols-outlined" style="width: 38px;">
