@@ -41,7 +41,7 @@
                   <span class="price">
                    $ <%= fav['product'].price.replace('.', ',') %>
                   </span>
-                  <button>
+                  <button onclick="addProductToCart('<%= fav['product'].id %>')">
                   <span class="material-symbols-outlined cart">
                     add_shopping_cart
                     </span>

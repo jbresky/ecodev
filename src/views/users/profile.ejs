@@ -31,7 +31,11 @@
             <span>Favoritos</span>
         </div>
         <div class="user-activity">
+            <% if(cartProducts){ %> 
             <h3><%= cartProducts.length %></h3>
+            <% } else { %>
+            <h3>0</h3>
+            <% } %> 
             <br>
             <span>En carrito</span>
         </div>
