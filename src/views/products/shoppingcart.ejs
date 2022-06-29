@@ -1,96 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
 
-<body>
+    <body>
 
-    <%- include('../partials/header') %>
-    <hr>
-    
-    <div class="shopping-card-container">
+        <%- include('../partials/header') %>
+            <hr>
 
-    
-    <section class="shopping-cart">
-        <div class="title">
-
-            <h3>Carrito de Compras</h3>
-            <% if (products) { %>             
-                <p>Cant. Productos: <%= products.length %>  </p>
-            <% } %>
-        </div>
-        <hr>
-        <ul>
-            
-             
-                <% if (!products) { %>
-                    <p style="text-align: center;">Tu carrito está vacío</p>
-                <% } else { %>
-                        
-            
-
-            <% products.forEach(product => { %>
-                
-                <li>
-
-                    <div class="cart-details">
-                        <div class="product-img">
-                            <img class="imagen-producto" src="../img/products/<%= product['product.image'] %> " alt="Producto1">
-                        </div>
-                        <div class="product-description">
-                            <h5><%= product['product.name'] %></h5>
-                            <p><%= product['product.description'] %> </p>
-                            <strong>$ <%=   product['product.price'] %> </strong>
-                            
-                        </div>
-                        <div class="product-cant">
-                            <button class="subtractProduct"><i class="fas fa-minus"></i></button>
-                            <input value=<%= product.quantity %>  type="text"  name="cantidad" id="cantidad" readonly />
-                            <button class="addProduct"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="product-subtotal">
-                            
-                            <span>$ </span><h4 class="priceSubtotal"><%=  product['product.price'] * product.quantity %> </h4>                            
-                            
-                        </div>
-
-                        <div class="product-delete">
-                            <form action="/products/cartDeleteProduct/<%= product.product_id %>?_method=DELETE" method="post">
-                                <button class="deleteProduct"><i class="fas fa-trash-alt"></i></button>
-                            </form>                            
-                        </div>
-                        
+            <div class="shopping-card-container">
+                <div class="mycart">
+                    <div class="continue-shopping">
+                        <span class="material-symbols-outlined" style="font-size: 18px; color: rgb(90, 90, 90);">
+                            arrow_back
+                        </span> <a href="/products" class="continue">Continuar comprando</a>
                     </div>
-                    <hr>
-                </li>
-                
-                <% }) %>
-                <% } %>
-            </ul>
-            
-            
-        </section>
-        
-        
-        <section class="footer-cart">
-            <div class="total">
-                
+                    <div class="title">
 
-                 <h3>Subtotal: </h3> <p class="subtotal"> </p>
+                        <% if (products) { %>
+                            <h3>Mi carrito </h3>
+                            <span style="font-weight: bold;"> (<%= products.length %>)</span>
+                            <% } else { %>
+                                <span style="font-weight: bold;"> No tenés productos en carrito</span>
+                                <% } %>
+                    </div>
+                </div>
 
-                
-            </div>           
-            
-            <div class="opciones">
-                <a href="/products" class="btn-continue">Seguir comprando</a>
-                <a href="#" class="btn-end">Finalizar Compra</a>
-                
+                <main class="products-in-cart">
+                    <div class="cart-overall">
+                        <% if(products){ %>
+                            <% products.forEach(product=> { %>
+                                <section class="shopping-cart">
+
+                                    <!-- <div class="cart-details"> -->
+                                    <!-- <section class="cart-container"> -->
+                                    <ul>
+
+
+
+                                        <li>
+                                            <div class="cart-product-detail">
+                                                <div class="product-img">
+                                                    <!--Si es desde el controller, antes de /img van dos puntos (../img)-->
+                                                    <img class="imagen-producto"
+                                                        src="/img/products/<%= product['product.image'] %> "
+                                                        alt="Producto1">
+                                                </div>
+                                                <div class="product-description">
+                                                    <h5>
+                                                        <%= product['product.name'] %>
+                                                    </h5>
+                                                    <p>
+                                                        <%= product['product.description'] %>
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div class="cart-info">
+                                                <div class="price-quantity">
+                                                    <div class="price">
+                                                        <span>$ <%= product['product.price'] %> </span>
+                                                    </div>
+                                                    <div class="quantity">
+                                                        <select name="quantity" id="quantity">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="5">6</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="product-delete">
+                                                    <!--CAMBIAR DE FORMULARIO A API-->
+                                                    <!-- <form
+                                            action="/products/cartDeleteProduct/<%= product.product_id %>?_method=DELETE"
+                                            method="post"> -->
+                                                    <button onclick="deleteProductInCart('<%= product['product.id']%>')"
+                                                        class="deleteProduct">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                        <span style="text-decoration: underline; cursor: pointer;">Eliminar</span>
+                                                    </button>
+                                                    <!-- </form> -->
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </section>
+                                <% }) %>
+                                   
+                    </div>
+
+                 
+                    <% const suma=(product, nextProduct) => Number(product['product.price']) +
+                        Number(nextProduct['product.price']) %>
+
+                        <% let checkoutTotal = products.reduce(suma) %>
+
+                            <section class="checkout">
+                                <div class="shipping">
+                                    <span class="material-symbols-outlined" style="width: 38px;">
+                                        local_shipping
+                                    </span>
+                                    <p>Este envío es gratuito!</p>
+                                </div>
+                                <div class="order-summary">
+                                    <div class="order-data">
+                                        <div class="subtotal">
+                                            <span>Subtotal</span>
+
+                                            <span>$<%= checkoutTotal.toFixed(2).replace('.', ',' ) %>
+                                            </span>
+                                        </div>
+                                        <div class="free-ship">
+                                            <span>Envío a:  <span style="text-decoration: underline; cursor: pointer; margin-left: 3px;">Argentina</span></span><span>GRATIS</span>
+                                        </div>
+                                        <div class="taxes">
+                                            <span>Impuesto estimado</span>
+                                            <% let tax=checkoutTotal * 0.10 %>
+
+                                                <span>$<%= tax.toFixed(2).replace('.', ',' ) %>
+                                                </span>
+                                        </div>
+                                        <div class="order-summary-divider">
+                                            <hr>
+                                        </div>
+                                        <div class="order-total">
+                                            <span>Total: </span>
+                                            <% let total=checkoutTotal + tax %>
+                                                <span>$<%= total.toFixed(2).replace('.', ',' ) %>
+                                                </span>
+                                        </div>
+                                        <div class="checkout-button">
+
+                                            <button class="checkout">
+                                                <span class="material-symbols-outlined">
+                                                    lock
+                                                </span>
+                                                Proceder al pago
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <% } %>
+                </main>
+
             </div>
-            
-            
-        </section>
 
-</div>
-<script src="/js/shoppingCarts.js"></script>
-<%- include('../partials/footer') %> 
-</body>
+            <div style="margin-bottom: 6rem;"></div>
+
+
+
+            <%- include('../partials/footer') %>
+    </body>
+
 </html>
