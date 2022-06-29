@@ -1307,42 +1307,87 @@ div.user_email input{
 /*****************************************/
   /*CARRITO DE COMPRAS*/
 /*****************************************/
-.shopping-card-container{
-    width: 100%;    
-}
-
-.shopping-cart{
+div.shopping-card-container{
+    width: 90%;
+    margin: auto;
+    /* margin-top: 1rem; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
 }
-.title h3, .title p {
-    padding: 0.5rem;
+
+main.products-in-cart{
+    display: flex;
+    gap: 3rem;
 }
-.title{
-    text-align: center;
+
+div.shopping-card-container div.title{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+div.cart-overall{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+section.shopping-cart{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-content: center; */
+    /* max-width: 66%; */
+    padding-right: 32px;
+    padding-bottom: 32px;
+}
+
+div.mycart{
+    margin-top: 1rem;
+}
+
+div.mycart a.continue{
+    color: rgb(90, 90, 90);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.shopping-cart ul {
+    padding: 16px 0;
+}
+.shopping-cart ul li{
+    list-style: none;
+    display: flex;
+}
+
+div.continue-shopping{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 8px 0;
+}
+
+.shopping-cart div.product-description h5{
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+.shopping-cart .title{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
 }
 
 .imagen-producto{
-    width: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    width: 122px;
+    height: 122px;
+    object-fit: cover;
 }
 
 .product-img{    
-    margin-right: 7px;
-    margin-left: 10px;
-    box-shadow: 2px 2px 10px rgb(56, 56, 56);
+    margin-right: 16px;
 }
 
-.product-description{
-    width: 30%;
-}
-.product-description p{
-    display: none;
-}
 .product-cant{
     display: flex;    
     align-items: center;
@@ -1364,12 +1409,113 @@ div.user_email input{
     
 }
 
-.cart-details {
+div.cart-product-detail{
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 65%;
+}
+
+div.cart-info{
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+div.price{
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+div.price span{
+    color: #c4113f;
+    font-size: 1.4rem;
+}
+
+div.product-delete{
+    margin: 8px;
+}
+div.cart-info button{
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-size: .9rem;
+}
+div.quantity select#quantity{
+    width: 120px;
+    padding: 5px;
+    border-radius: 8px;
+    height: 40px;
+}
+
+section.checkout{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    width: 40%;
+}
+div.order-summary{
+    /* margin: 8px 0 16px; */
+    box-shadow: 0 7px 14px rgb(33 30 34 / 20%);
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 16px;
+}
+
+div.order-summary span{
+    font-size: .9rem;
+}
+
+div.order-data{
+    padding: 8px;
+    line-height: 1;
+}
+
+div.shipping, div.subtotal, div.free-ship, div.taxes, div.order-total, div.checkout-button{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+div.order-summary-divider{
+    margin: 8px 0 16px;
+}
+
+div.order-summary-divider hr{
+    background-color: gray;
+}
+
+div.order-total span{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+div.checkout-button{
+    margin-top: 10px;
+}
+div.checkout-button button{
+    border-radius: 30px;
+    background-color: #538d42;
+    padding: 15px 32px;
+    text-align: center;
+    border: none;
+    font-size: .9rem;
+    color: #ffffff;
+    width: 300px;
+    cursor: pointer;
+
+}
+/* .cart-details {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 10px 0px;
-}
+} */
 
 .product-subtotal{
     margin-left: 25px;
@@ -1378,7 +1524,7 @@ div.user_email input{
 .product-delete i{
     color: grey;
     font-size: 1rem;
-    margin:15px;
+    /* margin: 0 10px; */
     
 }
 .footer-cart {
