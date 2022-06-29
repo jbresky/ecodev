@@ -1,152 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-<%- include('../partials/head') %>
-    
-    <body>
-        <%- include('../partials/header')%>
-            <hr>
+
+<head>
+    <%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header')%>
+        <hr>
 
 
-            <main class="home">
-                <!-- <h2 class="home-text">Nuestros productos</h2> -->
-                <section class="product-box">
-                 <div class="side-filter">
-                     <aside>
-                         <h2>Filtrar</h2>
-                        
-                             <ul>
-                                 <li class="filter-button">
-                                  
-                                         <button class="search-category">
-                                            <span>Categoría</span> 
-                                            <div class="transform">
-                                                <span>
-                                                    <i class="fas fa-angle-up rotate-90"></i>
-                                                </span>
-                                            </div>
-                                         </button>
-                                   
-                                         <ul class="dropdown hide">
-                                             <li>
-                                                 <button class="all-category">
-                                                     <span><a href="/products">Todas las categorías</a></span>
-                                                 </button>
-                                                 <ul class="list-category">
-                                                    <li><a href="/products/personal-care">Personal Care</a></li>
-                                                    <li><a href="/products/health-&-beauty">Health & Beauty</a></li>
-                                                    <li><a href="/products/natural-medicine">Natural medicine</a></li>
-                                                    <li><a href="/products/eco-products">Eco products</a></li>
-                                                    <li><a href="/products/deco">Deco</a></li>
-                                                 </ul>
-                                             </li>
-                                         </ul>
-                                 </li>
-                                 <li class="filter-button">
-                                    <button class="search-price">
-                                        <span>Precio</span> 
-                                        <div class="transform">
-                                            <span>
-                                                <i class="fas fa-angle-up rotate-90"></i>
-                                            </span>
-                                        </div>
-                                     </button>
-                                 
-                                 <div class="dropdown filter-price hide">
-                                   <form action="">
-                                       <label for="">
-                                       <input type="checkbox">
-                                       <span>$</span>
-                                    </label>
-                                    <label for="">
-                                        <input type="checkbox">
-                                        <span>$$</span>
-                                     </label>
-                                     <label for="">
-                                        <input type="checkbox">
-                                        <span>$$$</span>
-                                     </label>
-                                   </form>
-                                 </div>
-                                 </li>
-                             </ul>
-                             <% if(locals.isAdmin){ %> 
-                             <div class="create-product">
+        <main class="home">
+            <!-- <h2 class="home-text">Nuestros productos</h2> -->
+            <section class="product-box">
+                <div class="side-filter">
+                    <aside>
+                        <h2>Filtrar</h2>
+
+                        <ul>
+                            <li class="filter-button">
+
+                                <button class="search-category">
+                                    <span>Categoría</span>
+                                    <div class="transform">
+                                        <span>
+                                            <i class="fas fa-angle-up rotate-90"></i>
+                                        </span>
+                                    </div>
+                                </button>
+
+                                <ul class="dropdown hide">
+                                    <li>
+                                        <button class="all-category">
+                                            <span><a href="/products">Todas las categorías</a></span>
+                                        </button>
+                                        <ul class="list-category">
+                                            <li><a href="/products/personal-care">Personal Care</a></li>
+                                            <li><a href="/products/health-&-beauty">Health & Beauty</a></li>
+                                            <li><a href="/products/natural-medicine">Natural medicine</a></li>
+                                            <li><a href="/products/eco-products">Eco products</a></li>
+                                            <li><a href="/products/deco">Deco</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="filter-button">
+                                <button class="search-price">
+                                    <span>Precio</span>
+                                    <div class="transform">
+                                        <span>
+                                            <i class="fas fa-angle-up rotate-90"></i>
+                                        </span>
+                                    </div>
+                                </button>
+
+                                <div class="dropdown filter-price hide">
+                                    <form action="">
+                                        <label for="">
+                                            <input type="checkbox">
+                                            <span>$</span>
+                                        </label>
+                                        <label for="">
+                                            <input type="checkbox">
+                                            <span>$$</span>
+                                        </label>
+                                        <label for="">
+                                            <input type="checkbox">
+                                            <span>$$$</span>
+                                        </label>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                        <% if(locals.isAdmin){ %>
+                            <div class="create-product">
                                 <a href="/products/create">
-                                <button>Nuevo producto</button>
-                               </a>
+                                    <button>Nuevo producto</button>
+                                </a>
                             </div>
-                            <% } %> 
-                         </div>
-                     </aside>
-                 </div>
-
-
-
-                    <div class="column">
-
-                     
-                            <% if (locals.product_to_search) { %>
-                               <h3>Resultados para <span> <%= product_to_search %></span> </h3>
                             <% } %>
-                        
-                            <% if (products.length === 0) { %>
+                </div>
+                </aside>
+                </div>
+
+
+
+                <div class="column">
+
+
+                    <% if (locals.product_to_search) { %>
+                        <h3>Resultados para <span>
+                                <%= product_to_search %>
+                            </span> </h3>
+                        <% } %>
+
+                            <% if (products.length===0) { %>
                                 <h4>No hay resultados para tu búsqueda</h4>
 
-                                 
-                            
-                            <% } else { %>
-                              
 
-                                <div class="prod-box">
-                            <% products.forEach( product => { %>
 
-                             <article class="show-products">
-                                 <div>
-                                     <a href="/products/detail/<%= product.id %> "> <img src= "/img/products/<%=product.image%>"> </a> 
-                                    </div>
-                                    <!-- <% if (product.discount)  { %> 
+                                <% } else { %>
+
+
+                                    <div class="prod-box">
+
+                                        <% products.forEach( product=> { %>
+
+                                            <article class="show-products">
+                                                <div>
+                                                    <a href="/products/detail/<%= product.id %> "> <img
+                                                            src="/img/products/<%=product.image%>"> </a>
+                                                </div>
+                                                <!-- <% if (product.discount)  { %> 
                                         
                                         <button class="off-fixed"><%= product.discount %> % OFF</button>
                                         
                                         <% } %> -->
-                                        
-                                        
-                                        <!-- <ul>
+
+
+                                                <!-- <ul>
                                             <li class="prod-title">
                                             </li> -->
-                                            <div class="name"><%= product.name %></div> 
-                                            
-                                            
-                                            <!-- <% if (product.discount) { %> 
+                                                <div class="name">
+                                                    <%= product.name %>
+                                                </div>
+
+
+                                                <!-- <% if (product.discount) { %> 
                                                 <li class="prod-price"><%= product.price %> </li>
                                                 <%   let priceOff = ( product.price - (product.discount * product.price / 100) ) %>
                                                 <li class="prod-price-off">$<%= priceOff %></li>  -->
-                                                
+
                                                 <!-- <% } else { %> if there isn't discount show product price -->
                                                 <!-- <li class="product-price">
                                                 </li> -->
-                                                <div>$<%= product.price.replace('.', ',') %></div> 
+                                                <div>$<%= product.price.replace('.', ',' ) %>
+                                                </div>
                                                 <!-- <% } %>  -->
-                                                
+
                                                 <!-- </ul> -->
                                                 <!-- <h3 class="prod-title">Botella térmica</h3> -->
-                                                
-                                                
-                                            </article>
-                                            
-                                            <% }) %> 
-                                        </div>
-                     
-                    
-                        <% } %>
-                    </div>
-                    
-                </section>
-           
-                <div style="height: 4rem;"></div>
 
-        <%- include('../partials/footer')  %> 
-    </body>
+
+                                            </article>
+
+                                            <% }) %>
+                                    </div>
+
+
+                                    <% } %>
+                </div>
+
+            </section>
+
+            <div style="height: 4rem;"></div>
+
+            <%- include('../partials/footer') %>
+</body>
+
 </html>
-   
