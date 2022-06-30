@@ -1308,42 +1308,51 @@ div.user_email input{
   /*CARRITO DE COMPRAS*/
 /*****************************************/
 div.shopping-card-container{
-    width: 90%;
+    width: 94%;
     margin: auto;
-    /* margin-top: 1rem; */
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
 }
 
 main.products-in-cart{
     display: flex;
-    gap: 3rem;
+    flex-direction: column;
+    gap: 1rem;
+    /* width: 95%; */
+    margin: auto;
+    margin-top: 1rem;
 }
 
 div.shopping-card-container div.title{
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    gap: 4px;
+    align-items: left;
+    margin: 0 0 15px;
+}
+
+div.cart-quantity{
+    display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 div.cart-overall{
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    padding: 16px 0 32px;
 }
 
 section.shopping-cart{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-content: center; */
-    /* max-width: 66%; */
-    padding-right: 32px;
-    padding-bottom: 32px;
 }
 
 div.mycart{
     margin-top: 1rem;
+    width: 95%;
+    margin: auto;
 }
 
 div.mycart a.continue{
@@ -1352,13 +1361,26 @@ div.mycart a.continue{
     text-decoration: none;
 }
 
-.shopping-cart ul {
-    padding: 16px 0;
-}
 .shopping-cart ul li{
     list-style: none;
     display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    position: relative;
+    /* gap: 2rem; */
 }
+
+.shopping-cart ul li::after{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw;
+    content: "";
+    border-top: 1px solid #d1d1d6;
+    max-width: 100%;
+}
+
 
 div.continue-shopping{
     display: flex;
@@ -1369,7 +1391,7 @@ div.continue-shopping{
 
 .shopping-cart div.product-description h5{
     margin-bottom: 5px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .shopping-cart .title{
     margin-top: 10px;
@@ -1379,13 +1401,16 @@ div.continue-shopping{
 }
 
 .imagen-producto{
-    width: 122px;
-    height: 122px;
+    width: 133px;
+    height: 133px;
     object-fit: cover;
 }
 
-.product-img{    
+div.product-img{    
     margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .product-cant{
@@ -1412,26 +1437,30 @@ div.continue-shopping{
 div.cart-product-detail{
     display: flex;
     flex-wrap: nowrap;
-    max-width: 65%;
+    margin-bottom: 1rem;
 }
 
 div.cart-info{
-    width: 35%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-around;
 }
 
 div.price{
     margin-bottom: 12px;
     text-align: center;
+    display: none;
 }
 
 div.price span{
     color: #c4113f;
     font-size: 1.4rem;
+}
+div.price-mobile span{
+    color: #c4113f;
+    font-size: 1.2rem;
 }
 
 div.product-delete{
@@ -1443,7 +1472,18 @@ div.cart-info button{
     cursor: pointer;
     font-size: .9rem;
 }
+
+div.quantity{
+    display: none;
+}
 div.quantity select#quantity{
+    width: 120px;
+    padding: 5px;
+    border-radius: 8px;
+    height: 40px;
+}
+
+div.quantity-desktop select#mobile-quantity{
     width: 120px;
     padding: 5px;
     border-radius: 8px;
@@ -1455,16 +1495,18 @@ section.checkout{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 16px;
-    width: 40%;
+}
+
+div.order-resume{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start;
 }
 div.order-summary{
-    /* margin: 8px 0 16px; */
-    box-shadow: 0 7px 14px rgb(33 30 34 / 20%);
-    background-color: #fff;
     border-radius: 8px;
     margin-bottom: 24px;
-    padding: 16px;
+    width: 100%;
 }
 
 div.order-summary span{
@@ -1472,11 +1514,20 @@ div.order-summary span{
 }
 
 div.order-data{
-    padding: 8px;
+    padding: 8px 0;
     line-height: 1;
 }
 
-div.shipping, div.subtotal, div.free-ship, div.taxes, div.order-total, div.checkout-button{
+div.order-total{
+    display: none;
+}
+
+div.shipping{
+    display: none;
+    margin-bottom: 8px;
+}
+
+div.subtotal, div.free-ship, div.taxes, div.order-total, div.checkout-button{
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
@@ -1497,8 +1548,12 @@ div.order-total span{
 
 div.checkout-button{
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
 }
-div.checkout-button button{
+
+button.checkout{
+    transition: cubic-bezier(.65,.05,.36,1) all .25s;
     border-radius: 30px;
     background-color: #538d42;
     padding: 15px 32px;
@@ -1506,10 +1561,21 @@ div.checkout-button button{
     border: none;
     font-size: .9rem;
     color: #ffffff;
-    width: 300px;
+    width: 100%;
     cursor: pointer;
-
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
+
+button.checkout:hover{
+    box-shadow: 0 4px 14px rgb(33 30 34 / 15%);
+    opacity: .95;
+    background-color: #619e4f;
+}
+
 /* .cart-details {
     display: flex;
     justify-content: space-around;
@@ -2310,6 +2376,35 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
+@media(min-width: 480px){
+    div.cart-product-detail{
+        max-width: 65%;
+    }
+    div.cart-info{
+        max-width: 35%;
+        align-items: flex-end;
+        /* justify-content: flex-end; */
+    }
+    div.quantity-desktop{
+        display: none;
+    }
+    div.quantity{
+        display: block;
+    }
+    .shopping-cart ul li{
+       flex-direction: row;
+       /* justify-content: space-around; */
+       gap: 2rem;
+    }
+    div.price{
+        display: block;
+    }
+    div.price-mobile{
+        display: none;
+    }
+    
+}
+
 
 @media(min-width: 620px){
 
@@ -2432,8 +2527,6 @@ input[type=number]::-webkit-outer-spin-button {
         width: 100%;
     }
     
-
-    
     footer section.f-1 {
         flex-direction: row !important;
     }
@@ -2459,6 +2552,86 @@ input[type=number]::-webkit-outer-spin-button {
         width: 80%;
         height: 500px;
     }
+}
+
+@media(min-width: 800px) {
+    div.cart-overall{
+        width: 65%;
+    }
+    div.shopping-card-container{
+        width: 90%;
+    }
+    div.order-summary{
+        box-shadow: 0 7px 14px rgb(33 30 34 / 20%);
+        background-color: #fff;
+        padding: 16px;
+    }
+    section.checkout{
+        max-width: 38%;
+    }
+    div.order-total{
+        display: flex;
+    }
+    div.order-total-desktop{
+    display: none;
+}
+    div.checkout-button-desktop{
+        display: none;
+    }
+    button.checkout{
+        width: 300px;
+    }
+    div.shipping{
+        display: flex;
+    }
+    div.shipping-desktop{
+        display: none;
+    }
+    main.products-in-cart{
+     flex-direction: row;
+     margin: 0;
+     gap: 0;
+     justify-content: space-between;
+    }
+    div.shopping-card-container div.title{
+        flex-direction: row;
+        font-size: 1rem;
+        align-items: center;
+        gap: 8px;
+        /* padding: 0; */
+    }
+    div.mycart{
+        width: 100%;
+        /* margin-top: 0; */
+    }
+    hr.cart-mobile-separator{
+        display: none;
+    }
+    div.product-img{
+        display: block;
+    }
+    div.order-resume{
+        display: none;
+    }
+    div.order-data{
+        padding: 8px;
+    }
+    div.price{
+        display: none;
+    }
+    div.price-mobile{
+        display: block;
+    }
+    div.quantity-desktop{
+        display: block;
+    }
+    div.quantity{
+        display: none;
+    }
+    .shopping-cart ul li{
+        width: 90%;
+     }
+    
 }
 
 @media(min-width: 1024px){
@@ -2516,6 +2689,28 @@ input[type=number]::-webkit-outer-spin-button {
         margin: auto;
         padding: 0 2rem;
     }
+    .shopping-cart ul li{
+        justify-content: flex-start;
+        gap: 3rem;
+     }
+     div.price{
+        display: block;
+    }
+    div.price-mobile{
+        display: none;
+    }
+    div.quantity-desktop{
+        display: none;
+    }
+    div.quantity{
+        display: block;
+    }
+    section.checkout{
+        max-width: 41%;
+    }
+    .shopping-cart ul li{
+        width: 100%;
+     }
 }
 
 @media screen and (min-width: 1000px){
