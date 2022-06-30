@@ -17,14 +17,41 @@
                     <div class="title">
 
                         <% if (products) { %>
-                            <h3>Mi carrito </h3>
-                            <span style="font-weight: bold;"> (<%= products.length %>)</span>
+                            <div class="cart-quantity">
+                            <h3 style="font-size: 1.4rem;">Mi carrito </h3>
+                            <span style="font-weight: bold; letter-spacing: 2.5px;"> (<%= products.length %>)</span>
+                        </div>
                             <% } else { %>
                                 <span style="font-weight: bold;"> No tenés productos en carrito</span>
                                 <% } %>
+                                <!--MOBILE (-800px)-->
+                                <% let checkoutTotal = 0; %>
+                                <% for(product of products){ %>  
+                                   <% checkoutTotal += Number(product['product.price']) %>  
+                                    <% } %> 
+                                <div class="order-total-desktop">
+                                    <span style="font-weight: bold; font-size: .95rem;">$<%= checkoutTotal.toFixed(2).replace('.', ',' ) %>
+                                    </span>
+                                </div>
+                                <div class="shipping-desktop">
+                                    <p style="font-size: .95rem;">Este envío es gratuito!</p>
+                                </div>
+                               
                     </div>
-                </div>
+                    <div class="checkout-button-desktop">
 
+                        <button class="checkout">
+                            <span class="material-symbols-outlined" style="font-size: 21px;">
+                                lock
+                            </span>
+                            <span>
+                            Proceder al pago
+                        </span>
+                        </button>
+                    </div>
+                     <!---->
+                </div>
+    
                 <main class="products-in-cart">
                     <div class="cart-overall">
                         <% if(products){ %>
@@ -40,18 +67,35 @@
                                         <li>
                                             <div class="cart-product-detail">
                                                 <div class="product-img">
+                                                    <div class="cart-img" style="padding-bottom: 1rem;">
+                                                    <a href="/products/detail/<%= product['product.id'] %>">
                                                     <!--Si es desde el controller, antes de /img van dos puntos (../img)-->
                                                     <img class="imagen-producto"
                                                         src="/img/products/<%= product['product.image'] %> "
                                                         alt="Producto1">
+                                                    </a>
+                                                </div>
+                                                    <div class="quantity-desktop">
+                                                        <select name="quantity" id="mobile-quantity">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="5">6</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                                 <div class="product-description">
                                                     <h5>
                                                         <%= product['product.name'] %>
                                                     </h5>
-                                                    <p>
+                                                    <p style="font-size: .9rem;">
                                                         <%= product['product.description'] %>
                                                     </p>
+                                                    <div class="price-mobile">
+                                                        <span>$ <%= product['product.price'] %> </span>
+                                                    </div>
                                                 </div>
 
                                             </div>
@@ -99,8 +143,12 @@
                     <% for(product of products){ %>  
                        <% checkoutTotal += Number(product['product.price']) %>  
                         <% } %> 
-                       
+                    
                             <section class="checkout">
+                                <div class="order-resume">
+                                    <h4 style="font-size: 1.4rem;">Resumen de orden </h4>
+                                    <span style="font-weight: bold; letter-spacing: 2.5px;"> (<%= products.length %>)</span>
+                                </div>
                                 <div class="shipping">
                                     <span class="material-symbols-outlined" style="width: 38px;">
                                         local_shipping
@@ -137,10 +185,12 @@
                                         <div class="checkout-button">
 
                                             <button class="checkout">
-                                                <span class="material-symbols-outlined">
+                                                <span class="material-symbols-outlined" style="font-size: 21px;">
                                                     lock
                                                 </span>
+                                                <span>
                                                 Proceder al pago
+                                            </span>
                                             </button>
                                         </div>
                                     </div>
