@@ -730,9 +730,17 @@ div.favorites-container img{
 
 div.favorites-header{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 1rem;
+    gap: 2rem;
     margin-top: 2rem;
+}
+
+div.total-fav{
+    display: flex;
+    align-items: center;
+    gap: .9rem;
 }
 
 div.favorites-header button{
@@ -743,6 +751,7 @@ div.favorites-header button{
     border-radius: 50px;
     border: none;
     cursor: pointer;
+    margin: auto;
 }
 div.favorites-header button:hover{
     background-color: #e7e7ec;
@@ -1047,15 +1056,18 @@ hr {
 
 main.profile{
     display: flex;
+    flex-direction: column;
     margin: auto;
     width: 90%;
     padding: 5rem 0;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
 }
 div.user-pannel{
     height: 300px;
     flex: .75;
+    width: 100%;
     border-radius: 10px;
     background-color: #ececec99;
     box-shadow: rgb(0 0 0 / 25%) 0 1px 2px;
@@ -1066,14 +1078,15 @@ div.user-pannel h2{
     font-weight: normal;
 }
 
-div.user-pannel h3{
+/* div.user-pannel h3{
     font-size: 3rem;
     font-weight: normal;
-}
+} */
 
 div.user-pannel ul{
     display: flex;
-    height: 200px;
+    flex-direction: column;
+    /* height: 200px; */
     justify-content: center;
     margin-top: 2rem;
     align-items: center;
@@ -1089,10 +1102,10 @@ div.user-pannel .user-activity{
     text-align: center;
 }
 
-div.user-pannel .middle{
+/* div.user-pannel .middle{
     border-right: 1.5px solid #afb3b3;
     border-left: 1.5px solid #afb3b3;
-}
+} */
 
 div.avatar-container{
    display: flex;
@@ -1102,8 +1115,8 @@ div.avatar-container{
 div.avatar-container img{
     object-fit: cover;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }
 div.profile-sidebar{
     background-color: #ffffff;
@@ -1154,10 +1167,12 @@ div.profile-options button a{
 main.user-settings{
     max-width: 960px;
     margin: auto;
-    height: 600px;
+    margin-top: 2rem;
+    /* height: 600px; */
 }
 section.avatar-form{
-    width: 700px;
+    /* width: 700px; */
+    width: 100%;
     float: right;
 }
 
@@ -1178,7 +1193,8 @@ section.avatar-form h3{
     font-family: 'Rubik', sans-serif;
 }
 section.avatar-form div.button-container{
-    padding-left: 13px;
+    text-align: center;
+    padding: 1rem 0 2rem 0;
 }
 
 section.avatar-form div.button-container button{
@@ -1195,9 +1211,11 @@ section.avatar-form fieldset{
     border-radius: 5px;
     box-shadow: rgb(0 0 0 / 10%) 0 1px 2px;
     background-color: #ffffff;
-    margin: 0 0 1rem 0;
+    margin: auto;
     padding: 1rem;
+    width: 97%;
     border: none;
+    margin-bottom: 1rem;
 }
 
 section.avatar-form fieldset h1{
@@ -1213,6 +1231,11 @@ div.avatar-form{
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+input#avatar-file{
+    width: 95%;
 }
 
 section.avatar-form p{
@@ -1224,13 +1247,14 @@ section.avatar-form p{
 
 /**/
 section.user-nav-menu{
-    display: flex;
-    margin-top: 2rem;
+    display: none;
+    /* margin-top: 2rem; */
     padding-right: 1rem;
 }
 
 section.user-nav-menu nav{
-    margin-top: 20px;
+    padding-top: 20px;
+    margin: auto;
 }
 
 section.user-nav-menu h3{
@@ -1267,7 +1291,9 @@ div.user-data{
 div.user-data div{
     margin-bottom: 1rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
 }
 
 div.user-data label{
@@ -1277,7 +1303,7 @@ div.user-data label{
 }
 
 div.user-data input{
-    width: 75%;
+    width: 100%;
     height: 40px;
     outline: none;
     background-color: #ffffff;
@@ -2402,6 +2428,13 @@ input[type=number]::-webkit-outer-spin-button {
     div.price-mobile{
         display: none;
     }
+    div.avatar-container img{
+        width: 150px;
+        height: 150px;
+    }
+    div.user-pannel ul{
+       font-size: 1.2rem;
+    }
     
 }
 
@@ -2478,6 +2511,27 @@ input[type=number]::-webkit-outer-spin-button {
     .column-2{
         width: 60%;
     }
+    div.favorites-header{
+        flex-direction: row;
+        justify-content: space-between;
+        /* margin-bottom: 1rem;
+        margin-top: 2rem; */
+    }
+    div.user-pannel ul{
+        height: 200px;
+        flex-direction: row;
+    }
+    div.user-pannel h3{
+        font-size: 2rem;
+        font-weight: normal;
+    }
+    div.user-pannel .middle{
+        border-right: 1.5px solid #afb3b3;
+        border-left: 1.5px solid #afb3b3;
+    }
+    div.user-pannel ul{
+        font-size: 1rem;
+     }
    
 
 }
@@ -2551,6 +2605,11 @@ input[type=number]::-webkit-outer-spin-button {
         flex-direction: row;
         width: 80%;
         height: 500px;
+    }
+    div.user-data div{
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
     }
 }
 
@@ -2631,6 +2690,13 @@ input[type=number]::-webkit-outer-spin-button {
     .shopping-cart ul li{
         width: 90%;
      }
+     main.profile{
+        flex-direction: row;
+    }
+    div.user-pannel{
+        width: 50%;
+    }
+   
     
 }
 
@@ -2711,9 +2777,19 @@ input[type=number]::-webkit-outer-spin-button {
     .shopping-cart ul li{
         width: 100%;
      }
+     div.user-pannel{
+        width: 100%;
+    }
+    div.user-pannel h3{
+        font-size: 3rem;
+    }
+    div.avatar-container img{
+        width: 200px;
+        height: 200px;
+    }
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 960px){
 
     /* .column {
         width: 70%;
@@ -2749,4 +2825,16 @@ input[type=number]::-webkit-outer-spin-button {
         width: 290px;
         height: 290px;
      }
+     section.user-nav-menu{
+        display: block;
+    }
+    section.avatar-form{
+        width: 75%;
+    }
+    section.avatar-form div.button-container{
+       text-align: right;
+    }
+    div.user-data input{
+        width: 75%;
+    }
 }
