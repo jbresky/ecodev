@@ -1169,7 +1169,7 @@ main.user-settings{
     max-width: 960px;
     margin: auto;
     margin-top: 2rem;
-    /* height: 600px; */
+    height: 500px;
 }
 section.avatar-form{
     /* width: 700px; */
@@ -1313,6 +1313,10 @@ div.user-data input{
     transition: all .2s linear;
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
     padding: 10px;
+}
+
+div.user-data textarea{
+    width: 150px;
 }
 
 div.user-data input:focus{
@@ -2077,6 +2081,7 @@ div.reserved span{
     font-size: 12px;
     color: #9695A8;
     margin: auto;
+    text-align: center;
 }
 
 /* PRODUCT DETAIL */
@@ -2435,6 +2440,9 @@ input[type=number]::-webkit-outer-spin-button {
     }
     div.user-pannel ul{
        font-size: 1.2rem;
+    }
+    div.user-data textarea{
+        width: 100%;
     }
     
 }

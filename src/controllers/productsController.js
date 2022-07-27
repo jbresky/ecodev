@@ -150,6 +150,9 @@ const productsController = {
            ...req.body,
            image: req.file.filename
         })
+        .then(newProduct => {
+            res.redirect('/')
+        })
     },
 
     detail: (req, res) => {
@@ -181,7 +184,7 @@ const productsController = {
                 id: req.params.id
             }
         })
-        res.redirect('products/detail/:id')
+        res.redirect('/products/detail/:id')
     }, 
     delete: (req, res) => {
         db.Product.findByPk(req.params.id)

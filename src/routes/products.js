@@ -12,7 +12,7 @@ const authAdmin = require('../middlewares/authAdmin')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './public/img/users')
+        cb(null, './public/img/products')
     },
     filename: (req, file, cb) => {
        let fileName = `${Date.now()}-${path.extname(file.originalname)}`;
