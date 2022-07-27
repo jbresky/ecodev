@@ -19,7 +19,7 @@
     "dev": "nodemon src/app.js"
   },
   "keywords": [],
-  "author": "jbresky",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.15"
