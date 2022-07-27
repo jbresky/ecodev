@@ -19,10 +19,18 @@
     "dev": "nodemon src/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "jbresky",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbresky/ecodev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jbresky/ecodev/issues"
+  },
+  "homepage": "https://github.com/jbresky/ecodev#readme",
+  "description": ""
 }
