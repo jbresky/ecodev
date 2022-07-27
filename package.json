@@ -15,7 +15,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node src/app",
     "dev": "nodemon src/app.js"
   },
   "keywords": [],
